@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XB.Framework</name>
+    </assembly>
+    <members>
+        <member name="F:XB.Framework.Constant._DatabaseName">
+            <summary>
+            数据库名称，在HuijuSDFWConfigure.xml中进行配置，如果为空的话，默认为XB
+            </summary>
+            <remarks>
+            张晓斌 2012年11月19日16:30:35
+            </remarks>
+            
+        </member>
+        <member name="P:XB.Framework.Constant.KeySuffix">
+            <summary>
+            实现缓存的Key
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.DbExecute" -->
+        <member name="M:XB.Framework.DbExecute.BeginTransaction">
+            <summary>
+            开始事务
+            </summary>
+        </member>
+        <member name="M:XB.Framework.DbExecute.BeginTransaction(System.String)">
+            <summary>
+            开始事务
+            </summary>
+            <param name="databaseName">数据库名称</param>
+        </member>
+        <member name="M:XB.Framework.DbExecute.CreateDbInstance(XB.Framework.DataAccess.DbInstanceType,Microsoft.Practices.EnterpriseLibrary.Data.Database,System.Data.Common.DbTransaction)">
+            <summary>
+            根据类型和数据库创建事物管理对象
+            </summary>
+            <param name="type"></param>
+            <param name="database"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.DbExecute.GetAutoParameterDbInstance">
+            <summary>
+            创建数据库事物参数对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.DbExecute.GetAutoParameterDbInstance(System.String)">
+            <summary>
+            创建数据库事物参数对象
+            </summary>
+            <param name="databaseName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.DbExecute.GetDatabase(System.String)">
+            <summary>
+            获取数据库对象
+            </summary>
+            <param name="databaseName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.DbExecute.Rollback(System.String)">
+            <summary>
+            事物回滚，并从缓存中删除事物对象
+            </summary>
+            <param name="databaseName"></param>
+        </member>
+        <member name="M:XB.Framework.DbExecute.ExecuteDataSet(System.String)">
+            <summary>
+            执行SQL语句返回DataSet操作
+            </summary>
+            <param name="sql">SQL语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.DbExecute.ExecuteDataSet(System.String,System.Collections.IList)">
+            <summary>
+            执行SQL语句返回DataSet
+            </summary>
+            <param name="SqlString">查询语句</param>
+            <param name="cmdParms"> sql中参数, cmdParms中的每个元素为一个object[2] objs, objs[0]为键, objs[1]为值;</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:XB.Framework.DbExecute.ExecuteDataTable(System.String)">
+            <summary>
+            执行SQL语句返回DataSet操作
+            </summary>
+            <param name="sql">SQL语句</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:XB.Framework.DbExecute.ExecuteDataTable(System.String,System.Collections.IList)">
+            <summary>
+            执行SQL语句返回DataTable
+            </summary>
+            <param name="SqlString">查询语句</param>
+            <param name="cmdParms"> sql中参数, cmdParms中的每个元素为一个object[2] objs, objs[0]为键, objs[1]为值;</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:XB.Framework.DbExecute.BuildDBParameter(Microsoft.Practices.EnterpriseLibrary.Data.Database,System.Data.Common.DbCommand,System.Collections.IList)">
+            <summary>
+            赋值IList对象到DbCommand中
+            </summary>
+            <param name="dbCommand">DbCommand</param>
+            <param name="cmdParms">需要赋值的键值对对象，成员为objct数组对象，object[0]为键   object[1]为值</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.TranServiceBase" -->
+        <member name="M:XB.Framework.TranServiceBase.BeginTransaction">
+            <summary>
+            开启事物
+            </summary>
+        </member>
+        <member name="M:XB.Framework.TranServiceBase.BeginTransaction(System.String)">
+            <summary>
+            开启事物
+            </summary>
+            <param name="databaseName">数据库名称</param>
+        </member>
+        <member name="M:XB.Framework.TranServiceBase.Commit">
+            <summary>
+            提交事物
+            </summary>
+        </member>
+        <member name="M:XB.Framework.TranServiceBase.Commit(System.String)">
+            <summary>
+            提交事物
+            </summary>
+            <param name="databaseName">数据库名称</param>
+        </member>
+        <member name="M:XB.Framework.TranServiceBase.HandleException(System.Exception)">
+            <summary>
+            抛出异常
+            </summary>
+            <param name="exception"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.TranServiceBase.Rollback">
+            <summary>
+            事物回滚
+            </summary>
+        </member>
+        <member name="M:XB.Framework.TranServiceBase.Rollback(System.String)">
+            <summary>
+            事物回滚
+            </summary>
+            <param name="databaseName">数据库名称</param>
+        </member>
+    </members>
+</doc>

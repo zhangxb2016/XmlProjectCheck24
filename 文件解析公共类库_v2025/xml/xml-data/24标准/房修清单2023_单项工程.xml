@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConstructionProject Number="001" Name="24标准测试文件" FileKind="6" ValuationMethod="1" TaxModel="1"
+	StandardName="建设工程造价数据交换标准" StandardNumber="GB/T 50XXX-201X" Scale="50000" ScaleUnit="50000"
+	MaterialPriceDate="2025-06-08" Developer="建设单位_24add" DeveloperAuthorizer="建设单位法定代表人或其授权委托人"
+	LaborPriceDate="2024-12-09" MachinePriceDate="2024-12-03" Area="项目所在地区" Location="项目所在地点"
+	ProjectKind="1">
+	<SystemInfo
+		ID1="uePBqrTvv8a8vLnJt93T0M/euavLvju548GqtO/UxrzGvNvGvcyoR0NDUDYuMDYuNDEwMC4yLjEzNDtZMzIwODQxNDU2"
+		ID2="QkZFQkZCRkYwMDA5MDZFQTtXOUFDSFdFUDswMC1EOC02MS05Ny0zMi0yQg=="
+		MakeDate="2024-06-12T14:49:54" />
+	<ConstructionInfo>
+		<Option ResPrecision="4.1" QuantityPrecision="4.2" CostPrecision="2.3" RatePrecision="3.6" />
+		<ProjectInfo Developer="XX市轨道交通集团有限公司" Designer="XX设计研究院" Contractor=""
+			CompileCompany="XX工程造价咨询有限公司" Compiler="李强" CompilerCertNo="ZJGZ-2020-001"
+			CompileDate="2023-06-10" Examiner="王芳" ExaminerCertNo="ZJGZ-2018-005"
+			ExamineDate="2023-06-12" Approver="赵明" ApproverCertNo="ZJGZ-2015-010"
+			ApproverDate="2023-06-14" Total="385624500.00" />
+		<TendererInfo Tenderername="XX市轨道交通集团有限公司" TenderUSCI="91310101MA1FPX1234"
+			TenderCompileUnitKind="1" TenderCompiler="周涛"
+			TenderCompilerCertNo="ZJGZ-2019-008" TenderCompileDate="2023-05-20" TenderExaminer="吴刚"
+			TenderExaminerCertNo="ZJGZ-2017-003" TenderExamineDate="2023-05-25"
+			TenderApprover="郑伟" TenderApproverCertNo="ZJGZ-2014-002" TenderApproveDate="2023-05-28"
+			Proxy="XX招标代理有限公司" ProxyUSCI="91310101MA1FPY5678"
+			Consultant="XX工程造价咨询有限公司" ConsultantUSCI="91310101MA1FPZ9012"
+			BidPriceCeiling="385624500.00" />
+		<BidderInfo
+			BidName="XX建设工程集团有限公司" BidAuthorizer="刘强" BidTotal="378000000.00" BidCompiler="陈明"
+			BidCompilerCertNo="ZJGZ-2021-015" BidCompileDate="2023-06-05"
+			BidExaminer="林芳" BidExaminerCertNo="ZJGZ-2019-020" BidExamineDate="2023-06-08"
+			BidApprover="黄伟" BidApproverCertNo="ZJGZ-2016-012" BidApproveDate="2023-06-10" />
+		<AttrInfo>
+			<AttrInfoItem Name="项目编号" Value="001" Code="BidCode" Remark="备注" />
+		</AttrInfo>
+		<AddiInfo Remark="补充信息">
+			<AddiInfoItem Name="工程类型" Value="" Code="" Remark="" />
+		</AddiInfo>
+	</ConstructionInfo>
+	<SummaryOfCost Total="0" DivisionalAndElementalWorks="0" Preliminaries="0" CostForHSE="0"
+		OtherPreliminaries="0" SundryCosts="0" ProvisionalSums="0" SpecialtyProvisionalPrice="0"
+		DayWorkRate="0"
+		MainContractorAttendance="0" ClaimForLossAndExpenses="0" Tax="0" Labor="0" Material="0"
+		MainMaterialEquipment="0" MainMaterial="0" Equipment="0" Machine="0" Overhead="0"
+		RiskRate="0" Profit="0" ProvisionalMaterial="19.9">
+		<AddiCost Name="补充费用" Total="" Code="" Remark="" />
+	</SummaryOfCost>
+	<ConstructionSummary>
+		<ConstructionCost Name="未命名" Total="0" Scale="50000" Code="001">
+			<ProjectInstallationWorkCost Name="未命名" Total="0" Scale="50000" Code="001" ScaleUnit=""
+				Remark="">
+				<SectionalWorks Name="单项工程" Segment="未命名" Total="0" Specialty="0103" Scale="50000"
+					ScaleUnit="50000" Ratios="0.00">
+					<AttrInfo Remark="工程特征信息">
+						<AttrInfoItem Name="项目编号" Value="001" Code="BidCode" Remark="备注" />
+					</AttrInfo>
+					<SummaryOfCost Total="0" DivisionalAndElementalWorks="0" Preliminaries="0"
+						CostForHSE="0" OtherPreliminaries="0" SundryCosts="0" ProvisionalSums="0"
+						ProvisionalMaterial="0" SpecialtyProvisionalPrice="0" DayWorkRate="0"
+						MainContractorAttendance="0" ClaimForLossAndExpenses="0"
+						SiteInstruction="0" StatutoryFees="0" Tax="0" Labor="0" Material="0"
+						MainMaterialEquipment="0" MainMaterial="0" Equipment="0" Machine="0"
+						Overhead="0" RiskRate="0" Profit="0">
+						<AddiCost Name="" Total="" Code="" Remark=""></AddiCost>
+					</SummaryOfCost>
+					<UnitWorks Number="1001" Name="土建结构工程" Segment="未命名" ValuationMethod="1"
+						TaxModel="1" Total="0" Specialty="0201" Scale="50000" ScaleUnit="50000">
+						<AttrInfo Remark="工程特征信息">
+							<AttrInfoItem Name="工程类型" Value="" Code="" Remark="" />
+						</AttrInfo>
+						<AddiInfo Remark="工程特征信息">
+							<AddiInfoItem Name="工程类型" Value="" Code="" Remark="" />
+						</AddiInfo>
+						<UnitWorksSummary>
+							<UnitWorksSummaryGroup Name="单位工程费用组成汇总" QtyFormula="" Rate="" Total=""
+								Code="0202" Kind="" Remark="">
+								<UnitWorksSummaryItem Name="单位工程费用组成明细" QtyFormula="" Rate=""
+									Total=""
+									Code="020201" Kind="" Remark=""></UnitWorksSummaryItem>
+							</UnitWorksSummaryGroup>
+
+						</UnitWorksSummary>
+						<DivisionalAndElementalWorks>
+							<SummaryOfBasicCost Labor="0" Material="0" MainMaterialEquipment="0"
+								Machine="0" Overhead="0" RiskRate="0" StatutoryFees="0" Tax="0"
+								Profit="0" Appraisal="0" Remark="合计费用">
+								<AddiCost Name="" Total="" Code="" Remark="补充费用"></AddiCost>
+							</SummaryOfBasicCost>
+							<DivisionalWorks Number="A" Name="A 土建工程" Attr="" Unit="" Quantity="0"
+								Total="0" Code="" Remark="">
+								<SummaryOfBasicCost Labor="0" Material="0" MainMaterialEquipment="0"
+									Machine="0" Overhead="0" RiskRate="0" StatutoryFees="0" Tax="0"
+									Profit="0" Appraisal="0" Remark="合计费用">
+									<AddiCost Name="" Total="" Code="" Remark="补充费用"></AddiCost>
+								</SummaryOfBasicCost>
+								<DivisionalWorks Number="A.1" Name="整体拆除工程" Attr="" Unit=""
+									Quantity="0" Total="0" Code="" Remark="">
+									<SummaryOfBasicCost Labor="0" Material="0"
+										MainMaterialEquipment="0" Machine="0" Overhead="0"
+										RiskRate="0" StatutoryFees="0" Tax="0" Profit="0"
+										Appraisal="0" Remark="合计费用">
+										<AddiCost Name="" Total="" Code="" Remark="补充费用"></AddiCost>
+									</SummaryOfBasicCost>
+									<WorkElement Number="910101001001" Name="建筑物整体拆除" Attr=""
+										Unit="m2" Quantity="1.000" OriginalPrice="0" Price="0"
+										PriceHigh="0" Total="0" Major="false" CalcType="1"
+										Specialty="0202">
+										<SummaryOfBasicCost Labor="0.00" Material="0.00"
+											MainMaterialEquipment="0" Machine="0.00" Overhead="0.00"
+											RiskRate="0.00" StatutoryFees="0.00" Tax="0.00"
+											Profit="0.00" Appraisal="0.00" Remark="合计费用">
+											<AddiCost Name="" Total="" Code="" Remark="补充费用"></AddiCost>
+										</SummaryOfBasicCost>
+										<ExpressElement OrderNumber="0" Express="0" Quantity="0"
+											Kind="1" Remark="" Unit="" />
+										<WorkContent Name="室内地坪以上的全部建筑物拆除" Total="0" Remark=""
+											Content="" />
+										<PriceAnalysis>
+											<OriginalPriceItem Labor="" Material=""
+												MainMaterialEquipment="" MainMaterial=""
+												Equipment="" Machine="" Overhead="" RiskRate=""
+												Profit="" Remark="调整前单价明细">
+												<AddiCost Name="" Total="" Code="" Remark="补充费用"></AddiCost>
+											</OriginalPriceItem>
+											<PriceItem Labor="1" Material="2.1"
+												MainMaterialEquipment="3.1" MainMaterial="4.1"
+												Equipment="5.1" Machine="6.1" Overhead="7.1"
+												RiskRate="8.1" Profit="9.1">
+												<AddiCost Name="A" Total="2" Code="12"
+													Remark="单价明细-补充费用"></AddiCost>
+											</PriceItem>
+											<LabourMaterialsEquipmentsMachinesElement Number="1"
+												Quantity="2" OriginalContent="1.2" NOCost="1"
+												Remark="工料机含量明细" />
+										</PriceAnalysis>
+									</WorkElement>
+								</DivisionalWorks>
+								<WorkElement Number="910101001001" Name="建筑物整体拆除" Attr="" Unit="m2"
+									Quantity="1.000" OriginalPrice="0" Price="0" PriceHigh="0"
+									Total="0" Major="false" CalcType="1" Specialty="0301">
+									<SummaryOfBasicCost Labor="0.00" Material="0.00"
+										MainMaterialEquipment="0" Machine="0.00" Overhead="0.00"
+										RiskRate="0.00" StatutoryFees="0.00" Tax="0.00"
+										Profit="0.00" Appraisal="0.00">
+										<AddiCost Name="" Total="" Code="" Remark="补充费用"></AddiCost>
+									</SummaryOfBasicCost>
+									<ExpressElement OrderNumber="0" Express="0" Quantity="0"
+										Kind="1" Remark="工程量计算表" Unit="" />
+									<WorkContent Name="室内地坪以上的全部建筑物拆除" Total="0" Remark=""
+										Content="" />
+									<PriceAnalysis Remark="单价分析">
+										<OriginalPriceItem Labor="" Material=""
+											MainMaterialEquipment="" MainMaterial="" Equipment=""
+											Machine="" Overhead="" RiskRate="" Profit=""
+											Remark="调整前单价明细">
+											<AddiCost Name="" Total="" Code="" Remark="补充费用"></AddiCost>
+										</OriginalPriceItem>
+										<PriceItem Labor="" Material="" MainMaterialEquipment=""
+											MainMaterial="" Equipment="" Machine="" Overhead=""
+											RiskRate="" Profit="" Remark="单价明细">
+											<AddiCost Name="" Total="" Code="" Remark="补充费用"></AddiCost>
+										</PriceItem>
+										<LabourMaterialsEquipmentsMachinesElement Number=""
+											Quantity="" OriginalContent="" NOCost="" Remark="" />
+									</PriceAnalysis>
+								</WorkElement>
+							</DivisionalWorks>
+						</DivisionalAndElementalWorks>
+						<LabourMaterialsEquipmentsMachinesSummary Number="" Name="工料机汇总"
+							Specification="" Unit="" Quantity="" ProviderRate="" ProviderBase=""
+							TaxRate="" NoTaxPrice="" TaxPrice="" NoTaxTotal="" TaxTotal=""
+							Weight="" BasicPrice="" CurrentPrice="" Kind="" Class="" ExtKind=""
+							AddiKind="" MainMaterial="" ProvisionalMaterial="" Provider=""
+							PriceSource=""
+							Delivery="" Location="" ProducingArea="" Supplier="" Character=""
+							Remark="">
+							<LabourMaterialsEquipmentsMachinesElement Number="" Quantity=""
+								OriginalContent="" NOCost="" Remark="" />
+						</LabourMaterialsEquipmentsMachinesSummary>
+					</UnitWorks>
+					<OtherCost Number="" Name="安全文明施工费2" Quantity="1000" Rate="3.5" Total="35000"
+						Code="AQWM" QtyFormula="" Ratios="100" Remark="">
+						<OtherCost Name="临时设施费2" Quantity="500" Rate="2.0" Total="10000" />
+						<OtherCost Name="环境保护费2" Quantity="500" Rate="1.5" Total="7500" />
+					</OtherCost>
+					<LabourMaterialsEquipmentsMachinesSummary Number="" Name="工料机汇总"
+						Specification="0" Unit="" Quantity="0" ProviderRate="0" ProviderBase="0"
+						TaxRate="0" NoTaxOrgPrice="0" NoTaxPrice="0" TaxOrgPrice="0"
+						NoTaxOrgTotal="0" NoTaxTotal="0" TaxOrgTotal="0" TaxTotal="0" Weight="0"
+						BasicPrice="0" CurrentPrice="0" Kind="0" Class="0" Concrete="0" ExtKind="0"
+						AddiKind="0" MainMaterial="0" ProvisionalMaterial="0" Provider="0"
+						Delivery="0" Location="0" ProducingArea="0" Supplier="0" Character="0"
+						Remark="">
+						<LabourMaterialsEquipmentsMachinesElement Number="" Quantity="0"
+							NOCost="true" Remark="" />
+					</LabourMaterialsEquipmentsMachinesSummary>
+				</SectionalWorks>
+				<Preliminaries Remark="措施项目">
+					<SummaryOfBasicCost Labor="" Material="" MainMaterialEquipment=""
+						MainMaterial="" Equipment="" Machine="" Overhead="" RiskRate="" Profit=""
+						Appraisal="" Remark="合计费用">
+						<AddiCost Name="" Total="" Code="" Remark="补充费用"></AddiCost>
+					</SummaryOfBasicCost>
+					<WorkElement Number="910101001001" Name="建筑物整体拆除" Attr="" Unit="m2"
+						Quantity="1.000" OriginalPrice="0" Price="0" PriceHigh="0" Total="0"
+						Major="false" CalcType="1" Specialty="0102">
+						<SummaryOfBasicCost Labor="0.00" Material="0.00" MainMaterialEquipment="0"
+							Machine="0.00" Overhead="0.00" RiskRate="0.00" StatutoryFees="0.00"
+							Tax="0.00" Profit="0.00" Appraisal="0.00">
+							<AddiCost Name="" Total="" Code="" Remark="补充费用"></AddiCost>
+						</SummaryOfBasicCost>
+						<ExpressElement OrderNumber="0" Express="0" Quantity="0" Kind="1"
+							Remark="工程量计算表" Unit="" />
+						<WorkContent Name="室内地坪以上的全部建筑物拆除" Total="0" Remark="" Content="" />
+						<PriceAnalysis Remark="单价分析">
+							<OriginalPriceItem Labor="" Material="" MainMaterialEquipment=""
+								MainMaterial="" Equipment="" Machine="" Overhead="" RiskRate=""
+								Profit="" Remark="调整前单价明细">
+								<AddiCost Name="" Total="" Code="" Remark="补充费用"></AddiCost>
+							</OriginalPriceItem>
+							<PriceItem Labor="" Material="" MainMaterialEquipment="" MainMaterial=""
+								Equipment="" Machine="" Overhead="" RiskRate="" Profit=""
+								Remark="单价明细">
+								<AddiCost Name="" Total="" Code="" Remark="补充费用"></AddiCost>
+							</PriceItem>
+							<LabourMaterialsEquipmentsMachinesElement Number="" Quantity=""
+								OriginalContent="" NOCost="" Remark="工料机含量明细" />
+						</PriceAnalysis>
+					</WorkElement>
+				</Preliminaries>
+				<Sundry Remark="其他项目">
+					<SundryCosts Name="其他项目" Total="0" SettlementTotal="0" Code="QTF" Remark="">
+						<SundryCostsGroup Name="其他项目费汇总" Unit="" Total="" SettlementTotal="" Code=""
+							Kind="" Remark="">
+							<SundryCostsItem Name="其他项目费明细1" Unit="" Quantity="" QtyFormula=""
+								Price=""
+								Rate="" ProvisionalTotal="" Total="" TotalDifference="" Code=""
+								Kind=""
+								Remark=""></SundryCostsItem>
+							<SundryCostsItem Name="其他项目费明细2" Unit="" Quantity="" QtyFormula=""
+								Price=""
+								Rate="" ProvisionalTotal="" Total="" TotalDifference="" Code=""
+								Kind=""
+								Remark=""></SundryCostsItem>
+						</SundryCostsGroup>
+
+					</SundryCosts>
+					<ProvisionalSums Remark="暂列金额">
+						<ProvisionalSumsGroup Name="暂列金额汇总" Unit="" Total="" Kind="" Remark="">
+							<ProvisionalSumsItem Name="暂列金额明细1" Unit="" Quantity="" QtyFormula=""
+								Price="" Rate="" ProvisionalTotal="" Total="" TotalDifference=""
+								Code=""
+								Kind="" Remark=""></ProvisionalSumsItem>
+							<ProvisionalSumsItem Name="暂列金额明细2" Unit="" Quantity="" QtyFormula=""
+								Price="" Rate="" ProvisionalTotal="" Total="" TotalDifference=""
+								Code=""
+								Kind="" Remark=""></ProvisionalSumsItem>
+						</ProvisionalSumsGroup>
+
+					</ProvisionalSums>
+					<ProvisionalMaterial />
+					<SpecialtyProvisionalPrice Name="专业工程暂估价" Code="" ProvisionalTotal=""
+						SettlementTotal="" TotalDifference="" Remark="">
+						<SpecialtyProvisionalPriceGroup Name="专业工程暂估价汇总" Content="" Unit="" Total=""
+							ProvisionalTotal="" SettlementTotal="" TotalDifference="" Kind=""
+							Remark="">
+							<SpecialtyProvisionalPriceItem Name="专业工程暂估价明细1" Content="" Unit=""
+								Quantity="" QtyFormula="" Price="" Rate="" NoTaxProvisionalTotal=""
+								ProvisionalTotalTax="" TaxOrgProvisionalTotal=""
+								NoTaxSettlementTotal="" SettlementTotalTax=""
+								TaxOrgSettlementTotal=""
+								Total="" TotalDifference="" Kind="" Remark=""></SpecialtyProvisionalPriceItem>
+							<SpecialtyProvisionalPriceItem Name="专业工程暂估价明细2" Content="" Unit=""
+								Quantity="" QtyFormula="" Price="" Rate="" NoTaxProvisionalTotal=""
+								ProvisionalTotalTax="" TaxOrgProvisionalTotal=""
+								NoTaxSettlementTotal="" SettlementTotalTax=""
+								TaxOrgSettlementTotal=""
+								Total="" TotalDifference="" Kind="" Remark=""></SpecialtyProvisionalPriceItem>
+						</SpecialtyProvisionalPriceGroup>
+
+					</SpecialtyProvisionalPrice>
+
+					<DayWorkRate Name="计日工" Code="" Total="" Remark="">
+						<DayWorkRateGroup Name="人工" Unit="" ProvisionalTotal="0" Total="0"
+							Code="LXF" Remark="">
+							<DayWorkRateItem Name="人工费" Unit="" Quantity="0" QtyFormula="" Rate="0"
+								ProvisionalTotal="0" Total="0" Code="RGF" Remark="" />
+						</DayWorkRateGroup>
+						<DayWorkRateGroup Name="材料" Unit="" ProvisionalTotal="0" Total="0"
+							Code="LXF" Remark="">
+							<DayWorkRateItem Name="材料费" Unit="" Quantity="0" QtyFormula="" Rate="0"
+								ProvisionalTotal="0" Total="0" Code="CLF" Remark="" />
+						</DayWorkRateGroup>
+						<DayWorkRateGroup Name="机械" Unit="" ProvisionalTotal="0" Total="0"
+							Code="LXF" Remark="">
+							<DayWorkRateItem Name="机械费" Unit="" Quantity="0" QtyFormula="" Rate="0"
+								ProvisionalTotal="0" Total="0" Code="JXF" Remark="" />
+						</DayWorkRateGroup>
+
+					</DayWorkRate>
+					<MainContractorAttendance Name="总承包服务费" Code="" ProvisionalTotal="" Remark="">
+						<MainContractorAttendanceGroup Name="管理费汇总" Unit="" Total="0" Code="GLF"
+							Remark="">
+							<MainContractorAttendanceItem Name="管理费明细1" Unit="" Quantity="0"
+								QtyFormula=""
+								Rate="0" Total="0" Code="GLF" Remark="" />
+						</MainContractorAttendanceGroup>
+						<MainContractorAttendanceGroup Name="利润汇总" Unit="" Total="0" Code="LR"
+							Remark="">
+							<MainContractorAttendanceItem Name="利润明细" Unit="" Quantity="0"
+								QtyFormula=""
+								Rate="0" Total="0" Code="LR" Remark="" />
+						</MainContractorAttendanceGroup>
+
+
+					</MainContractorAttendance>
+					<OtherContents Name="合同中约定的其他项目" Code="" Total="" Kind="" Remark="">
+						<OtherContentsGroup Name="合同中约定的其他项目汇总" Unit="" Total="" Kind="" Remark="">
+							<OtherContentsItem Name="合同中约定的其他项目明细1" Unit="" Quantity="" QtyFormula="" Price="" Rate="" Total="" Reason="" Kind="" ></OtherContentsItem>
+							<OtherContentsItem Name="合同中约定的其他项目明细2" Unit="" Quantity="" QtyFormula="" Price="" Rate="" Total="" Reason="" Kind="" ></OtherContentsItem>
+						</OtherContentsGroup>
+
+					</OtherContents>
+				</Sundry>
+
+				<OtherCost Number="" Name="安全文明施工费" Quantity="1000" Rate="3.5" Total="35000"
+					Code="AQWM" QtyFormula="" Ratios="100" Remark="">
+					<OtherCost Name="临时设施费" Quantity="500" Rate="2.0" Total="10000" />
+					<OtherCost Name="环境保护费" Quantity="500" Rate="1.5" Total="7500" />
+				</OtherCost>
+				<LabourMaterialsEquipmentsMachinesSummary Number="" Name="工料机汇总" Specification="0"
+					Unit="" Quantity="0" ProviderRate="0" ProviderBase="0" TaxRate="0"
+					NoTaxOrgPrice="0" NoTaxPrice="0" TaxOrgPrice="0" NoTaxOrgTotal="0"
+					NoTaxTotal="0" TaxOrgTotal="0" TaxTotal="0" Weight="0" BasicPrice="0"
+					CurrentPrice="0" Kind="0" Class="0" Concrete="0" ExtKind="0" AddiKind="0"
+					MainMaterial="0" ProvisionalMaterial="0" Provider="0" Delivery="0" Location="0"
+					ProducingArea="0" Supplier="0" Character="0" Remark="">
+					<LabourMaterialsEquipmentsMachinesElement Number="" Quantity="0" NOCost="true"
+						Remark="工料机含量明细" />
+				</LabourMaterialsEquipmentsMachinesSummary>
+			</ProjectInstallationWorkCost>
+			<EquipmentProcurementCost Name="设备及工器具购置费" Total="0" Code="" Remark="">
+				<EquipmentProcurementCostItem Number="" Name="设备及工器具购置费明细" Total="0" Kind="0"
+					Remark="" Specification="" Unit="" Quantity="" Price="">
+					<UnitPriceCalculationOfItem Name="子目单价计算1" QtyFormula="" Rate="0" Total="0"
+						Code="" Remark=""></UnitPriceCalculationOfItem>
+					<UnitPriceCalculationOfItem Name="子目单价计算2" QtyFormula="" Rate="0" Total="0"
+						Code="" Remark=""></UnitPriceCalculationOfItem>
+					<UnitPriceCalculationOfItem Name="子目单价计算3" QtyFormula="" Rate="0" Total="0"
+						Code="" Remark=""></UnitPriceCalculationOfItem>
+				</EquipmentProcurementCostItem>
+			</EquipmentProcurementCost>
+			<OtherCost Number="" Name="安全文明施工费1" Quantity="1000" Rate="3.5" Total="35000"
+				Code="AQWM" QtyFormula="" Ratios="100" Remark="">
+				<OtherCost Name="临时设施费1" Quantity="500" Rate="2.0" Total="10000" />
+				<OtherCost Name="环境保护费1" Quantity="500" Rate="1.5" Total="7500" />
+			</OtherCost>
+		</ConstructionCost>
+		<OtherInvestmentOfConstructionProject Name="工程建设其他费用" Total="0" Code="" Remark="">
+			<OtherInvestmentOfConstructionProjectGroup Number="" Name="工程建设其他费用汇总" Unit="" Total="0"
+				Remark="">
+				<OtherInvestmentOfConstructionProjectItem Number="" Name="工程建设其他费用明细" Unit=""
+					Quantity="0" QtyFormula="" Price="0" Rate="0" Total="0" Rule="0" Remark="" />
+			</OtherInvestmentOfConstructionProjectGroup>
+			<OtherInvestmentOfConstructionProjectItem Number="" Name="工程建设其他费用明细1" Unit=""
+				Quantity="0" QtyFormula="" Price="0" Rate="0" Total="0" Rule="0" Remark="" />
+		</OtherInvestmentOfConstructionProject>
+		<ContingencyFee Name="预备费" Total="0" Code="" Remark="">
+			<ContingencyFeeGroup Name="预备费汇总" Unit="" Total="0" Code="" Remark="" />
+			<ContingencyFeeItem Name="预备费明细" Unit="" Quantity="0" QtyFormula="" Price="0" Rate="0"
+				Total="0" Kind="0" Remark="" />
+		</ContingencyFee>
+		<FundraisingFee Name="资金筹措费" Total="" Code="" Remark="">
+			<FundraisingFeeGroup Name="资金筹措费汇总" Unit="" Total="0" Remark="" />
+			<FundraisingFeeItem Name="资金筹措费明细" Unit="" QtyFormula="" Total="0" Remark="" />
+		</FundraisingFee>
+		<WorkingCapital Name="流动资金" Total="0" Code="" Remark="">
+			<WorkingCapitalGroup Name="流动资金汇总" Unit="" Total="0" Code="" Remark=""></WorkingCapitalGroup>
+			<WorkingCapitalItem Name="流动资金明细" Unit="" Quantity="0" QtyFormula="" Total="0" Remark=""></WorkingCapitalItem>
+		</WorkingCapital>
+	</ConstructionSummary>
+</ConstructionProject>

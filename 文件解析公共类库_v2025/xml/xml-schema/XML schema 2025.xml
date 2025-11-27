@@ -1,0 +1,3160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    attributeFormDefault="unqualified">
+    <xs:element name="ConstructionProject">
+        <xs:annotation>
+            <xs:documentation>建设项目</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="SystemInfo" />
+                <xs:element ref="ConstructionInfo" />
+                <xs:element ref="SummaryOfCost" />
+                <xs:element ref="ConstructionSummary" />
+            </xs:sequence>
+            <xs:attribute name="Number" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>项目编号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>项目名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="FileKind" type="xs:integer" use="required">
+                <xs:annotation>
+                    <xs:documentation>文件类型</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ValuationMethod" type="xs:integer" use="required">
+                <xs:annotation>
+                    <xs:documentation>计价类别</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TaxModel" type="xs:integer" use="required">
+                <xs:annotation>
+                    <xs:documentation>计税模式</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="StandardName" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>数据交换标准名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="StandardNumber" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>数据交换标准编号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Developer" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>建设单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="DeveloperAuthorizer" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>建设单位法定代表人或其授权委托人</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Scale" type="xs:double" use="required">
+                <xs:annotation>
+                    <xs:documentation>建设规模</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ScaleUnit" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>建设规模计量单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="MaterialPriceDate" type="xs:date" use="required">
+                <xs:annotation>
+                    <xs:documentation>材料价格时间</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="LaborPriceDate" type="xs:date" use="required">
+                <xs:annotation>
+                    <xs:documentation>人工价格时间</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="MachinePriceDate" type="xs:date" use="required">
+                <xs:annotation>
+                    <xs:documentation>施工机具价格时间</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Area" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>项目所在地区</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Location" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>项目所在地点</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Explains" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>编制（填报）说明</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ProjectKind" type="xs:integer" use="required">
+                <xs:annotation>
+                    <xs:documentation>建设性质</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SystemInfo">
+        <xs:annotation>
+            <xs:documentation>系统信息</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="ID1" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>编制软件信息</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ID2" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>编制机器硬件信息</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="MakeDate" type="xs:dateTime" use="required">
+                <xs:annotation>
+                    <xs:documentation>文件生成时间</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ConstructionInfo">
+        <xs:annotation>
+            <xs:documentation>工程信息</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Option" />
+                <xs:element ref="ProjectInfo" minOccurs="0" />
+                <xs:element ref="TendererInfo" minOccurs="0" />
+                <xs:element ref="BidderInfo" minOccurs="0" />
+                <xs:element ref="AttrInfo" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="AddiInfo" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Option">
+        <xs:annotation>
+            <xs:documentation>费用精度</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="ResPrecision" type="xs:double" use="required">
+                <xs:annotation>
+                    <xs:documentation>工料机消耗量、含量、数量类小数精度</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="QuantityPrecision" type="xs:double" use="required">
+                <xs:annotation>
+                    <xs:documentation>工程量、数量类小数精度</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="CostPrecision" type="xs:double" use="required">
+                <xs:annotation>
+                    <xs:documentation>金额、合价、费用类小数精度</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="RatePrecision" type="xs:double" use="required">
+                <xs:annotation>
+                    <xs:documentation>费率（%）、比率（%）、指数（%）类小数精度</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ProjectInfo">
+        <xs:annotation>
+            <xs:documentation>预算、结算信息</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="Developer" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>建设单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Designer" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>设计单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Contractor" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>承包单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="CompileCompany" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>编制单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Compiler" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>编制人</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="CompilerCertNo" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>编制人资格证书编号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="CompileDate" type="xs:date">
+                <xs:annotation>
+                    <xs:documentation>编制时间</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Examiner" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>审核人</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ExaminerCertNo" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>审核人资格证书编号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ExamineDate" type="xs:date">
+                <xs:annotation>
+                    <xs:documentation>审核时间</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Approver" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>审定人</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ApproverCertNo" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>审定人资格证书编号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ApproverDate" type="xs:date">
+                <xs:annotation>
+                    <xs:documentation>审定时间</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double" use="required">
+                <xs:annotation>
+                    <xs:documentation>工程总价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="TendererInfo">
+        <xs:annotation>
+            <xs:documentation>招标信息</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="Tenderername" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>招标单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TenderUSCI" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>招标单位统一社会信用代码</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TenderCompileUnitKind" type="xs:integer" use="required">
+                <xs:annotation>
+                    <xs:documentation>招标文件编制单位类型</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TenderCompiler" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>招标文件编制人</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TenderCompilerCertNo" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>招标文件编制人资格证书编号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TenderCompileDate" type="xs:date">
+                <xs:annotation>
+                    <xs:documentation>招标文件编制时间</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TenderExaminer" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>招标文件审核人</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TenderExaminerCertNo" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>招标文件审核人资格证书编号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TenderExamineDate" type="xs:date">
+                <xs:annotation>
+                    <xs:documentation>招标文件审核时间</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TenderApprover" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>招标文件审定人</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TenderApproverCertNo" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>招标文件审定人资格证书编号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TenderApproveDate" type="xs:date">
+                <xs:annotation>
+                    <xs:documentation>招标文件审定时间</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Proxy" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>招标代理单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ProxyUSCI" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>招标代理单位统一社会信用代码</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Consultant" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>造价咨询单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ConsultantUSCI" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>造价咨询单位统一社会信用代码</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="BidPriceCeiling" type="xs:double" use="required">
+                <xs:annotation>
+                    <xs:documentation>最高投标限价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="BidderInfo">
+        <xs:annotation>
+            <xs:documentation>投标信息</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="BidName" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>投标单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="BidAuthorizer" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>投标单位法定代表人或其授权人</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="BidTotal" type="xs:double" use="required">
+                <xs:annotation>
+                    <xs:documentation>投标总价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="BidCompiler" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>投标文件编制人</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="BidCompilerCertNo" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>投标文件编制人资格证书编号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="BidCompileDate" type="xs:date">
+                <xs:annotation>
+                    <xs:documentation>投标文件编制时间</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="BidExaminer" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>投标文件审核人</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="BidExaminerCertNo" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>投标文件审核人资格证书编号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="BidExamineDate" type="xs:date">
+                <xs:annotation>
+                    <xs:documentation>投标文件审核时间</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="BidApprover" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>投标文件审定人</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="BidApproverCertNo" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>投标文件审定人资格证书编号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="BidApproveDate" type="xs:date">
+                <xs:annotation>
+                    <xs:documentation>投标文件审定时间</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AttrInfo">
+        <xs:annotation>
+            <xs:documentation>工程特征信息</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="AttrInfoItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AttrInfoItem">
+        <xs:annotation>
+            <xs:documentation>工程特征信息明细</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="AttrInfoItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Value" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>内容</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>特征编码</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AddiInfo">
+        <xs:annotation>
+            <xs:documentation>补充信息</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="AddiInfoItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AddiInfoItem">
+        <xs:annotation>
+            <xs:documentation>补充信息明细</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="AddiInfoItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Value" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>内容</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SummaryOfCost">
+        <xs:annotation>
+            <xs:documentation>费用汇总</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="AddiCost" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Total" type="xs:double" use="required">
+                <xs:annotation>
+                    <xs:documentation>工程总价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="DivisionalAndElementalWorks" type="xs:double" use="required">
+                <xs:annotation>
+                    <xs:documentation>分部分项工程费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Preliminaries" type="xs:double" use="required">
+                <xs:annotation>
+                    <xs:documentation>措施项目费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="CostForHSE" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>安全生产措施费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="SundryCosts" type="xs:double" use="required">
+                <xs:annotation>
+                    <xs:documentation>其他项目费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ProvisionalSums" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>暂列金额</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="SpecialtyProvisionalPrice" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>专业工程暂估价</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="DayWorkRate" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>计日工费用</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="MainContractorAttendance" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>总承包服务费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="OtherContents" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>合同中约定的其他项目</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Tax" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>增值税</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Labor" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>人工费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Material" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>材料费(不含主材费)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="MainMaterialEquipment" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>主材设备费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="MainMaterial" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>主材费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Equipment" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>设备费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Machine" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>施工机具使用费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ProvisionalMaterial" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>材料暂估单价</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Overhead" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>管理费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="RiskRate" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>风险费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Profit" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>利润</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AddiCost">
+        <xs:annotation>
+            <xs:documentation>补充费用</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double" use="required">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ConstructionSummary">
+        <xs:annotation>
+            <xs:documentation>费用组成</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ConstructionCost" />
+                <xs:element ref="OtherInvestmentOfConstructionProject" minOccurs="0" />
+                <xs:element ref="ContingencyFee" minOccurs="0" />
+                <xs:element ref="FundraisingFee" minOccurs="0" />
+                <xs:element ref="WorkingCapital" minOccurs="0" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ConstructionCost">
+        <xs:annotation>
+            <xs:documentation>工程费用</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ProjectInstallationWorkCost" />
+                <xs:element ref="EquipmentProcurementCost" minOccurs="0" />
+                <xs:element ref="OtherCost" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>工程名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Scale" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>建设规模</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ScaleUnit" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>建设规模计量单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ProjectInstallationWorkCost">
+        <xs:annotation>
+            <xs:documentation>建筑安装工程费</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="SectionalWorks" maxOccurs="unbounded" />
+                <xs:element ref="Preliminaries" />
+                <xs:element ref="Sundry" />
+                <xs:element ref="OtherCost" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="LabourMaterialsEquipmentsMachinesSummary" minOccurs="0"
+                    maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>工程名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Scale" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>建设规模</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ScaleUnit" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>建设规模计量单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Preliminaries">
+        <xs:annotation>
+            <xs:documentation>措施项目</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element ref="SummaryOfBasicCost" />
+                <xs:element ref="WorkElement" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Sundry">
+        <xs:annotation>
+            <xs:documentation>其他项目</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="SundryCosts" />
+                <xs:element ref="ProvisionalSums" />
+                <xs:element ref="SpecialtyProvisionalPrice" />
+                <xs:element ref="DayWorkRate" />
+                <xs:element ref="MainContractorAttendance" />
+                <xs:element ref="OtherContents" minOccurs="0" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SundryCosts">
+        <xs:annotation>
+            <xs:documentation>其他项目费</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="SundryCostsGroup" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="SundryCostsItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ProvisionalTotal" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>暂估（暂定）金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>结算（确定）金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TotalDifference" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>调整金额±（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SundryCostsGroup">
+        <xs:annotation>
+            <xs:documentation>其他项目费汇总</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="SundryCostsGroup" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="SundryCostsItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计量单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="SettlementTotal" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>结算金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Kind" type="xs:integer" use="required">
+                <xs:annotation>
+                    <xs:documentation>汇总类型</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SundryCostsItem">
+        <xs:annotation>
+            <xs:documentation>其他项目费明细</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计量单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Quantity" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>工程量</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="QtyFormula" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计算基础</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Price" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>单价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Rate" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>费率(%)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ProvisionalTotal" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>暂估（暂定）金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>结算（确定）金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TotalDifference" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>调整金额±（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Kind" type="xs:integer" use="required">
+                <xs:annotation>
+                    <xs:documentation>汇总类型</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ProvisionalSums">
+        <xs:annotation>
+            <xs:documentation>暂列金额</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="ProvisionalSumsGroup" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="ProvisionalSumsItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ProvisionalSumsGroup">
+        <xs:annotation>
+            <xs:documentation>暂列金额汇总</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="ProvisionalSumsGroup" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="ProvisionalSumsItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计量单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Kind" type="xs:integer" use="required">
+                <xs:annotation>
+                    <xs:documentation>汇总类型</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ProvisionalSumsItem">
+        <xs:annotation>
+            <xs:documentation>暂列金额明细</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计量单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Quantity" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>工程量</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="QtyFormula" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计算基础</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Price" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>单价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Rate" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>费率(%)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ProvisionalTotal" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>暂定金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>确定金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TotalDifference" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>调整金额±（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Kind" type="xs:integer" use="required">
+                <xs:annotation>
+                    <xs:documentation>汇总类型</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SpecialtyProvisionalPrice">
+        <xs:annotation>
+            <xs:documentation>专业工程暂估价</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="SpecialtyProvisionalPriceGroup" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="SpecialtyProvisionalPriceItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>工程名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ProvisionalTotal" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>暂估金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="SettlementTotal" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>结算金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TotalDifference" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>调整金额±（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SpecialtyProvisionalPriceGroup">
+        <xs:annotation>
+            <xs:documentation>专业工程暂估价汇总</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="SpecialtyProvisionalPriceGroup" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="SpecialtyProvisionalPriceItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>工程名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Content" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>工程内容</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计量单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ProvisionalTotal" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>暂估金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="SettlementTotal" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>结算金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TotalDifference" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>调整金额±（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Kind" type="xs:integer" use="required">
+                <xs:annotation>
+                    <xs:documentation>汇总类型</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SpecialtyProvisionalPriceItem">
+        <xs:annotation>
+            <xs:documentation>专业工程暂估价明细</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>工程名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Content" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>工程内容</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计量单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Quantity" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>工程量</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="QtyFormula" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计算基础</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Price" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>单价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Rate" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>费率(%)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="NoTaxProvisionalTotal" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>暂估金额不含税价格（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ProvisionalTotalTax" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>暂估金额增值税（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TaxOrgProvisionalTotal" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>暂估金额含税价格（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="NoTaxSettlementTotal" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>结算金额不含税价格（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="SettlementTotalTax" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>结算金额增值税（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TaxOrgSettlementTotal" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>结算金额含税价格（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TotalDifference" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>调整金额±（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Kind" type="xs:integer" use="required">
+                <xs:annotation>
+                    <xs:documentation>汇总类型</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="DayWorkRate">
+        <xs:annotation>
+            <xs:documentation>计日工</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="DayWorkRateGroup" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="DayWorkRateItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>项目名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ProvisionalTotal" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>暂定合价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>实际合价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="DayWorkRateGroup">
+        <xs:annotation>
+            <xs:documentation>计日工汇总</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="DayWorkRateItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>项目名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计量单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ProvisionalTotal" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>暂定合价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>实际合价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="DayWorkRateItem">
+        <xs:annotation>
+            <xs:documentation>计日工明细</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="Number" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>项目编号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>计日工名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Specification" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>规格型号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>计量单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ProvisionalQuantity" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>暂定数量</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Quantity" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>实际数量</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Price" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>综合单价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ProvisionalTotal" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>暂定合价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>实际合价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TotalDifference" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>调整金额±（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="MainContractorAttendance">
+        <xs:annotation>
+            <xs:documentation>总承包服务费</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="MainContractorAttendanceGroup" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="MainContractorAttendanceItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>项目名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="MainContractorAttendanceGroup">
+        <xs:annotation>
+            <xs:documentation>总承包服务费汇总</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="MainContractorAttendanceGroup" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="MainContractorAttendanceItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>项目名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Kind" type="xs:integer" use="required">
+                <xs:annotation>
+                    <xs:documentation>汇总类型</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="MainContractorAttendanceItem">
+        <xs:annotation>
+            <xs:documentation>总承包服务费明细</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>项目名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Quantity" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>项目价值（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Content" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>服务内容</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="QtyFormula" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计算基础</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Rate" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>费率(%)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="SettlementCalBasis" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>确认计算基础</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="SettlementTotal" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>结算金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TotalDifference" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>调整金额±（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Kind" type="xs:integer" use="required">
+                <xs:annotation>
+                    <xs:documentation>汇总类型</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="OtherContents">
+        <xs:annotation>
+            <xs:documentation>合同中约定的其他项目</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="OtherContentsGroup" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="OtherContentsItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>项目名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="OtherContentsGroup">
+        <xs:annotation>
+            <xs:documentation>合同中约定的其他项目汇总</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="OtherContentsGroup" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="OtherContentsItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>项目名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计量单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Kind" type="xs:integer" use="required">
+                <xs:annotation>
+                    <xs:documentation>汇总类型</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="OtherContentsItem">
+        <xs:annotation>
+            <xs:documentation>合同中约定的其他项目明细</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>项目名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计量单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Quantity" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>数量</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="QtyFormula" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计算基础</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Price" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>单价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Rate" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>费率(%)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>合价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Reason" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>依据</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Kind" type="xs:integer" use="required">
+                <xs:annotation>
+                    <xs:documentation>汇总类型</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Tax">
+        <xs:annotation>
+            <xs:documentation>增值税</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="TaxItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="TaxItem">
+        <xs:annotation>
+            <xs:documentation>增值税明细</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="QtyFormula" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计算基础</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Rate" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>费率(%)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="LabourMaterialsEquipmentsMachinesSummary">
+        <xs:annotation>
+            <xs:documentation>工料机汇总</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="LabourMaterialsEquipmentsMachinesElement" minOccurs="0"
+                    maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Number" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>工料机编码</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Specification" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>规格型号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Quantity" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>数量</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ProviderRate" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>风险幅度(%)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ProviderBase" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>基准价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TaxRate" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>税率(%)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="NoTaxPrice" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>不含税编制价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TaxPrice" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>含税编制价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="NoTaxTotal" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>不含税编制价合价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TaxTotal" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>含税编制价合价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Weight" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>变值权重</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="BasicPrice" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>基本价格指数</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="CurrentPrice" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>现行价格指数</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Kind" type="xs:integer" use="required">
+                <xs:annotation>
+                    <xs:documentation>工料机类型</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Class" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>工料机归属</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ExtKind" type="xs:integer">
+                <xs:annotation>
+                    <xs:documentation>扩展属性</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="AddiKind" type="xs:integer">
+                <xs:annotation>
+                    <xs:documentation>附加属性</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="MainMaterial" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>主要材料</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ProvisionalMaterial" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>材料暂估单价</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Provider" type="xs:integer">
+                <xs:annotation>
+                    <xs:documentation>供料方式</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="PriceSource" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>价格来源</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Delivery" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>交货方式</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Location" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>送达地点</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ProducingArea" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>产地</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Supplier" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>厂家</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Character" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>质量要求</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="LabourMaterialsEquipmentsMachinesElement">
+        <xs:annotation>
+            <xs:documentation>工料机含量明细</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="Number" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>工料机编码</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Quantity" type="xs:double" use="required">
+                <xs:annotation>
+                    <xs:documentation>消耗量</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="OriginalContent" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>原始含量</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="NOCost" type="xs:boolean" use="required">
+                <xs:annotation>
+                    <xs:documentation>不计价材料</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EquipmentProcurementCost">
+        <xs:annotation>
+            <xs:documentation>设备及工器具购置费</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="EquipmentProcurementCostItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EquipmentProcurementCostItem">
+        <xs:annotation>
+            <xs:documentation>设备及工器具购置费明细</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="UnitPriceCalculationOfItem" minOccurs="0" />
+            </xs:sequence>
+            <xs:attribute name="Number" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>编码</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Specification" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>型号规格及材质</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Quantity" type="xs:double" use="required">
+                <xs:annotation>
+                    <xs:documentation>数量</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Price" type="xs:double" use="required">
+                <xs:annotation>
+                    <xs:documentation>单价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double" use="required">
+                <xs:annotation>
+                    <xs:documentation>合价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Kind" type="xs:integer">
+                <xs:annotation>
+                    <xs:documentation>类型</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="UnitPriceCalculationOfItem">
+        <xs:annotation>
+            <xs:documentation>子目单价计算</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="UnitPriceCalculationOfItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="QtyFormula" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计算基础</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Rate" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>费率(%)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="OtherCost">
+        <xs:annotation>
+            <xs:documentation>扩展项</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="OtherCost" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Number" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>编号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Quantity" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>工程量</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="QtyFormula" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计算基础</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Rate" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>费率(%)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Ratios" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>占整个项目费用比率(%)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="OtherInvestmentOfConstructionProject">
+        <xs:annotation>
+            <xs:documentation>工程建设其他费用</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="OtherInvestmentOfConstructionProjectGroup" minOccurs="0"
+                    maxOccurs="unbounded" />
+                <xs:element ref="OtherInvestmentOfConstructionProjectItem" minOccurs="0"
+                    maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用项目名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="OtherInvestmentOfConstructionProjectGroup">
+        <xs:annotation>
+            <xs:documentation>工程建设其他费用汇总</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="OtherInvestmentOfConstructionProjectGroup" minOccurs="0"
+                    maxOccurs="unbounded" />
+                <xs:element ref="OtherInvestmentOfConstructionProjectItem" minOccurs="0"
+                    maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Number" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>费用项目编号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用项目名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="OtherInvestmentOfConstructionProjectItem">
+        <xs:annotation>
+            <xs:documentation>工程建设其他费用明细</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="Number" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>费用项目编号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用项目名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Quantity" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>工程量</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="QtyFormula" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计算基础</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Price" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>单价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Rate" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>费率(%)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Rule" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计算方法说明</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ContingencyFee">
+        <xs:annotation>
+            <xs:documentation>预备费</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="ContingencyFeeGroup" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="ContingencyFeeItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ContingencyFeeGroup">
+        <xs:annotation>
+            <xs:documentation>预备费汇总</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="ContingencyFeeGroup" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="ContingencyFeeItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ContingencyFeeItem">
+        <xs:annotation>
+            <xs:documentation>预备费明细</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Quantity" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>工程量</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="QtyFormula" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计算基础</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Price" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>单价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Rate" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>费率(%)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>合价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Kind" type="xs:integer">
+                <xs:annotation>
+                    <xs:documentation>费用类型</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="FundraisingFee">
+        <xs:annotation>
+            <xs:documentation>资金筹措费</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="FundraisingFeeGroup" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="FundraisingFeeItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="FundraisingFeeGroup">
+        <xs:annotation>
+            <xs:documentation>资金筹措费汇总</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="FundraisingFeeGroup" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="FundraisingFeeItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="FundraisingFeeItem">
+        <xs:annotation>
+            <xs:documentation>资金筹措费明细</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="QtyFormula" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计算基础</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="WorkingCapital">
+        <xs:annotation>
+            <xs:documentation>流动资金</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="WorkingCapitalGroup" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="WorkingCapitalItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="WorkingCapitalGroup">
+        <xs:annotation>
+            <xs:documentation>流动资金汇总</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="WorkingCapitalGroup" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="WorkingCapitalItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="WorkingCapitalItem">
+        <xs:annotation>
+            <xs:documentation>流动资金明细</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="QtyFormula" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计算基础</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>合价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SectionalWorks">
+        <xs:annotation>
+            <xs:documentation>单项工程</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element ref="AttrInfo" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="SummaryOfCost" />
+                <xs:element ref="SectionalWorks" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="UnitWorks" maxOccurs="unbounded" />
+                <xs:element ref="OtherCost" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="LabourMaterialsEquipmentsMachinesSummary" minOccurs="0"
+                    maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Number" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>工程编号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>工程名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Segment" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>标段名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Scale" type="xs:double" use="required">
+                <xs:annotation>
+                    <xs:documentation>建设规模</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ScaleUnit" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>建设规模计量单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Ratios" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>占整个项目费用比率(%)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="UnitWorks">
+        <xs:annotation>
+            <xs:documentation>单位工程</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="AttrInfo" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="AddiInfo" minOccurs="0" />
+                <xs:element ref="UnitWorksSummary" />
+                <xs:element ref="DivisionalAndElementalWorks" />
+                <xs:element ref="LabourMaterialsEquipmentsMachinesSummary" minOccurs="0"
+                    maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Number" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>工程编号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>工程名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Segment" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>标段名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ValuationMethod" type="xs:integer" use="required">
+                <xs:annotation>
+                    <xs:documentation>计价类别</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="TaxModel" type="xs:integer" use="required">
+                <xs:annotation>
+                    <xs:documentation>计税模式</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Specialty" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>专业类别</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Purposes" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>工程用途</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Scale" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>建设规模</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ScaleUnit" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>建设规模计量单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="BillDataBase" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>清单规则库名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ResInfoPricingFile" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>人工材料设备价格文件名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="MaterialPriceDate" type="xs:date" use="required">
+                <xs:annotation>
+                    <xs:documentation>材料价格时间</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Explains" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>编制（填报）说明</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="UnitWorksSummary">
+        <xs:annotation>
+            <xs:documentation>单位工程费用组成</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="UnitWorksSummaryGroup" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="UnitWorksSummaryItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="UnitWorksSummaryGroup">
+        <xs:annotation>
+            <xs:documentation>单位工程费用组成汇总</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="UnitWorksSummaryGroup" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="UnitWorksSummaryItem" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="QtyFormula" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计算基础</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Rate" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>费率(%)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Kind" type="xs:integer" use="required">
+                <xs:annotation>
+                    <xs:documentation>汇总类型</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="UnitWorksSummaryItem">
+        <xs:annotation>
+            <xs:documentation>单位工程费用组成明细</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="QtyFormula" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计算基础</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Rate" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>费率(%)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Kind" type="xs:integer" use="required">
+                <xs:annotation>
+                    <xs:documentation>汇总类型</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="DivisionalAndElementalWorks">
+        <xs:annotation>
+            <xs:documentation>分部分项工程</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element ref="SummaryOfBasicCost" />
+                <xs:element ref="DivisionalWorks" minOccurs="0" maxOccurs="unbounded" />
+                <xs:choice minOccurs="0">
+                    <xs:element ref="WorkElement" minOccurs="0" maxOccurs="unbounded" />
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SummaryOfBasicCost">
+        <xs:annotation>
+            <xs:documentation>合计费用</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="AddiCost" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Labor" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>人工费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Material" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>材料费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="MainMaterialEquipment" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>主材设备费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="MainMaterial" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>主材费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Equipment" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>设备费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Machine" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>施工机具使用费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Overhead" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>管理费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="RiskRate" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>风险费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Profit" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>利润</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Appraisal" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>暂估价</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="DivisionalWorks">
+        <xs:annotation>
+            <xs:documentation>分部工程</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element ref="SummaryOfBasicCost" />
+                <xs:element ref="DivisionalWorks" minOccurs="0" maxOccurs="unbounded" />
+                <xs:choice minOccurs="0">
+                    <xs:element ref="WorkElement" minOccurs="0" maxOccurs="unbounded" />
+                </xs:choice>
+            </xs:sequence>
+            <xs:attribute name="Number" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>编码</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Attr" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>特征</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Quantity" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>工程量</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>金额（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="CostCondition" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>取费条件</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="WorkElement">
+        <xs:annotation>
+            <xs:documentation>清单项目</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="SummaryOfBasicCost" />
+                <xs:element ref="ExpressElement" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="WorkContent" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="PriceAnalysis" minOccurs="0" />
+            </xs:sequence>
+            <xs:attribute name="Number" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>项目编码</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>项目名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Attr" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>项目特征</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="WorkContent" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>工作内容</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>计量单位</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Quantity" type="xs:double" use="required">
+                <xs:annotation>
+                    <xs:documentation>工程量</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="QtyFormula" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>计算基础</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="OriginalPrice" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>调整前单价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Price" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>单价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="PriceHigh" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>最高限价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="OriginalRate" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>调整前费率(%)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Rate" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>费率(%)</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="OriginalTotal" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>调整前合价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Total" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>合价（元）</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Major" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>主要清单</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="CalcType" type="xs:integer" use="required">
+                <xs:annotation>
+                    <xs:documentation>计算方式</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Specialty" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>专业类别</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="WorkElementIdentity" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>清单标识</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Code" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>费用代号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ExpressElement">
+        <xs:annotation>
+            <xs:documentation>工程量计算表</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="OrderNumber" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>序号</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Express" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>工程量计算式</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Quantity" type="xs:double" use="required">
+                <xs:annotation>
+                    <xs:documentation>工程量</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Kind" type="xs:integer" use="required">
+                <xs:annotation>
+                <xs:documentation>汇总类型</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Unit" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>计量单位</xs:documentation>
+				</xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="WorkContent">
+        <xs:annotation>
+            <xs:documentation>工作内容</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="WorkContent" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation>名称</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Content" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>工程内容</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Remark" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>备注</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PriceAnalysis">
+        <xs:annotation>
+            <xs:documentation>单价分析</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="OriginalPriceItem" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="PriceItem" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="LabourMaterialsEquipmentsMachinesElement" minOccurs="0"
+                    maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="OriginalPriceItem">
+        <xs:annotation>
+            <xs:documentation>调整前单价明细</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="AddiCost" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Labor" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>人工费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Material" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>材料费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="MainMaterialEquipment" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>主材设备费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="MainMaterial" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>主材费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Equipment" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>设备费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Machine" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>施工机具使用费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Overhead" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>管理费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="RiskRate" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>风险费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Profit" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>利润</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PriceItem">
+        <xs:annotation>
+            <xs:documentation>单价明细</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element ref="AddiCost" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Labor" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>人工费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Material" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>材料费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="MainMaterialEquipment" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>主材设备费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="MainMaterial" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>主材费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Equipment" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>设备费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Machine" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>施工机具使用费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Overhead" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>管理费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="RiskRate" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>风险费</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Profit" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>利润</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

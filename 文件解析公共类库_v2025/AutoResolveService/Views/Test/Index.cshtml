@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<script src="~/jquery-1.11.3.min.js"></script>
+<script>
+    function Submit() {
+        $.ajaxFileUpload({
+            url: "/Test/Upload",   //submit to UploadFileServlet
+            secureuri: false,
+            fileElementId: 'uploadfile',
+            dataType: 'text', //or json xml whatever you like
+            success: function (data, status) {
+                alert(data);
+            },
+            error: function (data, status, e) {
+               
+            }
+        });
+    }
+</script>
+<h2>Index</h2>
+<input type="file" name="file" id="uploadfile" accept="text/xml,application/xml" onchange="Submit();" />
+<script src="~/ajaxfileupload.js"></script>

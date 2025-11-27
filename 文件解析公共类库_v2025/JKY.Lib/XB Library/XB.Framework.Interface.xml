@@ -1,0 +1,1661 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XB.Framework.Interface</name>
+    </assembly>
+    <members>
+        <member name="T:XB.Framework.Interface.Action.IPagingAction">
+            <summary>
+            执行分页的接口
+            张晓斌 2011年12月1日 add
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Interface.Action.IPagingAction.GetPagingCondition(System.Collections.IDictionary)">
+            <summary>
+            获取分页组件需要的分页条件
+            </summary>
+            <param name="dicCondition">参数集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Action.IPagingAction.GetQuerySelectState">
+            <summary>
+            获取From语句前的SQL语句
+            例如：
+            select A.id,A.Name,B,ID,B.Name 
+            </summary>
+            <returns>获取From语句前的SQL语句</returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Action.IPagingAction.GetQueryFromState">
+            <summary>
+            获取From后的SQL语句
+            例如：
+            From T_Tool A Inner Join T_ToolDataStatus B ON A.DataStatusID = B.DataStatusID Where A.DataStatusID IN(1,2,3,4)
+            </summary>
+            <returns>From关键字后的语句</returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Action.IPagingAction.GetQueryWhereState(System.Collections.IDictionary,System.Collections.IList@,System.String@)">
+            <summary>
+            查询条件，不包含Where关键字
+            </summary>
+            <param name="dicCondition">查询条件集合</param>
+            <param name="cdtStr">需要往外传递的参数，一般用于导出Excel</param>
+            <returns>不包含Where关键的Where条件</returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Action.IPagingAction.GetPagingModelList(System.Collections.IDictionary,System.Int32,System.Int32)">
+            <summary>
+            分页查询
+            </summary>
+            <param name="pagingCondition">包含查询语句、SQL参数、排序条件等分页条件对象</param>
+            <param name="currentPageIndex">当前页</param>
+            <param name="PageSize">每页多少行</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Action.IQueryPattern.GetQPPagingCondition">
+            <summary>
+            获取查询SQL
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Action.IQueryPattern.ExportQPExcel(System.String,System.String,System.Web.HttpResponse)">
+            <summary>
+            基查询方案导出Excel
+            </summary>
+            <param name="sql">注入查询SQL</param>
+            <param name="cdtstring">条件语句</param>
+        </member>
+        <member name="M:XB.Framework.Interface.Action.IQueryPattern.ConvertToListModel(System.Data.DataTable)">
+            <summary>
+            转换为List格式的Model进行序列化
+            </summary>
+            <param name="dataTable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Action.PagingAction.getPaging(System.Int32,System.Int32,System.Int32,System.String,System.String[],System.String)">
+            <summary>
+            对SQL分页
+            </summary>
+            <param name="currentPage">当前页</param>
+            <param name="pageSize">页大小</param>
+            <param name="totalRows">总行数</param>
+            <param name="sql">查询的SQL</param>
+            <param name="fields">SQL中查询字段</param>
+            <param name="TopSql">分页的top限制语句，例如：Top 300000</param>
+            <returns>Paging</returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Action.PagingAction.getPaging(System.Int32,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            对SQL分页,去掉了需要设置filed字段的限制
+            </summary>
+            <param name="currentPage">当前页</param>
+            <param name="pageSize">页大小</param>
+            <param name="totalRows">总行数</param>
+            <param name="sql">查询的SQL</param>
+            <param name="TopSql">分页的top限制语句，例如：Top 300000</param>
+            <returns>Paging</returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Action.ProjectUtils.parseExcelParams(System.Web.HttpRequest)">
+            解析导出Excel中的参数
+        </member>
+        <member name="M:XB.Framework.Interface.Action.ProjectUtils.ParseRequest2Dictionary``1(System.Web.HttpRequest)">
+            <summary>
+            根据泛型对象中的属性参数，转换为属性和值的Dictionary的存储格式，其中Key为属性,value为值
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Action.ProjectUtils.ParseHttpRequestParams``1(System.Web.HttpRequest)">
+            <summary>
+            通过反射获取对象的属性，并且将HttpRequest中的数据赋值到对象中
+            </summary>
+            <typeparam name="T">目标对象类型</typeparam>
+            <param name="request">HttpRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Action.ProjectUtils.ParseHttpRequestParams``1(``0,System.Web.HttpRequest)">
+            <summary>
+            通过反射获取对象的属性，并且将HttpRequest中的数据赋值到对象中
+            </summary>
+            <typeparam name="T">目标对象类型</typeparam>
+            <param name="entity">目标对象实体</param>
+            <param name="request">HttpRequest</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Action.ProjectUtils.ParseHttpRequestJosnString``1(``0,System.Web.HttpRequest,System.String)">
+            <summary>
+            通过反射获取对象的属性，并且将HttpRequest中的数据赋值到对象中
+            </summary>
+            <typeparam name="T">目标对象类型</typeparam>
+            <param name="entity">目标对象实体</param>
+            <param name="request">HttpRequest</param>
+            <returns></returns>
+        </member>
+        <member name="F:XB.Framework.Interface.Constant.EnumInfo.System_Base">
+            <summary>
+            系统平台
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Constant.EnumInfo.System_PMS">
+            <summary>
+            PMS系统
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Constant.EnumInfo.System">
+            <summary>
+            所属系统
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Constant.EnumInfo.Module">
+            <summary>
+            模块类别
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Constant.EnumInfo.PermissionIcoRootPath">
+            <summary>
+            系统菜单ico图标加载起始路径
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Constant.EnumInfo.EnableFlag.Y">
+            <summary>
+            项目经理
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Constant.EnumInfo.EnableFlag.N">
+            <summary>
+            项目成员
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Constant.EnumInfo.WF_FlowType">
+            <summary>
+            流程类型
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Constant.EnumInfo.WF_FormState">
+            <summary>
+            表单状态
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Constant.EnumInfo.WF_ExecuteType">
+            <summary>
+            流程执行方式
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Constant.EnumInfo.WF_ConsignType">
+            <summary>
+            委托方式
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Constant.EnumInfo.WF_IsEffect">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Constant.EnumInfo.WF_WorkFlowStatus">
+            <summary>
+            工作流状态
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Constant.EnumInfo.WF_RemindGrade">
+            <summary>
+            工作流级别
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Constant.EnumInfo.File_StrorageMode">
+            <summary>
+            存储模式
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Constant.EnumInfo.User_DataState">
+            <summary>
+            数据状态
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Interface.Constant.EnumInfo.PMS_ProjectRole">
+            <summary>
+            项目角色枚举
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Constant.EnumInfo.PMS_ProjectRole.ProjectManager">
+            <summary>
+            项目经理
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Constant.EnumInfo.PMS_ProjectRole.ProjectPlayers">
+            <summary>
+            项目成员
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Interface.Constant.EnumInfo.PMS_ProjectStatus">
+            <summary>
+            项目状态
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Constant.EnumInfo.PMS_ProjectStatus.Close">
+            <summary>
+            项目关闭
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Interface.Constant.EnumInfo.ProjectSelectType">
+            <summary>
+            项目选择类型
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Constant.EnumInfo.ProjectSelectType.All">
+            <summary>
+            全部项目信息
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Constant.EnumInfo.ProjectSelectType.UserUseProject">
+            <summary>
+            用户拥有权限的项目
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Interface.Constant.LoginUserInfo">
+            <summary>
+            当前登录用户的信息
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Constant.LoginUserInfo._Entit">
+            <summary>
+            实体对象
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Constant.LoginUserInfo.UseRoles">
+            <summary>
+            当前登录用户所使用的角色信息
+            </summary>
+            <remarks>
+            XB.Authentication.Model.Accounts_Role
+            </remarks>
+        </member>
+        <member name="P:XB.Framework.Interface.Constant.LoginUserInfo.UseOrganizations">
+            <summary>
+            当前登录用户所使用的组织机构信息
+            </summary>
+            <remarks>
+            XB.Authentication.Model.Accounts_Organization
+            </remarks>
+        </member>
+        <member name="P:XB.Framework.Interface.Constant.LoginUserInfo.UsePermissions">
+            <summary>
+            当前登录用户所使用的权限菜单信息
+            </summary>
+            <remarks>
+            XB.Framework.Interface.Model.Accounts_Permission
+            </remarks>
+        </member>
+        <member name="P:XB.Framework.Interface.Constant.LoginUserInfo.UseElementsInResources">
+            <summary>
+            当前登录用户所使用的对控件或grid 列的限制访问记录
+            </summary>
+            <remarks>
+            XB.Authentication.Model.Accounts_ElementsInResource
+            </remarks>
+        </member>
+        <member name="P:XB.Framework.Interface.Constant.AppPlat.IsTesting">
+            <summary>
+            是否测试 
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Constant.AppPlat.Cur_Permission_Menu">
+            <summary>
+            选中的菜单模块信息
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Constant.AppPlat.PermissionCategorie_SystemPrivileges">
+            <summary>
+            菜单加载的权限类型为系统权限，此为系统权限的标识
+            张晓斌 2013-3-28 14:29:53 add
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Constant.AppPlat.RegionUserCompanyID">
+            <summary>
+            注册用户所属公司ID
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Constant.AppPlat.RegionUserPositionNumber">
+            <summary>
+            注册用户职位编码
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Constant.AppPlat.TreeNodeKey">
+            <summary>
+            获取树节点值的Key值
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Constant.AppPlat.limit">
+            <summary>
+            获取树节点值的Key值
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Menu.DataStore.MenuStore">
+            <summary>
+            菜单数据源  2014-10-21增加，用户登录的时候，将数据存储于此
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Interface.Model.Accounts_Permission">
+            <summary>
+            功能说明：权限菜单类，主要用于菜单信息的存储
+            备    注：权限和菜单为一张表
+            </summary>
+            <remarks>
+            作    者：zhangxiaobin
+            创建时间：2012-08-21
+            注意事项：
+            </remarks>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.gPermissionID">
+            <summary>
+            权限ID
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.gPermissionCategorieID">
+            <summary>
+            权限类型ID
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.nPermissionCategorieName">
+            <summary>
+            权限类型描述
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.nPermissionName">
+            <summary>
+            权限名称
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.nDescription">
+            <summary>
+            权限描述
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.nPrivilegeType">
+            <summary>
+            权限类型(Web/PDA)
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.nIsEnd">
+            <summary>
+            是否最底层
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.nLevelID">
+            <summary>
+            层级ID
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.nEnableFlag">
+            <summary>
+            标识位(Y/N)
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.gParentID">
+            <summary>
+            权限父ID
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.nParentName">
+            <summary>
+            父节点名称
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.nParentPath">
+            <summary>
+            父节点路径
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.nLocation">
+            <summary>
+            当前节点控制权限的路径
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.nOpenMode">
+            <summary>
+            菜单打开方式：框架内部采用增加页签方式打开 Frame；弹出新的模态窗口 Page
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:XB.Framework.Interface.Model.Accounts_Permission.nParameter" -->
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.iSortIndex">
+            <summary>
+            排序序号
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.nImageUrl">
+            <summary>
+            图片路径
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.tCreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.nCreateBy">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.tLastUpdateDate">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.nLastUpdateBy">
+            <summary>
+            最后修改人
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.nBuffer1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.nBuffer2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.nBuffer3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.nBuffer4">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_Permission.nBuffer5">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Interface.Model.Accounts_Permission_Storage">
+            <summary>
+            功能说明：菜单存储类，主要用于From程序登录后，将当前选中的菜单的信息存储到这个实体类中
+            说    明：主要用于From程序
+            </summary>
+            <remarks>
+            作    者：zhangxiaobin
+            创建时间：2012-8-21
+            注意事项：
+            </remarks>
+        </member>
+        <member name="T:XB.Framework.Interface.Model.Accounts_User">
+            <summary>
+            功能说明：系统用户表
+            </summary>
+            <remarks>
+            作    者：zhangxiaobin
+            创建时间：2012-05-11
+            注意事项：
+            说    明：
+            2012年8月25日由XB.Authentication移动到XB.Foundation.Model，由于需要在Foundation中建立Global因此移动到此此地
+            </remarks>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.gUserID">
+            <summary>
+            功能说明：用户ID
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.gCompanyID">
+            <summary>
+            功能说明：所属公司ID
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nUserName">
+            <summary>
+            功能说明：用户名
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nPassword">
+            <summary>
+            功能说明：用户密码
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nPasswordMD5">
+            <summary>
+            功能说明：用户密码经过MD5加密
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nTrueName">
+            <summary>
+            功能说明：真实姓名
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.cSex">
+            <summary>
+            功能说明：性别
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nPhone">
+            <summary>
+            功能说明：电话
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nEmail">
+            <summary>
+            功能说明：邮件
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nUserType">
+            <summary>
+            功能说明：用户类型（Web/PDA/AD）
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.iStyle">
+            <summary>
+            功能说明：样式
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nEnableFlag">
+            <summary>
+            功能说明：标识位(Y/N/)
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nDescription">
+            <summary>
+            功能说明：描述信息
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.tCreateDate">
+            <summary>
+            功能说明：创建时间
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nCreateBy">
+            <summary>
+            功能说明：创建人
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.tLastUpdateDate">
+            <summary>
+            功能说明：最后修改时间
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nLastUpdateBy">
+            <summary>
+            功能说明：最后修改人
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nBuffer1">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nBuffer2">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nBuffer3">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nBuffer4">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nBuffer5">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nCompanyName">
+            <summary>
+            所属公司名称
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.gOrganizationID">
+            <summary>
+            组织机构ID
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nOrganizationName">
+            <summary>
+            组织机构
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nRoleIDs">
+            <summary>
+            用户所属角色的ID集合
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nRoleNames">
+            <summary>
+            用户所属角色的名称集合
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nLanguage">
+            <summary>
+            当前登录用户的语言环境 zh-CN 中文    en-US 英文
+            </summary>
+            <remarks>
+            张晓斌  2012年10月2日15:58:11 add
+            </remarks>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nSkin">
+            <summary>
+            当前登录用户的皮肤配置 空或者ext-all 默认皮肤    ext-all-gray 灰色皮肤
+            </summary>
+            <remarks>
+            张晓斌  2013-3-16 23:44:59 add
+            </remarks>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nPosition">
+            <summary>
+            职位
+            </summary>
+            <remarks>
+            张晓斌  2013-3-19 22:47:05 add
+            </remarks>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nDepartment">
+            <summary>
+            用户所属部门
+            </summary>
+            <remarks>
+            张晓斌  2013年3月19日22:46:59 add
+            </remarks>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nAddress">
+            <summary>
+            功能说明：居住地址
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nQQ">
+            <summary>
+            功能说明：QQ号
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nCardID">
+            <summary>
+            功能说明：身份证号
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nWangWang">
+            <summary>
+            功能说明：阿里旺旺
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nOpenBankAccount">
+            <summary>
+            功能说明：开户行账号
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nOpenBankName">
+            <summary>
+            功能说明：开户行名称
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nOpenEmployee">
+            <summary>
+            功能说明：开户人名称
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nZhiFuBao">
+            <summary>
+            功能说明：支付宝账号
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nMobile">
+            <summary>
+            功能说明：手机号
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nEmployeeNumber">
+            <summary>
+            员工代码
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.PositionNumber">
+            <summary>
+            职位编码
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.PositionName">
+            <summary>
+            职位名称
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.gParentID">
+            <summary>
+            父级归属人ID
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nParentName">
+            <summary>
+            父级归属人名称
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nCountry">
+            <summary>
+            国家
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nCountryCode">
+            <summary>
+            国家
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nState">
+            <summary>
+            省
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nStateCode">
+            <summary>
+            省
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nArea">
+            <summary>
+            地区
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nAreaCode">
+            <summary>
+            地区
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nCity">
+            <summary>
+            城市
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.Accounts_User.nCityCode">
+            <summary>
+            城市
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Interface.Model.Accounts_PermissionOwner">
+            <summary>
+             类菜单权限拥有者。
+             </summary>
+        </member>
+        <member name="T:XB.Framework.Interface.Model.Accounts_User_Storage">
+            <summary>
+            功能说明：主要用于存储当前登录From程序的用户信息
+            </summary>
+            <remarks>
+            作    者：zhangxiaobin
+            创建时间：2012-8-21
+            注意事项：
+            </remarks>
+        </member>
+        <member name="F:XB.Framework.Interface.Model.Accounts_User_Storage._language">
+            <summary>
+            Language
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.BaseModel.AllCount">
+            <summary>
+            总行数
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.BaseModel.CreateDate">
+            <summary>
+            功能说明：CreateDate
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.BaseModel.CreateBy">
+            <summary>
+            功能说明：CreateBy
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.BaseModel.LastUpdateDate">
+            <summary>
+            功能说明：LastUpdateDate
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.BaseModel.LastUpdateBy">
+            <summary>
+            功能说明：LastUpdateBy
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Interface.Model.ComboBoxItem.FromDataRow(System.Data.DataRow)">
+            <summary>
+            由DataRow转换为DropList对象
+            </summary>
+            <param name="dritem">包含value和text的dataRow</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Model.ComboBoxItem.FromDataRow2(System.Data.DataRow)">
+            <summary>
+            由DataRow转换为DropList对象,加载是否选中，字段为selected
+            </summary>
+            <param name="dritem">包含value和text的dataRow</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Model.ComboBoxModel.FromDataRow(System.Data.DataRow)">
+            <summary>
+            由DataRow转换为DropList对象
+            </summary>
+            <param name="dritem">包含codeid和codename的dataRow</param>
+            <returns></returns>
+        </member>
+        <member name="T:XB.Framework.Interface.Model.IModel">
+            对象造型
+            
+            如果某C#对象要转换成JS对象,则必须实现此接口
+        </member>
+        <member name="T:XB.Framework.Interface.Model.ListBoxItem">
+            <summary>
+            功能说明：此类主要用于ListBox的数据存储类
+            </summary>
+            <remarks>
+            作    者：张晓斌
+            创建时间：2012年4月4日
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Interface.Model.ListBoxItem.FromDataRow(System.Data.DataRow)">
+            <summary>
+            由DataRow转换为DropList对象
+            </summary>
+            <param name="dritem">包含value和text的dataRow</param>
+            <returns></returns>
+        </member>
+        <member name="T:XB.Framework.Interface.Model.RunParameter">
+            <summary>
+            功能说明：启动参数对象，主要用于Winfrom程序的参数传度业务
+            </summary>
+            <remarks>
+            作    者：zhangxiaobin
+            创建时间：2012年8月31日
+            备注信息：IModel对象可以是本架构中的任何一个Model，所有的Model必须继承与IModel接口
+            注意事项：
+            修改信息：
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Interface.Model.RunParameter.Convert(System.Object)">
+            <summary>
+            转换为启动参数对象
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.RunParameter.Model">
+            <summary>
+            Model特性
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.RunParameter.DataObject">
+            <summary>
+            内置数据对象
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.RunParameter.List">
+            <summary>
+            IList对象
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Model.RunParameter.Position">
+            <summary>
+            位置
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Interface.Model.TreeNodeModel">
+            <summary>
+            功能说明：此类主要用于树结构的数据存储类
+            </summary>
+            <remarks>
+            作    者：张晓斌
+            创建时间：2012年3月25日
+            注意事项：
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Interface.Model.TreeNodeModel.FromDataRow(System.Data.DataRow,System.String)">
+            <summary>
+            由DataRow转换为DropList对象
+            </summary>
+            <param name="dritem">包含value和text的dataRow</param>
+            <returns></returns>
+            <remarks>
+            修改信息： 张晓斌 2012年4月5日21:13:24 增加对属性字段的判断，如果包含字段名称为属性的字段，则实例化该属性，否则跳过
+            </remarks>
+        </member>
+        <member name="T:XB.Framework.Interface.Model.TreeModel">
+            <summary>
+            树节点数据对象模型
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Interface.Model.TreeNodeModelChecked">
+            <summary>
+            功能说明：此类主要用于待复选框的树的数据结构存储类
+            </summary>
+            <remarks>
+            作    者：张晓斌
+            创建时间：2012年3月25日
+            注意事项：
+                    checked：主要控制复选框的状态
+                    children:子节点集合
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Interface.Model.TreeNodeModelChecked.FromDataRow(System.Data.DataRow,System.String)">
+            <summary>
+            由DataRow转换为DropList对象
+            </summary>
+            <param name="dritem">包含value和text的dataRow</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Model.TreeNodeModelChecked.ConvertListTreeNode(System.Data.DataTable,System.String,System.String)">
+            <summary>
+            转换为可以一次性加载所有的树节点格式的Model对象
+            </summary>
+            <param name="dtTreeData">包含id,ico,text,leaf,checked,parentID的DataTable</param>
+            <param name="nodeID">起始节点的ParentID</param>
+            <param name="iconDirectory">文件夹路径</param>
+            <returns></returns>
+            <remarks>
+            创建信息：张晓斌 2012年3月25日
+            </remarks>
+        </member>
+        <member name="T:XB.Framework.Interface.Model.ListBoxModel">
+            <summary>
+            功能说明：此类主要用于ListBox的数据存储类
+            </summary>
+            <remarks>
+            作    者：张晓斌
+            创建时间：2012年4月4日
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Interface.Model.ListBoxModel.FromDataRow(System.Data.DataRow)">
+            <summary>
+            由DataRow转换为DropList对象
+            </summary>
+            <param name="dritem">包含codeid和codename的dataRow</param>
+            <returns></returns>
+        </member>
+        <member name="T:XB.Framework.Interface.Model.TreeNodeModelNoChecked">
+            <summary>
+            功能说明：此类主要用于不带复选框一次性加载的的数据结构存储类
+            </summary>
+            <remarks>
+            作    者：张晓斌
+            创建时间：2012年3月25日
+            注意事项：
+                 
+                    children:子节点集合
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Interface.Model.TreeNodeModelNoChecked.FromDataRow(System.Data.DataRow,System.String)">
+            <summary>
+            由DataRow转换为DropList对象
+            </summary>
+            <param name="dritem">包含value和text的dataRow</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Model.TreeNodeModelNoChecked.ConvertListTreeNode(System.Data.DataTable,System.String,System.String)">
+            <summary>
+            转换为可以一次性加载所有的树节点格式的Model对象
+            </summary>
+            <param name="dtTreeData">包含id,ico,text,leaf,checked,parentID的DataTable</param>
+            <param name="nodeID">起始节点的ParentID</param>
+            <param name="iconDirectory">文件夹路径</param>
+            <returns></returns>
+            <remarks>
+            创建信息：张晓斌 2012年3月25日
+            </remarks>
+        </member>
+        <member name="T:XB.Framework.Interface.Model.Language">
+            <summary>
+            系统语言
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Interface.Model.ImageStatus">
+            <summary>
+            图片状态
+            2011年12月12日 张晓斌
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Model.ImageStatus.None">
+            <summary>
+            不做任何操作
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Model.ImageStatus.Refsh">
+            <summary>
+            更新，执行新增和编辑的功能
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Model.ImageStatus.Delete">
+            <summary>
+            删除图片
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Interface.Model.ModuleStatus">
+            <summary>
+            所有组件当前的状态
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Model.ModuleStatus.None">
+            <summary>
+            没有操作
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Model.ModuleStatus.Add">
+            <summary>
+            新增
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Model.ModuleStatus.Update">
+            <summary>
+            编辑
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Model.ModuleStatus.Look">
+            <summary>
+            查看
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Model.ModuleStatus.Selected">
+            <summary>
+            选择
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Model.ModuleStatus.Selected_Edit">
+            <summary>
+            选择并可编辑
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Model.ModuleStatus.Check">
+            <summary>
+            审核
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Model.ModuleStatus.ReverseCheck">
+            <summary>
+            反审
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Model.ModuleStatus.Report">
+            <summary>
+            打印
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Model.ModuleStatus.Delete">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Model.ModuleStatus.Ref">
+            <summary>
+            提交审核
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Model.ModuleStatus.SaveSon">
+            <summary>
+            得到主表业务逻辑ID，直接跳过主表，直接保存子表
+            主要用于TMS系统中，工具借出归还的刷条形码的业务操作
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Interface.Local.LocalizationUtil.#ctor(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="CurrentLocalFilePath">当前模块的资源文件路径，资源文件的相对路径，相对于Localization</param>
+            <param name="LocalizationLanguage">语言类型 zh-CN,en-US</param>
+        </member>
+        <member name="M:XB.Framework.Interface.Local.LocalizationUtil.GetLocalizationDictionary(System.String)">
+            <summary>
+            根据文件路径获取文件中包含的Dictionary信息（文件中必须遵循josn格式）
+            </summary>
+            <param name="filePath">资源文件的相对路径，相对于Localization</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Local.LocalizationUtil.GetSysButtonText(System.String)">
+            <summary>
+            根据语言类型获取公有的按钮文本
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Local.LocalizationUtil.GetSysMessageText(System.String)">
+            <summary>
+            根据语言类型获取公有的提示信息文本
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Local.LocalizationUtil.GetUserDefineText(System.String)">
+            <summary>
+             根据语言类型获取公有的用户自定义信息
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Local.LocalizationUtil.GetSysCommonText(System.String)">
+            <summary>
+             根据语言类型获取公有的信息文本
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.PageModel.#ctor">
+            <summary>
+            实例化的分页页面模型
+            第一页、当前第一页、共0页、共0行
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.PageModel.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.String,XB.Framework.Common.Collections.SortableBindingList{System.Object},System.Data.DataTable)">
+            <summary>
+            实例化PageMode对象
+            </summary>
+            <param name="currentPage">当前页</param>
+            <param name="pageSize">每页多少行</param>
+            <param name="titalRows">总行数</param>
+            <param name="totalPages">总页数</param>
+            <param name="PageingSQL">查询的SQL语句</param>
+            <param name="valueList">IList格式的数据源 非必填</param>
+            <param name="datasource">DataTable格式的数据源 非必填</param>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PageModel.ValueList">
+            <summary>
+            List格式的当前页数据
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PageModel.SortableValueList">
+            <summary>
+            用于From程序
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PageModel.ValueMap">
+            <summary>
+            泛型格式的当前也数据
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PageModel.DataTableSource">
+            <summary>
+            数据集格式的当前页
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PageModel.CurrentPage">
+            <summary>
+            当前页索引
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PageModel.PageSize">
+            <summary>
+            每页多少行
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PageModel.TotalPages">
+            <summary>
+            共多少页
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PageModel.TotalRows">
+            <summary>
+            共多少行
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PageModel.Text">
+            <summary>
+            展示的文本
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PageModel.strCurrentPage">
+            <summary>
+            当前页
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PageModel.Fields">
+            <summary>
+            所包含的字段信息
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PageModel.PagingSQL">
+            <summary>
+            最终分页的SQL语句
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.Paging.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            采用存储过程的方式进行分页，只进行计算分页的数据即可
+            zhangxiaobin 2014-9-20 11:46:29
+            </summary>
+            <param name="currentPage">当前页</param>
+            <param name="pageSize">页大小</param>
+            <param name="totalRows">总行数</param>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.Paging.getPaging(System.Int32,System.Int32,System.Int32,System.String,System.String[],System.String)">
+            <summary>
+            对SQL分页
+            </summary>
+            <param name="currentPage">当前页</param>
+            <param name="pageSize">页大小</param>
+            <param name="totalRows">总行数</param>
+            <param name="sql">查询的SQL</param>
+            <param name="fields">SQL中查询字段</param>
+            <param name="TopSql">分页的top限制语句，例如：Top 300000</param>
+            <returns>Paging</returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.Paging.getPaging(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            采用存储过程的方式进行分页，只进行计算分页的数据即可
+            zhangxiaobin 2014-9-20 11:46:29
+            </summary>
+            <param name="currentPage">当前页</param>
+            <param name="pageSize">页大小</param>
+            <param name="totalRows">总行数</param>
+            <returns>Paging</returns>
+        </member>
+        <member name="T:XB.Framework.Interface.Service.PagingAttribute">
+            <summary>
+            适用于APF平台，采用WEB Servcie的方式进行数据分页所需要的属性对象
+            张晓斌 2014-9-20 10:07:13
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PagingAttribute.SelectCountMethod">
+            <summary>
+            采用IBatisNet技术的APF平台访问的对应后台Facade层中的获取分页总行数的方法名称
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PagingAttribute.DataObjectTypeName">
+            <summary>
+            采用IBatisNet技术的APF平台访问的对应后台Facade层中的数据对象类型名称
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PagingAttribute.SelectDataMethod">
+            <summary>
+            采用IBatisNet技术的APF平台访问的对应后台Facade层中的获取分页数据的方法名称
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PagingAttribute.QueryObjectTypeString">
+            <summary>
+            查询参数对象类型的String个格式 例如：NeuHuiju.APF.AppDemo.Interface.User.Entity.Dome_User,NeuHuiju.APF.AppDemo.Interface
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Interface.Service.PagingCondition">
+            <summary>
+            功能说明：主要用于查询方案组装查询SQL语句以及对排序和统计字段进行整合
+            </summary>
+            <remarks>
+            作    者：张晓斌
+            创建时间：2012年3月10日
+            注意事项：主要用于分页的查询条件获取
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.PagingCondition.#ctor(System.Text.StringBuilder)">
+            <summary>
+            实例化的分页页面模型
+            第一页、当前第一页、共0页、共0行
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.PagingCondition.LoadFields``1(``0)">
+            <summary>
+            传入Model自动加载Model中包含的属性信息到Fields字段中
+            主要用于三层架构
+            张晓斌 2014年1月5日13:51:34
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PagingCondition.fields">
+            <summary>
+            所包含的字段信息
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PagingCondition.PagingSQL">
+            <summary>
+            必须要包含ORDER BY 的SQL语句，其中排序条件，将作为分页属性使用
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PagingCondition.OutString">
+            <summary>
+            需要往外传递的参数
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PagingCondition.IListCondition">
+            <summary>
+            SQL参数
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PagingCondition.SortField">
+            <summary>
+            分页排序字段
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PagingCondition.SortDrive">
+            <summary>
+            DESC或者ASC
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PagingCondition.IDictionaryCondition">
+            <summary>
+            查询参数
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PagingCondition.Spare">
+            <summary>
+            备用对象 主要用于导出Excel时存储查询条件使用
+            </summary>
+            <remarks>
+            2012年3月11日
+            </remarks>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PagingCondition.StatSql">
+            <summary>
+            统计SQL
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PagingCondition.StatFields">
+            <summary>
+            统计字段
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Interface.Service.PagingCondition2">
+            <summary>
+            分页所需的条件参数，以APF平台为基础
+            张晓斌 2014-9-18 21:44:00
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.PagingCondition2.#ctor(System.Object)">
+            <summary>
+            实例化分页参数对象，以APF平台为条件
+            </summary>
+            <param name="whereObject">强类型的查询参数</param>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.PagingCondition2.#ctor(System.Object,System.String)">
+            <summary>
+            实例化分页参数对象，以APF平台为条件
+            </summary>
+            <param name="whereObject">强类型的查询参数</param>
+            <param name="Sort">排序参数</param>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.PagingCondition2.#ctor(System.Object,System.String,System.String[])">
+            <summary>
+            实例化分页参数对象，以APF平台为条件
+            </summary>
+            <param name="whereObject">强类型的查询参数</param>
+            <param name="Sort">排序参数</param>
+            <param name="fields">所需返回的列的集合</param>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PagingCondition2.Fields">
+            <summary>
+            所包含的字段信息
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PagingCondition2.Sort">
+            <summary>
+            不包含Order By的排序条件 例如： Name ASC或者Name ASC,Code DESC
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PagingCondition2.WhereObject">
+            <summary>
+            查询条件
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Interface.Service.DataPlatformType">
+            <summary>
+            后台数据交互类型
+            1.APF交互，启用SelectCountMethod和SelectDataMethod属性
+            zhangxiaobin 2014-9-18 21:23:23
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Service.DataPlatformType.iBatisNet_WebService">
+            <summary>
+            APF平台采用iBatisNet技术进行数据交互
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Interface.Service.DataPlatformType.EnterpriseLibrary_TCPIP">
+            <summary>
+            XB平台采用微软企业库进行数据交互
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.PagingService.GetPageModel``1(System.String,System.String,System.Int32,System.Int32,``0,System.String,System.String[])">
+            <summary>
+            采用调用Web Service的方式进行数据分页
+            </summary>
+            <param name="CustomAassamblyName">对应访问的模块Web Servcie的路径，采用全类名和dll名称的方式，中间采用逗号分隔的方式处理；例如：</param>
+            <param name="DataObjectTypeName"></param>
+            <param name="SelectCountMethod">获取总行数的方法名称</param>
+            <param name="SelectDataMethod">获取分页后的数据方法</param>
+            <param name="CurrentPageIndex">当前页码</param>
+            <param name="PageSize">每页多少行</param>
+            <param name="SelectWhere">强类型的查询条件</param>
+            <param name="Sort">不包含Order By的排序条件 例如： Name ASC或者Name ASC,Code DESC</param>
+            <param name="Fileds">获取数据的包含的字段，为空，代表所有字段</param>
+            <returns></returns>
+        </member>
+        <member name="T:XB.Framework.Interface.Service.Engine.Base">
+            <summary>
+            功能说明：实现aspx页面和josn对象以及aspx对象之间的相互写入和获取，并且实现数据库DAO事物的提交、回滚以及DAO数据库连接的对象关闭
+            </summary>
+            <remarks>
+            作    者：zhangxiaobin
+            创建时间：2012年10月18日
+            备注信息：
+            注意事项：
+            修改信息：
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.Engine.Base.writeParameters(System.Boolean,System.Web.HttpResponse,System.Object)">
+            <summary>
+            写入参数到浏览器，有前台进行数据接收
+            </summary>
+            <param name="formsubmit"></param>
+            <param name="response"></param>
+            <param name="robj"></param>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.Engine.Base.setServiceProperties(XB.Framework.Interface.Service.Engine.IService,System.Web.UI.Page)">
+            <summary>
+            设置基本属性
+            </summary>
+            <param name="service"></param>
+            <param name="page"></param>
+        </member>
+        <member name="T:XB.Framework.Interface.Service.Engine.BaseService">
+            <summary>
+            功能说明：底层服务对象
+            </summary>
+            <remarks>
+            作    者：zhangxiaobin
+            创建时间：2012-10-18
+            注意事项：
+            </remarks>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.Engine.BaseService.request">
+            <summary>
+            内置对象
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.Engine.BaseService.Execute(System.String)">
+            <summary>
+            执行Service内部指定的方法
+            </summary>
+            <param name="methodName">所指定执行的方法名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.Engine.BaseService.GetParameters(System.String[])">
+            <summary>
+            批量获取参数,存入IDictionary容器当中
+            </summary>
+            <param name="keys">批量参数键名</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.Engine.BaseService.SetCurrentQueryListSumWhere(System.String,System.Boolean)">
+            <summary>
+            主要用户分页统计时默认查询方案和自定义查询方案时的查询条件的保存，以and开头的查询条件
+            </summary>
+            <param name="querywhere">列表统计条件</param>
+            <param name="isAppend">是否追加</param>
+            <remarks>
+            2012年10月18日 张晓斌
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.Engine.BaseService.SetCurrentQueryListSumWhere(System.String)">
+            <summary>
+            获取主要用户分页统计时默认查询方案和自定义查询方案时的查询条件的保存，以and开头的查询条件  
+            </summary>
+            <param name="querywhere">Where条件</param>
+            <remarks>
+            2012年10月18日 张晓斌
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.Engine.BaseService.GetCurrentQueryListSumWhere">
+            <summary>
+            获取主要用户分页统计时默认查询方案和自定义查询方案时的查询条件的保存，以and开头的查询条件  
+            </summary>
+            <param name="querywhere">Where条件</param>
+            <remarks>
+            2012年10月18日 张晓斌
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.Engine.BaseService.GetPageModel``1(System.String,System.Int32,System.Int32,System.String,System.String,System.Collections.IList,Microsoft.Practices.EnterpriseLibrary.Data.IRowMapper{``0})">
+            <summary>
+            生成分页页面对象
+            </summary>
+            <typeparam name="TResult">查询后返回的实体</typeparam>
+            <param name="PagingSQL">查询SQL</param>
+            <param name="currentPageIndex">当前页</param>
+            <param name="PageSize">页面包含多少行</param>
+            <param name="SortField">分页排序字段</param>
+            <param name="SortDrive">DESC OR ASC</param>
+            <param name="paramList">分页的sql语句中的参数，成员为objct数组对象，object[0]为键   object[1]为值</param>
+            <param name="rowMapper">行映射对象</param>
+            <returns>分页对象</returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.Engine.BaseService.GetPageModel2``1(System.String,System.Int32,System.Int32,System.String,System.String,System.Collections.IList,Microsoft.Practices.EnterpriseLibrary.Data.IRowMapper{``0})">
+            <summary>
+            生成分页页面对象,在分页语句中增加了" ORDER BY  a.tCreateDate DESC"，按照创建时间倒叙排列
+            </summary>
+            <typeparam name="TResult">查询后返回的实体</typeparam>
+            <param name="PagingSQL">查询SQL</param>
+            <param name="currentPageIndex">当前页</param>
+            <param name="PageSize">页面包含多少行</param>
+            <param name="SortField">分页排序字段</param>
+            <param name="SortDrive">DESC OR ASC</param>
+            <param name="paramList">分页的sql语句中的参数，成员为objct数组对象，object[0]为键   object[1]为值</param>
+            <param name="rowMapper">行映射对象</param>
+            <returns>分页对象</returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.Engine.BaseService.GetPageModel3``1(System.String,System.Int32,System.Int32,System.String,System.Collections.IList,Microsoft.Practices.EnterpriseLibrary.Data.IRowMapper{``0})">
+            <summary>
+            生成分页页面对象,采用分页存储过程的方式进行处理
+            </summary>
+            <typeparam name="TResult">查询后返回的实体</typeparam>
+            <param name="SqlScript">查询SQL</param>
+            <param name="currentPageIndex">当前页</param>
+            <param name="PageSize">页面包含多少行</param>
+            <param name="OrderBy">排序表达式，可以为空，为order by 后面的内容  例如：name asc,id desc</param>
+            <param name="paramList">分页的sql语句中的参数，成员为objct数组对象，object[0]为键   object[1]为值</param>
+            <param name="rowMapper">行映射对象</param>
+            <returns>分页对象</returns>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.Engine.BaseService.ExportExcel2``1(System.String,System.Collections.Generic.IList{``0},System.Collections.Generic.IList{XB.Framework.Office.NpoiLib.Excel.ColumnStyle},System.Web.HttpResponse)">
+            <summary>
+            导出数据到Excel
+            </summary>
+            <typeparam name="T">需要导出的数据源成员类型</typeparam>
+            <param name="fileName">文件名称</param>
+            <param name="store">数据源</param>
+            <param name="columnStyle">列配置</param>
+            <param name="response">导出Excel的Http.Response对象</param>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.Engine.IService.Execute(System.String)">
+            <summary>
+            执行Service内部指定的方法
+            </summary>
+            <param name="methodName">所指定执行的方法名称</param>
+            <returns></returns>
+        </member>
+        <member name="T:XB.Framework.Interface.Service.PagingCondition3">
+            <summary>
+            分页条件参数对象，
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.PagingCondition3.#ctor(System.Collections.IDictionary)">
+            <summary>
+            实例化分页参数对象，以APF平台为条件
+            </summary>
+            <param name="whereObject">强类型的查询参数</param>
+        </member>
+        <member name="M:XB.Framework.Interface.Service.PagingCondition3.#ctor(System.Collections.IDictionary,System.String)">
+            <summary>
+            实例化分页参数对象，以APF平台为条件
+            </summary>
+            <param name="whereObject">强类型的查询参数</param>
+            <param name="Sort">排序参数</param>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PagingCondition3.Fields">
+            <summary>
+            所包含的字段信息
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PagingCondition3.Sort">
+            <summary>
+            不包含Order By的排序条件 例如： Name ASC或者Name ASC,Code DESC
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Interface.Service.PagingCondition3.WhereDicCondition">
+            <summary>
+            查询参数
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Interface.Reflection.AssemblyHelper.getServiceInstance(System.String)">
+            <summary>
+            根据传递的命名空间名称+类名+,+dll名称，返回IServce的对象
+            </summary>
+            <param name="classFullName">命名空间名称+类名+,+dll名称</param>
+            <returns>IServce的对象</returns>
+            <remarks>
+            使用示例： var url = this.action + "HuijuSDFW.Authentication.BLL.WebBusinessDo.Account_UserDO,HuijuSDFW.Authentication" + "method=GetPagingModelList"
+            </remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:XB.Framework.Interface.Reflection.AssemblyHelper.getAssemblyInstance(System.String)" -->
+        <member name="P:XB.Framework.Interface.RemotingServer.BaseRemotingClass.CanPublish">
+            <summary>
+            是否发布
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Interface.RemotingServer.RegisterRemotingClass.BeginRegister(System.String)">
+            <summary>
+            开始注册
+            </summary>
+            <param name="appServerName"></param>
+        </member>
+        <member name="T:XB.Framework.Interface.Store.ComboBoxStore">
+            <summary>
+            功能说明：下拉列表的数据源对象
+            </summary>
+            <remarks>
+            作    者：张晓斌
+            创建时间：2012-03-10
+            注意事项：
+            </remarks>
+        </member>
+        <member name="F:XB.Framework.Interface.Store.ComboBoxStore.store">
+            <summary>
+            数据源
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Interface.Store.ComboBoxStore.add(System.String,System.String)">
+            <summary>
+            新增数据到ComboBox数据源
+            </summary>
+            <param name="codeid"></param>
+            <param name="codename"></param>
+        </member>
+        <member name="M:XB.Framework.Interface.Store.ComboBoxStore.add(XB.Framework.Interface.Model.ComboBoxModel)">
+            <summary>
+            新增下拉列表对象到数据源
+            </summary>
+            <param name="cbxModel"></param>
+        </member>
+        <member name="M:XB.Framework.Interface.Store.ComboBoxStore.remove(XB.Framework.Interface.Model.ComboBoxModel)">
+            <summary>
+            删除下拉列表数据对象
+            </summary>
+            <param name="cbxModel"></param>
+        </member>
+        <member name="M:XB.Framework.Interface.Store.ComboBoxStore.clear">
+            <summary>
+            清空
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Interface.Store.ComboBoxStore.getStore">
+            <summary>
+            获取IList的数据源对象
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

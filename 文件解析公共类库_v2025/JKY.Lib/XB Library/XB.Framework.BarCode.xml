@@ -1,0 +1,610 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XB.Framework.BarCode</name>
+    </assembly>
+    <members>
+        <member name="F:XB.Framework.BarCode.Enum.Code128Type.Code128A">
+            <summary>
+            码值：103
+            </summary>
+        </member>
+        <member name="F:XB.Framework.BarCode.Enum.Code128Type.Code128B">
+            <summary>
+            码值：104
+            </summary>
+        </member>
+        <member name="F:XB.Framework.BarCode.Enum.Code128Type.Code128C">
+            <summary>
+            码值：105
+            </summary>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.Barcode128.BuildBarCode(System.String)">
+            <summary>
+            自动判断传递的条码参数，如果是偶数，并且是数字，直接生成128C码；否则生成128B码
+            </summary>
+            <param name="text">生成条码的文本</param>
+            <returns>生成的条形码图片</returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.Barcode128.BuildBarCode(System.String,XB.Framework.BarCode.Enum.Code128Type)">
+            <summary>
+            根据传递的code128码的类型生成条形码图片
+            </summary>
+            <param name="text">生成条码的文本</param>
+            <param name="code128Type">code128码的类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.Barcode128.BuildBarCode(System.String,XB.Framework.BarCode.Enum.Code128Type,System.Int32)">
+            <summary>
+            根据传递的code128码的类型生成条形码图片
+            </summary>
+            <param name="text">生成条码的文本</param>
+            <param name="code128Type">code128码的类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.Barcode128.BuildBarString(System.String,XB.Framework.BarCode.Enum.Code128Type)">
+            <summary>
+            生成条码字符串
+            </summary>
+            <param name="text">生成条码的文本</param>
+            <param name="code128Type">Code128吗的类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.Barcode128.AddSimpleTag(System.Int32)">
+            <summary>
+            增加一个条码标记
+            </summary>
+            <param name="CodeIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.Barcode128.CheckErrerCode(System.String)">
+            <summary>
+            检查条形码文字是否合条件(不能是汉字或全角字符)
+            </summary>
+            <param name="cktext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.Barcode128.KillCode128(System.String,System.Int32)">
+            <summary>生成条码 </summary>
+            <param name="BarString">条码模式字符串</param>  //Format32bppArgb
+            <param name="Height">生成的条码高度</param>
+            <returns>条码图形</returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.Barcode128.BuildFontBarcode128(System.String,System.Int32,XB.Framework.BarCode.Enum.Code128Type)">
+            <summary>
+            根据字体生成的Barcode128的条码
+            注意：
+                1)此功能目前只实现了128 B和128 C码
+                2)条形码的宽度和高度，随着字体的大小而变动，无法进行具体的设置，在具体的业务操作中，需要采用Graphics.DrawImage()方法进行重新绘制
+            </summary>
+            <param name="StringToEncode">需要生成条码的字符串格式的数据</param>
+            <param name="FontSize">字体大小，条码的长度会根据字体大小而自动变化</param>
+            <param name="_Code128Type">Code128的类型枚举，目前只实现了128 B和128 C码</param>
+            <returns>根据Barcode128字体生成的条码图片</returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.Barcode128.BuildFontBarcode128(System.String,System.Int32,XB.Framework.BarCode.Enum.Code128Type,System.Int32,System.Int32)">
+            <summary>
+            根据字体生成的Barcode128的条码
+            注意：
+                1)此功能目前只实现了128 B和128 C码
+                2)条形码的宽度和高度，随着字体的大小而变动，无法进行具体的设置，在具体的业务操作中，需要采用Graphics.DrawImage()方法进行重新绘制
+            </summary>
+            <param name="StringToEncode">需要生成条码的字符串格式的数据</param>
+            <param name="FontSize">字体大小，条码的长度会根据字体大小而自动变化</param>
+            <param name="_Code128Type">Code128的类型枚举，目前只实现了128 B和128 C码</param>
+            <param name="Width">生成的条形码图片的宽度</param>
+            <param name="Height">生成的条形码图片的高度</param>
+            <returns>根据Barcode128字体生成的条码图片</returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.Barcode128.Get128BCodeString(System.String)">
+            <summary>
+            获取128B码的方式,位数没限制 
+            特性：可以包含文本，位数没有限制
+            </summary>
+            <param name="inputData">输入的原码</param>
+            <returns>返回转换成打印格式的字符串</returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.Barcode128.Get128CCodeString(System.String)">
+            <summary>
+            获取128C码的方法 
+            规则：位数必须是偶数，只能是数字
+            </summary>
+            <param name="inputData">输入的原码</param>
+            <returns>返回转换成打印格式的字符串</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.BarCode.Entity.Symbologies.Blank" -->
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.BarCode.Entity.Symbologies.Codabar" -->
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.Codabar.Encode_Codabar">
+            <summary>
+            使用Codabar的算法进行编码的原始数据。
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.BarCode.Entity.Symbologies.Code11" -->
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.Code11.Encode_Code11">
+            <summary>
+            Encode the raw data using the Code 11 algorithm.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.BarCode.Entity.Symbologies.Code128" -->
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.Code128.#ctor(System.String)">
+            <summary>
+            Encodes data in Code128 format.
+            </summary>
+            <param name="input">Data to encode.</param>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.Code128.#ctor(System.String,XB.Framework.BarCode.Entity.Symbologies.Code128.TYPES)">
+            <summary>
+            Encodes data in Code128 format.
+            </summary>
+            <param name="input">Data to encode.</param>
+            <param name="type">Type of encoding to lock to. (Code 128A, Code 128B, Code 128C)</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.BarCode.Entity.Symbologies.Code39" -->
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.Code39.#ctor(System.String)">
+            <summary>
+            Encodes with Code39.
+            </summary>
+            <param name="input">Data to encode.</param>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.Code39.#ctor(System.String,System.Boolean)">
+            <summary>
+            Encodes with Code39.
+            </summary>
+            <param name="input">Data to encode.</param>
+            <param name="AllowExtended">Allow Extended Code 39 (Full Ascii mode).</param>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.Code39.Encode_Code39">
+            <summary>
+            Encode the raw data using the Code 39 algorithm.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.BarCode.Entity.Symbologies.Code93" -->
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.Code93.#ctor(System.String)">
+            <summary>
+            Encodes with Code93.
+            </summary>
+            <param name="input">Data to encode.</param>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.Code93.Encode_Code93">
+            <summary>
+            Encode the raw data using the Code 93 algorithm.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.BarCode.Entity.Symbologies.EAN13" -->
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.EAN13.Encode_EAN13">
+            <summary>
+            Encode the raw data using the EAN-13 algorithm. (Can include the checksum already.  If it doesnt exist in the data then it will calculate it for you.  Accepted data lengths are 12 + 1 checksum or just the 12 data digits)
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.BarCode.Entity.Symbologies.EAN8" -->
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.EAN8.Encode_EAN8">
+            <summary>
+            Encode the raw data using the EAN-8 algorithm.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.BarCode.Entity.Symbologies.FIM" -->
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.Interleaved2of5.Encode_Interleaved2of5">
+            <summary>
+            Encode the raw data using the Interleaved 2 of 5 algorithm.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.BarCode.Entity.Symbologies.ISBN" -->
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.ISBN.Encode_ISBN_Bookland">
+            <summary>
+            Encode the raw data using the Bookland/ISBN algorithm.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.BarCode.Entity.Symbologies.ITF14" -->
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.ITF14.Encode_ITF14">
+            <summary>
+            Encode the raw data using the ITF-14 algorithm.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.BarCode.Entity.Symbologies.JAN13" -->
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.JAN13.Encode_JAN13">
+            <summary>
+            Encode the raw data using the JAN-13 algorithm.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.BarCode.Entity.Symbologies.MSI" -->
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.MSI.Encode_MSI">
+            <summary>
+            Encode the raw data using the MSI algorithm.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.BarCode.Entity.Symbologies.Postnet" -->
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.Postnet.Encode_Postnet">
+            <summary>
+            Encode the raw data using the PostNet algorithm.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.BarCode.Entity.Symbologies.Standard2of5" -->
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.Standard2of5.Encode_Standard2of5">
+            <summary>
+            Encode the raw data using the Standard 2 of 5 algorithm.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.BarCode.Entity.Symbologies.Telepen" -->
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.Telepen.#ctor(System.String)">
+            <summary>
+            Encodes data using the Telepen algorithm.
+            </summary>
+            <param name="input"></param>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.Telepen.Encode_Telepen">
+            <summary>
+            Encode the raw data using the Telepen algorithm.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.BarCode.Entity.Symbologies.UPCA" -->
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.UPCA.Encode_UPCA">
+            <summary>
+            Encode the raw data using the UPC-A algorithm.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.BarCode.Entity.Symbologies.UPCE" -->
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.UPCE.#ctor(System.String)">
+            <summary>
+            Encodes a UPC-E symbol.
+            </summary>
+            <param name="input">Data to encode.</param>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.UPCE.Encode_UPCE">
+            <summary>
+            Encode the raw data using the UPC-E algorithm.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.BarCode.Entity.Symbologies.UPCSupplement2" -->
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.UPCSupplement2.Encode_UPCSupplemental_2">
+            <summary>
+            Encode the raw data using the UPC Supplemental 2-digit algorithm.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.BarCode.Entity.Symbologies.UPCSupplement5" -->
+        <member name="M:XB.Framework.BarCode.Entity.Symbologies.UPCSupplement5.Encode_UPCSupplemental_5">
+            <summary>
+            Encode the raw data using the UPC Supplemental 5-digit algorithm.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.BarCode.Entity.BarcodeManager" -->
+        <member name="M:XB.Framework.BarCode.Entity.BarcodeManager.#ctor">
+            <summary>
+            默认构造函数。不填充原始数据。必须通过在编码之前rawData属性。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.BarcodeManager.#ctor(System.String)">
+            <summary>
+            构造函数，增加条码类型
+            </summary>
+            <param name="data">需要编码的string字符串</param>
+        </member>
+        <member name="P:XB.Framework.BarCode.Entity.BarcodeManager.RawData">
+            <summary>
+            获取或设置的原始数据进行编码。
+            </summary>
+        </member>
+        <member name="P:XB.Framework.BarCode.Entity.BarcodeManager.EncodedValue">
+            <summary>
+            获取编码值
+            </summary>
+        </member>
+        <member name="P:XB.Framework.BarCode.Entity.BarcodeManager.Country_Assigning_Manufacturer_Code">
+            <summary>
+            获取当前的国家编码，用于生成条码
+            </summary>
+        </member>
+        <member name="P:XB.Framework.BarCode.Entity.BarcodeManager.EncodedType">
+            <summary>
+            获取或者设置当前的编码类型 (ex. UPC-A, EAN-13 ... etc)
+            </summary>
+        </member>
+        <member name="P:XB.Framework.BarCode.Entity.BarcodeManager.EncodedImage">
+            <summary>
+            获取生成的Barcode的条码图象
+            </summary>
+        </member>
+        <member name="P:XB.Framework.BarCode.Entity.BarcodeManager.ForeColor">
+            <summary>
+            获取或者设置条码的颜色 (默认为黑色)
+            </summary>
+        </member>
+        <member name="P:XB.Framework.BarCode.Entity.BarcodeManager.BackColor">
+            <summary>
+            获取或者设置背景颜色 (默认为白色)
+            </summary>
+        </member>
+        <member name="P:XB.Framework.BarCode.Entity.BarcodeManager.LabelFont">
+            <summary>
+            获取或者设置标签字体 (默认字体： Microsoft Sans Serif, 10pt, Bold)
+            </summary>
+        </member>
+        <member name="P:XB.Framework.BarCode.Entity.BarcodeManager.LabelPosition">
+            <summary>
+            获取或设置有关的条形码标签的位置。 (默认：BOTTOMCENTER)
+            </summary>
+        </member>
+        <member name="P:XB.Framework.BarCode.Entity.BarcodeManager.RotateFlipType">
+            <summary>
+            获取或设置在旋转/翻转图像的程度。(默认为没有动作)
+            </summary>
+        </member>
+        <member name="P:XB.Framework.BarCode.Entity.BarcodeManager.Width">
+            <summary>
+            获取或者设置生成条码的图象的快读. (默认为 300 像素)
+            </summary>
+        </member>
+        <member name="P:XB.Framework.BarCode.Entity.BarcodeManager.Height">
+            <summary>
+            获取或者设置生成条码的图象的快读. (默认为 150 像素)
+            </summary>
+        </member>
+        <member name="P:XB.Framework.BarCode.Entity.BarcodeManager.IncludeLabel">
+            <summary>
+            获取或设置一个标签，是否应该得出下面的图像。
+            </summary>
+        </member>
+        <member name="P:XB.Framework.BarCode.Entity.BarcodeManager.EncodingTime">
+            <summary>
+            获取或设置的时间量（以毫秒为单位），它采取了编码和绘制条形码。
+            </summary>
+        </member>
+        <member name="P:XB.Framework.BarCode.Entity.BarcodeManager.XML">
+            <summary>
+            获取条码数据和图像的XML格式。
+            </summary>
+        </member>
+        <member name="P:XB.Framework.BarCode.Entity.BarcodeManager.ImageFormat">
+            <summary>
+            获取或者设置返回的条码图象的格式. (默认为jpg)
+            </summary>
+        </member>
+        <member name="P:XB.Framework.BarCode.Entity.BarcodeManager.Errors">
+            <summary>
+            获取列表中遇到的错误
+            </summary>
+        </member>
+        <member name="P:XB.Framework.BarCode.Entity.BarcodeManager.Alignment">
+            <summary>
+            获取或设置在图像内的条形码的取向。 （不适用于POSTNET或ITF-14）
+            </summary>
+        </member>
+        <member name="P:XB.Framework.BarCode.Entity.BarcodeManager.Version">
+            <summary>
+            获取程序集的版本信息。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.BarcodeManager.Encode(XB.Framework.BarCode.Enum.BarcodeType,System.String,System.Int32,System.Int32)">
+            <summary>
+            将原始数据编码生成二进制格式的编码制，此外还生成条码图片
+            </summary>
+            <param name="iType">使用的编码类型</param>
+            <param name="StringToEncode">需要编码的原始数据</param>
+            <param name="Width">Width of the resulting barcode.(pixels)</param>
+            <param name="Height">Height of the resulting barcode.(pixels)</param>
+            <returns>图象形式的条形码</returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.BarcodeManager.Encode(XB.Framework.BarCode.Enum.BarcodeType,System.String,System.Drawing.Color,System.Drawing.Color,System.Int32,System.Int32)">
+            <summary>
+            将原始数据编码生成二进制格式的编码制，此外还生成条码图片
+            </summary>
+            <param name="iType">使用的编码类型</param>
+            <param name="StringToEncode">需要编码的原始数据</param>
+            <param name="DrawColor">字体颜色</param>
+            <param name="BackColor">北京颜色</param>
+            <param name="Width">Width of the resulting barcode.(pixels)</param>
+            <param name="Height">Height of the resulting barcode.(pixels)</param>
+            <returns>图象形式的条形码</returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.BarcodeManager.Encode(XB.Framework.BarCode.Enum.BarcodeType,System.String,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            将原始数据编码生成二进制格式的编码制，此外还生成条码图片
+            </summary>
+            <param name="iType">使用的编码类型</param>
+            <param name="StringToEncode">需要编码的原始数据</param>
+            <param name="DrawColor">字体颜色</param>
+            <param name="BackColor">背景颜色</param>
+            <returns>图象形式的条形码</returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.BarcodeManager.Encode(XB.Framework.BarCode.Enum.BarcodeType,System.String)">
+            <summary>
+            将原始数据编码生成二进制格式的编码制，此外还生成条码图片
+            </summary>
+            <param name="iType">使用的编码类型</param>
+            <param name="StringToEncode">需要编码的原始数据</param>
+            <returns>图象形式的条形码</returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.BarcodeManager.Encode(XB.Framework.BarCode.Enum.BarcodeType)">
+            <summary>
+            将原始数据编码生成二进制格式的编码制，此外还生成条码图片
+            </summary>
+            <param name="iType">使用的编码类型</param>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.BarcodeManager.Encode">
+            <summary>
+            将编码原始数据转换为二进制格式的条码
+            </summary>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.BarcodeManager.Generate_Image">
+            <summary>
+            获取的编码数据的位图
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.BarcodeManager.GetImageData(XB.Framework.BarCode.Enum.SaveTypes)">
+            <summary>
+            获取图象的字节数
+            </summary>
+            <param name="savetype">保存的文件类型.</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.BarcodeManager.SaveImage(System.String,XB.Framework.BarCode.Enum.SaveTypes)">
+            <summary>
+            保存条码图象到制定的文件
+            </summary>
+            <param name="Filename">保存的文件名称</param>
+            <param name="FileType">保存的图象类型</param>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.BarcodeManager.SaveImage(System.IO.Stream,XB.Framework.BarCode.Enum.SaveTypes)">
+            <summary>
+            保存条形码图象到制定的流
+            </summary>
+            <param name="stream">数据流</param>
+            <param name="FileType">保存的图象类型</param>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.BarcodeManager.GetSizeOfImage(System.Double@,System.Double@,System.Boolean)">
+            <summary>
+            返回的EncodedImage的坐标（毫米或英寸）的尺寸。
+            </summary>
+            <param name="Width">在指定坐标的图像宽度。</param>
+            <param name="Height">指定的坐标中的图像的高度。</param>
+            <param name="Metric">如果为true，否则英寸毫米。</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.BarcodeManager.Label_UPCA(System.Drawing.Image)">
+            <summary>
+            绘制条码标签
+            </summary>
+            <param name="img"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.BarcodeManager.DoEncode(XB.Framework.BarCode.Enum.BarcodeType,System.String)">
+            <summary>
+            将原始数据编码生成二进制格式的编码制，此外还生成条码图片
+            </summary>
+            <param name="iType">使用的编码类型</param>
+            <param name="Data">需要编码的原始数据</param>
+            <returns>图象形式的条形码</returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.BarcodeManager.DoEncode(XB.Framework.BarCode.Enum.BarcodeType,System.String,System.String@)">
+            <summary>
+            将原始数据编码生成二进制格式的编码制，此外还生成条码图片
+            </summary>
+            <param name="iType">使用的编码类型</param>
+            <param name="Data">需要编码的原始数据</param>
+            <param name="XML">XML representation of the data and the image of the barcode.</param>
+            <returns>图象形式的条形码</returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.BarcodeManager.DoEncode(XB.Framework.BarCode.Enum.BarcodeType,System.String,System.Boolean)">
+            <summary>
+            将原始数据编码生成二进制格式的编码制，此外还生成条码图片
+            </summary>
+            <param name="iType">使用的编码类型</param>
+            <param name="Data">需要编码的原始数据</param>
+            <param name="IncludeLabel">是否包含生成的文本标签</param>
+            <returns>图象形式的条形码</returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.BarcodeManager.DoEncode(XB.Framework.BarCode.Enum.BarcodeType,System.String,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            将原始数据编码生成二进制格式的编码制，此外还生成条码图片
+            </summary>
+            <param name="iType">使用的编码类型</param>
+            <param name="data">需要编码的原始数据</param>
+            <param name="IncludeLabel">是否包含生成的文本标签</param>
+            <param name="Width">Width of the resulting barcode.(pixels)</param>
+            <param name="Height">Height of the resulting barcode.(pixels)</param>
+            <returns>图象形式的条形码</returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.BarcodeManager.DoEncode(XB.Framework.BarCode.Enum.BarcodeType,System.String,System.Boolean,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            将原始数据编码生成二进制格式的编码制，此外还生成条码图片
+            </summary>
+            <param name="iType">使用的编码类型</param>
+            <param name="Data">需要编码的原始数据</param>
+            <param name="IncludeLabel">是否包含生成的文本标签</param>
+            <param name="DrawColor">字体颜色</param>
+            <param name="BackColor">北京颜色</param>
+            <returns>图象形式的条形码</returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.BarcodeManager.DoEncode(XB.Framework.BarCode.Enum.BarcodeType,System.String,System.Boolean,System.Drawing.Color,System.Drawing.Color,System.Int32,System.Int32)">
+            <summary>
+            将原始数据编码生成二进制格式的编码制，此外还生成条码图片
+            </summary>
+            <param name="iType">使用的编码类型</param>
+            <param name="Data">需要编码的原始数据</param>
+            <param name="IncludeLabel">是否包含生成的文本标签</param>
+            <param name="DrawColor">字体颜色</param>
+            <param name="BackColor">北京颜色</param>
+            <param name="Width">所得到的条形码的宽度.(pixels)</param>
+            <param name="Height">所得到的条形码的高度(pixels)</param>
+            <returns>图象形式的条形码</returns>
+        </member>
+        <member name="M:XB.Framework.BarCode.Entity.BarcodeManager.DoEncode(XB.Framework.BarCode.Enum.BarcodeType,System.String,System.Boolean,System.Drawing.Color,System.Drawing.Color,System.Int32,System.Int32,System.String@)">
+            <summary>
+            将原始数据编码生成二进制格式的编码制，此外还生成条码图片
+            </summary>
+            <param name="iType">使用的编码类型</param>
+            <param name="Data">需要编码的原始数据</param>
+            <param name="IncludeLabel">是否包含生成的文本标签</param>
+            <param name="DrawColor">字体颜色</param>
+            <param name="BackColor">北京颜色</param>
+            <param name="Width">所得到的条形码的宽度.(pixels)</param>
+            <param name="Height">所得到的条形码的高度(pixels)</param>
+            <param name="XML">XML格式的数据和条形码的图像.</param>
+            <returns>图象形式的条形码</returns>
+        </member>
+        <member name="T:XB.Framework.BarCode.Inteface.IBarcode">
+            <summary>
+            生成BarCode条码的接口
+            </summary>
+        </member>
+        <member name="P:XB.Framework.BarCode.Inteface.IBarcode.Encoded_Value">
+            <summary>
+            编码后的数据
+            </summary>
+        </member>
+        <member name="P:XB.Framework.BarCode.Inteface.IBarcode.RawData">
+            <summary>
+            需要进行编码的数据
+            </summary>
+        </member>
+        <member name="P:XB.Framework.BarCode.Inteface.IBarcode.Errors">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.BarCode.Common.BarcodeCommon" -->
+        <member name="P:XB.Framework.BarCode.Common.BarcodeCommon.RawData">
+            <summary>
+            获取需要转换为编码的原始数据
+            </summary>
+        </member>
+        <member name="P:XB.Framework.BarCode.Common.BarcodeCommon.Errors">
+            <summary>
+            获取错误列表
+            </summary>
+        </member>
+        <member name="M:XB.Framework.BarCode.Common.BarcodeCommon.Error(System.String)">
+            <summary>
+            调用异常类使其抛出异常
+            </summary>
+            <param name="ErrorMessage"></param>
+        </member>
+        <member name="M:XB.Framework.BarCode.Common.BarcodeCommon.IsNumeric(System.String)">
+            <summary>
+            检测是否数字
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XB.Framework.BarCode.BarcodeXsd.BarcodeXML">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:XB.Framework.BarCode.BarcodeXsd.BarcodeXML.BarcodeDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:XB.Framework.BarCode.BarcodeXsd.BarcodeXML.BarcodeRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:XB.Framework.BarCode.BarcodeXsd.BarcodeXML.BarcodeRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+    </members>
+</doc>

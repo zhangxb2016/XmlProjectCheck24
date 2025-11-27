@@ -1,0 +1,256 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XB.Framework.ExcelXmlWriter</name>
+    </assembly>
+    <members>
+        <member name="P:XB.Framework.ExcelXmlWriter.Export.ColumnStyle.WriteRule">
+            <summary>
+            填写规定
+            </summary>
+        </member>
+        <member name="P:XB.Framework.ExcelXmlWriter.Export.ColumnStyle.DataType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="M:XB.Framework.ExcelXmlWriter.Export.ColumnStyleCollection.ToSortList">
+            <summary>
+            根据Index属性进行排序，主要用于Framework2.0的环境下对格式集合进行排序
+            </summary>
+            <returns>排序后的List集合</returns>
+            <remarks>
+            创建人员： zhangxiaobin 
+            创建时间： 2012-12-25 10:44:15
+            </remarks>
+        </member>
+        <member name="T:XB.Framework.ExcelXmlWriter.Export.ColumnStyleCollection.OrderByRule">
+            <summary>
+            排序规则
+            </summary>
+        </member>
+        <member name="F:XB.Framework.ExcelXmlWriter.Export.ColumnStyleCollection.OrderByRule.ASC">
+            <summary>
+            正序
+            </summary>
+        </member>
+        <member name="F:XB.Framework.ExcelXmlWriter.Export.ColumnStyleCollection.OrderByRule.DESC">
+            <summary>
+            倒序
+            </summary>
+        </member>
+        <member name="M:XB.Framework.ExcelXmlWriter.Export.ColumnStyleCollection.ListSort``1(System.Collections.Generic.List{``0},System.String,XB.Framework.ExcelXmlWriter.Export.ColumnStyleCollection.OrderByRule)">
+            <summary>
+            在Framework2.0的环境下，采用泛型+反射，使用PropertyInfo中的CompareTo方法进行排序的通用方法
+            张晓斌  2012年12月24日12:29:45
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entityList">需要排序的List实体集合对象</param>
+            <param name="field">实体对象中包含的字段名称</param>
+            <param name="OrderByRule">排序规则枚举 倒序：DESC  正序：ASC</param>
+            <returns>排序之后的List实体集合对象</returns>
+        </member>
+        <member name="P:XB.Framework.ExcelXmlWriter.Export.ExcelStyle.CustomTitleStyle">
+            <summary>
+            表头样式设置
+            </summary>
+        </member>
+        <member name="P:XB.Framework.ExcelXmlWriter.Export.ExcelStyle.CustomConditionStyle">
+            <summary>
+            查询条件项目的样式设置
+            </summary>
+        </member>
+        <member name="P:XB.Framework.ExcelXmlWriter.Export.ExcelStyle.CustomItemStyle">
+            <summary>
+            数据项的样式设置
+            </summary>
+        </member>
+        <member name="P:XB.Framework.ExcelXmlWriter.Export.ExcelStyle.CustomColumnTitleStyle">
+            <summary>
+            列头的样式
+            </summary>
+        </member>
+        <member name="P:XB.Framework.ExcelXmlWriter.Export.ExcelStyle.ColumnStyle">
+            <summary>
+            预定义的系统样式
+            </summary>
+            <summary>
+            定义列的显示样式
+            </summary>
+        </member>
+        <member name="P:XB.Framework.ExcelXmlWriter.Export.ExcelStyle.RowStyle">
+            <summary>
+            数据行的样式
+            </summary>
+        </member>
+        <member name="M:XB.Framework.ExcelXmlWriter.Export.ExportExcel.#ctor(System.String)">
+            <summary>
+            实例化导出数据到Excel操作类
+            张晓斌 2011年11月4日 新增
+            </summary>
+            <param name="Title">导出Excel文件的标题，必填项</param>
+        </member>
+        <member name="M:XB.Framework.ExcelXmlWriter.Export.ExportExcel.#ctor(System.String,System.String)">
+            <summary>
+            实例化导出数据到Excel操作类
+            张晓斌 2011年11月4日 新增
+            </summary>
+            <param name="Title">导出Excel文件的标题，必填项</param>
+            <param name="ConditiString">导出的Excel文件的筛选条件，可选</param>
+        </member>
+        <member name="M:XB.Framework.ExcelXmlWriter.Export.ExportExcel.ExportToExcelClient(System.Data.DataTable,System.String,System.Boolean)">
+            <summary>
+            导出数据到Excel到客户端桌面
+            张晓斌 2011年11月4日 添加
+            </summary>
+            <param name="source"></param>
+            <param name="ExcelName"></param>
+            <param name="showProgressForm"></param>
+        </member>
+        <member name="M:XB.Framework.ExcelXmlWriter.Export.ExportExcel.ExportToExcelClient(XB.Framework.ExcelXmlWriter.Export.ExcelStyle,System.Data.DataTable,System.String,System.Boolean)">
+            <summary>
+            导出Excel到客户端桌面程序使用
+            </summary>
+            <param name="style"></param>
+            <param name="source"></param>
+            <param name="ExcelName"></param>
+            <param name="showProgressForm"></param>
+        </member>
+        <member name="M:XB.Framework.ExcelXmlWriter.Export.ExportExcel.ExportToExcelWeb(XB.Framework.ExcelXmlWriter.Export.ExcelStyle,System.Data.DataTable,System.String,System.Web.HttpResponse)">
+            <summary>
+            导出Excel到
+            WEB程序使用
+            </summary>
+            <param name="style"></param>
+            <param name="source"></param>
+            <param name="ExcelName"></param>
+            <param name="respone"></param>
+        </member>
+        <member name="M:XB.Framework.ExcelXmlWriter.Export.ExportExcelDo.#ctor(System.String)">
+            <summary>
+            实例化导出数据到Excel操作类
+            张晓斌 2011年11月4日 新增
+            </summary>
+            <param name="Title">导出Excel文件的标题，必填项</param>
+        </member>
+        <member name="M:XB.Framework.ExcelXmlWriter.Export.ExportExcelDo.#ctor(System.String,System.String)">
+            <summary>
+            实例化导出数据到Excel操作类
+            张晓斌 2011年11月4日 新增
+            </summary>
+            <param name="Title">导出Excel文件的标题，必填项</param>
+            <param name="ConditiString">导出的Excel文件的筛选条件，可选</param>
+        </member>
+        <member name="M:XB.Framework.ExcelXmlWriter.Export.ExportExcelDo.ExportDataGridViewToExcel(System.Windows.Forms.DataGridView,System.Data.DataTable,System.String)">
+            <summary>
+            导出DataGridView格式的数据到Excel
+            </summary>
+            <param name="dgv">DataGridView</param>
+            <param name="DataSource">需要导出的数据源</param>
+            <param name="ExportExcelTitle">导出的标题</param>
+        </member>
+        <member name="M:XB.Framework.ExcelXmlWriter.Export.ExportExcelDo.ExportToExcelClient(System.Data.DataTable,System.String,System.Boolean)">
+            <summary>
+            导出数据到Excel到客户端桌面
+            张晓斌 2011年11月4日 添加
+            </summary>
+            <param name="source"></param>
+            <param name="ExcelName"></param>
+            <param name="showProgressForm"></param>
+        </member>
+        <member name="M:XB.Framework.ExcelXmlWriter.Export.ExportExcelDo.ExportToExcelClient(XB.Framework.ExcelXmlWriter.Export.ExcelStyle,System.Data.DataTable,System.String,System.Boolean)">
+            <summary>
+            导出Excel到客户端桌面程序使用
+            </summary>
+            <param name="style"></param>
+            <param name="source"></param>
+            <param name="ExcelName"></param>
+            <param name="showProgressForm"></param>
+        </member>
+        <member name="M:XB.Framework.ExcelXmlWriter.Export.ExportExcelDo.ExportToExcelWeb(XB.Framework.ExcelXmlWriter.Export.ExcelStyle,System.Data.DataTable,System.String,System.Web.HttpResponse)">
+            <summary>
+            导出Excel到
+            WEB程序使用
+            </summary>
+            <param name="style"></param>
+            <param name="source"></param>
+            <param name="ExcelName"></param>
+            <param name="respone"></param>
+        </member>
+        <member name="M:XB.Framework.ExcelXmlWriter.Export.FmProgress.SetInit(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="caption"></param>
+            <param name="maxValue"></param>
+        </member>
+        <member name="M:XB.Framework.ExcelXmlWriter.Export.FmProgress.SetData(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="showText"></param>
+            <param name="value"></param>
+        </member>
+        <member name="F:XB.Framework.ExcelXmlWriter.Export.FmProgress.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.ExcelXmlWriter.Export.FmProgress.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:XB.Framework.ExcelXmlWriter.Export.FmProgress.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:XB.Framework.ExcelXmlWriter.Export.XmlExcelHelper">
+            <summary>
+            操作采用XB.Framework.ExcelXmlWriter导出的Excel的数据操作类
+            张晓斌 2011年11月24日
+            </summary>
+        </member>
+        <member name="P:XB.Framework.ExcelXmlWriter.Export.XmlExcelHelper.FilePath">
+            <summary>
+            文件名称在应用程序根目录下
+            </summary>
+        </member>
+        <member name="M:XB.Framework.ExcelXmlWriter.Export.XmlExcelHelper.CreateXmlExcelHelper(System.String,System.Boolean)">
+            <summary>
+            实例化工具类
+            </summary>
+            <param name="filename">不包含路径的文件名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.ExcelXmlWriter.Export.XmlExcelHelper.ReadDataTable">
+            <summary>
+            根据SheetName读取数据到DataTable,如果SheetName 为空，则获取第一个Sheet的数据
+            </summary>
+            <param name="SheetName"></param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:XB.Framework.ExcelXmlWriter.Export.XmlExcelHelper.ReadDataTable(System.String)">
+            <summary>
+            根据SheetName读取数据到DataTable,如果SheetName 为空，则获取第一个Sheet的数据
+            </summary>
+            <param name="SheetName"></param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:XB.Framework.ExcelXmlWriter.Export.XmlExcelHelper.ReadDataSet">
+            <summary>
+            读取XML文件中的所有数据到DataSet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.ExcelXmlWriter.Export.XmlExcelHelper.WriterDataSetToToExcel(System.Data.DataSet)">
+            <summary>
+            将DataSet数据写入到指定的文件中
+            </summary>
+            <param name="source">需要写入文件的数据源</param>
+        </member>
+    </members>
+</doc>

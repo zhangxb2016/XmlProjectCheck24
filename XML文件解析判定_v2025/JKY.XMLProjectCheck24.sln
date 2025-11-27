@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JKY.XMLProjectCheck", "JKY.XMLProjectCheck\JKY.XMLProjectCheck.csproj", "{51B7C4F9-8C6D-404F-927D-42B57827314C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoResolveService", "..\文件解析公共类库_v2025\AutoResolveService\AutoResolveService.csproj", "{C6312A72-0996-4124-923C-45667B4F67B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		DVD-5|Any CPU = DVD-5|Any CPU
+		Release|Any CPU = Release|Any CPU
+		SingleImage|Any CPU = SingleImage|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51B7C4F9-8C6D-404F-927D-42B57827314C}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{51B7C4F9-8C6D-404F-927D-42B57827314C}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{51B7C4F9-8C6D-404F-927D-42B57827314C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51B7C4F9-8C6D-404F-927D-42B57827314C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51B7C4F9-8C6D-404F-927D-42B57827314C}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{51B7C4F9-8C6D-404F-927D-42B57827314C}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{51B7C4F9-8C6D-404F-927D-42B57827314C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51B7C4F9-8C6D-404F-927D-42B57827314C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51B7C4F9-8C6D-404F-927D-42B57827314C}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{51B7C4F9-8C6D-404F-927D-42B57827314C}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{C6312A72-0996-4124-923C-45667B4F67B6}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{C6312A72-0996-4124-923C-45667B4F67B6}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{C6312A72-0996-4124-923C-45667B4F67B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6312A72-0996-4124-923C-45667B4F67B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6312A72-0996-4124-923C-45667B4F67B6}.DVD-5|Any CPU.ActiveCfg = Release|Any CPU
+		{C6312A72-0996-4124-923C-45667B4F67B6}.DVD-5|Any CPU.Build.0 = Release|Any CPU
+		{C6312A72-0996-4124-923C-45667B4F67B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6312A72-0996-4124-923C-45667B4F67B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6312A72-0996-4124-923C-45667B4F67B6}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{C6312A72-0996-4124-923C-45667B4F67B6}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XB.Framework.Communication</name>
+    </assembly>
+    <members>
+        <member name="P:XB.Framework.Communication.Mail.MailResource.Template">
+            <summary>
+            模板内容
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Communication.Mail.MailResource.TemplatePath">
+            <summary>
+            模板内容存储的绝对路径，用于拼接图片绝对路径  图片的绝对路径=TemplatePath+MediaPath
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Communication.Mail.MailResource.LinkResources">
+            <summary>
+            关联资源集合
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Communication.Mail.LinkResourceItem">
+            <summary>
+            邮件发送的模板内置资源对象（图片）
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Communication.Mail.LinkResourceItem.MediaType">
+            <summary>
+            资源类型 例如：image/png
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Communication.Mail.LinkResourceItem.MediaPath">
+            <summary>
+            资源的相对路径 例如：images/rt.png
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Communication.Mail.LinkResourceItem.ContentId">
+            <summary>
+            内容ID
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Communication.Mail.MailHandler">
+            <summary>
+            发送邮件通用操作
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Communication.Mail.MailHandler.SmtpServer">
+            <summary>
+            SMTP 服务器
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Communication.Mail.MailHandler.FromMail">
+            <summary>
+            发件地址
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Communication.Mail.MailHandler.FromMailDisplay">
+            <summary>
+            发件地址的展示名称
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Communication.Mail.MailHandler.FromMailPwd">
+            <summary>
+            发件地址密码
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Communication.Mail.MailHandler.SmtpPort">
+            <summary>
+            端口
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Communication.Mail.MailHandler.IsSendmail">
+            <summary>
+            是否立即发送
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Communication.Mail.MailHandler.SmtpclientSecurityProtocolType">
+            <summary>
+            验证类型
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Communication.Mail.MailHandler.CerAddress">
+            <summary>
+            证书文件的存在位置
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Communication.Mail.MailHandler.AttachmentsPosition">
+            <summary>
+            邮件附件上传后的实际存放位置
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Communication.Mail.MailHandler.AttachmentsFilePath">
+            <summary>
+            邮件附件上传后的网站文件夹位置
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Communication.Mail.MailHandler.SplitStringToAyyay(System.String)">
+            <summary>
+            使用“,”分割字符串，返回Array
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Communication.Mail.MailHandler.GetAttachmentList(System.String[])">
+            <summary>
+            根据相对的邮件附件位置来获取附件在服务器上附件实际存在位置
+            </summary>
+            <param name="aList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Communication.Mail.MailHandler.GetAttachmentLinkList(System.String[])">
+            <summary>
+            根据相对的邮件附件位置来获取附件链接
+            </summary>
+            <param name="aList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Communication.Mail.MailHandler.InstallCertificate">
+            <summary>
+            获取证书
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Communication.Mail.MailHandler.Send(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Text.Encoding,System.Boolean,XB.Framework.Communication.Mail.MailResource,System.String[])">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="server">邮件服务器</param>
+            <param name="sender">发件人</param>
+            <param name="senderPsw">发件人密码 可为空</param>
+            <param name="recipient">收件人</param>
+            <param name="ccEmail">抄送人 可为空</param>
+            <param name="subject">标题 可为空</param>
+            <param name="body">内容</param>
+            <param name="isBodyHtml">是否HTML 默认为false</param>
+            <param name="encoding">编码格式</param>
+            <param name="isAuthentication">是否权限验证</param>
+            <param name="mailResource">内嵌的资源附件集合</param>
+            <param name="files">附件</param>
+        </member>
+        <member name="M:XB.Framework.Communication.Mail.MailHandler.Send(System.String,System.String,System.String,System.String,System.String,XB.Framework.Communication.Mail.MailResource)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="recipient">收件人</param>
+            <param name="sender">发件人</param>
+            <param name="senderPsw">发件人密码</param>
+            <param name="subject">标题</param>
+            <param name="body">邮件内容</param>
+            <param name="mailResource">邮件内嵌资源</param>
+        </member>
+        <member name="M:XB.Framework.Communication.Mail.MailHandler.Send(System.String,System.String,System.String,XB.Framework.Communication.Mail.MailResource)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="recipient">收件人</param>
+            <param name="subject">标题</param>
+            <param name="body">邮件内容</param>
+            <param name="mailResource">邮件内嵌资源</param>
+        </member>
+        <member name="M:XB.Framework.Communication.Mail.MailHandler.Send(System.String,System.String,System.String,System.String,XB.Framework.Communication.Mail.MailResource,System.String[])">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="recipient">收件人</param>
+            <param name="ccEmail">发件人密码</param>
+            <param name="subject">标题</param>
+            <param name="body">邮件内容</param>
+            <param name="mailResource">邮件内嵌资源</param>
+            <param name="files">附件</param>
+        </member>
+        <member name="M:XB.Framework.Communication.Mail.MailHandler.Send(System.String,System.String,System.String,System.String,System.String,System.String,XB.Framework.Communication.Mail.MailResource,System.String[])">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="recipient">收件人</param>
+            <param name="sender">发件人</param>
+            <param name="senderPsw">发件人密码</param>
+            <param name="ccEmail">抄送</param>
+            <param name="subject">标题</param>
+            <param name="body">邮件内容</param>
+            <param name="files">附件</param>
+            <param name="mailResource">邮件内嵌资源</param>
+        </member>
+        <member name="M:XB.Framework.Communication.Mail.MailHandler.MailAddressChecker(System.String)">
+            <summary>
+            验证邮件地址是否正确
+            </summary>
+            <param name="mailAddr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Communication.Mail.MailHandler.ConfirmDirectory(System.String)">
+            <summary>
+            验证服务上存在附件的文件夹位置，如果不存在则创建它
+            </summary>
+            <param name="dPath"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XB.Framework.Communication.Mail.ParseMailConfigFile">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Communication.Mail.ParseMailConfigFile._CfgXmlDoc">
+            <summary>
+            配置文件XML对象
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Communication.Mail.ParseMailConfigFile.ConfigureFile">
+            <summary>
+            在WEB.CONFIG中获取 MailConigFile 结点的内容，它存在了邮件配置文件在服务器上的位置
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Communication.Mail.ParseMailConfigFile.ROOT_TAG">
+            <summary>
+            邮件配置文件中的根结点路径
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Communication.Mail.ParseMailConfigFile.ParseConfigFile">
+            <summary>
+            解决配置文件
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Communication.Mail.ParseMailConfigFile.Get(System.String)">
+            <summary>
+            获取配置信息
+            </summary>
+            <param name="itemName"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

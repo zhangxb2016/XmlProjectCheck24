@@ -1,0 +1,1169 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XB.Framework.DataAccess</name>
+    </assembly>
+    <members>
+        <member name="T:XB.Framework.DataAccess.AutoParameterDbInstance">
+            <summary>
+            功能说明：数据执行对象
+            </summary>
+            <remarks>
+            作    者：张晓斌
+            创建时间：2012年11月23日16:10:16
+            注意事项：
+            </remarks>
+        </member>
+        <member name="T:XB.Framework.DataAccess.DataAccessContext">
+            <summary>
+            功能说明：数据执行对象上下文操作对象
+            </summary>
+            <remarks>
+            作    者：张晓斌
+            创建时间：2012年11月23日16:01:40
+            注意事项：
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DataAccessContext.#ctor(System.String,Microsoft.Practices.EnterpriseLibrary.Data.Database)">
+            <summary>
+            实例化DataAccessContext对象
+            </summary>
+            <param name="databaseName">当前上下文对象所对应的数据库名称</param>
+            <param name="database">当前上下文对象所对应的数据库对象</param>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DataAccessContext.BeginTransaction">
+            <summary>
+            开启当前数据库执行对象的事物，实现Connection和Transaction的传递
+            </summary>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DataAccessContext.CloseConnection">
+            <summary>
+            关闭数据库连接
+            </summary>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DataAccessContext.Commit">
+            <summary>
+            事物提交
+            </summary>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DataAccessContext.Rollback">
+            <summary>
+            事物回滚
+            </summary>
+        </member>
+        <member name="P:XB.Framework.DataAccess.DataAccessContext.Database">
+            <summary>
+            当前执行的数据库对象
+            </summary>
+        </member>
+        <member name="P:XB.Framework.DataAccess.DataAccessContext.Transaction">
+            <summary>
+            当前执行的事物对象
+            </summary>
+        </member>
+        <member name="T:XB.Framework.DataAccess.DbInstance">
+            <summary>
+            功能说明：数据执行对象
+            </summary>
+            <remarks>
+            作    者：张晓斌
+            创建时间：2012年11月23日16:10:16
+            注意事项：增加注释的为已经经过测试和验证过的方法
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbInstance.ExecuteDataSet(System.Data.Common.DbCommand)">
+            <summary>
+            执行DbCommand返回DataSet，如果开启了事物，则会自动加载并执行事物
+            </summary>
+            <param name="command">DbCommand对象</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbInstance.ExecuteDataSet(System.Data.CommandType,System.String)">
+            <summary>
+            执行DbCommand返回DataSet，如果开启了事物，则会自动加载并执行事物
+            </summary>
+            <param name="CommandType">CommandType对象</param>
+            <param name="commandText">SQL语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbInstance.ExecuteDataSet(System.String,System.Object[])">
+            <summary>
+            执行带参数的存储过程，返回DataSet
+            </summary>
+            <param name="storedProcedureName">存储过程名称</param>
+            <param name="parameterValues"></param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbInstance.ExecuteDataSet(System.String)">
+            <summary>
+            执行SQL语句返回DataSet
+            </summary>
+            <param name="sql">SQL语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbInstance.ExecuteDataTable(System.Data.Common.DbCommand)">
+            <summary>
+            执行DbCommand返回DataTable
+            </summary>
+            <param name="command">DbCommand</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbInstance.ExecuteDataTable(System.Data.CommandType,System.String)">
+            <summary>
+            执行DbCommand返回DataTable
+            </summary>
+            <param name="commandType">commandType</param>
+            <param name="commandText">commandText</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbInstance.ExecuteDataTable(System.String,System.Object[])">
+            <summary>
+            执行带参数的存储过程返回DataTable
+            </summary>
+            <param name="storedProcedureName">存储过程名称</param>
+            <param name="parameterValues">存储过程参数键值对</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbInstance.ExecuteDataTable(System.String)">
+            <summary>
+            执行单条SQL语句返回DataTable
+            </summary>
+            <param name="sql"></param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbInstance.ExecuteNonQuery(System.Data.Common.DbCommand)">
+            <summary>
+            执行DbCommand返回执行的行数，如果实现了事物，则会自动加载事物
+            </summary>
+            <param name="command">DbCommand</param>
+            <returns>执行的行数</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbInstance.ExecuteNonQuery(System.Data.CommandType,System.String)">
+            <summary>
+            执行SQL语句，返回执行对象的行数
+            </summary>
+            <param name="commandType">CommandType</param>
+            <param name="commandText">commandText</param>
+            <returns>执行对象的行数</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbInstance.ExecuteNonQueryBySql(System.String)">
+            <summary>
+            执行SQL语句，返回执行对象的行数
+            </summary>
+            <param name="sql">需要执行的SQL语句</param>
+            <returns>执行对象的行数</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbInstance.ExecuteScalar(System.Data.Common.DbCommand)">
+            <summary>
+            执行DbCommand对象返回单一对象
+            </summary>
+            <param name="command">DbCommand对象</param>
+            <returns>查询得到的单一的对象值，查询结果中的第一行第一列中的数据</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbInstance.ExecuteScalar(System.Data.CommandType,System.String)">
+            <summary>
+            执行SQL语句返回执行对象
+            </summary>
+            <param name="commandType">CommandType对象</param>
+            <param name="commandText">commandText</param>
+            <returns>执行结果的第一行第一列的对象</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbInstance.ExecuteScalarBySql(System.String)">
+            <summary>
+            执行SQL语句返回执行对象
+            </summary>
+            <param name="sql">SQL语句</param>
+            <returns>执行结果的第一行第一列的对象</returns>
+        </member>
+        <member name="T:XB.Framework.DataAccess.DbInstanceType">
+            <summary>
+            数据库执行类型
+            </summary>
+        </member>
+        <member name="F:XB.Framework.DataAccess.DbManager._abstractDao">
+            <summary>
+            用户新增、编辑的时候，对Dict的对象解析功能对象
+            </summary>
+        </member>
+        <member name="P:XB.Framework.DataAccess.DbManager.KeySuffix">
+            <summary>
+            缓存的Key
+            </summary>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.BeginTransaction">
+            <summary>
+            开始事务
+            </summary>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.BeginTransaction(System.String)">
+            <summary>
+            开始事务
+            </summary>
+            <param name="databaseName">数据库名称</param>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.CreateDbInstance(XB.Framework.DataAccess.DbInstanceType,Microsoft.Practices.EnterpriseLibrary.Data.Database,System.Data.Common.DbTransaction)">
+            <summary>
+            根据类型和数据库创建事物管理对象
+            </summary>
+            <param name="type"></param>
+            <param name="database"></param>
+            <param name="transaction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.GetAutoParameterDbInstance">
+            <summary>
+            创建数据库事物参数对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.GetAutoParameterDbInstance(System.String)">
+            <summary>
+            创建数据库事物参数对象
+            </summary>
+            <param name="databaseName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.GetDatabase(System.String)">
+            <summary>
+            获取数据库对象
+            </summary>
+            <param name="databaseName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.GetDbInstance">
+            <summary>
+            根据KeySuffix到缓存中获取数据库管理对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.GetDbInstance(System.String)">
+            <summary>
+            根据数据库名称到缓存中获取数据库管理对象
+            </summary>
+            <param name="databaseName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.GetDbInstance(XB.Framework.DataAccess.DbInstanceType,System.String)">
+            <summary>
+            根据KeySuffix到缓存中获取数据库管理对象
+            </summary>
+            <param name="type"></param>
+            <param name="databaseName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.Rollback(System.String)">
+            <summary>
+            事物回滚，并从缓存中删除事物对象
+            </summary>
+            <param name="databaseName"></param>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteDataSetBySql(System.String)">
+            <summary>
+            执行SQL语句返回DataSet操作
+            </summary>
+            <param name="sql">SQL语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteSqlListTran(System.Collections.IList)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">多条SQL语句</param>		
+            <returns>执行的行数</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteSqlListTran(System.Collections.IList,System.Int32)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">多条SQL语句</param>	
+            <param name="commandTimeout">获取或设置在终止执行命令的尝试并生成错误之前的等待时间。返回结果:等待命令执行的时间（以秒为单位）。</param>
+            <returns>执行的行数</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteSqlList(System.Collections.IList)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">多条SQL语句</param>		
+            <returns>执行的行数</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteSqlList(System.Collections.IList,System.Int32)">
+            <summary>
+            执行多条SQL语句，实现数据库事务。
+            </summary>
+            <param name="SQLStringList">多条SQL语句</param>	
+            <param name="commandTimeout">获取或设置在终止执行命令的尝试并生成错误之前的等待时间。返回结果:等待命令执行的时间（以秒为单位）。</param>
+            <returns>执行的行数</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteDataSet(System.String)">
+            <summary>
+            执行SQL语句返回DataSet
+            </summary>
+            <param name="SqlString">查询语句</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteDataSet(System.String,System.Collections.IList)">
+            <summary>
+            执行SQL语句返回DataSet
+            </summary>
+            <param name="SqlString">查询语句</param>
+            <param name="cmdParms"> sql中参数, cmdParms中的每个元素为一个object[2] objs, objs[0]为键, objs[1]为值;</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteDataSet(System.String,System.Collections.IDictionary)">
+            <summary>
+            执行SQL语句返回DataSet
+            </summary>
+            <param name="SqlString">查询语句</param>
+            <param name="dicCondition">查询条件参数，为集合类型，其中Key必须为数据库字段名称</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteDataTable(System.String)">
+            <summary>
+            执行SQL语句返回DataSet操作
+            </summary>
+            <param name="SqlString">SQL语句</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteDataTable(System.String,System.Collections.IList)">
+            <summary>
+            执行SQL语句返回DataTable
+            </summary>
+            <param name="SqlString">查询语句</param>
+            <param name="cmdParms"> sql中参数, cmdParms中的每个元素为一个object[2] objs, objs[0]为键, objs[1]为值;</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteDataTable(System.String,System.Collections.IDictionary)">
+            <summary>
+            执行SQL语句返回DataSet
+            </summary>
+            <param name="SqlString">查询语句</param>
+            <param name="dicCondition">查询条件参数，为集合类型，其中Key必须为数据库字段名称</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.BuildIListDBParameter(Microsoft.Practices.EnterpriseLibrary.Data.Database,System.Data.Common.DbCommand,System.Collections.IList)">
+            <summary>
+            赋值IList对象到DbCommand中
+            </summary>
+            <param name="db">需要赋值操作的database对象</param>
+            <param name="dbCommand">DbCommand</param>
+            <param name="cmdParms">需要赋值的键值对对象，成员为objct数组对象，object[0]为键   object[1]为值</param>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.BuildIListDBParameter(Microsoft.Practices.EnterpriseLibrary.Data.Database,System.Data.Common.DbCommand,System.Collections.IList,System.Collections.IList)">
+            <summary>
+            赋值IList对象到DbCommand中
+            </summary>
+            <param name="db">需要赋值操作的database对象</param>
+            <param name="dbCommand">DbCommand</param>
+            <param name="cmdParms">需要赋值的键值对对象，成员为objct数组对象，object[0]为键   object[1]为值</param>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.BuildIDictionaryDBParameter``1(Microsoft.Practices.EnterpriseLibrary.Data.Database,System.Data.Common.DbCommand,``0)">
+            <summary>
+            通过反射技术，将实体对象中的数据参数赋值给DbCommand对象，如果有以下情况，则忽略赋值：
+            1.属性的对象值为null
+            2.类型为DateTime类型的属性，如果为0001-01-01
+            
+            张晓斌 2014年6月28日16:44:31
+            </summary>
+            <param name="db">需要赋值操作的database对象</param>
+            <param name="dbCommand">DbCommand</param>
+            <param name="entity">需要新增的对象，如果属性存在以下现象，则忽略：1.属性的对象值为null； 2.类型为DateTime类型的属性，如果为0001-01-01</param>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.BuildIDictionaryDBParameter(Microsoft.Practices.EnterpriseLibrary.Data.Database,System.Data.Common.DbCommand,System.Collections.IDictionary)">
+            <summary>
+            赋值IDictionary对象到DbCommand中
+            </summary>
+            <param name="db">需要赋值操作的database对象</param>
+            <param name="dbCommand">DbCommand</param>
+            <param name="dic">需要赋值的键值对对象，为IDictionary类型</param>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.BuildIDictionaryDBParameter(Microsoft.Practices.EnterpriseLibrary.Data.Database,System.Data.Common.DbCommand,System.Collections.IDictionary,System.Collections.IDictionary)">
+            <summary>
+            赋值IDictionary对象到DbCommand中
+            </summary>
+            <param name="db">需要赋值操作的database对象</param>
+            <param name="dbCommand">DbCommand</param>
+            <param name="dic">需要赋值的键值对对象，为IDictionary类型</param>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteScalar(System.String)">
+            <summary>
+            执行SQL语句返回单一对象
+            </summary>
+            <param name="SqlString">查询的SQL语句</param>
+            <returns>查询得到的单一的对象值，查询结果中的第一行第一列中的数据</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteScalar(System.String,System.Collections.IList)">
+            <summary>
+            执行SQL语句返回单一对象
+            </summary>
+            <param name="SqlString">查询的SQL语句</param>
+            <param name="cmdParms">需要赋值的IList对象，cmdParms中的每个元素为一个object[2] objs, objs[0]为键, objs[1]为值</param>
+            <returns>查询得到的单一的对象值，查询结果中的第一行第一列中的数据</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteScalar(System.String,System.Collections.IDictionary)">
+            <summary>
+            执行SQL语句返回单一对象
+            </summary>
+            <param name="SqlString">查询的SQL语句</param>
+            <param name="dicCondition">查询条件参数，为集合类型，其中Key必须为数据库字段名称</param>
+            <returns>查询得到的单一的对象值，查询结果中的第一行第一列中的数据</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteProcedureNonQuery(System.String,System.Collections.IDictionary,System.Int32)">
+            <summary>
+            执行存储过程返回执行结果
+            </summary>
+            <param name="storedProcedureName">存储过程名称</param>
+            <param name="dicCondition">查询条件参数，为集合类型，其中Key必须为数据库字段名称</param>
+            <param name="commandTimeout">获取或设置在终止执行命令的尝试并生成错误之前的等待时间。返回结果:等待命令执行的时间（以秒为单位）。</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteProcedureNonQuery(System.String,System.Collections.IDictionary)">
+            <summary>
+            执行存储过程返回执行结果
+            </summary>
+            <param name="storedProcedureName">存储过程名称</param>
+            <param name="dicCondition">查询条件参数，为集合类型，其中Key必须为数据库字段名称</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteProcedureNonQuery(System.String,System.Collections.IList,System.Int32)">
+            <summary>
+            执行存储过程返回执行结果
+            </summary>
+            <param name="storedProcedureName">存储过程名称</param>
+            <param name="cmdParms">需要赋值的IList对象，cmdParms中的每个元素为一个object[2] objs, objs[0]为键, objs[1]为值</param>
+            <param name="commandTimeout">获取或设置在终止执行命令的尝试并生成错误之前的等待时间。返回结果:等待命令执行的时间（以秒为单位）。</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteProcedureNonQuery(System.String,System.Collections.IList)">
+            <summary>
+            执行存储过程返回执行结果
+            </summary>
+            <param name="storedProcedureName">存储过程名称</param>
+            <param name="cmdParms">需要赋值的IList对象，cmdParms中的每个元素为一个object[2] objs, objs[0]为键, objs[1]为值</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteProcedureNonQuery(System.String,System.Collections.IDictionary,System.Collections.IDictionary)">
+            <summary>
+            执行存储过程返回执行结果(带Out参数的)
+            </summary>
+            <param name="storedProcedureName">存储过程名称</param>
+            <param name="dicInCondition">查询条件参数，为集合类型，其中Key必须为数据库字段名称</param>
+            <param name="dicOutCondition">输出参数，为集合类型</param>
+            <returns>查询得到的输出参数</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteProcedureNonQuery(System.String,System.Collections.IDictionary,System.Collections.IDictionary,System.Int32)">
+            <summary>
+            执行存储过程返回执行结果(带Out参数的)
+            </summary>
+            <param name="storedProcedureName">存储过程名称</param>
+            <param name="dicInCondition">查询条件参数，为集合类型，其中Key必须为数据库字段名称</param>
+            <param name="dicOutCondition">输出参数，为集合类型</param>
+            <param name="commandTimeout">获取或设置在终止执行命令的尝试并生成错误之前的等待时间。返回结果:等待命令执行的时间（以秒为单位）。</param>
+            <returns>查询得到的输出参数</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteProcedureNonQuery(System.String,System.Collections.IList,System.Collections.IList)">
+            <summary>
+            执行存储过程返回执行结果(带Out参数的)
+            </summary>
+            <param name="storedProcedureName">存储过程名称</param>
+            <param name="cmdInParms">需要赋值的IList对象，cmdParms中的每个元素为一个object[2] objs, objs[0]为键, objs[1]为值</param>
+            <param name="cmdOutParms">输出参数，cmdOutParms中的每个元素为一个object[2] objs, objs[0]为键, objs[1]为值</param>
+            <returns>查询得到的输出参数</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteProcedureNonQuery(System.String,System.Collections.IList,System.Collections.IList,System.Int32)">
+            <summary>
+            执行存储过程返回执行结果(带Out参数的)
+            </summary>
+            <param name="storedProcedureName">存储过程名称</param>
+            <param name="cmdInParms">需要赋值的IList对象，cmdInParms中的每个元素为一个object[2] objs, objs[0]为键, objs[1]为值</param>
+            <param name="cmdOutParms">输出参数，cmdOutParms中的每个元素为一个object[2] objs, objs[0]为键, objs[1]为值</param>
+            <param name="commandTimeout">获取或设置在终止执行命令的尝试并生成错误之前的等待时间。返回结果:等待命令执行的时间（以秒为单位）。</param>
+            <returns>查询得到的输出参数</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteProcedureDataSet(System.String,System.Collections.IDictionary,System.Int32)">
+            <summary>
+            执行存储过程返回执行DataSet
+            </summary>
+            <param name="storedProcedureName">存储过程名称</param>
+            <param name="dicCondition">查询条件参数，为集合类型，其中Key必须为数据库字段名称</param>
+            <param name="commandTimeout">获取或设置在终止执行命令的尝试并生成错误之前的等待时间。返回结果:等待命令执行的时间（以秒为单位）。</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteProcedureDataSet(System.String)">
+            <summary>
+            执行存储过程返回执行DataSet,默认为30秒
+            </summary>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteProcedureDataSet(System.String,System.Collections.IDictionary)">
+            <summary>
+            执行存储过程返回执行DataSet
+            </summary>
+            <param name="storedProcedureName">存储过程名称</param>
+            <param name="dicCondition">查询条件参数，为集合类型，其中Key必须为数据库字段名称</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteProcedureDataSet(System.String,System.Collections.IList)">
+            <summary>
+            执行存储过程返回执行DataSet
+            </summary>
+            <param name="storedProcedureName">存储过程名称</param>
+            <param name="cmdParms">需要赋值的IList对象，cmdParms中的每个元素为一个object[2] objs, objs[0]为键, objs[1]为值</param>
+            <returns>DataSet</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteNonQuery(System.String)">
+            <summary>
+            执行SQL语句返回单一对象,返回执行的行数
+            </summary>
+            <param name="SqlString">查询的SQL语句</param>
+            <returns>查询得到的单一的对象值，查询结果中的第一行第一列中的数据</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteNonQuery(System.String,System.Collections.IList)">
+            <summary>
+            执行SQL语句返回单一对象,返回执行的行数
+            </summary>
+            <param name="SqlString">查询的SQL语句</param>
+            <param name="cmdParms">需要赋值的键值对对象，成员为objct数组对象，object[0]为键   object[1]为值</param>
+            <returns>查询得到的单一的对象值，查询结果中的第一行第一列中的数据</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteNonQuery(System.String,System.Collections.IDictionary)">
+            <summary>
+            执行SQL语句返回单一对象,返回执行的行数
+            </summary>
+            <param name="SqlString">查询的SQL语句</param>
+            <param name="dicCondition">查询条件参数，为集合类型，其中Key必须为数据库字段名称</param>
+            <returns>查询得到的单一的对象值，查询结果中的第一行第一列中的数据</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.Update(System.String)">
+            <summary>
+            执行修改操作,并且实现事物
+            </summary>
+            <param name="strSql">Update Tab Set Name = @Name Where ID= @ID格式的SQL语句</param>
+            <returns>True：修改成功 false:修改失败</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.Update(System.String,System.Collections.IList)">
+            <summary>
+            执行修改操作,并且实现事物
+            </summary>
+            <param name="strSql">Update Tab Set Name = @Name Where ID= @ID格式的SQL语句</param>
+            <param name="cmdParms">SqlParameter的List对象,参数格式为object[2] objs, objs[0]为键, objs[1]为值;</param>
+            <returns>True：修改成功 false:修改失败</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.Update(System.String,System.Collections.IDictionary,System.String)">
+            <summary>
+            更新方法
+            </summary>
+            <param name="tableName">表名</param>
+            <param name="dic">需要更新数据的键值对,Key为数据库字段名称，value为值</param>
+            <param name="whereClause">更新数据的WHERE条件</param>
+            <param name="cmdParms">SqlParameter的List对象,参数格式为object[2] objs, objs[0]为键, objs[1]为值;</param>
+            <returns>True：修改成功 false:修改失败</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.Update(System.String,System.Collections.IDictionary,System.String,System.Collections.IList)">
+            <summary>
+            更新方法
+            </summary>
+            <param name="tableName">表名</param>
+            <param name="dic">需要更新数据的键值对，key为数据库字段名称，value为值</param>
+            <param name="whereClause">更新数据的WHERE条件</param>
+            <param name="cmdParms">SqlParameter的List对象,参数格式为object[2] objs, objs[0]为键, objs[1]为值;</param>
+            <returns>True：修改成功 false:修改失败</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.UpdateEntity``1(System.String,``0,System.String)">
+            <summary>
+            更新方法
+            </summary>
+            <param name="tableName">表名</param>
+            <param name="entity">
+            需要更新的实体对象，如果属性存在以下现象，则忽略：
+                1.属性的对象值为null； 
+                2.类型为DateTime类型的属性，如果为0001-01-01
+            对象属性设置说明：
+                1.如果属性的Description信息中，sync为0的话，忽略存储，否则直接存储
+                2.属性的Description信息采用josn的格式进行数据存储，分别包含field[对应的数据库字段名称];sync[是否需要同步到数据库 0：忽略同步 1需要同步]  
+                    说明：可以直接写字段名称，但是不能包含join的三个明显标记[{  :  }]
+                3.如果属性是DateTime类型并且值为0001-01-01,直接忽略
+                4.如果属性是其它类型，并且值为null，则直接忽略。
+                5.没有Description描述的属性，对应的数据库字段则为当前属性名称 
+            </param>
+            <param name="whereClause">更新数据的WHERE条件</param>
+            <returns>True：修改成功 false:修改失败</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.UpdateEntity``1(System.String,``0,System.String,System.Collections.IList)">
+            <summary>
+            更新方法
+            </summary>
+            <param name="tableName">表名</param>
+            <param name="entity">
+            需要更新的实体对象，如果属性存在以下现象，则忽略：
+                1.属性的对象值为null； 
+                2.类型为DateTime类型的属性，如果为0001-01-01
+            对象属性设置说明：
+                1.如果属性的Description信息中，sync为0的话，忽略存储，否则直接存储
+                2.属性的Description信息采用josn的格式进行数据存储，分别包含field[对应的数据库字段名称];sync[是否需要同步到数据库 0：忽略同步 1需要同步]  
+                    说明：可以直接写字段名称，但是不能包含join的三个明显标记[{  :  }]
+                3.如果属性是DateTime类型并且值为0001-01-01,直接忽略
+                4.如果属性是其它类型，并且值为null，则直接忽略。
+                5.没有Description描述的属性，对应的数据库字段则为当前属性名称 
+            </param>
+            <param name="whereClause">更新数据的WHERE条件</param>
+            <param name="cmdParms">SqlParameter的List对象,参数格式为object[2] objs, objs[0]为键, objs[1]为值;</param>
+            <returns>True：修改成功 false:修改失败</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.UpdateEntity``1(System.String,``0,System.String,System.Collections.IList,System.String@)">
+            <summary>
+            更新方法
+            </summary>
+            <param name="tableName">表名</param>
+            <param name="entity">
+            需要更新的实体对象，如果属性存在以下现象，则忽略：
+                1.属性的对象值为null； 
+                2.类型为DateTime类型的属性，如果为0001-01-01
+            对象属性设置说明：
+                1.如果属性的Description信息中，sync为0的话，忽略存储，否则直接存储
+                2.属性的Description信息采用josn的格式进行数据存储，分别包含field[对应的数据库字段名称];sync[是否需要同步到数据库 0：忽略同步 1需要同步]  
+                    说明：可以直接写字段名称，但是不能包含join的三个明显标记[{  :  }]
+                3.如果属性是DateTime类型并且值为0001-01-01,直接忽略
+                4.如果属性是其它类型，并且值为null，则直接忽略。
+                5.没有Description描述的属性，对应的数据库字段则为当前属性名称 
+            </param>
+            <param name="whereClause">更新数据的WHERE条件</param>
+            <param name="cmdParms">SqlParameter的List对象,参数格式为object[2] objs, objs[0]为键, objs[1]为值;</param>
+            <param name="ExecSqlScript">解析后执行的数据库sql脚本</param>
+            <returns>True：修改成功 false:修改失败</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteSyncIList``1(System.String,System.Collections.IList)">
+            <summary>
+            实现IList实体对象集合的同步业务操作（直接新增）
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="tableName">操作的数据表</param>
+            <param name="iListEntity">IList接口的实体对象集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteSyncIList``1(System.String,System.Collections.IList,System.String)">
+            <summary>
+            实现IList实体对象集合的同步业务操作(先删后加)，如果需要在增加之前清理历史数据的，请增加清理历史数据的参数即可。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="tableName">操作的数据表</param>
+            <param name="iListEntity">IList接口的实体对象集合</param>
+            <param name="whereCondition">增加之前清理历史数据的删除参数，不带Where</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteSyncIList``1(System.String,System.Collections.IList,System.String,System.Collections.IDictionary)">
+            <summary>
+            实现IList实体对象集合的同步业务操作(先删后加)，如果需要在增加之前清理历史数据的，请增加清理历史数据的参数即可。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="tableName">操作的数据表</param>
+            <param name="iListEntity">IList接口的实体对象集合</param>
+            <param name="whereCondition">增加之前清理历史数据的删除参数，不带Where</param>
+            <param name="dicConditionParam">删除参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteSyncIList``1(System.String,System.Collections.IList,System.String,System.Collections.IDictionary,System.String@)">
+            <summary>
+            实现IList实体对象集合的同步业务操作(先删后加)，如果需要在增加之前清理历史数据的，请增加清理历史数据的参数即可。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="tableName">操作的数据表</param>
+            <param name="iListEntity">IList接口的实体对象集合</param>
+            <param name="whereCondition">增加之前清理历史数据的删除参数，不带Where</param>
+            <param name="dicConditionParam">删除参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.Add(System.String,System.Collections.IDictionary)">
+            <summary>
+            新增并保存
+            </summary>
+            <param name="tableName">需要新增的表格名称</param>
+            <param name="dic">需要更新数据的键值对，key为数据库字段名称，value为值</param>
+            <returns>True：修改成功 false:修改失败</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.AddEntity``1(System.String,``0)">
+             <summary>
+             实体对象新增并保存
+             </summary>
+             <param name="tableName">需要新增的表格名称</param>
+            <param name="entity">
+             需要新增的实体对象，如果属性存在以下现象，则忽略：
+                 1.属性的对象值为null； 
+                 2.类型为DateTime类型的属性，如果为0001-01-01
+             对象属性设置说明：
+                 1.如果属性的Description信息中，sync为0的话，忽略存储，否则直接存储
+                 2.属性的Description信息采用josn的格式进行数据存储，分别包含field[对应的数据库字段名称];sync[是否需要同步到数据库 0：忽略同步 1需要同步]  
+                     说明：可以直接写字段名称，但是不能包含join的三个明显标记[{  :  }]
+                 3.如果属性是DateTime类型并且值为0001-01-01,直接忽略
+                 4.如果属性是其它类型，并且值为null，则直接忽略。
+                 5.没有Description描述的属性，对应的数据库字段则为当前属性名称
+             </param>
+             <returns>True：修改成功 false:修改失败</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.AddEntity``1(System.String,``0,System.String@)">
+             <summary>
+             实体对象新增并保存
+             </summary>
+             <param name="tableName">需要新增的表格名称</param>
+            <param name="entity">
+             需要新增的实体对象，如果属性存在以下现象，则忽略：
+                 1.属性的对象值为null； 
+                 2.类型为DateTime类型的属性，如果为0001-01-01
+             对象属性设置说明：
+                 1.如果属性的Description信息中，sync为0的话，忽略存储，否则直接存储
+                 2.属性的Description信息采用josn的格式进行数据存储，分别包含field[对应的数据库字段名称];sync[是否需要同步到数据库 0：忽略同步 1需要同步]  
+                     说明：可以直接写字段名称，但是不能包含join的三个明显标记[{  :  }]
+                 3.如果属性是DateTime类型并且值为0001-01-01,直接忽略
+                 4.如果属性是其它类型，并且值为null，则直接忽略。
+                 5.没有Description描述的属性，对应的数据库字段则为当前属性名称
+             </param>
+             <param name="ExecSqlScript">解析后执行的数据库sql脚本</param>
+             <returns>True：修改成功 false:修改失败</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.Delete(System.String,System.String)">
+            <summary>
+            删除,并且实现事物
+            </summary>
+            <param name="tableName">需要删除的表格名称</param>
+            <param name="whereClause">删除的条件，不带Where</param>
+            <returns>True：修改成功 false:修改失败</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.Delete(System.String,System.Collections.IDictionary)">
+            <summary>
+            删除,并且实现事物
+            </summary>
+            <param name="tableName">需要删除的表格名称</param>
+            <param name="dicCondition">查询条件参数，为集合类型，其中Key必须为数据库字段名称</param>
+            <returns>True：修改成功 false:修改失败</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.Delete(System.String,System.Collections.IDictionary,System.String)">
+            <summary>
+            删除,并且实现事物
+            </summary>
+            <param name="tableName">需要删除的表格名称</param>
+            <param name="dicCondition">查询条件参数，为集合类型，其中Key必须为数据库字段名称</param>
+            <param name="whereClause">删除的条件，不带Where</param>
+            <param name="ExecSqlScript">最终执行的SQL脚本</param>
+            <returns>True：修改成功 false:修改失败</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.Delete(System.String,System.Collections.IDictionary,System.String,System.String@)">
+            <summary>
+            删除,并且实现事物
+            </summary>
+            <param name="tableName">需要删除的表格名称</param>
+            <param name="dicCondition">查询条件参数，为集合类型，其中Key必须为数据库字段名称</param>
+            <param name="whereClause">删除的条件，不带Where</param>
+            <param name="ExecSqlScript">最终执行的SQL脚本</param>
+            <returns>True：修改成功 false:修改失败</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.Delete(System.String,System.Collections.IList)">
+            <summary>
+            删除,并且实现事物
+            </summary>
+            <param name="tableName">需要删除的表格名称</param>
+            <param name="cmdParms"> sql中参数, cmdParms中的每个元素为一个object[2] objs, objs[0]为键, objs[1]为值;</param>
+            <returns>True：修改成功 false:修改失败</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.Delete(System.String,System.Collections.IList,System.String)">
+            <summary>
+            删除,并且实现事物
+            </summary>
+            <param name="tableName">需要删除的表格名称</param>
+            <param name="cmdParms"> sql中参数, cmdParms中的每个元素为一个object[2] objs, objs[0]为键, objs[1]为值;</param>
+            <param name="whereClause">删除的条件，不带Where</param>
+            <param name="ExecSqlScript">最终执行的SQL脚本</param>
+            <returns>True：修改成功 false:修改失败</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.Delete(System.String,System.Collections.IList,System.String,System.String@)">
+            <summary>
+            删除,并且实现事物
+            </summary>
+            <param name="tableName">需要删除的表格名称</param>
+            <param name="cmdParms"> sql中参数, cmdParms中的每个元素为一个object[2] objs, objs[0]为键, objs[1]为值;</param>
+            <param name="whereClause">删除的条件，不带Where</param>
+            <param name="ExecSqlScript">最终执行的SQL脚本</param>
+            <returns>True：修改成功 false:修改失败</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.Exists(System.String)">
+            <summary>
+            检测数据是否存在
+            </summary>
+            <param name="strSql">Select count(1) From TableName Where 1=1 </param>
+            <returns>True:数据存在   False:数据不存在</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.Exists(System.String,System.Collections.IList)">
+            <summary>
+            检测数据是否存在
+            </summary>
+            <param name="strSql">Select count(1) From TableName Where 1=1 </param>
+            <param name="pars">SqlParameter的List对象</param>
+            <returns>True:数据存在   False:数据不存在</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.Exists(System.String,System.Collections.IDictionary)">
+            <summary>
+            检测数据是否存在
+            </summary>
+            <param name="strSql">Select count(1) From TableName Where 1=1 </param>
+            <param name="dicCondition">查询条件参数，为集合类型，其中Key必须为数据库字段名称</param>
+            <returns>True:数据存在   False:数据不存在</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:XB.Framework.DataAccess.DbManager.GetMappingExecuteSql(Microsoft.Practices.EnterpriseLibrary.Data.Database,System.String)" -->
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteSqlReturnList``1(System.String,System.Collections.IList,Microsoft.Practices.EnterpriseLibrary.Data.IRowMapper{``0})">
+            <summary>
+            执行SQL语句查询数据库直接返回实体对象的IList集合
+            </summary>
+            <typeparam name="TResult">返回的IList的成员类对象</typeparam>
+            <param name="sqlString">Sql语句</param>
+            <param name="dicParms">IList格式的查询参数</param>
+            <param name="resultSetMapper">查询结果转换为IList类对象集合的行映射关系对象IRowMapper</param>
+            <returns>IList格式的类对象集合</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteSqlReturnList``1(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},Microsoft.Practices.EnterpriseLibrary.Data.IRowMapper{``0})">
+            <summary>
+            执行SQL语句查询数据库直接返回实体对象的IList集合
+            </summary>
+            <typeparam name="TResult">返回的IList的成员类对象</typeparam>
+            <param name="sqlString">Sql语句</param>
+            <param name="dicParms">Dictionary格式的查询参数</param>
+            <param name="resultSetMapper">查询结果转换为IList类对象集合的行映射关系对象IRowMapper</param>
+            <returns>IList格式的类对象集合</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteSqlReturnList``1(System.String,Microsoft.Practices.EnterpriseLibrary.Data.IRowMapper{``0})">
+            <summary>
+            执行SQL语句查询数据库直接返回实体对象的IList集合
+            </summary>
+            <typeparam name="TResult">返回的IList的成员类对象</typeparam>
+            <param name="sqlString">Sql语句</param>
+            <param name="resultSetMapper">查询结果转换为IList类对象集合的行映射关系对象IRowMapper</param>
+            <returns>IList格式的类对象集合</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteProcReturnList``1(System.String,System.Collections.IList,Microsoft.Practices.EnterpriseLibrary.Data.IRowMapper{``0})">
+            <summary>
+            执行存储过程查询数据库直接返回实体对象的IList集合
+            </summary>
+            <typeparam name="TResult">返回的IList的成员类对象</typeparam>
+            <param name="sqlString">Sql语句</param>
+            <param name="dicParms">IList格式的查询参数</param>
+            <param name="resultSetMapper">查询结果转换为IList类对象集合的行映射关系对象IRowMapper</param>
+            <returns>IList格式的类对象集合</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteProcReturnList``1(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},Microsoft.Practices.EnterpriseLibrary.Data.IRowMapper{``0})">
+            <summary>
+            执行存储过程查询数据库直接返回实体对象的IList集合
+            </summary>
+            <typeparam name="TResult">返回的IList的成员类对象</typeparam>
+            <param name="sqlString">Sql语句</param>
+            <param name="dicParms">Dictionary格式的查询参数</param>
+            <param name="resultSetMapper">查询结果转换为IList类对象集合的行映射关系对象IRowMapper</param>
+            <returns>IList格式的类对象集合</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.ExecuteProcReturnList``1(System.String,Microsoft.Practices.EnterpriseLibrary.Data.IRowMapper{``0})">
+            <summary>
+            执行存储过程查询数据库直接返回实体对象的IList集合
+            </summary>
+            <typeparam name="TResult">返回的IList的成员类对象</typeparam>
+            <param name="sqlString">Sql语句</param>
+            <param name="resultSetMapper">查询结果转换为IList类对象集合的行映射关系对象IRowMapper</param>
+            <returns>IList格式的类对象集合</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.DbManager.GetExecuteSqlScript(System.String,System.Collections.IList)">
+            <summary>
+            在采用Parameter传递参数的情况下，根据传递的参数，获取执行的SQL脚本
+            </summary>
+            <param name="sqlScript">采用参数传递的脚本 例如：select * from user whre username = @username</param>
+            <param name="cmdList">采用数组传递的参数 例如：cmdParms中的每个元素为一个object[2] objs, objs[0]为键, objs[1]为值;</param>
+            <returns>用于执行的Sql脚本</returns>
+        </member>
+        <member name="T:XB.Framework.DataAccess.Engine.AbstractDao">
+            <summary>
+            功能说明：主要根据传递的IDictionary或者IList对象，实现新增、编辑、删除、查询的SQL语句的构建以及SqlParameter参数的装换和赋值
+            </summary>
+            <remarks>作    者：zhangxiaobin
+            创建时间：2012-11-23 15:46:58
+            备注信息：
+            注意事项：
+            修改信息：</remarks>
+        </member>
+        <member name="M:XB.Framework.DataAccess.Engine.AbstractDao.GetQuerySql(System.String,System.Collections.IList,System.String)">
+            <summary>
+            构造查询的sql语句
+            </summary>
+            <param name="tableName">表名</param>
+            <param name="values">需要查询的字符串</param>
+            <param name="AppendCondition">where条件</param>
+            <returns>构造后的查询SQL语句，System.String.类型</returns>
+            <exception cref="T:System.Exception">请指定列查询,因为javascript对列名大小写敏感！</exception>
+        </member>
+        <member name="M:XB.Framework.DataAccess.Engine.AbstractDao.GetAddSql(System.String,System.Collections.IDictionary)">
+            <summary>
+            构造添加的SQL语句
+            </summary>
+            <param name="tableName">Name of the table.</param>
+            <param name="dicParms">The dictionary parms.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.Engine.AbstractDao.GetAddSql``1(System.String,``0,System.String@)">
+            <summary>
+            根据实体类获取新增的SQL语句，如果包含以下条件，则自动忽略字段存储：
+            1.属性值为null
+            2.DateTime属性值为0001-01-01
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="tableName">Name of the table.</param>
+            <param name="entity">实例化后的属性对象</param>
+            <param name="ExecSqlScript">解析后执行的sql语句</param>
+            <returns>新增的SQL 语句</returns>
+            <exception cref="T:System.Exception">请实例化需要新增的对象，并且给对象属性赋值！</exception>
+        </member>
+        <member name="M:XB.Framework.DataAccess.Engine.AbstractDao.GetUpdateSql(System.String,System.Collections.IDictionary,System.String)">
+            <summary>
+            构造更新的SQL语句
+            </summary>
+            <param name="tableName">表名</param>
+            <param name="dicParms">The dictionary parms.</param>
+            <param name="AppendCondition">where条件</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.Engine.AbstractDao.GetUpdateSql``1(System.String,``0,System.String,System.String@)">
+            <summary>
+            构造更新的SQL语句
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="tableName">表名</param>
+            <param name="entity">The entity.</param>
+            <param name="AppendCondition">where条件</param>
+            <param name="ExecSqlScript">解析后执行的数据库sql脚本</param>
+            <returns>System.String.</returns>
+            <exception cref="T:System.Exception">
+            请实例化需要新增的对象，并且给对象属性赋值！
+            or
+            Update的条件不能为空！
+            </exception>
+        </member>
+        <member name="M:XB.Framework.DataAccess.Engine.AbstractDao.GetDeleteSql(System.String)">
+            <summary>
+            构造删除的SQL语句
+            </summary>
+            <param name="tabelName">表名</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.Engine.AbstractDao.GetDeleteSql(System.String,System.String)">
+            <summary>
+            构造删除的SQL语句
+            </summary>
+            <param name="tabelName">表名</param>
+            <param name="AppendCondition">where条件</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.Engine.AbstractDao.GetDeleteSql(System.String,System.Collections.IDictionary,System.String)">
+            <summary>
+            构造删除的SQL语句
+            </summary>
+            <param name="tableName">Name of the table.</param>
+            <param name="values">The values.</param>
+            <param name="AppendCondition">where条件</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.Engine.AbstractDao.GetDeleteSql(System.String,System.Collections.IDictionary,System.String,System.String@)">
+            <summary>
+            构造删除的SQL语句
+            </summary>
+            <param name="tableName">Name of the table.</param>
+            <param name="values">The values.</param>
+            <param name="AppendCondition">where条件</param>
+            <param name="ExecSqlScript">执行的SQL脚本，为传出参数</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.Engine.AbstractDao.GetDeleteSql(System.String,System.Collections.IList,System.String,System.String@)">
+            <summary>
+            构造删除的SQL语句
+            </summary>
+            <param name="tableName">Name of the table.</param>
+            <param name="values">The values.</param>
+            <param name="AppendCondition">where条件</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.Engine.AbstractDao.GetDeleteSql``1(System.String,``0)">
+            <summary>
+            构造删除的SQL语句
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="tableName"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.Engine.AbstractDao.GetWhereSql(System.String)">
+            <summary>
+            通用的获取WHERE条件
+            </summary>
+            <param name="AppendCondition">where条件</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.Engine.AbstractDao.GetDbType(System.Object)">
+            <summary>
+            根据传递的对象，返回相对应的DbType
+            </summary>
+            <param name="obj">需要返回DbType的对象</param>
+            <returns>DbType</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.Engine.AbstractDao.GetExecValue(System.Object)">
+            <summary>
+            根据传递的对象，获取数据库执行的脚本
+            </summary>
+            <param name="obj">需要返回执行脚本的对象</param>
+            <returns>DbType</returns>
+        </member>
+        <member name="T:XB.Framework.DataAccess.ParameterMapper.GetDictionaryParameterMapper">
+            <summary>
+            Class GetDictionaryParameterMapper.
+            </summary>
+        </member>
+        <member name="F:XB.Framework.DataAccess.ParameterMapper.GetDictionaryParameterMapper.db">
+            <summary>
+            The database
+            </summary>
+        </member>
+        <member name="M:XB.Framework.DataAccess.ParameterMapper.GetDictionaryParameterMapper.#ctor(Microsoft.Practices.EnterpriseLibrary.Data.Database)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XB.Framework.DataAccess.ParameterMapper.GetDictionaryParameterMapper"/> class.
+            </summary>
+            <param name="db">The database.</param>
+        </member>
+        <member name="M:XB.Framework.DataAccess.ParameterMapper.GetDictionaryParameterMapper.AssignParameters(System.Data.Common.DbCommand,System.Object[])">
+            <summary>
+            增加参数到DbCommand
+            </summary>
+            <param name="command">The command.</param>
+            <param name="parameterValues">The parameter values.</param>
+        </member>
+        <member name="T:XB.Framework.DataAccess.ParameterMapper.GetIListParameterMapper">
+            <summary>
+            Class GetIListParameterMapper.
+            </summary>
+        </member>
+        <member name="F:XB.Framework.DataAccess.ParameterMapper.GetIListParameterMapper.db">
+            <summary>
+            The database
+            </summary>
+        </member>
+        <member name="M:XB.Framework.DataAccess.ParameterMapper.GetIListParameterMapper.#ctor(Microsoft.Practices.EnterpriseLibrary.Data.Database)">
+            <summary>
+            Initializes a new instance of the <see cref="T:XB.Framework.DataAccess.ParameterMapper.GetIListParameterMapper"/> class.
+            </summary>
+            <param name="db">The database.</param>
+        </member>
+        <member name="M:XB.Framework.DataAccess.ParameterMapper.GetIListParameterMapper.AssignParameters(System.Data.Common.DbCommand,System.Object[])">
+            <summary>
+            增加参数到DbCommand对象
+            </summary>
+            <param name="command">The command.</param>
+            <param name="parameterValues">The parameter values.</param>
+        </member>
+        <member name="T:XB.Framework.DataAccess.SqlMapper">
+            <summary>
+            功能说明：根据xml配置文件中的映射关系，获取相对应的执行命令
+            </summary>
+            <remarks>
+            注意事项：目前XML配置文件暂时不在</remarks>
+        </member>
+        <member name="F:XB.Framework.DataAccess.SqlMapper._SqlMapperFile">
+            <summary>
+            The _ SQL mapper file
+            </summary>
+        </member>
+        <member name="F:XB.Framework.DataAccess.SqlMapper._SqlMapperFileBaseDir">
+            <summary>
+            The _ SQL mapper file base dir
+            </summary>
+        </member>
+        <member name="M:XB.Framework.DataAccess.SqlMapper.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:XB.Framework.DataAccess.SqlMapper"/> class.
+            </summary>
+        </member>
+        <member name="M:XB.Framework.DataAccess.SqlMapper.CreateSqlLookup">
+            <summary>
+            Creates the SQL lookup.
+            </summary>
+            <returns>Hashtable.</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.SqlMapper.GetSql(System.String)">
+            <summary>
+            Gets the SQL.
+            </summary>
+            <param name="key">The key.</param>
+            <returns>System.String.</returns>
+            <exception cref="T:System.ArgumentException">key</exception>
+        </member>
+        <member name="M:XB.Framework.DataAccess.SqlMapper.GetSqlLookup">
+            <summary>
+            Gets the SQL lookup.
+            </summary>
+            <returns>Hashtable.</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.SqlMapper.GetSqlMapFileAbsolutePath(System.String,System.String)">
+            <summary>
+            Gets the SQL map file absolute path.
+            </summary>
+            <param name="sqlMapFile">The SQL map file.</param>
+            <param name="baseDir">The base dir.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.SqlMapper.ParseSqlMapFile(System.Collections.Hashtable,System.String)">
+            <summary>
+            Parses the SQL map file.
+            </summary>
+            <param name="sqlMapTable">The SQL map table.</param>
+            <param name="sqlMapFile">The SQL map file.</param>
+        </member>
+        <member name="T:XB.Framework.DataAccess.TranServiceBase">
+            <summary>
+            功能说明：在BL层实现对数据库事物对象的管理，如果需要实现数据库事物，BL层必须继承此对象
+            </summary>
+            <remarks>
+            作    者：张晓斌
+            创建时间：2012年11月19日16:20:07
+            注意事项：
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.DataAccess.TranServiceBase.BeginTransaction">
+            <summary>
+            开启事物
+            </summary>
+        </member>
+        <member name="M:XB.Framework.DataAccess.TranServiceBase.BeginTransaction(System.String)">
+            <summary>
+            开启事物
+            </summary>
+            <param name="databaseName">数据库名称</param>
+        </member>
+        <member name="M:XB.Framework.DataAccess.TranServiceBase.Commit">
+            <summary>
+            提交事物
+            </summary>
+        </member>
+        <member name="M:XB.Framework.DataAccess.TranServiceBase.Commit(System.String)">
+            <summary>
+            提交事物
+            </summary>
+            <param name="databaseName">数据库名称</param>
+        </member>
+        <member name="M:XB.Framework.DataAccess.TranServiceBase.HandleException(System.Exception)">
+            <summary>
+            抛出异常
+            </summary>
+            <param name="exception"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.DataAccess.TranServiceBase.Rollback">
+            <summary>
+            事物回滚
+            </summary>
+        </member>
+        <member name="M:XB.Framework.DataAccess.TranServiceBase.Rollback(System.String)">
+            <summary>
+            事物回滚
+            </summary>
+            <param name="databaseName">数据库名称</param>
+        </member>
+    </members>
+</doc>

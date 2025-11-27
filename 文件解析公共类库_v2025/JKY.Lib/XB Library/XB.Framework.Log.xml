@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XB.Framework.Log</name>
+    </assembly>
+    <members>
+        <member name="M:XB.Framework.Log.Logger.ConfigDBLog(System.String)">
+            <summary>
+            配置数据库日志对象连接字符串
+            </summary>
+            <param name="connStr"></param>
+        </member>
+        <member name="M:XB.Framework.Log.Logger.ConfigDBLog(System.String,System.String)">
+            <summary>
+            根据节点名称配置数据库日志对象和连接字符串
+            </summary>
+            <param name="name">配置节点名称</param>
+            <param name="connStr">连接字符串</param>
+        </member>
+        <member name="M:XB.Framework.Log.Logger.ConfigLog(System.String,XB.Framework.Log.LogType)">
+            <summary>
+            根据节点名称创建日志对象
+            </summary>
+            <param name="name">节点名称</param>
+            <param name="logType">日志类型</param>
+        </member>
+    </members>
+</doc>

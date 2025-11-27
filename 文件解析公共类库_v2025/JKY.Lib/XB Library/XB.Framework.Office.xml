@@ -1,0 +1,642 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XB.Framework.Office</name>
+    </assembly>
+    <members>
+        <member name="T:XB.Framework.Office.Excel.OlEDB.ExcelHelper">
+            <summary>
+            功能说明：此工具类主要采用OleDB的方式，实现对Excel的获取数据的功能。
+            </summary>
+            <remarks>
+            创建时间：2012年12月12日0:19:29   创建人：张晓斌
+            备注信息：
+            注意事项：
+            修改时间：              
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Office.Excel.OlEDB.ExcelHelper.GetExcelData(System.String,System.String,System.String)">
+            <summary>
+            获取Excel中的数据
+            </summary>
+            <param name="fileName">xls文件的路径</param>
+            <param name="tableName">xls文件中需要获取数据的worksheet的名称</param>
+            <param name="password">xls文件的密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.NpoiExpandAspNet.ExportGridViewToExcel(System.Data.DataTable,System.Web.UI.WebControls.GridView,System.String,System.String,System.Boolean,System.Int32,System.Int32,System.Int32)">
+            <summary>
+             导出GridView中类型为DataTable的数据源，格式为GridView的样式，到Excel文件中，并且实现下载
+            </summary>
+            <param name="store">DataTable格式的数据源</param>
+            <param name="dgv">DateGridView对象</param>
+            <param name="strHeadText">标题</param>
+            <param name="widthConvertMark">宽度转换标记，计算公式为：excel column width = gridcolumn width / widthConvertMark；默认值为1</param>
+            <param name="defaultColumnWidth">默认的宽度标记：excel column width=100px </param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:XB.Framework.Office.NpoiLib.Excel.NpoiExpandAspNet.ExportGridViewToExcel``1(System.Collections.Generic.IList{``0},System.Web.UI.WebControls.GridView,System.String,System.String,System.Boolean,System.Int32,System.Int32,System.Int32)" -->
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.NpoiExpandAspNet.GetColumnStyle(System.Web.UI.WebControls.GridView,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            根据GridView中列属性，生成导出Excel的配置文件
+            </summary>
+            <param name="gv"></param>
+            <returns></returns>
+            <param name="widthConvertMark">宽度转换标记，计算公式为：excel column width = gridcolumn width / widthConvertMark；默认值为1</param>
+            <param name="defaultColumnWidth">默认的宽度标记：excel column width=100px </param>
+            <param name="DataFiledVisible">需要导出列的显示状态 0：隐藏列导出 1：显示列导出  -1：全部导出</param>
+        </member>
+        <member name="P:XB.Framework.Office.NpoiLib.Excel.IColumnStyle.Name">
+            <summary>
+            DataTable的列名或者List中Object的属性名
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Office.NpoiLib.Excel.IColumnStyle.ItemStyle">
+            <summary>
+            样式
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Office.NpoiLib.Excel.IColumnStyle.WriteRule">
+            <summary>
+            填写规定，主要用于导出异常数据的时候用于批注
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Office.NpoiLib.Excel.IColumnStyle.DataType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Office.NpoiLib.Excel.IColumnStyle.Caption">
+            <summary>
+            导出的Excel列名标题
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Office.NpoiLib.Excel.IColumnStyle.Index">
+            <summary>
+            导出Excel的索引
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Office.NpoiLib.Excel.IColumnStyle.Width">
+            <summary>
+            列宽
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.Office.NpoiLib.Excel.ColumnStyleConverter" -->
+        <member name="P:XB.Framework.Office.NpoiLib.Excel.ColumnStyle.Name">
+            <summary>
+            DataTable的列名或者List中Object的属性名
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Office.NpoiLib.Excel.ColumnStyle.ItemStyle">
+            <summary>
+            样式
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Office.NpoiLib.Excel.ColumnStyle.WriteRule">
+            <summary>
+            填写规定，主要用于导出异常数据的时候用于批注
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Office.NpoiLib.Excel.ColumnStyle.DataType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Office.NpoiLib.Excel.ColumnStyle.Caption">
+            <summary>
+            导出的Excel列名标题
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Office.NpoiLib.Excel.ColumnStyle.Index">
+            <summary>
+            导出Excel的索引
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Office.NpoiLib.Excel.ColumnStyle.Width">
+            <summary>
+            列宽
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.ColumnStyle.#ctor(System.String,XB.Framework.Office.NpoiLib.Excel.SystemStyle,System.String,System.Int32,System.Int32)">
+            <summary>
+            实例化ColumnStyle
+            </summary>
+            <param name="columnName">DataTable的列名或者List中Object的属性名</param>
+            <param name="style">样式</param>
+            <param name="columncaption">导出的Excel列名标题</param>
+            <param name="width">列宽 单位:px</param>
+            <param name="index">导出Excel列的索引</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.ColumnStyle.#ctor(System.String,XB.Framework.Office.NpoiLib.Excel.SystemStyle,System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            实例化ColumnStyle
+            </summary>
+            <param name="columnName">DataTable的列名或者List中Object的属性名</param>
+            <param name="style">样式</param>
+            <param name="columncaption">导出的Excel列名标题</param>
+            <param name="width">列宽 单位:px</param>
+            <param name="index">导出Excel列的索引</param>
+            <param name="writeRule"> 填写规定，主要用于导出异常数据的时候用于批注</param>
+            <param name="dataType">数据类型</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.ColumnStyle.#ctor">
+            <summary>
+            实例化ColumnStyle
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.ColumnStyleCollection.Add(XB.Framework.Office.NpoiLib.Excel.ColumnStyle)">
+            <summary>
+            增加列配置
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.ColumnStyleCollection.Add(System.String,XB.Framework.Office.NpoiLib.Excel.SystemStyle,System.String)">
+            <summary>
+            增加Excel数据导出列配置，默认列宽80
+            </summary>
+            <param name="ColumnName">DataTable的列名或者List中Object的属性名</param>
+            <param name="style">导出列样式</param>
+            <param name="ColumnCaption">导出的Excel列名标题</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.ColumnStyleCollection.Add(System.String,XB.Framework.Office.NpoiLib.Excel.SystemStyle,System.String,System.Int32)">
+            <summary>
+            增加Excel数据导出列配置
+            </summary>
+            <param name="ColumnName">DataTable的列名或者List中Object的属性名</param>
+            <param name="style">导出列样式</param>
+            <param name="ColumnCaption">导出的Excel列名标题</param>
+            <param name="ColumnWidth">导出的Excel列宽度 单位:字符</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.ColumnStyleCollection.Add(System.String,XB.Framework.Office.NpoiLib.Excel.SystemStyle,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            增加Excel数据导出列配置
+            </summary>
+            <param name="ColumnName">DataTable的列名或者List中Object的属性名</param>
+            <param name="style">导出列样式</param>
+            <param name="ColumnCaption">导出的Excel列名标题</param>
+            <param name="ColumnWidth">导出的Excel列宽度 单位:字符</param>
+            <param name="writeRule">填写规定，主要用于导出异常数据的时候用于批注</param>
+            <param name="dataType">数据类型</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.ColumnStyleCollection.Add(System.String,XB.Framework.Office.NpoiLib.Excel.SystemStyle,System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            增加Excel数据导出列配置
+            </summary>
+            <param name="ColumnName">DataTable的列名或者List中Object的属性名</param>
+            <param name="style">导出列样式</param>
+            <param name="ColumnCaption">导出的Excel列名标题</param>
+            <param name="ColumnWidth">导出的Excel列宽度 单位:px</param>
+            <param name="ColumnIndex">导出Excel列的索引</param>
+            <param name="writeRule">填写规定，主要用于导出异常数据的时候用于批注</param>
+            <param name="dataType">数据类型</param>
+        </member>
+        <member name="T:XB.Framework.Office.NpoiLib.Excel.SystemStyle">
+            <summary>
+            Excel单元格的样式
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Office.NpoiLib.Excel.ExcelStyle.SystemStyleCollection">
+            <summary>
+            系统默认的集合样式
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Office.NpoiLib.Excel.ExcelStyle.ColumnStyle">
+            <summary>
+            定义列的显示样式
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Office.NpoiLib.Excel.ExcelStyle.RowStyle">
+            <summary>
+            数据行的样式
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.ExcelStyle.InitStyle(NPOI.HSSF.UserModel.HSSFWorkbook)">
+            <summary>
+            初始化DefaultStyle, LeftStyle, RightStyle, TitleStyle, FieldStyle, LastFieldStyle, DataStyle, ColumnTitleStyle, ConditionStyle, WarningStyle样式
+            </summary>
+            <param name="workbook">导出的workbook文件</param>
+        </member>
+        <member name="F:XB.Framework.Office.NpoiLib.Excel.FileNameType.FullFileName">
+            <summary>
+            全路径
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Office.NpoiLib.Excel.FileNameType.FileName">
+            <summary>
+            根据文件名称生成的虚拟路径
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.ExportData.ExportToExcelClient(System.Data.DataTable,System.String,System.String,System.Boolean)">
+            <summary>
+            导出数据到Excel存储到客户端，适用于Winfrom项目
+            </summary>
+            <param name="source">数据源</param>
+            <param name="ExcelName">导出的Excel文件名称(不包含路径)</param>
+            <param name="SheetName">导出后的Sheet名称</param>
+            <param name="IsShowColumnName">是否包含列名称，默认不包含</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.ExportData.ExportToExcelClient(XB.Framework.Office.NpoiLib.Excel.ExcelStyle,System.Data.DataTable,System.String,System.String,System.Boolean)">
+            <summary>
+            导出数据到Excel存储到客户端，适用于Winfrom项目
+            </summary>
+            <param name="style">样式设置</param>
+            <param name="source">数据源</param>
+            <param name="SheetName">导出后的Sheet名称</param>
+            <param name="ExcelName">导出的Excel文件名称(不包含路径)</param>
+            <param name="IsShowColumnName">是否包含列名称，默认不包含</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.ExportData.ExportToExcelClient``1(System.Collections.Generic.IList{``0},System.String,System.String,System.Boolean)">
+            <summary>
+            导出数据到Excel存储到客户端，适用于Winfrom项目
+            </summary>
+            <typeparam name="T">泛型格式</typeparam>
+            <param name="litparam">IList泛型集合的数据源</param>
+            <param name="ExcelName">导出的Excel文件名称(不包含路径)</param>
+            <param name="SheetName">导出后的Sheet名称</param>
+            <param name="IsShowColumnName">是否包含列名称，默认不包含</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.ExportData.ExportToExcelClient``1(XB.Framework.Office.NpoiLib.Excel.ExcelStyle,System.Collections.Generic.IList{``0},System.String,System.String,System.Boolean)">
+            <summary>
+            导出数据到Excel存储到客户端，适用于Winfrom项目
+            </summary>
+            <typeparam name="T">泛型格式</typeparam>
+            <param name="style">导出的样式</param>
+            <param name="litparam">IList泛型集合的数据源</param>
+            <param name="ExcelName">导出的Excel文件名称</param>
+            <param name="SheetName">导出后的Sheet名称</param>
+            <param name="IsShowColumnName">是否包含列名称，默认不包含</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.ExportData.ExportToExcelFile``1(System.Collections.Generic.IList{``0},System.String,XB.Framework.Office.NpoiLib.Excel.ExcelStyle,System.String,System.Boolean)">
+            <summary>
+            导出数据到Excel存储到绝对路径的文件（不执行文件委托）
+            </summary>
+            <typeparam name="T">泛型格式</typeparam>
+            <param name="litparam">IList泛型集合的数据源</param>
+            <param name="ExcelFullName">导出的Excel全路径，包含名称</param>
+            <param name="style">导出的样式</param>
+            <param name="SheetName">导出后的Sheet名称</param>
+            <param name="IsShowColumnName">是否包含列名称，默认不包含</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.ExportData.ExportToExcelWeb(System.Data.DataTable,System.String,System.Web.HttpResponse,System.String,System.Boolean)">
+            <summary>
+            导出数据到Excel并下载，适用于web项目
+            </summary>
+            <param name="source">数据源</param>
+            <param name="ExcelName">导出的Excel文件路径</param>
+            <param name="respone">HttpResponse</param>
+            <param name="SheetName">导出后的Sheet名称</param>
+            <param name="IsShowColumnName">是否包含列名称，默认不包含</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.ExportData.ExportToExcelWeb(XB.Framework.Office.NpoiLib.Excel.ExcelStyle,System.Data.DataTable,System.String,System.Web.HttpResponse,System.String,System.Boolean)">
+            <summary>
+            导出数据到Excel并下载，适用于web项目
+            </summary>
+            <param name="style">样式设置</param>
+            <param name="source">数据源</param>
+            <param name="ExcelName">导出的Excel文件路径</param>
+            <param name="respone">HttpResponse</param>
+            <param name="SheetName">导出后的Sheet名称</param>
+            <param name="IsShowColumnName">是否包含列名称，默认不包含</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.ExportData.ExportToExcelWeb``1(System.Collections.Generic.IList{``0},System.String,System.Web.HttpResponse,System.String,System.Boolean)">
+            <summary>
+            导出数据到Excel并下载，适用于web项目
+            </summary>
+            <typeparam name="T">IList参数的成员类型</typeparam>
+            <param name="litparam">IList格式的数据源</param>
+            <param name="ExcelName">导出的Excel文件路径</param>
+            <param name="respone">HttpResponse</param>
+            <param name="SheetName">导出后的Sheet名称</param>
+            <param name="IsShowColumnName">是否包含列名称，默认不包含</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.ExportData.ExportToExcelWeb``1(XB.Framework.Office.NpoiLib.Excel.ExcelStyle,System.Collections.Generic.IList{``0},System.String,System.Web.HttpResponse,System.String,System.Boolean)">
+            <summary>
+            导出数据到Excel并下载，适用于web项目
+            </summary>
+            <typeparam name="T">IList参数的成员类型</typeparam>
+            <param name="style">样式设置</param>
+            <param name="litparam">IList格式的数据源</param>
+            <param name="ExcelName">导出的Excel文件路径</param>
+            <param name="respone">HttpResponse</param>
+            <param name="SheetName">导出后的Sheet名称</param>
+            <param name="IsShowColumnName">是否包含列名称，默认不包含</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.ExportData.ExportToExcelClient(System.Data.DataTable,System.String,XB.Framework.Office.NpoiLib.Excel.ExcelStyle,XB.Framework.Office.NpoiLib.Excel.ExportData.ExportCompletedDelegate,System.String,System.Boolean)">
+            <summary>
+            导出DataTable数据到Excel文件并且直接打开
+            </summary>
+            <param name="dtSource">DataTable数据对象</param>
+            <param name="fileFullName">导出的Excel文件全路径</param>
+            <param name="style">导出Excel文件的样式</param>
+            <param name="exportCompletedToWin">导出成功之后执行的委托</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.ExportData.ExportToExcel``1(System.Collections.Generic.IList{``0},System.String,XB.Framework.Office.NpoiLib.Excel.ExcelStyle,XB.Framework.Office.NpoiLib.Excel.ExportData.ExportCompletedDelegate,System.String,System.Boolean)">
+            <summary>
+            导出List数据到Excel文件
+            </summary>
+            <typeparam name="T">List的泛型</typeparam>
+            <param name="litparam">list数据</param>
+            <param name="fileFullName">文件全路径（包含文件名称）</param>
+            <param name="style">导出Excel的样式,不赋值的话，为默认样式</param>
+            <param name="exportCompletedToWin">导出完成后执行操作的委托</param>
+            <param name="SheetName">导出后的Sheet名称</param>
+            <param name="IsShowColumnName">是否包含列名称，默认不包含</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.ExportData.Export(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.ExportData.ClientExportCompleted(System.Object)">
+            <summary>
+            导出Excel数据完成之后打开Excel文件的委托
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.IExportData.ExportToExcelClient(System.Data.DataTable,System.String,System.String,System.Boolean)">
+            <summary>
+            导出数据到Excel存储到客户端，适用于Winfrom项目
+            </summary>
+            <param name="source">数据源</param>
+            <param name="ExcelName">导出的Excel文件名称(不包含路径)</param>
+            <param name="SheetName">导出后的Sheet名称</param>
+            <param name="IsShowColumnName">是否包含列名称，默认不包含</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.IExportData.ExportToExcelClient(XB.Framework.Office.NpoiLib.Excel.ExcelStyle,System.Data.DataTable,System.String,System.String,System.Boolean)">
+            <summary>
+            导出数据到Excel存储到客户端，适用于Winfrom项目
+            </summary>
+            <param name="style">样式设置</param>
+            <param name="source">数据源</param>
+            <param name="SheetName">导出后的Sheet名称</param>
+            <param name="ExcelName">导出的Excel文件名称(不包含路径)</param>
+            <param name="IsShowColumnName">是否包含列名称，默认不包含</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.IExportData.ExportToExcelClient``1(System.Collections.Generic.IList{``0},System.String,System.String,System.Boolean)">
+            <summary>
+            导出数据到Excel存储到客户端，适用于Winfrom项目
+            </summary>
+            <typeparam name="T">泛型格式</typeparam>
+            <param name="litparam">IList泛型集合的数据源</param>
+            <param name="ExcelName">导出的Excel文件名称(不包含路径)</param>
+            <param name="SheetName">导出后的Sheet名称</param>
+            <param name="IsShowColumnName">是否包含列名称，默认不包含</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.IExportData.ExportToExcelClient``1(XB.Framework.Office.NpoiLib.Excel.ExcelStyle,System.Collections.Generic.IList{``0},System.String,System.String,System.Boolean)">
+            <summary>
+            导出数据到Excel存储到客户端，适用于Winfrom项目
+            </summary>
+            <typeparam name="T">泛型格式</typeparam>
+            <param name="litparam">IList泛型集合的数据源</param>
+            <param name="ExcelName">导出的Excel文件名称(不包含路径)</param>
+            <param name="SheetName">导出后的Sheet名称</param>
+            <param name="style">导出的样式</param>
+            <param name="IsShowColumnName">是否包含列名称，默认不包含</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.IExportData.ExportToExcelFile``1(System.Collections.Generic.IList{``0},System.String,XB.Framework.Office.NpoiLib.Excel.ExcelStyle,System.String,System.Boolean)">
+            <summary>
+            导出数据到Excel存储到绝对路径的文件（不执行文件委托）
+            </summary>
+            <typeparam name="T">泛型格式</typeparam>
+            <param name="litparam">IList泛型集合的数据源</param>
+            <param name="ExcelFullName">导出的Excel全路径，包含名称</param>
+            <param name="style">导出的样式</param>
+            <param name="SheetName">导出后的Sheet名称</param>
+            <param name="IsShowColumnName">是否包含列名称，默认不包含</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.IExportData.ExportToExcelWeb(XB.Framework.Office.NpoiLib.Excel.ExcelStyle,System.Data.DataTable,System.String,System.Web.HttpResponse,System.String,System.Boolean)">
+            <summary>
+            导出数据到Excel并下载，适用于web项目
+            </summary>
+            <param name="style">导出的样式</param>
+            <param name="source">数据源</param>
+            <param name="ExcelName">导出的Excel文件路径</param>
+            <param name="respone">HttpResponse</param>
+            <param name="SheetName">导出后的Sheet名称</param>
+            <param name="IsShowColumnName">是否包含列名称，默认不包含</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.IExportData.ExportToExcelWeb(System.Data.DataTable,System.String,System.Web.HttpResponse,System.String,System.Boolean)">
+            <summary>
+            导出数据到Excel并下载，适用于web项目
+            </summary>
+            <param name="source">数据源</param>
+            <param name="ExcelName">导出的Excel文件路径</param>
+            <param name="respone">HttpResponse</param>
+            <param name="SheetName">导出后的Sheet名称</param>
+            <param name="IsShowColumnName">是否包含列名称，默认不包含</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.IExportData.ExportToExcelWeb``1(System.Collections.Generic.IList{``0},System.String,System.Web.HttpResponse,System.String,System.Boolean)">
+            <summary>
+            导出数据到Excel并下载，适用于web项目
+            </summary>
+            <typeparam name="T">IList参数的成员类型</typeparam>
+            <param name="litparam">IList格式的数据源</param>
+            <param name="ExcelName">导出的Excel文件路径</param>
+            <param name="respone">HttpResponse</param>
+            <param name="SheetName">导出后的Sheet名称</param>
+            <param name="IsShowColumnName">是否包含列名称，默认不包含</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.IExportData.ExportToExcelWeb``1(XB.Framework.Office.NpoiLib.Excel.ExcelStyle,System.Collections.Generic.IList{``0},System.String,System.Web.HttpResponse,System.String,System.Boolean)">
+            <summary>
+            导出数据到Excel并下载，适用于web项目
+            </summary>
+            <typeparam name="T">IList参数的成员类型</typeparam>
+            <param name="style">样式设置</param>
+            <param name="litparam">IList格式的数据源</param>
+            <param name="ExcelName">导出的Excel文件路径</param>
+            <param name="respone">HttpResponse</param>
+            <param name="SheetName">导出后的Sheet名称</param>
+            <param name="IsShowColumnName">是否包含列名称，默认不包含</param>
+        </member>
+        <member name="T:XB.Framework.Office.NpoiLib.Excel.LoadMode">
+            <summary>
+            获取Excel的数据的加载模式
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Office.NpoiLib.Excel.LoadMode.OleDb">
+            <summary>
+            采用OleDb的模式加载，获取的DataTable的列名为从F1开始递增
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Office.NpoiLib.Excel.LoadMode.NPOI">
+            <summary>
+            采用Npoi模式加载，获取的DataTable的列名为headerRowIndex指定的单元格数据
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.DataConvert.ExcelToDataTable(System.String,System.String)">
+            <summary>    
+            获取Excel中Sheet的数据到DataTable,列名为第一行的数据
+            </summary>   
+             <param name="excelFilePath">Excel文件路径,为物理路径。</param>   
+            <param name="sheetName">Excel工作表名称</param>    
+            <returns>DataTable</returns>    
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.DataConvert.ExcelToDataTable(System.String,System.String,System.Int32,System.Int32)">
+            <summary>    
+            获取Excel中Sheet的数据到DataTable
+            </summary>   
+             <param name="excelFilePath">Excel文件路径,为物理路径。</param>   
+            <param name="sheetName">Excel工作表名称</param>    
+            <param name="headerRowIndex">Excel表头行索引</param>    
+            <param name="nonEmptyColumnCheckRowIndex">验证非空列的行索引</param>
+            <returns>DataTable</returns>    
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.DataConvert.ExcelToDataTable(System.String,System.String,System.Int32,System.Int32,XB.Framework.Office.NpoiLib.Excel.LoadMode)">
+            <summary>    
+            获取Excel中Sheet的数据到DataTable
+            </summary>   
+             <param name="excelFilePath">Excel文件路径,为物理路径。</param>   
+            <param name="sheetName">Excel工作表名称</param>    
+            <param name="headerRowIndex">Excel表头行索引</param>    
+            <param name="nonEmptyColumnCheckRowIndex">验证非空列的行索引</param>
+            <param name="loadMode">数据加载模式  OleDb：采用OleDb的模式加载，获取的DataTable的列名为从F1开始递增    NPOI：采用Npoi模式加载，获取的DataTable的列名为headerRowIndex指定的单元格数据；默认为NPOI方式加载</param>
+            <returns>DataTable</returns>    
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.DataConvert.GetSheetNames(System.String)">
+            <summary>    
+            获取传入的Excel文件的SheetName列表
+            </summary>   
+            <param name="excelFilePath">Excel文件路径,为物理路径。</param>   
+            <returns>IList格式的SheetName列表</returns>    
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.DataConvert.ExcelToDataTable(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>    
+            由Excel导入DataTable    
+            </summary>    
+            <param name="excelFilePath">Excel文件路径,为物理路径。</param>    
+            <param name="sheetName">Excel工作表索引</param>    
+            <param name="headerRowIndex">Excel表头行索引</param>    
+            <param name="nonEmptyColumnCheckRowIndex">验证非空列的行索引</param>
+            <returns>DataTable</returns>    
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.DataConvert.ExcelToDataTable(System.String,System.Int32,System.Int32,System.Int32,XB.Framework.Office.NpoiLib.Excel.LoadMode)">
+            <summary>    
+            由Excel导入DataTable    
+            </summary>    
+            <param name="excelFilePath">Excel文件路径,为物理路径。</param>    
+            <param name="sheetName">Excel工作表索引</param>    
+            <param name="headerRowIndex">Excel表头行索引</param>    
+            <param name="nonEmptyColumnCheckRowIndex">验证非空列的行索引</param>
+            <param name="loadMode">数据加载模式  OleDb：采用OleDb的模式加载，获取的DataTable的列名为从F1开始递增    NPOI：采用Npoi模式加载，获取的DataTable的列名为headerRowIndex指定的单元格数据；默认为NPOI方式加载</param>
+            <returns>DataTable</returns>    
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.DataConvert.ExcelToDataTable(System.IO.Stream,System.String,System.Int32,System.Int32,System.Int32,XB.Framework.Office.NpoiLib.Excel.LoadMode)">
+            <summary>    
+            由Excel导入DataTable    
+            </summary>    
+            <param name="excelStream">Excel文件流</param>   
+            <param name="sheetName">Excel工作表</param>    
+            <param name="sheetIndex">Excel工作表</param>    
+            <param name="headerRowIndex">Excel表头行索引</param>
+            <param name="nonEmptyColumnCheckRowIndex">验证非空列的行索引</param>
+            <param name="loadMode">数据加载模式  OleDb：采用OleDb的模式加载，获取的DataTable的列名为从F1开始递增    NPOI：采用Npoi模式加载，获取的DataTable的列名为headerRowIndex指定的单元格数据；默认为NPOI方式加载</param>
+            <returns>DataTable</returns>    
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:XB.Framework.Office.NpoiLib.Excel.DataConvert.ExcelToIList``1(System.String,System.Int32,System.Int32,System.Int32,System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:XB.Framework.Office.NpoiLib.Excel.DataConvert.ExcelToIList``1(System.IO.Stream,System.String,System.Int32,System.Int32,System.Int32,System.Int32)" -->
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.DataConvert.GetCellDataType(NPOI.SS.UserModel.ICell)">
+            <summary>
+            根据单元格对象获取单元格的类型
+            </summary>
+            <param name="cell">单元格对象</param>
+            <returns>单元格类型 CellDataType</returns>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.DataConvert.GetText(NPOI.SS.UserModel.ICell)">
+            <summary>
+            获取Excel单元格的文本数据
+            </summary>
+            <param name="cell">单元格对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.DataConvert.GetFormulaText(NPOI.SS.UserModel.ICell)">
+            <summary>
+            获取格式化后的单元格数据
+            </summary>
+            <param name="cell">单元格对象</param>
+            <returns>格式化后的单元格值</returns>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.NpoiExpandWinFrom.ExportGridViewToExcel(System.Data.DataTable,System.Windows.Forms.DataGridView,System.String,System.String,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+             导出GridView中类型为DataTable的数据源，格式为GridView的样式，到Excel文件中，并且实现下载
+            </summary>
+            <param name="store">DataTable格式的数据源</param>
+            <param name="dgv">DateGridView对象</param>
+            <param name="strHeadText">标题</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.NpoiExpandWinFrom.ExportGridViewToExcel``1(System.Collections.Generic.IList{``0},System.Windows.Forms.DataGridView,System.String,System.String,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+             导出GridView中类型为DataTable的数据源，格式为GridView的样式，到Excel文件中，并且实现下载
+            </summary>
+            <param name="store">DataTable格式的数据源</param>
+            <param name="dgv">DateGridView对象</param>
+            <param name="strHeadText">标题</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.NpoiExpandWinFrom.GetColumnStyle(System.Windows.Forms.DataGridView,System.Int32,System.Int32)">
+            <summary>
+            根据GridView中列属性，生成导出Excel的配置文件
+            </summary>
+            <param name="gv"></param>
+            <returns></returns>
+        </member>
+        <member name="F:XB.Framework.Office.NpoiLib.Excel.NpoiExpand._ExportCompleted">
+            <summary>
+            打开委托实例化
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.NpoiExpand.ExportToExcelWinDataGridView(System.Windows.Forms.DataGridView,System.String,System.String,System.Boolean,System.String)">
+            <summary>
+             导出GridView选中的行数据保存到磁盘上
+            </summary>
+            <param name="dgv">DateGridView对象</param>
+            <param name="strHeadText">标题</param>
+            <param name="strFileName">导出Excel文件不包含路径的Excel文件名称</param>
+            <param name="exportSelectedRows">是否导出选中的行数据</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.NpoiExpand.ExportToExcelWinDataGridView(System.Windows.Forms.DataGridView,System.String,System.String,System.String)">
+            <summary>
+            导出GridView数据保存到磁盘上,并且打开
+            </summary>
+            <param name="drv">GridView对象</param>
+            <param name="strHeadText">导出Excel数据的标题</param>
+            <param name="strFileName">不包含路径、后缀名的Excel文件名称</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.NpoiExpand.ExportToExcelWinDataGridView(System.Windows.Forms.DataGridView,System.String,System.String,XB.Framework.Office.NpoiLib.Excel.NpoiExpand.ExportCompletedDelegate,System.String)">
+            <summary>
+            导出GridView数据保存到磁盘上
+            </summary>
+            <param name="drv">GridVie对象</param>
+            <param name="strHeadText">导出的Excel文件的标题</param>
+            <param name="strFileAllName">导出文件的全路径</param>
+            <param name="exportCompleted">导出成功之后执行的委托操作</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.NpoiExpand.ExportToExcelWin(System.Data.DataTable,System.String,System.String,XB.Framework.Office.NpoiLib.Excel.NpoiExpand.ExportCompletedDelegate,System.String)">
+            <summary>
+            导出DataTable数据到Excel文件并且直接打开
+            </summary>
+            <param name="dtSource">DataTable数据对象</param>
+            <param name="strHeaderText">导出Excel文件的标题</param>
+            <param name="strFileName">导出的Excel文件不包含路径的文件名称</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.NpoiExpand.ExportToExcel(System.Data.DataTable,System.String,System.String,XB.Framework.Office.NpoiLib.Excel.NpoiExpand.ExportCompletedDelegate,System.String)">
+            <summary>
+            导出DataTable数据到Excel文件并且直接打开
+            </summary>
+            <param name="dtSource">DataTable数据对象</param>
+            <param name="strHeaderText">导出Excel文件的标题</param>
+            <param name="strFileAllName">导出的Excel文件全路径</param>
+            <param name="exportCompleted">导出成功之后执行的委托</param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.NpoiExpand.Export(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:XB.Framework.Office.NpoiLib.Excel.NpoiExpand.ExportCompleted(System.Object)">
+            <summary>
+            导出Excel数据完成之后打开Excel文件的委托
+            </summary>
+            <param name="obj"></param>
+        </member>
+    </members>
+</doc>

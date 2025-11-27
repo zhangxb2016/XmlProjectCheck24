@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XB.Framework.Service.Common</name>
+    </assembly>
+    <members>
+        <member name="T:XB.Framework.Service.Common.Context.IContextContainer">
+            <summary>
+            功能说明：上下文存储对象接口，主要为了创建同时兼顾WEB和Winfrom程序的存储对象
+            </summary>
+            <remarks>
+            作    者：张晓斌
+            创建时间：2012-11-23 17:49:19
+            注意事项：
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Service.Common.Context.IContextContainer.Add(System.String,System.Object)">
+            <summary>
+            将新增数据存储到上下文对象中
+            </summary>
+            <param name="key">存储对象的键</param>
+            <param name="value">键值对应的数据对象</param>
+        </member>
+        <member name="M:XB.Framework.Service.Common.Context.IContextContainer.Contains(System.String)">
+            <summary>
+            检测当前数据对象是否已经存储
+            </summary>
+            <param name="key">存储对象的键</param>
+            <returns>True：已经存储  False：没有存储</returns>
+        </member>
+        <member name="M:XB.Framework.Service.Common.Context.IContextContainer.Remove(System.String)">
+            <summary>
+            在上下文对象中删除键值对应的数据
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="P:XB.Framework.Service.Common.Context.IContextContainer.Item(System.String)">
+            <summary>
+            根据键值获取相对应的数据对象
+            </summary>
+            <param name="key">存储对象的键</param>
+            <returns>键值对应的数据对象</returns>
+        </member>
+        <member name="T:XB.Framework.Service.Common.Context.WebContextContainer">
+            <summary>
+            功能说明：Web系统中用于数据存储的上下文对象
+            </summary>
+            <remarks>
+            作    者：张晓斌
+            创建时间：2012-11-23 17:49:19
+            注意事项：
+            备    注：采用System.Runtime.Remoting.Messaging.CallContext对象进行数据管理
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Service.Common.Context.WebContextContainer.Add(System.String,System.Object)">
+            <summary>
+            将新增数据存储到上下文对象中
+            </summary>
+            <param name="key">存储对象的键</param>
+            <param name="value">键值对应的数据对象</param>
+        </member>
+        <member name="M:XB.Framework.Service.Common.Context.WebContextContainer.CheckKey(System.String)">
+            <summary>
+            判断当前键值不能为null
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:XB.Framework.Service.Common.Context.WebContextContainer.Contains(System.String)">
+            <summary>
+            检测当前数据对象是否已经存储
+            </summary>
+            <param name="key">存储对象的键</param>
+            <returns>True：已经存储  False：没有存储</returns>
+        </member>
+        <member name="M:XB.Framework.Service.Common.Context.WebContextContainer.Remove(System.String)">
+            <summary>
+            在上下文对象中删除键值对应的数据
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="P:XB.Framework.Service.Common.Context.WebContextContainer.Item(System.String)">
+            <summary>
+            根据键值获取相对应的数据对象
+            </summary>
+            <param name="key">存储对象的键</param>
+            <returns>键值对应的数据对象</returns>
+        </member>
+        <member name="T:XB.Framework.Service.Common.Context.WindowContextContainer">
+            <summary>
+            功能说明：Winfrom系统中用于数据存储的上下文对象
+            </summary>
+            <remarks>
+            作    者：张晓斌
+            创建时间：2012-11-23 17:49:19
+            注意事项：
+            备    注：采用Hashtable对象进行数据管理
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Service.Common.Context.WindowContextContainer.#ctor">
+            <summary>
+            实例化WindowContextContainer，并且初始化Hashtable对象
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Service.Common.Context.WindowContextContainer.Add(System.String,System.Object)">
+            <summary>
+            将新增数据存储到上下文对象中
+            </summary>
+            <param name="key">存储对象的键</param>
+            <param name="value">键值对应的数据对象</param>
+        </member>
+        <member name="M:XB.Framework.Service.Common.Context.WindowContextContainer.Contains(System.String)">
+            <summary>
+            检测当前数据对象是否已经存储
+            </summary>
+            <param name="key">存储对象的键</param>
+            <returns>True：已经存储  False：没有存储</returns>
+        </member>
+        <member name="M:XB.Framework.Service.Common.Context.WindowContextContainer.Remove(System.String)">
+            <summary>
+            在上下文对象中删除键值对应的数据
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="P:XB.Framework.Service.Common.Context.WindowContextContainer.Item(System.String)">
+            <summary>
+            根据键值获取相对应的数据对象
+            </summary>
+            <param name="key">存储对象的键</param>
+            <returns>键值对应的数据对象</returns>
+        </member>
+        <member name="T:XB.Framework.Service.Common.ServiceContext">
+            <summary>
+            功能说明：实现Web和Winfrom程序的数据对象存储
+                1.如果是WEB程序，采用WebContextContainer对象进行存储；
+                2.如果是Winfrom程序，采用WindowContextContainer对象进行存储
+            </summary>
+            <remarks>
+            作    者：张晓斌
+            创建时间：2012-11-23 17:49:19
+            注意事项：
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Service.Common.ServiceContext.Add(System.String,System.Object)">
+            <summary>
+            将对象存储到上下文对象
+            </summary>
+            <param name="key">存储对象的键</param>
+            <param name="value">键值对应的数据对象</param>
+        </member>
+        <member name="M:XB.Framework.Service.Common.ServiceContext.Contains(System.String)">
+            <summary>
+            判断是否当前Key的对象是否存储
+            </summary>
+            <param name="key">存储对象的键</param>
+            <returns>True：已经存储   False：没有存储</returns>
+        </member>
+        <member name="M:XB.Framework.Service.Common.ServiceContext.Remove(System.String)">
+            <summary>
+            在上下文对象中清除当前Key的数据
+            </summary>
+            <param name="key">存储对象的键</param>
+        </member>
+        <member name="P:XB.Framework.Service.Common.ServiceContext.ContextContainer">
+            <summary>
+            数据存储的对象，如果是WEB程序，采用WebContextContainer，如果是Winfrom程序，采用WindowContextContainer对象进行上下文管理
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Service.Common.ServiceContext.Current">
+            <summary>
+            当前上下文对象
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Service.Common.ServiceContext.Item(System.String)">
+            <summary>
+            根据键值获取相对应的数据对象
+            </summary>
+            <param name="key">存储对象的键</param>
+            <returns>键值对应的数据对象</returns>
+        </member>
+    </members>
+</doc>

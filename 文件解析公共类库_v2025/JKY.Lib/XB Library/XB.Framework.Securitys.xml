@@ -1,0 +1,541 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XB.Framework.Securitys</name>
+    </assembly>
+    <members>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.Cryptographer.CreateHash(System.String,System.Byte[])">
+            <overrides>
+            Computes the hash value of plain text using the given hash provider instance
+            </overrides>
+            <summary>
+            Computes the hash value of plain text using the given hash provider instance
+            </summary>
+            <param name="hashInstance">A hash instance from configuration.</param>
+            <param name="plaintext">The input for which to compute the hash.</param>
+            <returns>The computed hash code.</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.Cryptographer.CreateHash(System.String,System.String)">
+            <summary>
+            Computes the hash value of plain text using the given hash provider instance
+            </summary>
+            <param name="hashInstance">A hash instance from configuration.</param>
+            <param name="plaintext">The input for which to compute the hash.</param>
+            <returns>The computed hash code.</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.Cryptographer.CompareHash(System.String,System.Byte[],System.Byte[])">
+            <overrides>
+            Compares plain text input with a computed hash using the given hash provider instance.
+            </overrides>
+            <summary>
+            Compares plain text input with a computed hash using the given hash provider instance.
+            </summary>
+            <remarks>
+            Use this method to compare hash values. Since hashes may contain a random "salt" value, two seperately generated
+            hashes of the same plain text may result in different values. 
+            </remarks>
+            <param name="hashInstance">A hash instance from configuration.</param>
+            <param name="plaintext">The input for which you want to compare the hash to.</param>
+            <param name="hashedText">The hash value for which you want to compare the input to.</param>
+            <returns><c>true</c> if plainText hashed is equal to the hashedText. Otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.Cryptographer.CompareHash(System.String,System.String,System.String)">
+            <summary>
+            Compares plain text input with a computed hash using the given hash provider instance.
+            </summary>
+            <remarks>
+            Use this method to compare hash values. Since hashes contain a random "salt" value, two seperately generated
+            hashes of the same plain text will result in different values. 
+            </remarks>
+            <param name="hashInstance">A hash instance from configuration.</param>
+            <param name="plaintext">The input as a string for which you want to compare the hash to.</param>
+            <param name="hashedText">The hash as a string for which you want to compare the input to.</param>
+            <returns><c>true</c> if plainText hashed is equal to the hashedText. Otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.Cryptographer.EncryptSymmetric(System.String,System.Byte[])">
+            <summary>
+            Encrypts a secret using a specified symmetric cryptography provider.
+            </summary>
+            <param name="symmetricInstance">A symmetric instance from configuration.</param>
+            <param name="plaintext">The input for which you want to encrypt.</param>
+            <returns>The resulting cipher text.</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.Cryptographer.EncryptSymmetric(System.String,System.String)">
+            <summary>
+            Encrypts a secret using a specified symmetric cryptography provider.
+            </summary>
+            <param name="symmetricInstance">A symmetric instance from configuration.</param>
+            <param name="plaintext">The input as a base64 encoded string for which you want to encrypt.</param>
+            <returns>The resulting cipher text as a base64 encoded string.</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.Cryptographer.DecryptSymmetric(System.String,System.Byte[])">
+            <summary>
+            Decrypts a cipher text using a specified symmetric cryptography provider.
+            </summary>
+            <param name="symmetricInstance">A symmetric instance from configuration.</param>
+            <param name="ciphertext">The cipher text for which you want to decrypt.</param>
+            <returns>The resulting plain text.</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.Cryptographer.DecryptSymmetric(System.String,System.String)">
+            <summary>
+            Decrypts a cipher text using a specified symmetric cryptography provider.
+            </summary>
+            <param name="symmetricInstance">A symmetric instance from configuration.</param>
+            <param name="ciphertextBase64">The cipher text as a base64 encoded string for which you want to decrypt.</param>
+            <returns>The resulting plain text as a string.</returns>
+        </member>
+        <member name="T:XB.Framework.Securitys.BaseSecurity.Cryptography.DesSymmetryCraptographer">
+            <summary>
+            DES加密通用
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographer">
+            <summary>
+            [功能描述: 对称加密解密通用类]<br></br>
+            <说明>
+               对称加密解密通用类
+            </说明>
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographer.SECRET_KEY">
+            <summary>
+            默认密钥字符串
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographer.secretKey">
+            <summary>
+            密钥(byte数组)
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographer.Key">
+            <summary>
+            密钥(字符串格式)
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographer.initVec">
+            <summary>
+            偏移向量
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographer.#ctor">
+            <summary>
+            默认构造
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographer.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="symmetryCraptographerName"></param>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographer.CreateCraptographer">
+            <summary>
+            生成加密器
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographer.GeneratorKeyAndIV">
+            <summary>
+            生成密钥和向量
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographer.ToEncryptString(System.Byte[])">
+            <summary>
+            转换加密后的字符串[包皮]
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographer.ToDecryptBytes(System.String)">
+            <summary>
+            decrypt data[剥皮]
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographer.CanConvert(System.Byte)">
+            <summary>
+            是否可以执行转换
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographer.IsDigital(System.Byte)">
+            <summary>
+            判断是否是数字
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographer.IsCapitalLetters(System.Byte)">
+            <summary>
+            判断是否是大些字母
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographer.IsLowercaseLetters(System.Byte)">
+            <summary>
+            判断是否是小写字母
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographer.Encrypt(System.String)">
+            <summary>
+            加密字符串
+            </summary>
+            <param name="encryptValue">要加密的字符串</param>
+            <returns>加密后的字符串</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographer.Decrypt(System.String)">
+            <summary>
+            解密字符串
+            </summary>
+            <param name="encryptedValue">要解密的字符串</param>
+            <returns>解密后的字符串</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographer.Encrypt(System.Byte[])">
+            <summary>
+            加密字节
+            </summary>
+            <param name="encryptValue">要加密的字节</param>
+            <returns>加密后的字节数组</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographer.Decrypt(System.Byte[])">
+            <summary>
+            解密字节
+            </summary>
+            <param name="encryptValue">要解密的字节</param>
+            <returns>解密后的字节数组</returns>
+        </member>
+        <member name="T:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographerBase">
+            <summary>
+            对称加密基类
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographerBase.CreateEncryptTransform">
+            <summary>
+            加密 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographerBase.CreateDecryptTransform">
+            <summary>
+            解密
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographerBase.key">
+            <summary>
+            加密密钥
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographerBase.Key">
+            <summary>
+            密钥
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographerBase.initVec">
+            <summary>
+            偏移向量
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographerBase.IV">
+            <summary>
+            偏移向量
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographerBase.Encrypt(System.Byte[])">
+            <summary>
+            加密数据
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetricCraptographerBase.Decrypt(System.Byte[])">
+            <summary>
+            解密数据
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetryCraptographerTypeValueDictionary">
+            <summary>
+            对称加密字典，用于设定默认的key和iv长度
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Securitys.BaseSecurity.Cryptography.SymmetryCraptographerTypeValueDictionary.SymmetryCraptographerTypeValueItem">
+            <summary>
+            对称加密机密算法类型包容器
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Securitys.BaseSecurity.Cryptography.TripleDesSymmetryCraptographer">
+            <summary>
+            Triple加密通用
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Securitys.BaseSecurity.DEncrypt">
+            <summary>
+            Encrypt：使用给定密钥的方式进行加密解密操作
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.DEncrypt.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.DEncrypt.Encrypt(System.String)">
+            <summary>
+            使用缺省密钥字符串加密string
+            </summary>
+            <param name="original">明文</param>
+            <returns>密文</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.DEncrypt.Decrypt(System.String)">
+            <summary>
+            使用缺省密钥字符串解密string
+            </summary>
+            <param name="original">密文</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.DEncrypt.Encrypt(System.String,System.String)">
+            <summary>
+            使用给定密钥字符串加密string
+            </summary>
+            <param name="original">原始文字</param>
+            <param name="key">密钥</param>
+            <param name="encoding">字符编码方案</param>
+            <returns>密文</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.DEncrypt.Decrypt(System.String,System.String)">
+            <summary>
+            使用给定密钥字符串解密string
+            </summary>
+            <param name="original">密文</param>
+            <param name="key">密钥</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.DEncrypt.Decrypt(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            使用给定密钥字符串解密string,返回指定编码方式明文
+            </summary>
+            <param name="encrypted">密文</param>
+            <param name="key">密钥</param>
+            <param name="encoding">字符编码方案</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.DEncrypt.Decrypt(System.Byte[])">
+            <summary>
+            使用缺省密钥字符串解密byte[]
+            </summary>
+            <param name="encrypted">密文</param>
+            <param name="key">密钥</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.DEncrypt.Encrypt(System.Byte[])">
+            <summary>
+            使用缺省密钥字符串加密
+            </summary>
+            <param name="original">原始数据</param>
+            <param name="key">密钥</param>
+            <returns>密文</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.DEncrypt.MakeMD5(System.Byte[])">
+            <summary>
+            生成MD5摘要
+            </summary>
+            <param name="original">数据源</param>
+            <returns>摘要</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.DEncrypt.Encrypt(System.Byte[],System.Byte[])">
+            <summary>
+            使用给定密钥加密
+            </summary>
+            <param name="original">明文</param>
+            <param name="key">密钥</param>
+            <returns>密文</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.DEncrypt.Decrypt(System.Byte[],System.Byte[])">
+            <summary>
+            使用给定密钥解密数据
+            </summary>
+            <param name="encrypted">密文</param>
+            <param name="key">密钥</param>
+            <returns>明文</returns>
+        </member>
+        <member name="T:XB.Framework.Securitys.BaseSecurity.DESEncrypt">
+            <summary>
+            DES加密/解密类，采用MD5加密解密的方式进行处理。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.DESEncrypt.Encrypt(System.String)">
+            <summary>
+            加密
+            </summary>
+            <param name="Text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.DESEncrypt.Encrypt(System.String,System.String)">
+            <summary> 
+            加密数据 
+            </summary> 
+            <param name="Text"></param> 
+            <param name="sKey"></param> 
+            <returns></returns> 
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.DESEncrypt.Decrypt(System.String)">
+            <summary>
+            解密
+            </summary>
+            <param name="Text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.DESEncrypt.Decrypt(System.String,System.String)">
+            <summary> 
+            解密数据 
+            </summary> 
+            <param name="Text"></param> 
+            <param name="sKey"></param> 
+            <returns></returns> 
+        </member>
+        <member name="T:XB.Framework.Securitys.BaseSecurity.HashEncode">
+            <summary>
+            得到随机安全码（哈希加密）。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.HashEncode.GetSecurity">
+            <summary>
+            得到随机哈希加密字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.HashEncode.GetRandomValue">
+            <summary>
+            得到一个随机数值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.HashEncode.HashEncoding(System.String)">
+            <summary>
+            哈希加密一个字符串
+            </summary>
+            <param name="Security"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XB.Framework.Securitys.BaseSecurity.RSACryption">
+            <summary> 
+            RSA加密解密及RSA签名和验证
+            </summary> 
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.RSACryption.RSAKey(System.String@,System.String@)">
+            <summary>
+            RSA 的密钥产生 产生私钥 和公钥 
+            </summary>
+            <param name="xmlKeys"></param>
+            <param name="xmlPublicKey"></param>
+        </member>
+        <member name="T:XB.Framework.Securitys.BaseSecurity.SuperSecurity">
+            <summary>
+            采用对象加密方式，并且增加密钥的方式进行加密操作
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.SuperSecurity.#ctor">
+            <summary>
+            对称加密类的构造函数
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.SuperSecurity.GetLegalKey">
+            <summary>
+            获得密钥
+            </summary>
+            <returns>密钥</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.SuperSecurity.GetLegalIV">
+            <summary>
+            获得初始向量IV
+            </summary>
+            <returns>初试向量IV</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.SuperSecurity.Encrypt(System.String)">
+            <summary>
+             使用对称算法进行数据字符串的加密方法
+            </summary>
+            <param name="Source">待加密的串</param>
+            <returns>经过加密的串</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.BaseSecurity.SuperSecurity.Decrypt(System.String)">
+            <summary>
+            是用对称算法进行数据的解密方法
+            </summary>
+            <param name="Source">待解密的串</param>
+            <returns>经过解密的串</returns>
+        </member>
+        <member name="F:XB.Framework.Securitys.Util.LicenseType.SRV">
+            <summary>
+            服务器版本lic:采用IP地址和有效期时间校验
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Securitys.Util.LicenseType.DEV">
+            <summary>
+            开发版本lic：采用cpu编号,主板编号和有效期校验
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Securitys.Util.ValidataResult.Value">
+            <summary>
+            true：授权范围之内可以使用;false:不可使用,已经停止授权
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Securitys.Util.ValidataResult.Mess">
+            <summary>
+            验证描述信息
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Securitys.Util.LicenseUtil.lic_file_name">
+            <summary>
+            lic文件的名称
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Securitys.Util.LicenseUtil.GeneratorLicenseKey(System.String,System.String,System.DateTime,System.DateTime,System.String)">
+            <summary>
+            生成lic验证密钥-凭证为本机信息
+            </summary>
+            <param name="CPUNumer">CPU编号</param>
+            <param name="IPAddress">IP地址</param>
+            <param name="BeginDate">有效期 开始时间</param>
+            <param name="EndDate">有效期 结束时间</param>
+            <param name="licenseType">SRV:服务器版本lic-采用IP地址和有效期时间校验;DEV:开发版本lic-采用cpu编号有效期校验</param>
+            <returns>lic验证密钥</returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.Util.LicenseUtil.ValidateLicense">
+            <summary>
+            验证lic是否在授权范围之内,lic文件位于bin文件目录下，和XB.Framework.Common.dll位于同一路径-凭证为本机信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.Util.LicenseUtil.ValidataLicense(System.String)">
+            <summary>
+            验证lic是否在授权范围之内-凭证为本机信息
+            </summary>
+            <param name="licensePath">lic授权文件的路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.Util.LicenseUtil.ValidationLicense(System.String,System.String)">
+            <summary>
+            验证lic是否在授权范围之内-凭证为本机信息
+            </summary>
+            <param name="licensePath">lic授权文件的路径</param>
+            <param name="licenseType">SRV:服务器版本lic-采用IP地址和有效期时间校验;DEV:开发版本lic-采用cpu编号有效期校验</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Securitys.Util.LicenseUtil.ValidataLicenseKey(System.String,System.String,XB.Framework.Securitys.Util.ClientKeyModel,System.Boolean)">
+            <summary>
+            验证lic是否在授权范围之内
+            </summary>
+            <param name="LicenseKey">加密的密钥</param>
+            <param name="licenseType">SRV:服务器版本lic-采用IP地址和有效期时间校验;DEV:开发版本lic-采用cpu编号有效期校验</param>
+            <param name="_ClientKeyModel">生成lic的客户端信息，主要包含IP或者CPU信息</param>
+            <param name="IsRelease">是否发布 true：程序已发布之验证第一次  fasle：程序未发布每次都进行验证</param>
+            <returns>true：授权范围之内可以使用;false:不可使用,已经停止授权</returns>
+        </member>
+    </members>
+</doc>

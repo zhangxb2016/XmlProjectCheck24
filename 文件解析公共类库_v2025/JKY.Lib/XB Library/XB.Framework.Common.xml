@@ -1,0 +1,4008 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XB.Framework.Common</name>
+    </assembly>
+    <members>
+        <member name="T:XB.Framework.Common.Config.ConnectionConfig">
+            <summary>
+            微软企业库连接数据库配置参数数据
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Config.ConnectionConfig.DefaultDatabase">
+            <summary>
+            默认数据库
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Config.ConnectionConfig.ConectionConfigElements">
+            <summary>
+            数据库连接串集合实体
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Common.Config.ConnectionConfigElement">
+            <summary>
+            数据库连接字符串实体
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Common.Config.AppConfig">
+            <summary>
+            张晓斌
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Config.AppConfig.OpenAppConfig(System.String)">
+            <summary>
+            打开配置文件
+            </summary>
+            <param name="exeName">配置文件的绝对路径</param>
+        </member>
+        <member name="M:XB.Framework.Common.Config.AppConfig.ContainStr(System.String[],System.String)">
+            <summary>
+            判断在数组中是否包含某个数据元素
+            </summary>
+            <param name="strList"></param>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Config.AppConfig.SetConnectionStringsConfig(System.String,System.String,System.String)">
+            <summary>
+            更新连接字符串
+            </summary>
+            <param name="name">连接字符串名称</param>
+            <param name="conString">连接字符串内容</param>
+            <param name="providerName">数据提供程序名称</param>
+            <remarks>
+             张晓斌
+             2016-7-15 00:52:43 新增
+             </remarks>
+        </member>
+        <member name="M:XB.Framework.Common.Config.AppConfig.GetConnectionConfig">
+            <summary>
+            获取配置文件中Connection的键值集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:XB.Framework.Common.Config.GetConfigFromFile">
+            <summary>
+            服务器全局配置类，读取系统目录下的全局配置文件GlobalConfigure.xml
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Config.GetConfigFromFile.#ctor">
+            <summary>
+            从Windows目录下的GsConfigure.xml中读取配置文件，存入cfgXmlDoc中
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Config.GetConfigFromFile.Get(System.String,System.String)">
+            <summary>
+            获取指定应用指定配置项的值
+            </summary>
+            <param name="appName">指定应用程序名称</param>
+            <param name="itemName">指定项名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Config.GetConfigFromFile.Get(System.String)">
+            <summary>
+            获取指定引用指定配置项(不在某一应用下)的值
+            </summary>
+            <param name="itemName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XB.Framework.Common.Config.ConfigUtil">
+            <summary>
+            通用配置管理工具类
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Config.ConfigUtil.DEBUG">
+            <summary> </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Config.ConfigUtil.SESSION_CLASS">
+            <summary> </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Config.ConfigUtil.IsDebug">
+            <summary>
+            调试开关配置，cache处理
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Config.ConfigUtil.SessionClass">
+            <summary>
+            Session实现类配置，cache处理
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Config.ConfigUtil.AppSettings(System.String)">
+            <summary>
+            appsettings其他配置项，注意不要轻易使用，需要通过架构确认
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XB.Framework.Common.Collections.SortableBindingList`1">
+            <summary>
+            实现IList数据源绑定到Winfrom DataGirdView的数据源排序功能
+            张晓斌 2014-12-13
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:XB.Framework.Common.IO.FileUtilityExtension">
+            <summary>
+            File utility extension class
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtilityExtension.WriteStream(System.IO.Stream,System.String)">
+            <summary>
+            Write stream to a file
+            </summary>
+            <param name="inputStream">InputStream value</param>
+            <param name="filePath">FilePath valye</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtilityExtension.WriteStream(System.Web.HttpPostedFileBase,System.String)">
+            <summary>
+            Write stream to a file
+            </summary>
+            <param name="httpPostedFile">HttpPostedFile value</param>
+            <param name="filePath">FilePath value</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtilityExtension.ReadStream(System.IO.FileInfo)">
+            <summary>
+            Read stream value
+            </summary>
+            <param name="fileStream">FileStream to be read</param>
+            <param name="filePath">FilePath value</param>
+            <returns>Stream object</returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.CompressUtil.CompressFile(System.String,System.String)">
+            <summary>
+            压缩文件
+            </summary>
+            <param name="sourceFile">源文件路径</param>
+            <param name="destinationFile">操作文件路径</param>
+        </member>
+        <member name="M:XB.Framework.Common.IO.CompressUtil.DecompressFile(System.String,System.String)">
+            <summary>
+            解压缩文件
+            </summary>
+            <param name="sourceFile">源文件路径</param>
+            <param name="destinationFile">操作文件路径</param>
+        </member>
+        <member name="M:XB.Framework.Common.IO.CompressUtil.CopyStream(System.IO.Stream,System.IO.Stream)">
+            <summary>
+            拷贝文件流
+            </summary>
+            <param name="source">源文件流</param>
+            <param name="destination">目标文件流</param>
+        </member>
+        <member name="M:XB.Framework.Common.IO.CompressUtil.Compress(System.String)">
+            <summary>
+            压缩字符串
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.CompressUtil.Zip(System.Byte[])">
+            <summary>
+            压缩二进制数组——专用于图片的操作
+            2011-12-24 1:06:45 调整 张晓斌 
+            压缩效果名称 压缩比例在50%左右
+            </summary>
+            <param name="buf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.CompressUtil.Unzip(System.Byte[])">
+            <summary>
+            解压缩二进制数组
+            2011-12-24 1:06:45 调整 张晓斌 
+            压缩效果名称 压缩比例在50%左右
+            </summary>
+            <param name="buf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.CompressUtil.Compress(System.Byte[])">
+            <summary>
+            压缩二进制数组——专用于图片的操作
+            </summary>
+            <param name="buf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.CompressUtil.Compress(System.IO.Stream)">
+            <summary>
+            压缩文件流
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.CompressUtil.Decompress(System.String)">
+            <summary>
+            解压缩字符串
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.CompressUtil.Decompress(System.Byte[])">
+            <summary>
+            解压缩二进制数组
+            </summary>
+            <param name="buf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.CompressUtil.Decompress(System.IO.Stream)">
+            <summary>
+            解压缩文件流
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="F:XB.Framework.Common.IO.CompressUtil.WorkWinRarType.Compress">
+            <summary>
+            压缩
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.IO.CompressUtil.WorkWinRarType.Decompress">
+            <summary>
+            解压缩
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.IO.CompressUtil.WorkWinRAR(System.String,System.String,XB.Framework.Common.IO.CompressUtil.WorkWinRarType)">
+            <summary>
+            使用WinRAR操作文件
+            </summary>
+            <param name="sourceFile">源文件的路径</param>
+            <param name="destinationFile">目标文件路径</param>
+            <param name="workWinRarType">压缩文件或者解压缩文件</param>
+        </member>
+        <member name="T:XB.Framework.Common.IO.FileMess">
+            <summary>
+            文件基本信息
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.IO.FileMess.DirectoryName">
+            <summary>
+            对应的文件夹名称
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.IO.FileMess.IsReadOnly">
+            <summary>
+            文件是否只读
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.IO.FileMess.Length">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.IO.FileMess.Name">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.IO.FileMess.Extension">
+            <summary>
+            后缀
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.IO.FileMess.FullName">
+            <summary>
+            文件夹全名称
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.IO.FileMess.CreationTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.IO.FileMess.LastWriteTime">
+            <summary>
+            最终修改时间
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.IO.FileMess.LastAccessTime">
+            <summary>
+            最终数据写入时间
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Common.IO.DirectoryFileMess">
+            <summary>
+            文件夹基本信息
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.IO.DirectoryFileMess.IsEmpyt">
+            <summary>
+            文件夹是否为空
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.IO.DirectoryFileMess.SubFileCount">
+            <summary>
+            文件夹包含子文件的数量
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.IO.DirectoryFileMess.dirOrFile">
+            <summary>
+            类型：文件夹或者文件
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.IO.DirectoryUtil.CopyDirectory(System.String,System.String)">
+            <summary>
+            拷贝某个文件夹下的所有文件到另一个文件目录下 
+            </summary>
+            <param name="sourceDirName">拷贝文件的源路径</param>
+            <param name="destDirName">文件拷贝到的目标路径</param>
+        </member>
+        <member name="M:XB.Framework.Common.IO.DirectoryUtil.CopyDirectory(System.String,System.String,System.String)">
+            <summary>
+            拷贝某个文件夹下的所有文件到另一个文件目录下 
+            </summary>
+            <param name="sourceDirName">拷贝文件的源路径</param>
+            <param name="sourceDir">拷贝文件的源文件夹</param>
+            <param name="destDirName">文件拷贝到的目标路径</param>
+        </member>
+        <member name="M:XB.Framework.Common.IO.DirectoryUtil.GetFiles(System.String)">
+            <summary>
+            返回某个文件夹下的所有文件路径
+            </summary>
+            <param name="rootDirPath">需要返回所有文件的文件夹路径</param>
+            <returns>返回的所有的文件</returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.DirectoryUtil.GetFilesInfo(System.String)">
+            <summary>
+            返回某个文件夹下的所有文件路径信息
+            </summary>
+            <param name="rootDirPath">需要返回所有文件的文件夹路径</param>
+            <returns>返回的所有的文件</returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.DirectoryUtil.GetFileNameList(System.String)">
+            <summary>
+            返回某个文件夹下的所有文件名称
+            </summary>
+            <param name="rootDirPath">需要返回所有文件的文件夹路径</param>
+            <returns>返回的所有的文件</returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.DirectoryUtil.DeleteFolder(System.String,System.Boolean)">
+            <summary>
+            直接删除目录下的所有文件及文件夹
+            </summary>
+            <param name="strDir">目录地址</param>
+            <param name="isDeleteCatalog">是否保留主目录</param>
+            <returns>True:删除成功 false：删除失败</returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.DirectoryUtil.GetDirectoryFiles(System.String,System.Boolean)">
+            <summary>
+            获取某个文件夹下的所有的文件夹及文件信息-不获取文件夹下的文件数量
+            </summary>
+            <param name="rootDirPath">需要返回所有文件的文件夹路径</param>
+            <param name="IsGetFileCount">是否获取文件夹下包含的文件数量</param>
+            <returns>返回的所有的文件及文件夹对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.DirectoryUtil.GetDirectoryFiles(System.String,System.Collections.Generic.List{XB.Framework.Common.IO.DirectoryFileMess},XB.Framework.Common.IO.DirectoryOrFile,System.Boolean)">
+            <summary>
+            获取某个文件夹下的所有的文件夹及文件信息
+            </summary>
+            <param name="dirPath">需要返回所有文件的文件夹路径</param>
+            <param name="litDir">需要返回的所有的所有的文件夹及文件对象</param>
+            <param name="dirOrFile">获取实体的类型 Directory:文件夹、File:文件、All：全部</param>
+            <param name="IsGetFileCount">是否获取文件夹下包含的文件数量</param>
+            <returns>返回的所有的文件对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.DirectoryUtil.GetDirectorys(System.String,System.Boolean)">
+            <summary>
+            获取某个文件夹下的所有的文件夹及文件信息
+            </summary>
+            <param name="rootDirPath">需要返回所有文件的文件夹路径</param>
+            <param name="IsGetFileCount">是否获取文件夹下面包含文件的数量</param>
+            <returns>返回的所有的文件及文件夹对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.DirectoryUtil.GetFileList(System.String)">
+            <summary>
+            获取某个文件夹下的所有的文件信息
+            </summary>
+            <param name="rootDirPath">需要返回所有文件的文件夹路径</param>
+            <returns>返回的所有的文件对象</returns>
+        </member>
+        <member name="T:XB.Framework.Common.IO.DomainFileConfig">
+            <summary>
+            文件配置元素
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.IO.DomainFileConfig.UserName">
+            <summary>
+            登陆域的用户名
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.IO.DomainFileConfig.PassWord">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.IO.DomainFileConfig.Domain">
+            <summary>
+            域名
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.IO.DomainFileConfig.SaveSharedPath">
+            <summary>
+            文件保存的共享文件夹路径
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.IO.WinLogonHelper.LogonUser(System.String,System.String,System.String,System.Int32,System.Int32,System.IntPtr@)">
+            <summary>
+            模拟windows登录域
+            http://www.cnblogs.com/yukaizhao/
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtil.GetKB(System.Double)">
+            <summary>
+            获取字节的KB值
+            </summary>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtil.GetFileDirectoryPath(System.String)">
+            <summary>
+            获取某个文件所在的目录路径
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtil.GetFileDirectoryInfo(System.String)">
+            <summary>
+            获取路径下的文件夹信息
+            </summary>
+            <param name="fileFullName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtil.GetFileName(System.String)">
+            <summary>
+            获取文件名称
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtil.FileToByte(System.String)">
+            <summary>
+            将文件转换为byte数组
+            </summary>
+            <param name="path">文件地址</param>
+            <returns>转换后的byte数组</returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtil.BytesToFile(System.Byte[],System.String,System.Text.Encoding)">
+            <summary>
+            将byte数组转换为文件并保存到指定地址
+            </summary>
+            <param name="buff">byte数组</param>
+            <param name="savepath">保存地址</param>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtil.GetFileExtension(System.String)">
+            <summary>
+            获取某个文件的扩展名
+            </summary>
+            <param name="fileFullName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtil.GetStrFileExtension(System.String)">
+            <summary>
+            获取某个字符串中的扩展名
+            </summary>
+            <param name="string_val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtil.SaveFileAs(System.String,System.Byte[])">
+            <summary>
+            文件另存为
+            </summary>
+            <param name="fileName"></param>
+            <param name="byFile"></param>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtil.OpenFile(System.String)">
+            <summary>
+            文件打开
+            </summary>
+            <param name="filePath"></param>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtil.WriteTxtFile(System.String,System.String,System.IO.FileMode,System.Text.Encoding)">
+            <summary>
+            把字符串写入文本文件
+            </summary>
+            <param name="filePath">文件路径，包含文件名</param>
+            <param name="WriteFileInfo">写入文件的内容</param>
+            <param name="fileMode">写入文件方式的枚举</param>
+            <param name="encoding">文件的编码方式</param>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtil.ReaderTxtFile(System.String,System.Text.Encoding)">
+            <summary>
+            读取文本文件的内容
+            </summary>
+            <param name="filePath">文件的路径</param>
+            <param name="encoding">字符的编码方式</param>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtil.WriteBinaryFile(System.String,System.String)">
+            <summary>
+            把字符串写入二进制
+            </summary>
+            <param name="filePath"></param>
+            <param name="write_info"></param>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtil.WriteBinaryFile(System.String,System.String,System.IO.FileMode,System.Text.Encoding)">
+            <summary>
+            把字符串写入二进制
+            </summary>
+            <param name="filePath">文件路径，包含文件名</param>
+            <param name="write_info">写入文件的内容</param>
+            <param name="fileMode">写入文件方式的枚举</param>
+            <param name="encoding">文件的编码方式</param>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtil.ReaderBinaryFile(System.String)">
+            <summary>
+            读取二进制文件的内容
+            </summary>
+            <param name="filePath">文件的路径</param>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtil.ReaderBinaryFile(System.String,System.Text.Encoding)">
+            <summary>
+            读取二进制文件的内容
+            </summary>
+            <param name="filePath">文件的路径</param>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtil.ISTwoFileEquals(System.String,System.String)">
+            <summary>
+            比较两个文件是否相等
+            </summary>
+            <param name="fistFilePath">第一个文件的路径</param>
+            <param name="secondFilePath">第二个文件的路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtil.WriteDomainBinaryFile(XB.Framework.Common.IO.DomainFileConfig,System.Byte[],System.IO.FileMode,System.Text.Encoding)">
+            <summary>
+            实现对域共享文件的写入操作-二进制
+            </summary>
+            <param name="domainFileConfig">与文件共享目录的配置参数：包含用户名、密码、域名、及文件保存的共享文件夹路径</param>
+            <param name="buff">需要写入的二进制数组</param>
+            <param name="fileMode">文件的生成模式</param>
+            <param name="encoding">编码格式，默认为utf-8</param>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtil.WriteDomainTxtFile(XB.Framework.Common.IO.DomainFileConfig,System.String,System.IO.FileMode,System.Text.Encoding)">
+            <summary>
+            实现对域共享文件的写入操作-二进制
+            </summary>
+            <param name="domainFileConfig">与文件共享目录的配置参数：包含用户名、密码、域名、及文件保存的共享文件夹路径</param>
+            <param name="write_info">写入内容</param>
+            <param name="fileMode">文件的生成模式</param>
+            <param name="encoding">编码格式，默认为utf-8</param>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtil.GetFileSize(System.String)">
+            <summary>
+            获取文件大小
+            </summary>
+            <param name="sFullName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtil.CountSize(System.Int64)">
+            <summary>
+            计算文件大小函数(保留两位小数),Size为字节大小
+            </summary>
+            <param name="Size">初始文件大小</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.FileUtil.GetAutoSizeString(System.Double,System.Int32)">
+            <summary>
+            得到适应的大小
+            </summary>
+            <param name="path"></param>
+            <returns>string</returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.StreamUtil.StreamToByte(System.IO.Stream)">
+            <summary>
+            数据流转换为二进制数组
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.IO.StreamUtil.ConvertToByte(System.IO.Stream)">
+            <summary>
+            数据流转换为二进制数组
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XB.Framework.Common.Net.CookieUtil">
+            <summary>
+            Cookie操作类
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Net.CookieUtil.SetCookie(System.String,System.String)">
+            <summary>
+            创建COOKIE对象并赋Value值，修改COOKIE的Value值也用此方法，因为对COOKIE修改必须重新设Expires
+            </summary>
+            <param name="strCookieName">COOKIE对象名</param>
+            <param name="strValue">COOKIE对象Value值</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.CookieUtil.SetCookie(System.String,System.Int32,System.String)">
+            <summary>
+            创建COOKIE对象并赋Value值，修改COOKIE的Value值也用此方法，因为对COOKIE修改必须重新设Expires
+            </summary>
+            <param name="strCookieName">COOKIE对象名</param>
+            <param name="iExpires">COOKIE对象有效时间（秒数），1表示永久有效，0和负数都表示不设有效时间，大于等于2表示具体有效秒数，31536000秒=1年=(60*60*24*365)，</param>
+            <param name="strValue">COOKIE对象Value值</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.CookieUtil.SetCookie(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            创建COOKIE对象并赋Value值，修改COOKIE的Value值也用此方法，因为对COOKIE修改必须重新设Expires
+            </summary>
+            <param name="strCookieName">COOKIE对象名</param>
+            <param name="iExpires">COOKIE对象有效时间（秒数），1表示永久有效，0和负数都表示不设有效时间，大于等于2表示具体有效秒数，31536000秒=1年=(60*60*24*365)，</param>
+            <param name="strValue">COOKIE对象Value值</param>
+            <param name="strDomains">作用域,多个域名用;隔开</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.CookieUtil.SetCookie(System.String,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            创建COOKIE对象并赋Value值，修改COOKIE的Value值也用此方法，因为对COOKIE修改必须重新设Expires
+            </summary>
+            <param name="strCookieName">COOKIE对象名</param>
+            <param name="iExpires">COOKIE对象有效时间（秒数），1表示永久有效，0和负数都表示不设有效时间，大于等于2表示具体有效秒数，31536000秒=1年=(60*60*24*365)，</param>
+            <param name="strValue">COOKIE对象Value值</param>
+            <param name="strDomains">作用域,多个域名用;隔开</param>
+            <param name="strPath">作用路径</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.CookieUtil.SetCookie(System.String,System.Int32,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            创建COOKIE对象并赋多个KEY键值
+            设键/值如下：
+            NameValueCollection myCol = new NameValueCollection();
+            myCol.Add("red", "rojo");
+            myCol.Add("green", "verde");
+            myCol.Add("blue", "azul");
+            myCol.Add("red", "rouge");   结果“red:rojo,rouge；green:verde；blue:azul”
+            </summary>
+            <param name="strCookieName">COOKIE对象名</param>
+            <param name="iExpires">COOKIE对象有效时间（秒数），1表示永久有效，0和负数都表示不设有效时间，大于等于2表示具体有效秒数，31536000秒=1年=(60*60*24*365)，</param>
+            <param name="KeyValue">键/值对集合</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.CookieUtil.SetCookie(System.String,System.Int32,System.Collections.Specialized.NameValueCollection,System.String,System.String)">
+            <summary>
+            创建COOKIE对象并赋多个KEY键值
+            设键/值如下：
+            NameValueCollection myCol = new NameValueCollection();
+            myCol.Add("red", "rojo");
+            myCol.Add("green", "verde");
+            myCol.Add("blue", "azul");
+            myCol.Add("red", "rouge");   结果“red:rojo,rouge；green:verde；blue:azul”
+            </summary>
+            <param name="strCookieName">COOKIE对象名</param>
+            <param name="iExpires">COOKIE对象有效时间（秒数），1表示永久有效，0和负数都表示不设有效时间，大于等于2表示具体有效秒数，31536000秒=1年=(60*60*24*365)，</param>
+            <param name="KeyValue">键/值对集合</param>
+            <param name="strDomains">作用域,多个域名用;隔开</param>
+            <param name="strPath">作用路径</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.CookieUtil.GetCookie(System.String)">
+            <summary>
+            读取Cookie某个对象的Value值，返回Value值，如果对象本就不存在，则返回字符串null
+            </summary>
+            <param name="strCookieName">Cookie对象名称</param>
+            <returns>Value值，如果对象本就不存在，则返回字符串null</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Net.CookieUtil.GetCookie(System.String,System.String)">
+            <summary>
+            读取Cookie某个对象的某个Key键的键值，返回Key键值，如果对象本就不存在，则返回字符串null，如果Key键不存在，则返回字符串"KeyNonexistence"
+            </summary>
+            <param name="strCookieName">Cookie对象名称</param>
+            <param name="strKeyName">Key键名</param>
+            <returns>Key键值，如果对象本就不存在，则返回字符串null，如果Key键不存在，则返回字符串"KeyNonexistence"</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Net.CookieUtil.EditCookie(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            修改某个COOKIE对象某个Key键的键值 或 给某个COOKIE对象添加Key键 都调用本方法，操作成功返回字符串"success"，如果对象本就不存在，则返回字符串null。
+            </summary>
+            <param name="strCookieName">Cookie对象名称</param>
+            <param name="strKeyName">Key键名</param>
+            <param name="KeyValue">Key键值</param>
+            <param name="iExpires">COOKIE对象有效时间（秒数），1表示永久有效，0和负数都表示不设有效时间，大于等于2表示具体有效秒数，31536000秒=1年=(60*60*24*365)。注意：虽是修改功能，实则重建覆盖，所以时间也要重设，因为没办法获得旧的有效期</param>
+            <returns>如果对象本就不存在，则返回字符串null，如果操作成功返回字符串"success"。</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Net.CookieUtil.EditCookie(System.String,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            修改某个COOKIE对象某个Key键的键值 或 给某个COOKIE对象添加Key键 都调用本方法，操作成功返回字符串"success"，如果对象本就不存在，则返回字符串null。
+            </summary>
+            <param name="strCookieName">Cookie对象名称</param>
+            <param name="strKeyName">Key键名</param>
+            <param name="KeyValue">Key键值</param>
+            <param name="iExpires">COOKIE对象有效时间（秒数），1表示永久有效，0和负数都表示不设有效时间，大于等于2表示具体有效秒数，31536000秒=1年=(60*60*24*365)。注意：虽是修改功能，实则重建覆盖，所以时间也要重设，因为没办法获得旧的有效期</param>
+            <param name="strPath">作用路径</param>
+            <returns>如果对象本就不存在，则返回字符串null，如果操作成功返回字符串"success"。</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Net.CookieUtil.EditCookie(System.String,System.String,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            修改某个COOKIE对象某个Key键的键值 或 给某个COOKIE对象添加Key键 都调用本方法，操作成功返回字符串"success"，如果对象本就不存在，则返回字符串null。
+            </summary>
+            <param name="strCookieName">Cookie对象名称</param>
+            <param name="strKeyName">Key键名</param>
+            <param name="KeyValue">Key键值</param>
+            <param name="iExpires">COOKIE对象有效时间（秒数），1表示永久有效，0和负数都表示不设有效时间，大于等于2表示具体有效秒数，31536000秒=1年=(60*60*24*365)。注意：虽是修改功能，实则重建覆盖，所以时间也要重设，因为没办法获得旧的有效期</param>
+            <param name="strDomains">作用域,多个域名用;隔开</param>
+            <param name="strPath">作用路径</param>
+            <returns>如果对象本就不存在，则返回字符串null，如果操作成功返回字符串"success"。</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Net.CookieUtil.DeleteCookie(System.String)">
+            <summary>
+            删除COOKIE对象
+            </summary>
+            <param name="strCookieName">Cookie对象名称</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.CookieUtil.DeleteCookie(System.String,System.String)">
+            <summary>
+            删除COOKIE对象
+            </summary>
+            <param name="strCookieName">Cookie对象名称</param>
+            <param name="strDomains">作用域,多个域名用;隔开</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.CookieUtil.DeleteCookie(System.String,System.String,System.String)">
+            <summary>
+            删除COOKIE对象
+            </summary>
+            <param name="strCookieName">Cookie对象名称</param>
+            <param name="strDomains">作用域,多个域名用;隔开</param>
+            <param name="strPath">作用路径</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.CookieUtil.DeletctKey(System.String,System.String,System.Int32)">
+            <summary>
+            删除某个COOKIE对象某个Key子键，操作成功返回字符串"success"，如果对象本就不存在，则返回字符串null
+            </summary>
+            <param name="strCookieName">Cookie对象名称</param>
+            <param name="strKeyName">Key键名</param>
+            <param name="iExpires">COOKIE对象有效时间（秒数），1表示永久有效，0和负数都表示不设有效时间，大于等于2表示具体有效秒数，31536000秒=1年=(60*60*24*365)。注意：虽是修改功能，实则重建覆盖，所以时间也要重设，因为没办法获得旧的有效期</param>
+            <returns>如果对象本就不存在，则返回字符串null，如果操作成功返回字符串"success"。</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Net.CookieUtil.SelectDomain(System.String)">
+            <summary>
+            定位到正确的域
+            </summary>
+            <param name="strDomains"></param>
+            <returns></returns>
+        </member>
+        <member name="F:XB.Framework.Common.Net.FTPUtil.Request">
+            <summary>
+            FTP请求对象
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Net.FTPUtil.Response">
+            <summary>
+            FTP响应对象
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Net.FTPUtil._Uri">
+            <summary>
+            FTP服务器地址
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Net.FTPUtil.Uri">
+            <summary>
+            FTP服务器地址
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Net.FTPUtil._DirectoryPath">
+            <summary>
+            当前工作目录
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Net.FTPUtil.DirectoryPath">
+            <summary>
+            当前工作目录
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Net.FTPUtil._UserName">
+            <summary>
+            FTP登录用户
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Net.FTPUtil.UserName">
+            <summary>
+            FTP登录用户
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Net.FTPUtil._ErrorMsg">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Net.FTPUtil.ErrorMsg">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Net.FTPUtil._Password">
+            <summary>
+            FTP登录密码
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Net.FTPUtil.Password">
+            <summary>
+            FTP登录密码
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Net.FTPUtil._Proxy">
+            <summary>
+            连接FTP服务器的代理服务
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Net.FTPUtil.Proxy">
+            <summary>
+            连接FTP服务器的代理服务
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Net.FTPUtil._isDeleteTempFile">
+            <summary>
+            是否需要删除临时文件
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Net.FTPUtil._UploadTempFile">
+            <summary>
+            异步上传所临时生成的文件
+            </summary>
+        </member>
+        <member name="E:XB.Framework.Common.Net.FTPUtil.DownloadProgressChanged">
+            <summary>
+            异步下载进度发生改变触发的事件
+            </summary>
+        </member>
+        <member name="E:XB.Framework.Common.Net.FTPUtil.DownloadDataCompleted">
+            <summary>
+            异步下载文件完成之后触发的事件
+            </summary>
+        </member>
+        <member name="E:XB.Framework.Common.Net.FTPUtil.UploadProgressChanged">
+            <summary>
+            异步上传进度发生改变触发的事件
+            </summary>
+        </member>
+        <member name="E:XB.Framework.Common.Net.FTPUtil.UploadFileCompleted">
+            <summary>
+            异步上传文件完成之后触发的事件
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.#ctor(System.Uri,System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="FtpUri">FTP地址</param>
+            <param name="strUserName">登录用户名</param>
+            <param name="strPassword">登录密码</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.#ctor(System.Uri,System.String,System.String,System.Net.WebProxy)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="FtpUri">FTP地址</param>
+            <param name="strUserName">登录用户名</param>
+            <param name="strPassword">登录密码</param>
+            <param name="objProxy">连接代理</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.Finalize">
+            <summary>
+            析构函数
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.Open(System.Uri,System.String)">
+            <summary>
+            建立FTP链接,返回响应对象
+            </summary>
+            <param name="uri">FTP地址</param>
+            <param name="FtpMathod">操作命令</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.OpenRequest(System.Uri,System.String)">
+            <summary>
+            建立FTP链接,返回请求对象
+            </summary>
+            <param name="uri">FTP地址</param>
+            <param name="FtpMathod">操作命令</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.DownloadFile(System.String,System.String)">
+            <summary>
+            从FTP服务器下载文件，使用与远程文件同名的文件名来保存文件
+            </summary>
+            <param name="RemoteFileName">远程文件名</param>
+            <param name="LocalPath">本地路径</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.DownloadFile(System.String,System.String,System.String)">
+            <summary>
+            从FTP服务器下载文件，指定本地路径和本地文件名
+            </summary>
+            <param name="RemoteFileName">远程文件名</param>
+            <param name="LocalPath">本地路径</param>
+            <param name="LocalFilePath">保存文件的本地路径,后面带有"\"</param>
+            <param name="LocalFileName">保存本地的文件名</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.DownloadFile(System.String)">
+            <summary>
+            从FTP服务器下载文件，返回文件二进制数据
+            </summary>
+            <param name="RemoteFileName">远程文件名</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.DownloadFileAsync(System.String,System.String,System.String)">
+            <summary>
+            从FTP服务器异步下载文件，指定本地路径和本地文件名
+            </summary>
+            <param name="RemoteFileName">远程文件名</param>        
+            <param name="LocalPath">保存文件的本地路径,后面带有"\"</param>
+            <param name="LocalFileName">保存本地的文件名</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.DownloadFileAsync(System.String,System.String)">
+            <summary>
+            从FTP服务器异步下载文件，指定本地完整路径文件名
+            </summary>
+            <param name="RemoteFileName">远程文件名</param>
+            <param name="LocalFullPath">本地完整路径文件名</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.client_DownloadFileCompleted(System.Object,System.ComponentModel.AsyncCompletedEventArgs)">
+            <summary>
+            异步下载文件完成之后触发的事件
+            </summary>
+            <param name="sender">下载对象</param>
+            <param name="e">数据信息对象</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.client_DownloadProgressChanged(System.Object,System.Net.DownloadProgressChangedEventArgs)">
+            <summary>
+            异步下载进度发生改变触发的事件
+            </summary>
+            <param name="sender">下载对象</param>
+            <param name="e">进度信息对象</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.UploadFile(System.String)">
+            <summary>
+            上传文件到FTP服务器
+            </summary>
+            <param name="LocalFullPath">本地带有完整路径的文件名</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.UploadFile(System.String,System.Boolean)">
+            <summary>
+            上传文件到FTP服务器
+            </summary>
+            <param name="LocalFullPath">本地带有完整路径的文件</param>
+            <param name="OverWriteRemoteFile">是否覆盖远程服务器上面同名的文件</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.UploadFile(System.String,System.String)">
+            <summary>
+            上传文件到FTP服务器
+            </summary>
+            <param name="LocalFullPath">本地带有完整路径的文件</param>
+            <param name="RemoteFileName">要在FTP服务器上面保存文件名</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.UploadFile(System.String,System.String,System.Boolean)">
+            <summary>
+            上传文件到FTP服务器
+            </summary>
+            <param name="LocalFullPath">本地带有完整路径的文件名</param>
+            <param name="RemoteFileName">要在FTP服务器上面保存文件名</param>
+            <param name="OverWriteRemoteFile">是否覆盖远程服务器上面同名的文件</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.UploadFile(System.Byte[],System.String)">
+            <summary>
+            上传文件到FTP服务器
+            </summary>
+            <param name="FileBytes">上传的二进制数据</param>
+            <param name="RemoteFileName">要在FTP服务器上面保存文件名</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.UploadFile(System.Byte[],System.String,System.Boolean)">
+            <summary>
+            上传文件到FTP服务器
+            </summary>
+            <param name="FileBytes">文件二进制内容</param>
+            <param name="RemoteFileName">要在FTP服务器上面保存文件名</param>
+            <param name="OverWriteRemoteFile">是否覆盖远程服务器上面同名的文件</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.UploadFileAsync(System.String)">
+            <summary>
+            异步上传文件到FTP服务器
+            </summary>
+            <param name="LocalFullPath">本地带有完整路径的文件名</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.UploadFileAsync(System.String,System.Boolean)">
+            <summary>
+            异步上传文件到FTP服务器
+            </summary>
+            <param name="LocalFullPath">本地带有完整路径的文件</param>
+            <param name="OverWriteRemoteFile">是否覆盖远程服务器上面同名的文件</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.UploadFileAsync(System.String,System.String)">
+            <summary>
+            异步上传文件到FTP服务器
+            </summary>
+            <param name="LocalFullPath">本地带有完整路径的文件</param>
+            <param name="RemoteFileName">要在FTP服务器上面保存文件名</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.UploadFileAsync(System.String,System.String,System.Boolean)">
+            <summary>
+            异步上传文件到FTP服务器
+            </summary>
+            <param name="LocalFullPath">本地带有完整路径的文件名</param>
+            <param name="RemoteFileName">要在FTP服务器上面保存文件名</param>
+            <param name="OverWriteRemoteFile">是否覆盖远程服务器上面同名的文件</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.UploadFileAsync(System.Byte[],System.String)">
+            <summary>
+            异步上传文件到FTP服务器
+            </summary>
+            <param name="FileBytes">上传的二进制数据</param>
+            <param name="RemoteFileName">要在FTP服务器上面保存文件名</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.UploadFileAsync(System.Byte[],System.String,System.Boolean)">
+            <summary>
+            异步上传文件到FTP服务器
+            </summary>
+            <param name="FileBytes">文件二进制内容</param>
+            <param name="RemoteFileName">要在FTP服务器上面保存文件名</param>
+            <param name="OverWriteRemoteFile">是否覆盖远程服务器上面同名的文件</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.client_UploadFileCompleted(System.Object,System.Net.UploadFileCompletedEventArgs)">
+            <summary>
+            异步上传文件完成之后触发的事件
+            </summary>
+            <param name="sender">下载对象</param>
+            <param name="e">数据信息对象</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.client_UploadProgressChanged(System.Object,System.Net.UploadProgressChangedEventArgs)">
+            <summary>
+            异步上传进度发生改变触发的事件
+            </summary>
+            <param name="sender">下载对象</param>
+            <param name="e">进度信息对象</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.ListFilesAndDirectories">
+            <summary>
+            列出FTP服务器上面当前目录的所有文件和目录
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.ListFiles">
+            <summary>
+            列出FTP服务器上面当前目录的所有文件
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.ListDirectories">
+            <summary>
+            列出FTP服务器上面当前目录的所有的目录
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.GetList(System.String)">
+            <summary>
+            获得文件和目录列表
+            </summary>
+            <param name="datastring">FTP返回的列表字符信息</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.ParseFileStructFromWindowsStyleRecord(System.String)">
+            <summary>
+            从Windows格式中返回文件信息
+            </summary>
+            <param name="Record">文件信息</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.GuessFileListStyle(System.String[])">
+            <summary>
+            判断文件列表的方式Window方式还是Unix方式
+            </summary>
+            <param name="recordList">文件信息列表</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.ParseFileStructFromUnixStyleRecord(System.String)">
+            <summary>
+            从Unix格式中返回文件信息
+            </summary>
+            <param name="Record">文件信息</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil._cutSubstringFromStringWithTrim(System.String@,System.Char,System.Int32)">
+            <summary>
+            按照一定的规则进行字符串截取
+            </summary>
+            <param name="s">截取的字符串</param>
+            <param name="c">查找的字符</param>
+            <param name="startIndex">查找的位置</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.DirectoryExist(System.String)">
+            <summary>
+            判断当前目录下指定的子目录是否存在
+            </summary>
+            <param name="RemoteDirectoryName">指定的目录名</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.FileExist(System.String)">
+            <summary>
+            判断一个远程文件是否存在服务器当前目录下面
+            </summary>
+            <param name="RemoteFileName">远程文件名</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.DeleteFile(System.String)">
+            <summary>
+            从FTP服务器上面删除一个文件
+            </summary>
+            <param name="RemoteFileName">远程文件名</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.ReName(System.String,System.String)">
+            <summary>
+            更改一个文件的名称或一个目录的名称
+            </summary>
+            <param name="RemoteFileName">原始文件或目录名称</param>
+            <param name="NewFileName">新的文件或目录的名称</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.CopyFileToAnotherDirectory(System.String,System.String)">
+            <summary>
+            把当前目录下面的一个文件拷贝到服务器上面另外的目录中，注意，拷贝文件之后，当前工作目录还是文件原来所在的目录
+            </summary>
+            <param name="RemoteFile">当前目录下的文件名</param>
+            <param name="DirectoryName">新目录名称。
+            说明：如果新目录是当前目录的子目录，则直接指定子目录。如: SubDirectory1/SubDirectory2 ；
+            如果新目录不是当前目录的子目录，则必须从根目录一级一级的指定。如： ./NewDirectory/SubDirectory1/SubDirectory2
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.MoveFileToAnotherDirectory(System.String,System.String)">
+            <summary>
+            把当前目录下面的一个文件移动到服务器上面另外的目录中，注意，移动文件之后，当前工作目录还是文件原来所在的目录
+            </summary>
+            <param name="RemoteFile">当前目录下的文件名</param>
+            <param name="DirectoryName">新目录名称。
+            说明：如果新目录是当前目录的子目录，则直接指定子目录。如: SubDirectory1/SubDirectory2 ；
+            如果新目录不是当前目录的子目录，则必须从根目录一级一级的指定。如： ./NewDirectory/SubDirectory1/SubDirectory2
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.MoveFileToAnotherDirectory(System.String,System.String,System.String)">
+            <summary>
+            把当前目录下面的一个文件移动到服务器上面另外的目录中，注意，移动文件之后，当前工作目录还是文件原来所在的目录
+            </summary>
+            <param name="RemoteFile">当前目录下的文件名</param>
+            <param name="DirectoryName">新目录名称。
+            说明：如果新目录是当前目录的子目录，则直接指定子目录。如: SubDirectory1/SubDirectory2 ；
+            如果新目录不是当前目录的子目录，则必须从根目录一级一级的指定。如： ./NewDirectory/SubDirectory1/SubDirectory2
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.MakeDirectory(System.String)">
+            <summary>
+            在FTP服务器上当前工作目录建立一个子目录
+            </summary>
+            <param name="DirectoryName">子目录名称</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.RemoveDirectory(System.String)">
+            <summary>
+            从当前工作目录中删除一个子目录
+            </summary>
+            <param name="DirectoryName">子目录名称</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.IsValidPathChars(System.String)">
+            <summary>
+            判断目录名中字符是否合法
+            </summary>
+            <param name="DirectoryName">目录名称</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.IsValidFileChars(System.String)">
+            <summary>
+            判断文件名中字符是否合法
+            </summary>
+            <param name="FileName">文件名称</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.GotoDirectory(System.String)">
+            <summary>
+            进入一个目录
+            </summary>
+            <param name="DirectoryName">
+            新目录的名字。 
+            说明：如果新目录是当前目录的子目录，则直接指定子目录。如: SubDirectory1/SubDirectory2 ； 
+            如果新目录不是当前目录的子目录，则必须从根目录一级一级的指定。如： ./NewDirectory/SubDirectory1/SubDirectory2
+            </param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.EnterOneSubDirectory(System.String)">
+            <summary>
+            从当前工作目录进入一个子目录
+            </summary>
+            <param name="DirectoryName">子目录名称</param>
+        </member>
+        <member name="M:XB.Framework.Common.Net.FTPUtil.ComeoutDirectory">
+            <summary>
+            从当前工作目录往上一级目录
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Net.HttpClientUtil.PostResponseContentType(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>
+            post请求
+            </summary>
+            <param name="url"></param>
+            <param name="postData">post数据</param>
+            <param name="requestHeaders">发起Post请求的Header集合 key为head的name，value为head中的value</param>
+            <param name="mediaType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Net.HttpClientUtil.PostResponse(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            post请求
+            </summary>
+            <param name="url"></param>
+            <param name="postData">post数据</param>
+            <param name="headers">发起Post请求的Header集合 key为head的name，value为head中的value</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Net.HttpClientUtil.PostResponse``2(System.String,``0)">
+            <summary>
+            发起post请求
+            此方法2018-8-1 16:58:55 验证，兼容Java和.Net编写的WebAPI程序
+            </summary>
+            <typeparam name="PostTask">提交任务的类型</typeparam>
+            <typeparam name="ResponseTask">返回任务的类型</typeparam>
+            <param name="url">url</param>
+            <param name="postData">post数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Net.HttpClientUtil.PostResponseKey``1(System.String,``0)">
+            <summary>
+            发起post请求主键返回
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url">url</param>
+            <param name="postData">post数据</param>
+            <returns>主键</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Net.HttpClientUtil.PostResponse``1(System.String,System.String)">
+            <summary>
+            发起post请求
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url">url</param>
+            <param name="postData">post数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Net.HttpClientUtil.PostXmlResponse``1(System.String,System.String)">
+            <summary>
+            V3接口全部为Xml形式，故有此方法
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url"></param>
+            <param name="xmlString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Net.HttpClientUtil.XmlDeserialize``1(System.String)">
+            <summary>
+            反序列化Xml
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="xmlString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Net.HttpClientUtil.GetResponse(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            get请求
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Net.HttpClientUtil.GetResponse``1(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            get请求
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:XB.Framework.Common.Net.HttpClientUtil.GetResponseList``1(System.String)" -->
+        <member name="M:XB.Framework.Common.Net.HttpClientUtil.DeleteResponse(System.String)">
+            <summary>
+            Delete请求
+            </summary>
+            <param name="url"></param>
+            <param name="postData">post数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Net.HttpClientUtil.PutListDataResponse``1(System.String,System.Collections.Generic.List{``0})">
+            <summary>
+            发起put请求 List格式数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url">url</param>
+            <param name="postData">put数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Net.HttpClientUtil.PutDataResponse``1(System.String,``0)">
+            <summary>
+            发起put请求 (修改时候用)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url">url</param>
+            <param name="postData">put数据</param>
+            <returns></returns>
+        </member>
+        <member name="T:XB.Framework.Common.Net.WebClient_cls`1">
+            <summary>
+            webclient 帮助类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:XB.Framework.Common.Net.WebClient_cls`1.Method_e">
+            <summary>
+            Method enum
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Net.WebClient_cls`1.DevlopLang.Java">
+            <summary>
+            Java 开发
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Net.WebClient_cls`1.DevlopLang.DotNet">
+            <summary>
+            C# .Net开发
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Net.WebClient_cls`1.WebRequest(System.Uri,System.Collections.Specialized.NameValueCollection,XB.Framework.Common.Net.WebClient_cls{`0}.Method_e,System.String,System.String)">
+            <summary>
+            调用webclient 返回 json 序列化后 泛型对象
+            </summary>
+            <param name="uri">路径</param>
+            <param name="datas">参数 默认null</param>
+            <param name="method">提交方法 默认GET</param>
+            <param name="charset">编码 默认 GB2312</param>
+            <param name="devlopLang">开发语言，目前兼容.Net和Java，采用DevlopLang枚举值调用</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Net.WebClient_cls`1.WebRequestAsync(System.Uri,System.Action{`0},System.Collections.Specialized.NameValueCollection,XB.Framework.Common.Net.WebClient_cls{`0}.Method_e,System.String)">
+            <summary>
+            异步调用webclient 返回 json 序列化后 泛型对象
+            </summary>
+            <param name="uri">路径</param>
+            <param name="datas">参数 默认null</param>
+            <param name="method">提交方法 默认GET</param>
+            <param name="charset">编码 默认 GB2312</param>
+            <param name="ReturnT">异步回调方法</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Net.WebClient_cls`1.ObjectConvertJson(System.String)">
+            <summary>
+            字符串对象序列化
+            </summary>
+            <param name="jsonstr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Net.WebClient_cls`1.ObjectToJson(System.Object)">
+            <summary>
+            ObjectToJson 对象序列化 返回json
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.Base64Util.EncodeBase64(System.String,System.String)">
+            <summary>
+            编码
+            </summary>
+            <param name="code_type">Encoding编码规范</param>
+            <param name="code">带解码的Base64</param>
+            <returns>采用Base64位编码后的字符串</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.Base64Util.DecodeBase64(System.String,System.String)">
+            <summary>
+              解码
+            </summary>
+            <param name="code_type">Encoding编码规范</param>
+            <param name="code">带解码的Base64</param>
+            <returns>解码后的32位字符串</returns>
+        </member>
+        <member name="T:XB.Framework.Common.Util.CNDate">
+            <summary>
+            农历属性
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.CNDate.cnIntYear">
+            <summary>
+            农历年(整型)
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.CNDate.cnIntMonth">
+            <summary>
+            农历月份(整型)
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.CNDate.cnIntDay">
+            <summary>
+            农历天(整型)
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.CNDate.cnStrYear">
+            <summary>
+            农历年(支干)
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.CNDate.cnStrMonth">
+            <summary>
+            农历月份(字符)
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.CNDate.cnStrDay">
+            <summary>
+            农历天(字符)
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.CNDate.cnAnm">
+            <summary>
+            农历属象
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.CNDate.cnSolarTerm">
+            <summary>
+            二十四节气
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.CNDate.cnFtvl">
+            <summary>
+            阴历节日
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.CNDate.cnFtvs">
+            <summary>
+            阳历节日
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Common.Util.ChinaDate">
+            <summary>
+            公历转农历
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChinaDate.lYearDays(System.Int32)">
+            <summary>
+            传回农历y年的总天数
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChinaDate.leapDays(System.Int32)">
+            <summary>
+            传回农历y年闰月的天数
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChinaDate.leapMonth(System.Int32)">
+            <summary>
+            传回农历y年闰哪个月 1-12 , 没闰传回 0
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChinaDate.monthDays(System.Int32,System.Int32)">
+            <summary>
+            传回农历y年m月的总天数
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChinaDate.AnimalsYear(System.Int32)">
+            <summary>
+            传回农历y年的生肖
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChinaDate.cyclicalm(System.Int32)">
+            <summary>
+            传入月日的offset 传回干支,0=甲子
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChinaDate.cyclical(System.Int32)">
+            <summary>
+            传入offset 传回干支, 0=甲子
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChinaDate.Lunar(System.Int32,System.Int32)">
+            <summary>
+            传出农历.year0 .month1 .day2 .yearCyl3 .monCyl4 .dayCyl5 .isLeap6
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChinaDate.calElement(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            传出y年m月d日对应的农历.year0 .month1 .day2 .yearCyl3 .monCyl4 .dayCyl5 .isLeap6
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChinaDate.GetDaysByMonth(System.Int32,System.Int32)">
+            <summary>
+            传回公历y年m月的总天数
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChinaDate.GetMondayDateByDate(System.DateTime)">
+            <summary>
+            根据日期值获得周一的日期
+            </summary>
+            <param name="dt">输入日期</param>
+            <returns>周一的日期</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChinaDate.getChinaDate(System.DateTime)">
+            <summary>
+            获取农历
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Common.Util.ChineseCalendar">
+            <summary>
+            中国日历
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Common.Util.ChineseCalendar.SolarHolidayStruct">
+            <summary>
+            阳历
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Common.Util.ChineseCalendar.LunarHolidayStruct">
+            <summary>
+            农历
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ChineseCalendar.LunarDateArray">
+             <summary>
+             来源于网上的农历数据
+             </summary>
+             <remarks>
+             数据结构如下，共使用17位数据
+             第17位：表示闰月天数，0表示29天   1表示30天
+             第16位-第5位（共12位）表示12个月，其中第16位表示第一月，如果该月为30天则为1，29天为0
+             第4位-第1位（共4位）表示闰月是哪个月，如果当年没有闰月，则置0
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChineseCalendar.#ctor(System.DateTime)">
+            <summary>
+            用一个标准的公历日期来初使化
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChineseCalendar.#ctor(System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            用农历的日期来初使化
+            </summary>
+            <param name="cy">农历年</param>
+            <param name="cm">农历月</param>
+            <param name="cd">农历日</param>
+            <param name="LeapFlag">闰月标志</param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChineseCalendar.GetChineseMonthDays(System.Int32,System.Int32)">
+            <summary>
+            //传回农历y年m月的总天数
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChineseCalendar.GetChineseLeapMonth(System.Int32)">
+            <summary>
+            传回农历 y年闰哪个月 1-12 , 没闰传回 0
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChineseCalendar.GetChineseLeapMonthDays(System.Int32)">
+            <summary>
+            传回农历y年闰月的天数
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChineseCalendar.GetChineseYearDays(System.Int32)">
+            <summary>
+            取农历年一年的天数
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChineseCalendar.GetChineseHour(System.DateTime)">
+            <summary>
+            获得当前时间的时辰
+            </summary> 
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChineseCalendar.CheckDateLimit(System.DateTime)">
+            <summary>
+            检查公历日期是否符合要求
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChineseCalendar.CheckChineseDateLimit(System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            检查农历日期是否合理
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChineseCalendar.ConvertNumToChineseNum(System.Char)">
+            <summary>
+            将0-9转成汉字形式
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChineseCalendar.BitTest32(System.Int32,System.Int32)">
+            <summary>
+            测试某位是否为真
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChineseCalendar.ConvertDayOfWeek(System.DayOfWeek)">
+            <summary>
+            将星期几转成数字表示
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ChineseCalendar.CompareWeekDayHoliday(System.DateTime,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            比较当天是不是指定的第周几
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.newCalendarHoliday">
+            <summary>
+            计算中国农历节日
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.WeekDayHoliday">
+            <summary>
+            按某月第几周第几日计算的节日
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.DateHoliday">
+            <summary>
+            按公历日计算的节日
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.Date">
+            <summary>
+            取对应的公历日期
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.WeekDay">
+            <summary>
+            取星期几
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.WeekDayStr">
+            <summary>
+            周几的字符
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.DateString">
+            <summary>
+            公历日期中文表示法 如一九九七年七月一日
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.IsLeapYear">
+            <summary>
+            当前是否公历闰年
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.ChineseConstellation">
+            <summary>
+            28星宿计算
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.ChineseHour">
+            <summary>
+            时辰
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.IsChineseLeapMonth">
+            <summary>
+            是否闰月
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.IsChineseLeapYear">
+            <summary>
+            当年是否有闰月
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.ChineseDay">
+            <summary>
+            农历日
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.ChineseDayString">
+            <summary>
+            农历日中文表示
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.ChineseMonth">
+            <summary>
+            农历的月份
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.ChineseMonthString">
+            <summary>
+            农历月份字符串
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.ChineseYear">
+            <summary>
+            取农历年份
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.ChineseYearString">
+            <summary>
+            取农历年字符串如，一九九七年
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.ChineseDateString">
+            <summary>
+            取农历日期表示法：农历一九九七年正月初五
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.ChineseTwentyFourDay">
+            <summary>
+            定气法计算二十四节气,二十四节气是按地球公转来计算的，并非是阴历计算的
+            </summary>
+            <remarks>
+            节气的定法有两种。古代历法采用的称为"恒气"，即按时间把一年等分为24份，
+            每一节气平均得15天有余，所以又称"平气"。现代农历采用的称为"定气"，即
+            按地球在轨道上的位置为标准，一周360°，两节气之间相隔15°。由于冬至时地
+            球位于近日点附近，运动速度较快，因而太阳在黄道上移动15°的时间不到15天。
+            夏至前后的情况正好相反，太阳在黄道上移动较慢，一个节气达16天之多。采用
+            定气时可以保证春、秋两分必然在昼夜平分的那两天。
+            </remarks>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.Constellation">
+            <summary>
+            计算指定日期的星座序号 
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.Animal">
+            <summary>
+            计算属相的索引，注意虽然属相是以农历年来区别的，但是目前在实际使用中是按公历来计算的
+            鼠年为1,其它类推
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.AnimalString">
+            <summary>
+            取属相字符串
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.GanZhiYearString">
+            <summary>
+            取农历年的干支表示法如 乙丑年
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.GanZhiMonthString">
+            <summary>
+            取干支的月表示字符串，注意农历的闰月不记干支
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.GanZhiDayString">
+            <summary>
+            取干支日表示法
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ChineseCalendar.GanZhiDateString">
+            <summary>
+            取当前日期的干支表示法如 甲子年乙丑月丙庚日
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DateTimeUtil.DateDiff(XB.Framework.Common.Util.DateTimeUtil.CompareType,System.DateTime,System.DateTime)">
+            <summary>
+            作者:张晓斌 用途：比较两个时间的某个部分的差值
+            </summary>
+            <param name="compareType">
+            可选值：year,YY or yy 年部分|month,MM or mm 月部分|day,DD or dd 日部分|hour,HH or hh 小时|minute,MI or mi 分钟|SS or ss 秒
+            </param>
+            <param name="firstDate">
+            第一个时间
+            </param>
+            <param name="secondDate">
+            第二个时间
+            </param>
+            <returns>
+            第二个时间的对应部分减去第一个时间的对应部分的值
+            </returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DateTimeUtil.GetMonthDays(System.DateTime)">
+            <summary>
+            返回指定月份的天数
+            </summary>
+            <param name="date">需要查看的DataTime日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DateTimeUtil.GetTodayName">
+            <summary>
+            获得当前日期是星期几
+            </summary>
+            <returns>当前的中文星期名称</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DateTimeUtil.GetWeekName(System.DateTime,XB.Framework.Common.Util.DateTimeUtil.Language)">
+            <summary>
+            获取DataTime的中文星期名
+            </summary>
+            <param name="date">获取中文星期名的DataTime</param>
+            <param name="language">语言枚举</param>
+            <returns>中文星期名称</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DateTimeUtil.ConvertToChinese(System.DayOfWeek)">
+            <summary>
+            转换星期为中文名称
+            </summary>
+            <param name="dayOfWeek">英文星期枚举</param>
+            <returns>中文星期名称</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DateTimeUtil.ToSqlString(System.DateTime,System.String,System.String)">
+             <summary>
+            转换为Sql格式的字符串
+             </summary>
+             <param name="datetime"></param>
+             <param name="formart">转换标记符</param>
+             <param name="defaultVal">最小值的字符串默认值</param>
+             <returns>中文星期名称</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.AppRunUtil.HaveRun">
+            <summary>
+            判断本身程序是否已经运行了
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.AppRunUtil.HaveRun(System.String)">
+            <summary>
+            判断某个进程是否已经运行了
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:XB.Framework.Common.Util.CacheUtil">
+            <summary>
+            数据缓存工具类
+            做为静态缓存使用
+            需要动态装载请使用cache缓存块
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.CacheUtil.GetCache(System.String)">
+            <summary>
+            获取当前应用程序指定CacheKey的Cache值
+            </summary>
+            <param name="cacheKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.CacheUtil.SetCache(System.String,System.Object)">
+            <summary>
+            设置当前应用程序指定CacheKey的Cache值
+            </summary>
+            <param name="cacheKey"></param>
+            <param name="objObject"></param>
+        </member>
+        <member name="T:XB.Framework.Common.Util.ConvertUtil">
+            <summary>
+            功能说明：此工具类主要实现各种数据类型转换
+            </summary>
+            <remarks>
+            创建时间：2012年12月12日0:19:29   创建人：张晓斌
+            备注信息：
+            注意事项：
+            修改时间：              
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.ConvertToString(System.Object)">
+            <summary>
+            Object转换到String
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.ConvertToBytes(System.Object)">
+            <summary>
+            Object转换到Byte数组
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.ConvertToLong(System.Object)">
+            <summary>
+            Object转换到Int
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.ConvertToInt(System.Object)">
+            <summary>
+            Object转换到Int
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.ConvertToGuid(System.Object,System.Guid)">
+            <summary>
+            Object转换到GUID
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.ConvertListToQueryInCondition(System.Collections.Generic.List{System.String})">
+            <summary>
+            List转换为可以用作IN查询的条件
+            </summary>
+            <param name="litparam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.ConvertStringToQueryInCondition(System.String)">
+            <summary>
+            转换1,2,3,4为'1','2','3','4'
+            </summary>
+            <param name="strInCondition"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.ConvertToDecimal(System.Object)">
+            <summary>
+            Object转换到Decimail
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.ConvertToDouble(System.Object)">
+            <summary>
+            Object转换到Decimail
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.ConvertToDateTime(System.Object,System.DateTime)">
+            <summary>
+            装换Ojbect为Datetime
+            </summary>
+            <param name="obj">需要装换数据的对象</param>
+            <param name="nullObject">如果不符合规则返回的DateTime对象</param>
+            <returns>装换后的DateTime数据对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.ConvertToDateTime(System.Object)">
+            <summary>
+            装换Object为Datetime,如果不符合规则返回0001-01-01
+            </summary>
+            <param name="obj">需要装转换的对象</param>
+            <returns>转换后的DateTime数据</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:XB.Framework.Common.Util.ConvertUtil.ConvertHashtableToDataTable(System.Collections.Generic.IList{System.Collections.Hashtable})" -->
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.ConvertSmallWriteToBigWrite(System.Decimal)">
+            <summary>
+             将小写的财务数据装换成大写的财务数据
+            </summary>
+            <param name="MyDecimal">2位小数的浮点类型</param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:XB.Framework.Common.Util.ConvertUtil.ConvertEntityToXml``1(``0)" -->
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.ConvertXmlToEntity``1(System.String)">
+            <summary>
+            将xml转换为实体
+            </summary>
+            <typeparam name="T">实体类型</typeparam>
+            <param name="xmlData">xml数据</param>
+            <returns>转换后的实体对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.ConvertArrayToList``1(``0[])">
+            <summary>
+            转换Array为List
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="array"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.ConvetSAPDtoToEntity``2(``0)">
+            <summary>
+            泛型之间进行转化为IList泛型
+            </summary>
+            <typeparam name="TypeDto">In Dto</typeparam>
+            <typeparam name="TypeEntity">Out Dto</typeparam>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.DataTableToIList``1(System.Data.DataTable)">
+             <summary>
+              将DataTable转化为IList泛型
+             </summary>
+             <typeparam name="T">IList参数中对应成员类型</typeparam>
+             <param name="dt">实例化后的DataTable对象</param>
+             <returns></returns>
+             <author>冯志欣</author>
+             <mail>fenzhixin@neusoft.com</mail>
+            <mail>fengzx080628@hotmail.com</mail>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.IListToDataTable``1(System.Collections.Generic.IList{``0},System.String[])">
+            <summary>
+            将泛型集合类转换成DataTable
+            </summary>
+            <typeparam name="T">集合项类型</typeparam>
+            <param name="list">集合</param>
+            <param name="propertyName">需要返回的列的列名</param>
+            <returns>数据集(表)</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.IListToDataTable``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            转换IList实体对象为DataTable
+            </summary>
+            <param name="list">IList对象</param>
+            <returns>DataTable</returns>
+            <remarks>
+             张晓斌
+             2012-12-10 22:47:22
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.ArrayToDataTable``1(``0[])">
+            <summary>
+            装换List格式的实体对象为DataTable
+            </summary>
+            <typeparam name="T">List中Item的实体对象</typeparam>
+            <param name="array">数组参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.ArrayToDataTable``1(``0[],System.String)">
+            <summary>
+            装换List格式的实体对象为DataTable
+            </summary>
+            <typeparam name="T">List中Item的实体对象</typeparam>
+            <param name="array">数组参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.ArrayToXml``1(``0[])">
+            <summary>
+            转换数组对象为DataTable
+            </summary>
+            <typeparam name="T">List中Item的实体对象</typeparam>
+            <param name="array">数组参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.ArrayToXml``1(``0[],System.String)">
+            <summary>
+            转换数组对象为DataTable
+            </summary>
+            <typeparam name="T">List中Item的实体对象</typeparam>
+            <param name="array">数组参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.IListToXml``1(System.Collections.Generic.IList{``0},System.String)">
+            <summary>
+            装换List格式的实体对象为DataTable
+            </summary>
+            <typeparam name="T">List中Item的实体对象</typeparam>
+            <param name="list">List参数</param>
+            <param name="tableName">生成的TableName</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.EntityToDataTable``1(``0)">
+            <summary>
+            将实体对象转换为DataTable
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.EntityToDataTable``1(``0,System.String)">
+            <summary>
+            将实体对象转换为DataTable
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ConvertUtil.ConverArrayToInCondition(System.Array)">
+            <summary>
+            转换数组为可以适用于In查询的查询参数
+            </summary>
+            <param name="array">数组,如果是int类型的数组，即为直接拼接</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DataTableUtil.GetSum(System.Data.DataTable,System.String)">
+            <summary>
+            把DataTable内指定的列的所有行数据相加起来
+            </summary>
+            <param name="dt">需要累计数据值的DataTable数据表</param>
+            <param name="colName">需要累计的字段名称</param>
+            <returns>累计起来的和</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DataTableUtil.GetSum(System.Data.DataView,System.String)">
+            <summary>
+            把DataTable内指定的列的所有行数据相加起来
+            </summary>
+            <param name="dt">需要累计数据值的DataView数据</param>
+            <param name="colName">需要累计的字段名称</param>
+            <returns>累计起来的和</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DataTableUtil.GetRowFilterTable(System.Data.DataTable,System.String)">
+            <summary>
+            获取Table中设置rowFilter后生成的数据
+            </summary>
+            <param name="dtTab">源数据</param>
+            <param name="rowFilter">筛选条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DataTableUtil.GetDistinctNumber(System.Data.DataView,System.String[])">
+            <summary>
+            统计表内以某列为索引的所有不同的行数，类似于：select distinct a from a
+            </summary>
+            <param name="dv">需要获取的DataView</param>
+            <param name="colNames">需要获取的列名的数足</param>
+            <returns>统计的行数</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DataTableUtil.GetSumField(System.Data.DataTable,System.String,System.String)">
+            <summary>
+            获得统计条件的数据表的字段的值的累计 
+            </summary>
+            <param name="dt">统计前的数据表</param>
+            <param name="filter">统计条件 例如：FiledName = 'ZhangXiaoBin'</param>
+            <param name="sumField">字段名称</param>
+            <returns>返回的统计值</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DataTableUtil.getUpdateInCondition(System.Data.DataTable,System.String,System.String)">
+            <summary>
+            获取批量更新的条件参数，采用In关键字进行更新
+            张晓斌  2011年10月13日
+            </summary>
+            <param name="dtTab">数据源</param>
+            <param name="rowFilter">筛选的条件</param>
+            <param name="colName">更新的主键</param>
+            <returns>符合SQL语句IN关键字使用的参数条件</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DataTableUtil.ConverDataTableTOInsterSql(System.Data.DataTable,System.String,System.String,System.Boolean)">
+            <summary>
+            装换DataView到Inster的语句,如果在转换的后的SQL语句中不想出现某一列即可将这列的ExtendField属性设置为Add
+            例如：
+                 dt.Columns["ID"].ExtendedProperties["ExtendField"] = "Add";
+            </summary>
+            <param name="dv">需要转换SQL的数据视图</param>
+            <param name="TableName">表格名称</param>
+            <param name="PrimaryKey">主键名称</param>
+            <param name="isDelete">是否删除数据</param>
+            <returns>返回插入的SQL语句集合，其中第一条为删除数据的SQL</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DataTableUtil.ConverDataTableTOUpdateSql(System.Data.DataTable,System.String,System.String)">
+            <summary>
+            装换DataView为Update的SQL语句，如果不想更新某列的数值，把这列的属性设置不为空即可，
+            例如：
+                dt.Columns["ID"].ExtendedProperties["ExtendField"] = "Update";
+            </summary>
+            <param name="dv">转换数据为UpdateSQL的数据视图</param>
+            <param name="TableName">表格名称</param>
+            <param name="PrimaryKey">主键名称</param>
+            <returns>返回Update的SQL集合</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DataTableUtil.DataTableToList(System.Data.DataTable,System.String,System.String)">
+            <summary>
+            将DataTable转换成IList对象
+            </summary>
+            <param name="table">DataTable对象</param>
+            <param name="className">映射对象空间名,为null表示不映射</param>
+            <returns>IList</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DataTableUtil.toMapList(System.Data.DataTable)">
+            将datatable转换成IList 
+            IList中每一个元素是一个IDictionary, 一个IDictionary对应table中的DataRow
+        </member>
+        <member name="M:XB.Framework.Common.Util.DataTableUtil.newInstance(System.String,System.String)">
+            <summary>
+            根据类名创建其实例化对象
+            </summary>
+            <param name="className">包含命名空间的类名</param>
+            <param name="dllpath">dll的绝对路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DataTableUtil.toModelList(System.Data.DataTable,System.String,System.String)">
+            <summary>
+            将datatable转换成IList,IList中每一个元素是一个对应Type的对象, 一个对应Type的对象对应table中的DataRow
+            </summary>
+            <param name="dtTab">Datatable格式的数据源</param>
+            <param name="className">包含命名空间的的类名</param>
+            <param name="dllPath">包含类的初始化的dll组件的绝对路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DataTableUtil.DataTableToList``1(System.Data.DataTable)">
+            <summary>
+            将 DataTable 转换 IList 
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dtTab"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:XB.Framework.Common.Util.DataTableUtil.DataTableToList2``1(System.Data.DataTable)" -->
+        <member name="M:XB.Framework.Common.Util.DataTableUtil.MapperToObject``1(System.Data.DataRow)">
+            <summary>
+            将DataRow反射转换为实体类
+            </summary>
+            <param name="Row">DataRow</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DataTableUtil.GetNewDistinctTable(System.Data.DataTable,System.String[])">
+            <summary>
+            统计这个表里所有的不同的记录信息，返回数据表，类似于：select distinct a from a
+            </summary>
+            <param name="dt">需要获取的数据表</param>
+            <param name="colNames">需要获取的唯一数据的字段名数组</param>
+            <returns>数据表信息</returns>
+        </member>
+        <member name="T:XB.Framework.Common.Util.DbUtil">
+            <summary>
+            数据库基础工具类
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.DbUtil.LANG_ZHS">
+            <summary></summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.DbUtil.LANG_US">
+            <summary></summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DbUtil.SqlLanguage(System.String)">
+            <summary>
+            语言转换
+            </summary>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DbUtil.isnull(System.Object)">
+            <summary>
+            判定是否为null值
+            判定为null规则：
+            1.字符串 ==""
+            2.整型==0
+            其他类型不允许为null;
+            </summary>
+            <param name="val"></param>
+            <returns>true:null, false:非null</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DbUtil.convert(System.Type,System.Object)">
+            <summary>
+            将value转换为类型t的值
+            从快到慢依次是 string -> long64 -> double -> int32 -> DateTime 
+            出于性能考虑,不支持以上5类型之外的其他数据类型
+            100万次运行，平均1次时间均不超过0.2微秒, 速度与if语句的先后顺序有关
+            类型比较和字符串比较，时间相近 ,都是单cpu
+            </summary>
+            <param name="t"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DbUtil.convert(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="t"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DictionaryUtil.ConvertToSqlCondition(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            根据传入的dictionary，生成where条件，辅助查询使用
+            </summary>
+            <param name="dicSqlCondition">
+            item.value中包含数据类型的dictionary，item.value中以“$”进行分割，前面的是value的数据类型，后面是value，如果item.value不包含“$”，默认为string类型。
+            </param>
+            <remarks>
+            item.value中以“$”为分隔符，分隔符前面是数据类型，后面是value，如果数据类型为"string","guid","datetime"时，拼接where条件时，在value部分会增加"'"为前缀和后缀
+            张晓斌 2012-3-8
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DictionaryUtil.GetStringItemValue(System.Collections.IDictionary,System.String)">
+            <summary>
+            获取dicParameter集合中键值为key的的value的数据，返回文本格式内容,默认值为空
+            </summary>
+            <param name="dicParameter">IDictionary格式的参数</param>
+            <param name="key">键值</param>
+            <returns>文本格式的值对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.DictionaryUtil.GetStringItemValue(System.Collections.IDictionary,System.String,System.String)">
+            <summary>
+            获取dicParameter集合中键值为key的的value的数据，返回文本格式内容
+            </summary>
+            <param name="dicParameter">IDictionary格式的参数</param>
+            <param name="key">键值</param>
+            <param name="defaultValue">默认值：当值为空或者IDictionary为null的返回值</param>
+            <returns>文本格式的值对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.EnumUtil.ConvertEnumToInt(System.Object)">
+            <summary>
+            将枚举变量转换成整形
+            </summary>
+            <param name="enumObj"></param>
+            <returns>枚举变量的整形值</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.EnumUtil.ConvertIntToEnum``1(System.Int32)">
+            <summary>
+            将整形值转换成相应的枚举变量
+            </summary>
+            <typeparam name="T">要转换的枚举类型</typeparam>
+            <param name="enumValue">枚举的整形值</param>
+            <returns>返回的枚举值</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:XB.Framework.Common.Util.IListUtil`1" -->
+        <member name="M:XB.Framework.Common.Util.IListUtil`1.#ctor(System.Type,System.String,XB.Framework.Common.Util.ReverserInfo.Direction)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="type">进行比较的类类型</param>
+            <param name="name">进行比较对象的属性名称</param>
+            <param name="direction">比较方向(升序/降序)</param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.IListUtil`1.#ctor(System.String,System.String,XB.Framework.Common.Util.ReverserInfo.Direction)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="className">进行比较的类名称</param>
+            <param name="name">进行比较对象的属性名称</param>
+            <param name="direction">比较方向(升序/降序)</param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.IListUtil`1.#ctor(`0,System.String,XB.Framework.Common.Util.ReverserInfo.Direction)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="t">进行比较的类型的实例</param>
+            <param name="name">进行比较对象的属性名称</param>
+            <param name="direction">比较方向(升序/降序)</param>
+        </member>
+        <member name="T:XB.Framework.Common.Util.ReverserInfo">
+            <summary>
+            对象比较时使用的信息类
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Common.Util.ReverserInfo.Direction">
+            <summary>
+            比较的方向，如下：
+            ASC：升序
+            DESC：降序
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ImageUtil.CropImage(System.Drawing.Image,System.Drawing.Rectangle)">
+            <summary>
+            图片裁剪函数
+            </summary>
+            <param name="img"></param>
+            <param name="cropArea"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ImageUtil.resizeImage(System.Drawing.Image,System.Drawing.Size)">
+            <summary>
+            调整图片尺寸大小
+            </summary>
+            <param name="imgToResize"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ImageUtil.MakeThumbnail(System.String,System.String,System.Int32,System.Int32,XB.Framework.Common.Util.MakeMode)">
+            <summary> 
+            生成缩略图 
+            </summary> 
+            <param name="originalImagePath">源图绝对路径</param> 
+            <param name="thumbnailPath">缩略图存储的绝对路径</param> 
+            <param name="width">缩略图宽度</param> 
+            <param name="height">缩略图高度</param> 
+            <param name="mode">生成缩略图的方式</param> 
+        </member>
+        <member name="M:XB.Framework.Common.Util.ImageUtil.ImageToByte(System.Drawing.Image)">
+            <summary>
+            转换image类型为二进制
+            </summary>
+            <param name="image"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ImageUtil.ByteToImage(System.Byte[])">
+            <summary>
+            转换二进制的数据为image
+            </summary>
+            <param name="byteList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ImageUtil.ObjToImage(System.Object)">
+            <summary>
+            转换Ojbect类型为Iamge类型
+            </summary>
+            <param name="objImage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ImageUtil.ImageToByte(System.String)">
+            <summary>
+            转换文件为二进制对象，包含图片
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ImageUtil.MakeThumbnail(System.String,System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            生成缩略图
+            </summary>
+            <param name="originalImagePath">源图路径（物理路径）</param>
+            <param name="thumbnailPath">缩略图路径（物理路径）</param>
+            <param name="width">缩略图宽度</param>
+            <param name="height">缩略图高度</param>
+            <param name="mode">生成缩略图的方式</param>    
+        </member>
+        <member name="M:XB.Framework.Common.Util.ImageUtil.ImageWatermark(System.String,System.String,System.String)">
+            <summary>
+            图片水印处理方法
+            </summary>
+            <param name="path">需要加载水印的图片路径（绝对路径）</param>
+            <param name="waterpath">水印图片（绝对路径）</param>
+            <param name="location">水印位置（传送正确的代码）</param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ImageUtil.GetLocation(System.String,System.Drawing.Image,System.Drawing.Image)">
+            <summary>
+            图片水印位置处理方法
+            </summary>
+            <param name="location">水印位置</param>
+            <param name="img">需要添加水印的图片</param>
+            <param name="waterimg">水印图片</param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ImageUtil.LetterWatermark(System.String,System.Int32,System.String,System.Drawing.Color,System.String)">
+            <summary>
+            文字水印处理方法
+            </summary>
+            <param name="path">图片路径（绝对路径）</param>
+            <param name="size">字体大小</param>
+            <param name="letter">水印文字</param>
+            <param name="color">颜色</param>
+            <param name="location">水印位置</param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ImageUtil.GetLocation(System.String,System.Drawing.Image,System.Int32,System.Int32)">
+            <summary>
+            文字水印位置的方法
+            </summary>
+            <param name="location">位置代码</param>
+            <param name="img">图片对象</param>
+            <param name="width">宽(当水印类型为文字时,传过来的就是字体的大小)</param>
+            <param name="height">高(当水印类型为文字时,传过来的就是字符的长度)</param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ImageUtil.LDPic(System.Drawing.Bitmap,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            调整光暗
+            </summary>
+            <param name="mybm">原始图片</param>
+            <param name="width">原始图片的长度</param>
+            <param name="height">原始图片的高度</param>
+            <param name="val">增加或减少的光暗值</param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ImageUtil.RePic(System.Drawing.Bitmap,System.Int32,System.Int32)">
+            <summary>
+            反色处理
+            </summary>
+            <param name="mybm">原始图片</param>
+            <param name="width">原始图片的长度</param>
+            <param name="height">原始图片的高度</param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ImageUtil.FD(System.Drawing.Bitmap,System.Int32,System.Int32)">
+            <summary>
+            浮雕处理
+            </summary>
+            <param name="oldBitmap">原始图片</param>
+            <param name="Width">原始图片的长度</param>
+            <param name="Height">原始图片的高度</param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ImageUtil.ResizeImage(System.Drawing.Bitmap,System.Int32,System.Int32)">
+            <summary>
+            拉伸图片
+            </summary>
+            <param name="bmp">原始图片</param>
+            <param name="newW">新的宽度</param>
+            <param name="newH">新的高度</param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ImageUtil.FilPic(System.Drawing.Bitmap,System.Int32,System.Int32)">
+            <summary>
+            滤色处理
+            </summary>
+            <param name="mybm">原始图片</param>
+            <param name="width">原始图片的长度</param>
+            <param name="height">原始图片的高度</param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ImageUtil.RevPicLR(System.Drawing.Bitmap,System.Int32,System.Int32)">
+            <summary>
+            左右翻转
+            </summary>
+            <param name="mybm">原始图片</param>
+            <param name="width">原始图片的长度</param>
+            <param name="height">原始图片的高度</param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ImageUtil.RevPicUD(System.Drawing.Bitmap,System.Int32,System.Int32)">
+            <summary>
+            上下翻转
+            </summary>
+            <param name="mybm">原始图片</param>
+            <param name="width">原始图片的长度</param>
+            <param name="height">原始图片的高度</param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ImageUtil.Compress(System.String,System.String)">
+            <summary>
+            压缩到指定尺寸
+            </summary>
+            <param name="oldfile">原文件</param>
+            <param name="newfile">新文件</param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ImageUtil.BWPic(System.Drawing.Bitmap,System.Int32,System.Int32)">
+            <summary>
+            转换为黑白图片
+            </summary>
+            <param name="mybt">要进行处理的图片</param>
+            <param name="width">图片的长度</param>
+            <param name="height">图片的高度</param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ImageUtil.GetFrames(System.String,System.String)">
+            <summary>
+            获取图片中的各帧
+            </summary>
+            <param name="pPath">图片路径</param>
+            <param name="pSavePath">保存路径</param>
+        </member>
+        <member name="F:XB.Framework.Common.Util.MakeMode.Cut">
+            <summary>
+            裁剪，不会变形
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.MakeMode.WH">
+            <summary>
+            指定高宽缩放（可能变形）
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.MakeMode.W">
+            <summary>
+            指定宽度，高度按比例
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.MakeMode.H">
+            <summary>
+            指定高度，宽度按比例
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Common.Util.JsonUtil">
+            <summary>
+            分隔Json字符串为字典集合。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.JsonUtil.GetValueLength(System.String,System.Boolean,System.Int32@)">
+            <summary>
+            获取值的长度（当Json值嵌套以"{"或"["开头时）
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Common.Util.JsonUtil.CharState">
+            <summary>
+            字符状态
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.JsonUtil.CharState.arrayStart">
+            <summary>
+            数组开始【仅第一开头才算】，值嵌套的以【childrenStart】来标识。
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.JsonUtil.CharState.state">
+            <summary>
+            【0 初始状态，或 遇到“,”逗号】；【1 遇到“：”冒号】
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.JsonUtil.CharState.keyStart">
+            <summary>
+            【-1 取值结束】【0 未开始】【1 无引号开始】【2 单引号开始】【3 双引号开始】
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.JsonUtil.CharState.valueStart">
+            <summary>
+            【-1 取值结束】【0 未开始】【1 无引号开始】【2 单引号开始】【3 双引号开始】
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.JsonUtil.SetCharState(System.Char,XB.Framework.Common.Util.JsonUtil.CharState@)">
+            <summary>
+            设置字符状态(返回true则为关键词，返回false则当为普通字符处理）
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Common.Util.ListUtil.OrderByRule">
+            <summary>
+            排序规则
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ListUtil.OrderByRule.ASC">
+            <summary>
+            正序
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ListUtil.OrderByRule.DESC">
+            <summary>
+            倒序
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ListUtil.ListSort``1(System.Collections.Generic.List{``0},System.String,XB.Framework.Common.Util.ListUtil.OrderByRule)">
+            <summary>
+            在Framework2.0的环境下，采用泛型+反射，使用PropertyInfo中的CompareTo方法进行排序的通用方法
+            张晓斌  2012年12月24日12:29:45
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entityList">需要排序的List实体集合对象</param>
+            <param name="field">实体对象中包含的字段名称</param>
+            <param name="OrderByRule">排序规则枚举 倒序：DESC  正序：ASC</param>
+            <returns>排序之后的List实体集合对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ManagementUtil.GetAllPropertiesName">
+            <summary>
+            获取当前硬件的所有信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ManagementUtil.GetCpuID">
+            <summary>
+            取CPU编号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ManagementUtil.GetNetCardMacAddress">
+            <summary>
+            取得设备网卡的MAC地址
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ManagementUtil.GetLastLogicalDisk">
+            <summary>
+            获取最后一个磁盘的盘符
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ManagementUtil.GetAllLogicalDisk">
+            <summary>
+            获取所有的磁盘盘符信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ManagementUtil.GetHardDiskID">
+            <summary>
+            取第一块硬盘编号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ManagementUtil.GetDiskVolumeSerialNumber">
+            <summary>
+            取得设备硬盘的卷标号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ManagementUtil.GetBIOSNumber">
+            <summary>
+            主板序列号 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ManagementUtil.GetHostIP">
+            <summary>
+            获取主机IP地址
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ManagementUtil.SetNetworkAdapter(System.String,System.String,System.String,System.String[])">
+            <summary>
+            设置本机的网络配置 
+            </summary>
+            <param name="IP地址"></param>
+            <param name="子网掩码"></param>
+            <param name="网关"></param>
+            <param name="DNS"></param>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ManagementUtil.GetHostName">
+            <summary>
+            获取本机计算机名
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ManagementUtil.getAllPrintName">
+            <summary>
+            获取本机所有的打印机名称列表，默认打印机为第一位
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:XB.Framework.Common.Util.ManagementUtil.MenoryUnit">
+            <summary>
+            内存换算单位
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ManagementUtil.MenoryUnit.Byte">
+            <summary>
+            字节
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ManagementUtil.GetTotalPhysicalMemory(XB.Framework.Common.Util.ManagementUtil.MenoryUnit)">
+            <summary>
+            获取当前系统的物理内存
+            需using System.Management;
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ManagementUtil.GetAddressIP">
+            <summary>
+            获取客户端Ip
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ObjectMapperUtil.MapperData``2(``0,``1,System.Collections.Generic.List{System.String})">
+            <summary>
+            获取具有相同结构不同类对象的返回对象值
+            </summary>
+            <typeparam name="S">原始对象类型泛型</typeparam>
+            <typeparam name="T">目标对象类型泛型</typeparam>
+            <param name="s">原始对象</param>
+            <param name="t">目标对象</param>
+            <param name="propertyNames">自定义原始类与目标类关联的属性投影,如果为空则按类属性结构处理</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ObjectMapperUtil.MapperData``2(``0,System.Collections.Generic.List{System.String})">
+            <summary>
+            获取具有相同结构不同类对象的返回对象值
+            </summary>
+            <typeparam name="S">原始对象类型泛型</typeparam>
+            <typeparam name="T">目标对象类型泛型</typeparam>
+            <param name="s">原始对象</param>
+            <param name="t">目标对象</param>
+            <param name="propertyNames">自定义原始类与目标类关联的属性投影,如果为空则按类属性结构处理</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ObjectMapperUtil.CustomsPropertyValues``2(``0,``1,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            给不同结构，不同对象的属性赋值
+            </summary>
+            <typeparam name="S">源对象类型</typeparam>
+            <typeparam name="T">目标对象类型</typeparam>
+            <param name="s">源对象</param>
+            <param name="t">目标对象</param>
+            <param name="dictionary">需要赋值的属性集合 Key：源对象属性名称 Value：目标对象属性名称</param>
+        </member>
+        <member name="T:XB.Framework.Common.Util.ReflectUtil">
+            <summary>
+            反射工具类 功能:1.类型反射2.类对象属性存取3.创建类实例
+             依赖项:
+            1.cacheutil:用于类型缓存
+            2.dbutil:用于数据库类型标准化转换
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ReflectUtil.GetType(System.String)">
+            <summary>
+            获取类型,如果类型不在缓存中,则加入缓存
+            </summary>
+            <param name="typeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ReflectUtil.GetType(System.String,System.String)">
+            <summary>
+            获取类型,如果类型不在缓存中,则加入缓存
+            </summary>
+            <param name="typeName"></param>
+            <param name="keyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ReflectUtil.GetPropertyValue(System.Object,System.String)">
+            <summary>
+            获取属性值
+            </summary>
+            <param name="obj"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ReflectUtil.SetPropertyValue(System.Object,System.String,System.Object)">
+            <summary>
+            设置属性值
+            </summary>
+            <param name="obj"></param>
+            <param name="propertyName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ReflectUtil.CreateInstance(System.Type)">
+            <summary>
+            创建新的实例
+            </summary>
+            <param name="t">实例的类型</param>
+            <returns>实例对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ReflectUtil.GetPropertieKeyValue``1(``0)">
+            <summary>
+            根据对象实体获取该对象所有的属性及数据信息
+             张晓斌 2012-12-10 22:47:22
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="t">需要获取属性信息的对象</param>
+            <returns>Dictionary格式的对象属性集合列表，以属性名称为Key，属性中包含的值为Value</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ReflectUtil.GetPropertyInfo``1">
+            <summary>
+            根据实体对象，通过反射，获取属性对象信息的集合，其中属性名称为Key，值为PropertyInfo对象
+            张晓斌 2014年7月30日11:28:52
+            </summary>
+            <typeparam name="T">对象</typeparam>
+            <returns>属性对象信息的集合，其中属性名称为Key，值为PropertyInfo对象</returns> 
+        </member>
+        <member name="M:XB.Framework.Common.Util.ReflectUtil.GetPropertyInfo``1(``0)">
+            <summary>
+            根据实体对象，通过反射，获取属性对象信息的集合，其中属性名称为Key，值为PropertyInfo对象
+            张晓斌 2014年7月30日11:28:52
+            </summary>
+            <typeparam name="T">对象</typeparam>
+            <param name="t">获取解析的实例化后的对象</param>
+            <returns>属性对象信息的集合，其中属性名称为Key，值为PropertyInfo对象</returns> 
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:XB.Framework.Common.Util.ReflectUtil.GetPropertiesKeyDescription``1(``0)" -->
+        <!-- Badly formed XML comment ignored for member "M:XB.Framework.Common.Util.ReflectUtil.GetPropertyInfoKeyDescription``1(``0)" -->
+        <member name="M:XB.Framework.Common.Util.ReflectUtil.InvokeMethod(System.String,System.Boolean,System.String)">
+            <summary>
+            根据传递的命名空间名称+类名+,+dll名称，返回调用的返回值
+            </summary>
+            <param name="classFullName">>命名空间名称+类名+,+dll名称</param>
+            <param name="isInstanceMethod">是否内置方法</param>
+            <param name="methodName">方法名</param>
+            <returns>返回Object类型</returns>
+            <remarks>
+            使用示例：
+            InvokeMethod（"XB.Authentication.BLL.WebBusinessDo.Account_UserDO,XB.Authentication", "GetPagingModelList",new object[] {"a","b"});
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ReflectUtil.InvokeMethod(System.String,System.Boolean,System.String,System.Object[])">
+            <summary>
+            根据传递的命名空间名称+类名+,+dll名称，返回调用的返回值
+            </summary>
+            <param name="classFullName">>命名空间名称+类名+,+dll名称</param>
+            <param name="isInstanceMethod">是否创建新的实例</param>
+            <param name="methodName">方法名</param>
+            <param name="parameters">方法的参数</param>
+            <returns>返回Object类型</returns>
+            <remarks>
+            使用示例：
+            InvokeMethod（"XB.Authentication.BLL.WebBusinessDo.Account_UserDO,XB.Authentication", "GetPagingModelList",new object[] {"a","b"});
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ReflectUtil.InvokeMethod(System.String,System.String,System.Boolean,System.String,System.Object[])">
+            <summary>
+            采用反射方式调用方法，支持传递参数和返回对象
+            </summary>
+            <param name="dllFullName">全路径的dll名称</param>
+            <param name="classFullName">全类名</param>
+            <param name="isInstanceMethod">是否创建新的实例</param>
+            <param name="methodName">访问的方法名称</param>
+            <param name="parameters">参数</param>
+            <returns>返回object类型</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ReflectUtil.GetNVCFromEnumValue(System.Type)">
+            <summary>
+            从枚举类型和它的特性读出并返回一个键值对,其中键值是枚举的Item索引，为int类型
+            说明：
+               1.此功能主要针对于枚举包含的描述信息使用
+               2.使用此功能必须哎枚举的成员中增加  [Description("返回修改：a.改变单据状态")]标签
+            示例：
+            public enum AuditOfPayAfterAudit{[Description("记账确认：a.改变单据状态  b.生成正式凭证")]P05,[Description("退单：b.改变单据状态（终结，单据已废）")]P06,[Description("返回修改：a.改变单据状态")]P04}
+            zhangxiaobin  2014-1-15 12:00:41
+            </summary>
+            <param name="enumType">Type,该参数的格式为typeof(需要读的枚举类型)</param>
+            <returns>键值对</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ReflectUtil.GetNVCFromEnumKey(System.Type)">
+            <summary>
+            从枚举类型和它的特性读出并返回一个键值对,其中键值是枚举的Item元素，为string类型
+            说明：
+               1.此功能主要针对于枚举包含的描述信息使用
+               2.使用此功能必须哎枚举的成员中增加  [Description("返回修改：a.改变单据状态")]标签
+            示例：
+            public enum AuditOfPayAfterAudit{[Description("记账确认：a.改变单据状态  b.生成正式凭证")]P05,[Description("退单：b.改变单据状态（终结，单据已废）")]P06,[Description("返回修改：a.改变单据状态")]P04}
+            zhangxiaobin  2014-1-15 12:00:41
+            </summary>
+            <param name="enumType">Type,该参数的格式为typeof(需要读的枚举类型)</param>
+            <returns>键值对</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ReflectUtil.GetPropertyNameList``1">
+            <summary>
+            根据实体对象，通过反射，获取属性名称的集合
+            张晓斌 2014-9-20
+            </summary>
+            <typeparam name="T">对象</typeparam>
+            <param name="t">获取解析的实例化后的对象</param>
+            <returns>属性对象信息的集合</returns> 
+        </member>
+        <member name="M:XB.Framework.Common.Util.ReflectUtil.GetPropertyNameList``1(``0)">
+            <summary>
+            根据实体对象，通过反射，获取属性名称的集合
+            张晓斌 2014-9-20
+            </summary>
+            <typeparam name="T">对象</typeparam>
+            <param name="t">获取解析的实例化后的对象</param>
+            <returns>属性对象信息的集合</returns> 
+        </member>
+        <member name="M:XB.Framework.Common.Util.RegioUtil.RegWrite(System.String,System.String,System.String)">
+            <summary>
+            写注册表
+            </summary>
+            <param name="key">写到注册表键值路径</param>
+            <param name="name">注册信息的名称</param>
+            <param name="value">注册信息的值</param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.RegioUtil.SoftRunNumber(System.String)">
+            <summary>
+            设置程序启动次数
+            </summary>
+            <param name="runNumber">启动的次数</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.RegioUtil.HaveIsRunNumber">
+            <summary>
+            按照启动次数检测程序是否可以启动
+            </summary>
+            <returns>true:可以启动,false:不能启动</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.RegioUtil.GetRegValue(System.String,System.String)">
+            <summary>
+            读注册表的数据
+            </summary>
+            <param name="key"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.RegioUtil.GetRegValue(System.String,System.String,System.String)">
+            <summary>
+            读取注册表数据
+            </summary>
+            <param name="key">LocalMachine下key</param>
+            <param name="subKey">子key</param>
+            <param name="name">名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.RegioUtil.RegWrite(System.String,System.String,System.String,System.String)">
+            <summary>
+            写注册表
+            </summary>
+            <param name="key">LocalMachine下的键</param>
+            <param name="subKey">子键</param>
+            <param name="name">变量名</param>
+            <param name="value">变量值</param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.RegioUtil.DeleteValue(System.String,System.String)">
+            <summary>
+            删除注册表的值
+            </summary>
+            <param name="key"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.RegioUtil.SetAutoRun(System.String,System.String)">
+            <summary>
+            设置程序随系统一起启动
+            </summary>
+            <param name="appName">启动项目的名称</param>
+            <param name="appPath">启动项目的路径</param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.RegioUtil.SetNoAutoRun(System.String)">
+            <summary>
+            设置程序随系统一起启动
+            </summary>
+            <param name="appName">启动项目的名称</param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.StringUtil.ExtractChinese(System.String)">
+            <summary>
+            提取字符串中的中文部分
+            张晓斌 2011年11月17日21:44:48
+            例如： 提取 “zhangxb 张晓斌”中的“张晓斌”部分
+            </summary>
+            <param name="soruceString">需要提取的String对象 例如：“zhangxb 张晓斌”</param>
+            <returns>获取的中文字符串 例如：张晓斌</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.StringUtil.RowEqual(System.Object[],System.Object[])">
+            <summary>
+            判断2个元素个数相同的数组是否相等
+            </summary>
+            <param name="Values">第一个数组</param>
+            <param name="OtherValues">第二个数组</param>
+            <returns>true:数组相等，fale:数组不相等</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.StringUtil.GetStringCount(System.String,System.String)">
+            <summary>
+            获取某个字符串中某个字符的数量
+            </summary>
+            <param name="SourceString">被获取容量的源字符串</param>
+            <param name="TagParment">获取数量的字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.TraceUtil.MethodScriptWriteLine(System.String,System.String,System.String)">
+            <summary>
+            当前方法执行脚本输出到“输出”窗口
+            </summary>
+            <param name="fullName">执行的全类名</param>
+            <param name="methodName">方法名称</param>
+            <param name="script">执行脚本</param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ValidateUtil.ValidateObject(System.Object,System.Boolean,System.String,XB.Framework.Common.Util.ValidateType,System.String,System.String@)">
+             <summary>
+             验证数据是否符合规则
+             </summary>
+             <param name="value">需要验证的value</param>
+             <param name="MustInput">是否必须输入数据</param>
+             <param name="HintInput">假如不输入数据的提示信息</param>
+            <param name="validateType">输入类型</param>
+            <param name="ValidateClew">验证出错的提示信息</param>
+            <param name="OutClewMessage">输出的提示信息</param>
+            <returns>true:验证通过 false:验证失败</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ValidateUtil.DoValidate(System.Object,XB.Framework.Common.Util.ValidateType)">
+            <summary>
+            验证数据是否符合规则
+            </summary>
+            <param name="ValidateData">需要验证的数据</param>
+            <param name="validateType">数据验证的类型</param>
+            <returns>false：不符合规则 true：符合规则</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ValidateUtil.DoValidate(System.Object,XB.Framework.Common.Util.ValidateType,System.String,System.String@)">
+            <summary>
+            验证数据是否符合规则
+            </summary>
+            <param name="ValidateData">需要验证的数据</param>
+            <param name="validateType">数据验证的类型</param>
+            <param name="ValidateClew">不符合规则的提示信息</param>
+            <param name="OutClewMessage">向外传递的字符串</param>
+            <returns>false：不符合规则true：符合规则</returns>
+        </member>
+        <member name="T:XB.Framework.Common.Util.ValidateType">
+            <summary>
+            数据验证枚举类
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType.Phone">
+            <summary>
+            电话号码
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType.ZipCode">
+            <summary>
+            邮政编码
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType.EMail">
+            <summary>
+            电子邮件
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType.Url">
+            <summary>
+            网址 
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType.BankBookPassWord">
+            <summary>
+            银行卡密码
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType.IDCard">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType.HandSetCode">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType.Chinese">
+            <summary>
+            汉字
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType.English">
+            <summary>
+            英文
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType.Upper_English">
+            <summary>
+            大写英文字母
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType.Lower_English">
+            <summary>
+            小写英文字母
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType.Int">
+            <summary>
+            包括正整数、负整数和0
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType.Int_Positive">
+            <summary>
+            正整数 大于0的整数
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType.Int_Positive_0">
+            <summary>
+            大于等于0的整数
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType.Int_Negative">
+            <summary>
+            负正整数 小于0的负数
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType._float">
+            <summary>
+            正浮点数、负浮点数、0
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType._float_Positive_0">
+            <summary>
+            大于等于0的浮点数
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType._float_Positive">
+            <summary>
+            大于0的正浮点数
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType._float_Negative">
+            <summary>
+            不包括0的负浮点数
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType._float_Negative_0">
+            <summary>
+            负浮点数 小于等于0的负浮点数
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType.Numbers_And_Letters">
+            <summary>
+            数字和英文字母
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType.Numbers_And_Letters_Underline">
+            <summary>
+            数字和英文字母和下划线
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Util.ValidateType.DateTime">
+            <summary>
+            长整形+短整型+时间
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ValidateType.TypeName">
+            <summary>
+            类型名称
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Util.ValidateType.RegexInfo">
+            <summary>
+            正则式信息
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Common.Util.XMLUtil">
+            <summary>
+            实现DataTable格式的XML的操作，实现改格式XML和DataTable数据的相互转换
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Util.XMLUtil.CDataToXml(System.Data.DataTable)">
+            <summary>
+            将DataTable对象转换成XML字符串
+            </summary>
+            <param name="dt">DataTable对象</param>
+            <returns>XML字符串</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.XMLUtil.CDataToXml(System.Data.DataSet,System.Int32)">
+            <summary>
+            将DataSet对象中指定的Table转换成XML字符串
+            </summary>
+            <param name="ds">DataSet对象</param>
+            <param name="tableIndex">DataSet对象中的Table索引</param>
+            <returns>XML字符串</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.XMLUtil.CDataToXml(System.Data.DataSet)">
+            <summary>
+            将DataSet对象转换成XML字符串
+            </summary>
+            <param name="ds">DataSet对象</param>
+            <returns>XML字符串</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.XMLUtil.CDataToXml(System.Data.DataView)">
+            <summary>
+            将DataView对象转换成XML字符串
+            </summary>
+            <param name="dv">DataView对象</param>
+            <returns>XML字符串</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.XMLUtil.CDataToXmlFile(System.Data.DataTable,System.String)">
+            <summary>
+            将DataSet对象数据保存为XML文件
+            </summary>
+            <param name="dt">DataSet</param>
+            <param name="xmlFilePath">XML文件路径</param>
+            <returns>bool值</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.XMLUtil.CDataToXmlFile(System.Data.DataSet,System.Int32,System.String)">
+            <summary>
+            将DataSet对象中指定的Table转换成XML文件
+            </summary>
+            <param name="ds">DataSet对象</param>
+            <param name="tableIndex">DataSet对象中的Table索引</param>
+            <param name="xmlFilePath">xml文件路径</param>
+            <returns>bool]值</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.XMLUtil.CDataToXmlFile(System.Data.DataSet,System.String)">
+            <summary>
+            将DataSet对象转换成XML文件
+            </summary>
+            <param name="ds">DataSet对象</param>
+            <param name="xmlFilePath">xml文件路径</param>
+            <returns>bool]值</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.XMLUtil.CDataToXmlFile(System.Data.DataView,System.String)">
+            <summary>
+            将DataView对象转换成XML文件
+            </summary>
+            <param name="dv">DataView对象</param>
+            <param name="xmlFilePath">xml文件路径</param>
+            <returns>bool]值</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.XMLUtil.GetXMLToDataTable(System.String,System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            获取XML的数据信息
+            </summary>
+            <param name="xmlPash">推荐采用Constant中的静态的Xml配置属性信息</param>
+            <param name="lstDataColumns">数据列的集合，如果获取的数据为null的话， 便加载集合中的列到表结构中</param>
+            <param name="TableName">数据表的表名</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.XMLUtil.CXmlToDataSet(System.String)">
+            <summary>
+            将Xml内容字符串转换成DataSet对象
+            </summary>
+            <param name="xmlStr">Xml内容字符串</param>
+            <returns>DataSet对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.XMLUtil.CXmlToDatatTable(System.String,System.Int32)">
+            <summary>
+            将Xml字符串转换成DataTable对象
+            </summary>
+            <param name="xmlStr">Xml字符串</param>
+            <param name="tableIndex">Table表索引</param>
+            <returns>DataTable对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.XMLUtil.CXmlToDatatTable(System.String)">
+            <summary>
+            将Xml字符串转换成DataTable对象
+            </summary>
+            <param name="xmlStr">Xml字符串</param>
+            <returns>DataTable对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.XMLUtil.CXmlFileToDataSet(System.String)">
+            <summary>
+            读取Xml文件信息,并转换成DataSet对象
+            </summary>
+            <remarks>
+            DataSet ds = new DataSet();
+            ds = CXmlFileToDataSet("/XML/upload.xml");
+            </remarks>
+            <param name="xmlFilePath">Xml文件地址</param>
+            <returns>DataSet对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.XMLUtil.CXmlToDataTable(System.String,System.Int32)">
+            <summary>
+            读取Xml文件信息,并转换成DataTable对象
+            </summary>
+            <param name="xmlFilePath">xml文江路径</param>
+            <param name="tableIndex">Table索引</param>
+            <returns>DataTable对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.XMLUtil.CXmlToDataTable(System.String)">
+            <summary>
+            读取Xml文件信息,并转换成DataTable对象
+            </summary>
+            <param name="xmlFilePath">xml文江路径</param>
+            <returns>DataTable对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ZipUtil.ZipFileDictory(System.String,ICSharpCode.SharpZipLib.Zip.ZipOutputStream,System.String)">
+            <summary>
+            递归压缩文件夹方法
+            </summary>
+            <param name="FolderToZip"></param>
+            <param name="s"></param>
+            <param name="ParentFolderName"></param>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ZipUtil.ZipFileDictory(System.String,System.String,System.String)">
+            <summary>
+            压缩目录
+            </summary>
+            <param name="FolderToZip">待压缩的文件夹，全路径格式</param>
+            <param name="ZipedFile">压缩后的文件名，全路径格式</param>
+            <param name="Password">压宿密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ZipUtil.ZipManyFilesDictorys(System.String,System.String,System.String)">
+            <summary>
+            压缩多个目录或文件
+            </summary>
+            <param name="FolderToZip">待压缩的文件夹，全路径格式</param>
+            <param name="ZipedFile">压缩后的文件名，全路径格式</param>
+            <param name="Password">压宿密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ZipUtil.ZipFileWithStream(System.String,ICSharpCode.SharpZipLib.Zip.ZipOutputStream,System.String)">
+            <summary>
+            带压缩流压缩单个文件
+            </summary>
+            <param name="FileToZip">要进行压缩的文件名</param>
+            <param name="ZipedFile">压缩后生成的压缩文件名</param>
+            <param name="Password">压宿密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ZipUtil.ZipFile(System.String,System.String,System.String)">
+            <summary>
+            压缩文件
+            </summary>
+            <param name="FileToZip">要进行压缩的文件名</param>
+            <param name="ZipedFile">压缩后生成的压缩文件名</param>
+            <param name="Password">压宿密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ZipUtil.Zip(System.String,System.String,System.String)">
+            <summary>
+            压缩文件 和 文件夹
+            </summary>
+            <param name="FileToZip">待压缩的文件或文件夹，全路径格式 多个用%号分隔</param>
+            <param name="ZipedFile">压缩后生成的压缩文件名，全路径格式</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ZipUtil.IsFilesOrFolders(System.String)">
+            <summary>
+            是否传入的多个文件夹或文件或两者都有
+            </summary>
+            <param name="fileFolders"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Util.ZipUtil.UnZip(System.String,System.String,System.String)">
+            <summary>
+            解压功能(解压压缩文件到指定目录)
+            </summary>
+            <param name="FileToUpZip">待解压的文件</param>
+            <param name="ZipedFolder">指定解压目标目录</param>
+            <param name="Password">解压密码</param>
+        </member>
+        <member name="M:XB.Framework.Common.SystemLog.WriteErrorLog(System.String,System.Exception)">
+            <summary>
+            记录系统错误日志
+            </summary>
+            <param name="systemCode">系统编号，用于存储日志文件，该系统的所有日志文件，全部存储于系统最后一个盘符SystemLog\[SystemCode]文件夹下</param>
+            <param name="LogMess">日志内容</param>
+        </member>
+        <member name="M:XB.Framework.Common.SystemLog.WriteDebugLog(System.String,System.String)">
+            <summary>
+            记录日志
+            </summary>
+            <param name="systemCode">系统编号，用于存储日志文件，该系统的所有日志文件，全部存储于系统最后一个盘符SystemLog\[SystemCode]文件夹下</param>
+            <param name="logMess"></param>
+        </member>
+        <member name="F:XB.Framework.Common.SystemLog.LogType.Debug">
+            <summary>
+            调试日志
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.SystemLog.LogType.Exception">
+            <summary>
+            异常日志
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.SystemLog.LogType.BIZ">
+            <summary>
+            业务日志
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.SystemLog.LogType.Comms">
+            <summary>
+            通讯日志
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.SystemLog.WriteLog(System.String,XB.Framework.Common.SystemLog.LogType,System.String,System.String,System.String)">
+            <summary>
+            记录日志
+            </summary>
+            <param name="systemCode">系统编号，用于存储日志文件，该系统的所有日志文件，全部存储于系统最后一个盘符SystemLog\[SystemCode]文件夹下</param>
+            <param name="title">标题，主要为了表示日志的类型</param>
+            <param name="logMess">日志内容</param>
+        </member>
+        <member name="M:XB.Framework.Common.Reflection.AssemblyHelper.getServiceInstance(System.String)">
+            <summary>
+            根据传递的命名空间名称+类名+,+dll名称，返回IServce的对象
+            </summary>
+            <param name="classFullName">命名空间名称+类名+,+dll名称</param>
+            <returns>IServce的对象</returns>
+            <remarks>
+            使用示例： var url = this.action + "XB.Authentication.BLL.WebBusinessDo.Account_UserDO,XB.Authentication" + "method=GetPagingModelList"
+            </remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:XB.Framework.Common.Reflection.AssemblyHelper.getAssemblyInstance(System.String)" -->
+        <member name="T:XB.Framework.Common.Resource.ResourceManager">
+            <summary>
+            资源工具类
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Resource.ResourceManager.Instance">
+            <summary>
+            实体化实体
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Resource.ResourceManager.#ctor">
+            <summary>
+            构造函数,取相关配置配置参数
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Resource.ResourceManager.ResourcePath">
+            <summary>
+            配置中资源文所在路径
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Resource.ResourceManager.ResourceSymbol">
+            <summary>
+            根据多语言资源来源(FOL/MLM),确定是否有$符号
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Resource.ResourceManager.GetResource(System.String)">
+            <summary>
+            根据指定资源代码得到资源文本
+            2008-01-10 由于MLM系统不支持FOL的xml格式资源导入，故不再使用MLM生成的xml资源，
+            资源读取方式设为MLM时仅表示需在资源前加“$”符号。
+            </summary>
+            <param name="code">资源代码</param>
+            <returns>资源文本</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Resource.ResourceManager.GetResource(System.String,System.Boolean)">
+            <summary>
+            根据指定资源代码得到资源文本
+            </summary>
+            <param name="code">资源代码</param>
+            <param name="addRedStar">是否在后跟红星</param>
+            <returns>返回资源字符串</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Resource.ResourceManager.GetResources(System.String)">
+            <summary>
+            得到资源
+            </summary>
+            <param name="useLanguage">当前使用的语言</param>
+        </member>
+        <member name="M:XB.Framework.Common.Resource.ResourceManager.LoadResource(System.String,System.String)">
+            <summary>
+            从资源文件中加载资源
+            </summary>
+            <param name="language">语言</param>
+            <param name="cacheKey">缓存Key</param>
+        </member>
+        <member name="M:XB.Framework.Common.Resource.ResourceManager.LoadFileResource(System.Collections.Hashtable,System.String,System.String)">
+            <summary>
+            加载指定一个文件中的资源
+            </summary>
+            <param name="resource">资源HashTable</param>
+            <param name="language">语言</param>
+            <param name="fileName">文件名</param>
+        </member>
+        <member name="M:XB.Framework.Common.Resource.ResourceManager.LoadNodeResource(System.Collections.Hashtable,System.Xml.XmlNode)">
+            <summary>
+            从一个XML节点中加载资源到指定HashTable中
+            </summary>
+            <param name="resource">资源HashTable</param>
+            <param name="node">资源节点</param>
+        </member>
+        <member name="T:XB.Framework.Common.Service.Engine.Base">
+            <summary>
+            功能说明：实现aspx页面和josn对象以及aspx对象之间的相互写入和获取，并且实现数据库DAO事物的提交、回滚以及DAO数据库连接的对象关闭
+            </summary>
+            <remarks>
+            作    者：zhangxiaobin
+            创建时间：2012年10月18日
+            备注信息：
+            注意事项：
+            修改信息：
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Common.Service.Engine.Base.writeParameters(System.Boolean,System.Web.HttpResponse,System.Object)">
+            <summary>
+            写入参数到浏览器，有前台进行数据接收
+            </summary>
+            <param name="formsubmit"></param>
+            <param name="response"></param>
+            <param name="robj"></param>
+        </member>
+        <member name="M:XB.Framework.Common.Service.Engine.Base.setServiceProperties(XB.Framework.Common.Service.Engine.IService,System.Web.UI.Page)">
+            <summary>
+            设置基本属性
+            </summary>
+            <param name="service"></param>
+            <param name="page"></param>
+        </member>
+        <member name="T:XB.Framework.Common.Service.Engine.BaseService">
+            <summary>
+            功能说明：底层服务对象
+            </summary>
+            <remarks>
+            作    者：zhangxiaobin
+            创建时间：2012-10-18
+            注意事项：
+            </remarks>
+        </member>
+        <member name="P:XB.Framework.Common.Service.Engine.BaseService.request">
+            <summary>
+            内置对象
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Service.Engine.BaseService.Execute(System.String)">
+            <summary>
+            执行Service内部指定的方法
+            </summary>
+            <param name="methodName">所指定执行的方法名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Service.Engine.BaseService.GetParameters(System.String[])">
+            <summary>
+            批量获取参数,存入IDictionary容器当中
+            </summary>
+            <param name="keys">批量参数键名</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Service.Engine.IService.Execute(System.String)">
+            <summary>
+            执行Service内部指定的方法
+            </summary>
+            <param name="methodName">所指定执行的方法名称</param>
+            <returns></returns>
+        </member>
+        <member name="T:XB.Framework.Common.Session.IBaseSession">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Session.IBaseSession.GetSession(System.String)">
+            <summary>
+            获取Session中的对象
+            </summary>
+            <param name="key">Session key值</param>
+            <returns>Session中的对象</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:XB.Framework.Common.Session.IBaseSession.SetSession(System.String,System.Object)" -->
+        <!-- Badly formed XML comment ignored for member "M:XB.Framework.Common.Session.IBaseSession.RemoveSession(System.String)" -->
+        <member name="P:XB.Framework.Common.Session.IBaseSession.Item(System.String)">
+            <summary>
+            根据键值获取相对应的数据对象
+            </summary>
+            <param name="key">存储对象的键</param>
+            <returns>键值对应的数据对象</returns>
+        </member>
+        <member name="T:XB.Framework.Common.Session.SessionManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Session.SessionManager.GetSession(System.String)">
+            <summary>
+            获取Session中的对象
+            </summary>
+            <param name="key">Session key值</param>
+            <returns>Session中的对象</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:XB.Framework.Common.Session.SessionManager.SetSession(System.String,System.Object)" -->
+        <!-- Badly formed XML comment ignored for member "M:XB.Framework.Common.Session.SessionManager.RemoveSession(System.String)" -->
+        <member name="P:XB.Framework.Common.Session.SessionManager.SessionContainer">
+            <summary>
+            数据存储的对象，如果是WEB程序，采用WebContextContainer，如果是Winfrom程序，采用WindowContextContainer对象进行上下文管理
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Session.SessionManager.Instance">
+            <summary>
+            当前上下文对象
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Session.SessionManager.Item(System.String)">
+            <summary>
+            根据键值获取相对应的数据对象
+            </summary>
+            <param name="key">存储对象的键</param>
+            <returns>键值对应的数据对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Session.WebSession.GetSession(System.String)">
+            <summary>
+            获取Session中的对象
+            </summary>
+            <param name="key">Session key值</param>
+            <returns>Session中的对象</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:XB.Framework.Common.Session.WebSession.SetSession(System.String,System.Object)" -->
+        <!-- Badly formed XML comment ignored for member "M:XB.Framework.Common.Session.WebSession.RemoveSession(System.String)" -->
+        <member name="P:XB.Framework.Common.Session.WebSession.Item(System.String)">
+            <summary>
+            根据键值获取相对应的数据对象
+            </summary>
+            <param name="key">存储对象的键</param>
+            <returns>键值对应的数据对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Session.WinSession.#ctor">
+            <summary>
+            实例化WindowContextContainer，并且初始化Hashtable对象
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Session.WinSession.GetSession(System.String)">
+            <summary>
+            获取Session中的对象
+            </summary>
+            <param name="key">Session key值</param>
+            <returns>Session中的对象</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:XB.Framework.Common.Session.WinSession.SetSession(System.String,System.Object)" -->
+        <!-- Badly formed XML comment ignored for member "M:XB.Framework.Common.Session.WinSession.RemoveSession(System.String)" -->
+        <member name="P:XB.Framework.Common.Session.WinSession.Item(System.String)">
+            <summary>
+            根据键值获取相对应的数据对象
+            </summary>
+            <param name="key">存储对象的键</param>
+            <returns>键值对应的数据对象</returns>
+        </member>
+        <member name="T:XB.Framework.Common.Container.IContextContainer">
+            <summary>
+            功能说明：上下文存储对象接口，主要为了创建同时兼顾WEB和Winfrom程序的存储对象
+            </summary>
+            <remarks>
+            作    者：张晓斌
+            创建时间：2012-11-23 17:49:19
+            注意事项：
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Common.Container.IContextContainer.Add(System.String,System.Object)">
+            <summary>
+            将新增数据存储到上下文对象中
+            </summary>
+            <param name="key">存储对象的键</param>
+            <param name="value">键值对应的数据对象</param>
+        </member>
+        <member name="M:XB.Framework.Common.Container.IContextContainer.Contains(System.String)">
+            <summary>
+            检测当前数据对象是否已经存储
+            </summary>
+            <param name="key">存储对象的键</param>
+            <returns>True：已经存储  False：没有存储</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Container.IContextContainer.Remove(System.String)">
+            <summary>
+            在上下文对象中删除键值对应的数据
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="P:XB.Framework.Common.Container.IContextContainer.Item(System.String)">
+            <summary>
+            根据键值获取相对应的数据对象
+            </summary>
+            <param name="key">存储对象的键</param>
+            <returns>键值对应的数据对象</returns>
+        </member>
+        <member name="T:XB.Framework.Common.Container.ServiceContext">
+            <summary>
+            功能说明：实现Web和Winfrom程序的数据对象存储
+                1.如果是WEB程序，采用WebContextContainer对象进行存储；
+                2.如果是Winfrom程序，采用WindowContextContainer对象进行存储
+            </summary>
+            <remarks>
+            作    者：蒋耀禹
+            创建时间：2012-11-23 17:49:19
+            注意事项：
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Common.Container.ServiceContext.Add(System.String,System.Object)">
+            <summary>
+            将对象存储到上下文对象
+            </summary>
+            <param name="key">存储对象的键</param>
+            <param name="value">键值对应的数据对象</param>
+        </member>
+        <member name="M:XB.Framework.Common.Container.ServiceContext.Contains(System.String)">
+            <summary>
+            判断是否当前Key的对象是否存储
+            </summary>
+            <param name="key">存储对象的键</param>
+            <returns>True：已经存储   False：没有存储</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Container.ServiceContext.Remove(System.String)">
+            <summary>
+            在上下文对象中清除当前Key的数据
+            </summary>
+            <param name="key">存储对象的键</param>
+        </member>
+        <member name="P:XB.Framework.Common.Container.ServiceContext.ContextContainer">
+            <summary>
+            数据存储的对象，如果是WEB程序，采用WebContextContainer，如果是Winfrom程序，采用WindowContextContainer对象进行上下文管理
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Container.ServiceContext.Current">
+            <summary>
+            当前上下文对象
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Common.Container.ServiceContext.Item(System.String)">
+            <summary>
+            根据键值获取相对应的数据对象
+            </summary>
+            <param name="key">存储对象的键</param>
+            <returns>键值对应的数据对象</returns>
+        </member>
+        <member name="T:XB.Framework.Common.Container.WebContextContainer">
+            <summary>
+            功能说明：Web系统中用于数据存储的上下文对象
+            </summary>
+            <remarks>
+            作    者：蒋耀禹
+            创建时间：2012-11-23 17:49:19
+            注意事项：
+            备    注：采用System.Runtime.Remoting.Messaging.CallContext对象进行数据管理
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Common.Container.WebContextContainer.Add(System.String,System.Object)">
+            <summary>
+            将新增数据存储到上下文对象中
+            </summary>
+            <param name="key">存储对象的键</param>
+            <param name="value">键值对应的数据对象</param>
+        </member>
+        <member name="M:XB.Framework.Common.Container.WebContextContainer.CheckKey(System.String)">
+            <summary>
+            判断当前键值不能为null
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:XB.Framework.Common.Container.WebContextContainer.Contains(System.String)">
+            <summary>
+            检测当前数据对象是否已经存储
+            </summary>
+            <param name="key">存储对象的键</param>
+            <returns>True：已经存储  False：没有存储</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Container.WebContextContainer.Remove(System.String)">
+            <summary>
+            在上下文对象中删除键值对应的数据
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="P:XB.Framework.Common.Container.WebContextContainer.Item(System.String)">
+            <summary>
+            根据键值获取相对应的数据对象
+            </summary>
+            <param name="key">存储对象的键</param>
+            <returns>键值对应的数据对象</returns>
+        </member>
+        <member name="T:XB.Framework.Common.Container.WindowContextContainer">
+            <summary>
+            功能说明：Winfrom系统中用于数据存储的上下文对象
+            </summary>
+            <remarks>
+            作    者：蒋耀禹
+            创建时间：2012-11-23 17:49:19
+            注意事项：
+            备    注：采用Hashtable对象进行数据管理
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Common.Container.WindowContextContainer.#ctor">
+            <summary>
+            实例化WindowContextContainer，并且初始化Hashtable对象
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Container.WindowContextContainer.Add(System.String,System.Object)">
+            <summary>
+            将新增数据存储到上下文对象中
+            </summary>
+            <param name="key">存储对象的键</param>
+            <param name="value">键值对应的数据对象</param>
+        </member>
+        <member name="M:XB.Framework.Common.Container.WindowContextContainer.Contains(System.String)">
+            <summary>
+            检测当前数据对象是否已经存储
+            </summary>
+            <param name="key">存储对象的键</param>
+            <returns>True：已经存储  False：没有存储</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Container.WindowContextContainer.Remove(System.String)">
+            <summary>
+            在上下文对象中删除键值对应的数据
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="P:XB.Framework.Common.Container.WindowContextContainer.Item(System.String)">
+            <summary>
+            根据键值获取相对应的数据对象
+            </summary>
+            <param name="key">存储对象的键</param>
+            <returns>键值对应的数据对象</returns>
+        </member>
+        <member name="T:XB.Framework.Common.Constant.AppConstant">
+            <summary>
+            系统常量定义  add by jyy 20100625
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Common.Constant.AppConstant.Languages">
+            <summary>
+            语言类型
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Constant.AppConstant.Languages.中文">
+            <summary>
+            中文
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Constant.AppConstant.Languages.English">
+            <summary>
+            English
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Common.Constant.AppConstant.EnableFlag">
+            <summary>
+            是否可用
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Constant.AppConstant.EnableFlag.Y">
+            <summary>
+            可用
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Constant.AppConstant.EnableFlag.N">
+            <summary>
+            禁用
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Constant.AppConstant.DB_TYPE">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Common.Constant.AppConstant.DBTYPE">
+            <summary>
+            语言类型
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Constant.AppConstant.DBTYPE.ORACLE">
+            <summary>
+            Oracle
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Constant.AppConstant.DBTYPE.SQL_SERVER">
+            <summary>
+            Sql Server
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Common.Constant.AppConstant.Skin">
+            <summary>
+            Extjs前台的皮肤样式
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Constant.AppConstant.Skin.ext_all">
+            <summary>
+            默认皮肤，蓝色
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Common.Constant.AppConstant.Skin.ext_all_gray">
+            <summary>
+            灰色皮肤
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Constant.AppConstant.GetMark(XB.Framework.Common.Constant.AppConstant.MarkType,System.String)">
+            <summary>
+            根据传递的标记和语言种类，返回各自的标识
+            </summary>
+            <param name="nLanguages"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Xml.XmlUtil.Serialize``1(``0)">
+            <summary>
+            将对象序列化为xml文本
+            </summary>
+            <typeparam name="T">需要序列化的对象类型</typeparam>
+            <param name="value">需要序列化的对象</param>
+            <returns>序列化后的xml文本</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Xml.XmlUtil.Deserialize``1(System.String)">
+            <summary>
+            序列化xml为实体对象
+            </summary>
+            <typeparam name="T">序列化后的对象类型</typeparam>
+            <param name="xml">需要序列化的xml文本</param>
+            <returns>序列化后的实体对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Xml.XmlUtil.CDataToXml(System.Data.DataTable)">
+            <summary>
+            将DataTable对象转换成XML字符串
+            </summary>
+            <param name="dt">DataTable对象</param>
+            <returns>XML字符串</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Xml.XmlUtil.CDataToXml(System.Data.DataSet,System.Int32)">
+            <summary>
+            将DataSet对象中指定的Table转换成XML字符串
+            </summary>
+            <param name="ds">DataSet对象</param>
+            <param name="tableIndex">DataSet对象中的Table索引</param>
+            <returns>XML字符串</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Xml.XmlUtil.CDataToXml(System.Data.DataSet)">
+            <summary>
+            将DataSet对象转换成XML字符串
+            </summary>
+            <param name="ds">DataSet对象</param>
+            <returns>XML字符串</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Xml.XmlUtil.CDataToXml(System.Data.DataView)">
+            <summary>
+            将DataView对象转换成XML字符串
+            </summary>
+            <param name="dv">DataView对象</param>
+            <returns>XML字符串</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Xml.XmlUtil.CDataToXmlFile(System.Data.DataTable,System.String)">
+            <summary>
+            将DataSet对象数据保存为XML文件
+            </summary>
+            <param name="dt">DataSet</param>
+            <param name="xmlFilePath">XML文件路径</param>
+            <returns>bool值</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Xml.XmlUtil.CDataToXmlFile(System.Data.DataSet,System.Int32,System.String)">
+            <summary>
+            将DataSet对象中指定的Table转换成XML文件
+            </summary>
+            <param name="ds">DataSet对象</param>
+            <param name="tableIndex">DataSet对象中的Table索引</param>
+            <param name="xmlFilePath">xml文件路径</param>
+            <returns>bool]值</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Xml.XmlUtil.CDataToXmlFile(System.Data.DataSet,System.String)">
+            <summary>
+            将DataSet对象转换成XML文件
+            </summary>
+            <param name="ds">DataSet对象</param>
+            <param name="xmlFilePath">xml文件路径</param>
+            <returns>bool]值</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Xml.XmlUtil.CDataToXmlFile(System.Data.DataView,System.String)">
+            <summary>
+            将DataView对象转换成XML文件
+            </summary>
+            <param name="dv">DataView对象</param>
+            <param name="xmlFilePath">xml文件路径</param>
+            <returns>bool]值</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Xml.XmlUtil.GetXMLToDataTable(System.String,System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            获取XML的数据信息
+            </summary>
+            <param name="xmlPash">推荐采用Constant中的静态的Xml配置属性信息</param>
+            <param name="lstDataColumns">数据列的集合，如果获取的数据为null的话， 便加载集合中的列到表结构中</param>
+            <param name="TableName">数据表的表名</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Common.Xml.XmlUtil.CXmlToDataSet(System.String)">
+            <summary>
+            将Xml内容字符串转换成DataSet对象
+            </summary>
+            <param name="xmlStr">Xml内容字符串</param>
+            <returns>DataSet对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Xml.XmlUtil.CXmlToDatatTable(System.String,System.Int32)">
+            <summary>
+            将Xml字符串转换成DataTable对象
+            </summary>
+            <param name="xmlStr">Xml字符串</param>
+            <param name="tableIndex">Table表索引</param>
+            <returns>DataTable对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Xml.XmlUtil.CXmlToDatatTable(System.String)">
+            <summary>
+            将Xml字符串转换成DataTable对象
+            </summary>
+            <param name="xmlStr">Xml字符串</param>
+            <returns>DataTable对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Xml.XmlUtil.CXmlFileToDataSet(System.String)">
+            <summary>
+            读取Xml文件信息,并转换成DataSet对象
+            </summary>
+            <remarks>
+            DataSet ds = new DataSet();
+            ds = CXmlFileToDataSet("/XML/upload.xml");
+            </remarks>
+            <param name="xmlFilePath">Xml文件地址</param>
+            <returns>DataSet对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Xml.XmlUtil.CXmlToDataTable(System.String,System.Int32)">
+            <summary>
+            读取Xml文件信息,并转换成DataTable对象
+            </summary>
+            <param name="xmlFilePath">xml文江路径</param>
+            <param name="tableIndex">Table索引</param>
+            <returns>DataTable对象</returns>
+        </member>
+        <member name="M:XB.Framework.Common.Xml.XmlUtil.CXmlToDataTable(System.String)">
+            <summary>
+            读取Xml文件信息,并转换成DataTable对象
+            </summary>
+            <param name="xmlFilePath">xml文江路径</param>
+            <returns>DataTable对象</returns>
+        </member>
+        <member name="T:XB.Framework.Common.Xml.XmlLogFileUtil">
+            <summary>
+            xml日志文件帮助类
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Xml.XmlLogFileUtil.BackupData``1(System.String,System.String,System.String,``0)">
+            <summary>
+            保存接口请求和响应数据，执行将数据对象以xml形式存储的业务
+            </summary>
+            <typeparam name="T">执行备份保存的类型</typeparam>
+            <param name="interfaceType">接口类型</param>
+            <param name="extId">扩展di</param>
+            <param name="direction">文件夹扩展id</param>
+            <param name="param">备份的对象</param>
+        </member>
+        <member name="M:XB.Framework.Common.Xml.XmlLogFileUtil.GetFileName(System.String,System.String,System.String)">
+            <summary>
+            获取文件路径
+                组成方法：当前dll的路径+"InterfaceLog\\" + interfaceType + "\\" + dateDirectory;
+                文件路径：extId + "_" + DateTime.Now.ToString("yyMMdd HH.mm.ss.fff") + "_" + direction + ".xml";
+            </summary>
+            <param name="interfaceType">接口类型</param>
+            <param name="extId">扩展id</param>
+            <param name="direction">文件夹扩展</param>
+            <returns>拼接后的路径</returns>
+        </member>
+        <member name="F:XB.Framework.Common.Xml.XmlStringTool.XmlDocHeader">
+            <summary>
+            XML文件头
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Xml.XmlStringTool.FormatXmlString(System.String)">
+            <summary>
+            将字符串中的XML保留字符替换为转义符
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Common.Xml.XmlStringTool.GetXmlElementValue(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            获取非标准的xml节点元素值
+            </summary>
+            <param name="NonStandardXml">非标准的xml文本</param>
+            <param name="XmlElementList">xml节点元素列表</param>
+            <returns>以xml节点元素为key，对应的值为val的集合</returns>
+        </member>
+    </members>
+</doc>

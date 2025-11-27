@@ -1,0 +1,2605 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>XB.Framework.Win.Controls</name>
+    </assembly>
+    <members>
+        <member name="F:XB.Framework.Win.Controls.DynamicComBox._ShowButton">
+            <summary>
+            是否显示按钮
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.DynamicComBox._BankAutoCompleteSource">
+            <summary>
+            自动完成字符串的源
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.DynamicComBox._BankComboBoxStyle">
+             <summary>
+             控制组合框的外观和功能
+             </summary>
+            
+        </member>
+        <member name="M:XB.Framework.Win.Controls.DynamicComBox.SetSelectItem(System.String)">
+            <summary>
+            给ComBox赋值
+            </summary>
+            <param name="Value">需要绑定的数据值</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.DynamicComBox.SetSelectItem(System.String,XB.Framework.Win.Controls.CommonUI.ValueType)">
+            <summary>
+            给ComBox赋值
+            </summary>
+            <param name="Value">需要绑定的数据值</param>
+            <param name="valueType">类型枚举</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.DynamicComBox.GetComboxValue">
+            <summary>
+            获取下拉列表的数据
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.DynamicComBox.GetComboxValue(XB.Framework.Win.Controls.CommonUI.ValueType)">
+            <summary>
+            获取下拉列表的数据
+            </summary>
+            <param name="valueType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.DynamicComBox.GetComboBoxAllValue(XB.Framework.Win.Controls.CommonUI.ValueType)">
+            <summary>
+            获取下拉列表的数据
+            </summary>
+            <param name="valueType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.DynamicComBox.SetComboBoxData(System.Data.DataTable,System.String,System.String,System.String)">
+            <summary>
+            设置并绑定下拉列表的数据值
+            </summary>
+            <param name="dtSource">绑定的数据源</param>
+            <param name="Sort">排序的字符串 Name DESC</param>
+            <param name="IdFireldName">邦定的ID的字段名</param>
+            <param name="ValueFireldName">绑定的值得字段</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.DynamicComBox.SetComboBoxData(System.Data.DataTable,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            设置并绑定下拉列表的数据值
+            </summary>
+            <param name="dtSource">绑定的数据源</param>
+            <param name="Sort">排序的字符串 Name DESC</param>
+            <param name="IdFireldName">邦定的ID的字段名</param>
+            <param name="ValueFireldName">绑定的值得字段</param>
+            <param name="bankRow">是否有空数据行</param>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.DynamicComBox.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.DynamicComBox.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.DynamicComBox.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ComboBoxTreeView.DataBinding(System.Data.DataTable,System.String,System.String,System.Object,System.String[],System.String,System.String)">
+            <summary>
+            绑定ComboBoxTreeView的数据源
+            </summary>
+            <param name="datasource">数据源</param>
+            <param name="codeField">绑定节点的Tag属性的数据库字段名称 例如："ID_CodeData"</param>
+            <param name="parentField">父节点和子结点相关联关系字段名称 例如：ParentCodeData</param>
+            <param name="parentCodeValue">父级字段的值 例如："-1"</param>
+            <param name="textField">节点Text属性绑定的字段，可以为多个字段，多个字段之间用|相隔
+                                    例如：new string[] { "CodeValue" }</param>
+            <param name="sortField">排序条件，例如dv.Sort = "CodeValue DESC";</param>
+            <param name="expandNodeCode">展开节点的数据值信息 例如："-1"</param>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ComboBoxTreeView.IsLastStageSelected">
+            <summary>
+            是否为末级才能实现选择  true：必须选中末级节点才能够关闭下拉树； false：选中任何节点都能够关闭下拉树
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ComboBoxTreeView.SelectedNodeText">
+            <summary>
+            获取选中的树节点的Text
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ComboBoxTreeView.SelectedNodeValue">
+            <summary>
+            选中树节点的value
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ComboBoxTreeView.TreeView">
+            <summary>
+            下拉树加载的树控件
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ComboBoxTreeView.AllNodes">
+            <summary>
+            下拉树的所有节点集合
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ComboBoxTreeView.SetTreeViewData(System.Windows.Forms.TreeView,System.Windows.Forms.TreeNode,System.Data.DataTable,System.String,System.String,System.Object,System.String[],System.String,System.String)">
+            <summary>
+             绑定TreeView树的数据
+             例如：
+               TabManager模块——
+               XB.Framework.Win.Controls.CommonUI.SetTreeViewData(tvTableList, null, dtTableList, "ID_CodeData", "ParentCodeData",
+                   "-1", new string[] { "CodeValue" }, "", "");
+               或
+               SetTreeViewData(tvType, null, dtGoodsType, "ID_CodeData", "ParentCodeData", "-1",
+                      new string[] { "CodeValue" }, "", "-1");
+            张晓斌 2008年7月13日描述 
+            </summary>
+            <param name="treeView">需要绑定的TreeView控件的名称</param>
+            <param name="currNode">设置子结点的当前节点的信息</param>
+            <param name="dt">绑定树控件数据的DataTable数据源</param>
+            <param name="codeField">绑定节点的Tag属性的数据库字段名称 例如："ID_CodeData"</param>
+            <param name="parentField">父节点和子结点相关联关系字段名称 例如：ParentCodeData</param>
+            <param name="parentCodeValue">父级字段的值 例如："-1"</param>
+            <param name="textField">节点Text属性绑定的字段，可以为多个字段，多个字段之间用|相隔
+                                    例如：new string[] { "CodeValue" }</param>
+            <param name="sortField">排序条件，例如dv.Sort = "CodeValue DESC";</param>
+            <param name="expandNodeCode">展开节点的数据值信息 例如："-1"</param>
+        </member>
+        <member name="E:XB.Framework.Win.Controls.ComboBoxTreeViewCheckBox.TreeViewAfterSelect">
+            <summary>
+            下拉树节点变动事件
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ComboBoxTreeViewCheckBox.DataBinding(System.Data.DataTable,System.String,System.String,System.Object,System.String[],System.String,System.String)">
+            <summary>
+            绑定ComboBoxTreeView的数据源
+            </summary>
+            <param name="datasource">数据源</param>
+            <param name="codeField">绑定节点的Tag属性的数据库字段名称 例如："ID_CodeData"</param>
+            <param name="parentField">父节点和子结点相关联关系字段名称 例如：ParentCodeData</param>
+            <param name="parentCodeValue">父级字段的值 例如："-1"</param>
+            <param name="textField">节点Text属性绑定的字段，可以为多个字段，多个字段之间用|相隔
+                                    例如：new string[] { "CodeValue" }</param>
+            <param name="sortField">排序条件，例如dv.Sort = "CodeValue DESC";</param>
+            <param name="expandNodeCode">展开节点的数据值信息 例如："-1"</param>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ComboBoxTreeViewCheckBox.CheckedAllNodeText">
+            <summary>
+            获取选中复选框的树节点的Text
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ComboBoxTreeViewCheckBox.CheckedNodeValue">
+            <summary>
+            获取或者设置选中复选框的树节点的隐藏值,相当于TreeNode中的Tag属性
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ComboBoxTreeViewCheckBox.IsChildChecked">
+            <summary>
+            选中一个节点时，当前节点下的子节点是否也同时选中
+            true：同时选中子节点； 
+            false：不选中子节点
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ComboBoxTreeViewCheckBox.IsParentChecked">
+            <summary>
+            选中一个节点时，当前节点上关联的父节点是否也同时选中  
+            true：同时选中子节点；
+            false：不选中子节点
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ComboBoxTreeViewCheckBox.SelectedNodeText">
+            <summary>
+            "获取选中的树节点的Text
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ComboBoxTreeViewCheckBox.SelectedNodeValue">
+            <summary>
+            获取选中的树节点的隐藏值,相当于TreeNode中的Tag属性
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ComboBoxTreeViewCheckBox.TreeView">
+            <summary>
+            下拉树加载的树控件
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ComboBoxTreeViewCheckBox.AllNodes">
+            <summary>
+            下拉树的所有节点集合
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ComboBoxTreeViewCheckBox.SetTreeViewData(System.Windows.Forms.TreeView,System.Windows.Forms.TreeNode,System.Data.DataTable,System.String,System.String,System.Object,System.String[],System.String,System.String)">
+            <summary>
+             绑定TreeView树的数据
+             例如：
+               TabManager模块——
+               XB.Framework.Win.Controls.CommonUI.SetTreeViewData(tvTableList, null, dtTableList, "ID_CodeData", "ParentCodeData",
+                   "-1", new string[] { "CodeValue" }, "", "");
+               或
+               SetTreeViewData(tvType, null, dtGoodsType, "ID_CodeData", "ParentCodeData", "-1",
+                      new string[] { "CodeValue" }, "", "-1");
+            张晓斌 2008年7月13日描述 
+            </summary>
+            <param name="treeView">需要绑定的TreeView控件的名称</param>
+            <param name="currNode">设置子结点的当前节点的信息</param>
+            <param name="dt">绑定树控件数据的DataTable数据源</param>
+            <param name="codeField">绑定节点的Tag属性的数据库字段名称 例如："ID_CodeData"</param>
+            <param name="parentField">父节点和子结点相关联关系字段名称 例如：ParentCodeData</param>
+            <param name="parentCodeValue">父级字段的值 例如："-1"</param>
+            <param name="textField">节点Text属性绑定的字段，可以为多个字段，多个字段之间用|相隔
+                                    例如：new string[] { "CodeValue" }</param>
+            <param name="sortField">排序条件，例如dv.Sort = "CodeValue DESC";</param>
+            <param name="expandNodeCode">展开节点的数据值信息 例如："-1"</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.CommonUI.SetSelectItem(System.Windows.Forms.ComboBox,System.String)">
+            <summary>
+            设置选中的Combo
+            </summary>
+            <param name="combo">combo名</param>
+            <param name="value">需要选中的值</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.CommonUI.SetSelectItem(System.Windows.Forms.ComboBox,System.String,XB.Framework.Win.Controls.CommonUI.ValueType)">
+            <summary>
+            设置选中的Combo的值
+            </summary>
+            <param name="combo">combo的值</param>
+            <param name="value">需要选中的值</param>
+            <param name="valueType">选中的是combo的Value或者Text</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.CommonUI.GetComboBoxAllValue(System.Windows.Forms.ComboBox)">
+            <summary>
+            获取Combo的所有的值
+            </summary>
+            <param name="combo">获取值得combo</param>
+            <returns>返回用于Selecct * frm Tab Where M1 in (x) 中x的值</returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.CommonUI.GetComboBoxAllValue(System.Windows.Forms.ComboBox,XB.Framework.Win.Controls.CommonUI.ValueType)">
+            <summary>
+            获取Combo的所有的值
+            </summary>
+            <param name="combo">获取值得combo</param>
+            <param name="valueType">获取的是ID或者是Name</param>
+            <returns>返回用于Selecct * frm Tab Where M1 in (x) 中x的值</returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.CommonUI.GetComboBoxValue(System.Windows.Forms.ComboBox)">
+            <summary>
+            获取combo选中的值
+            </summary>
+            <param name="combo">获取值得combo</param>
+            <returns>返回combx的值</returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.CommonUI.GetComboBoxValue(System.Windows.Forms.ComboBox,XB.Framework.Win.Controls.CommonUI.ValueType)">
+            <summary>
+            获取Combo的选中的值
+            </summary>
+            <param name="combo">获取值得combo</param>
+            <param name="valueType">获取的是ID或者是Name</param>
+            <returns>返回combx的值</returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.CommonUI.SetComboBoxData(System.Windows.Forms.ComboBox,System.Data.DataTable,System.String,System.String)">
+            <summary>
+            给combo绑定数据
+            </summary>
+            <param name="combo">需要绑定数据的combo</param>
+            <param name="dt">绑定数据的DataTable</param>
+            <param name="idField">绑定的combo的Value的字段名</param>
+            <param name="nameField">绑定的combo的Text的字段名</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.CommonUI.SetComboBoxData(System.Windows.Forms.ComboBox,System.Data.DataTable,System.String,System.String[])">
+            <summary>
+            给combo绑定数据
+            </summary>
+            <param name="combo">需要绑定数据的combo</param>
+            <param name="dt">绑定数据的DataTable</param>
+            <param name="idField">绑定的combo的Value的字段名</param>
+            <param name="nameField">绑定的combo的Text的字段数组，如果数组元素为2个以上以4个空格作为分界</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.CommonUI.SetComboBoxData(System.Windows.Forms.ComboBox,System.Collections.Generic.List{XB.Framework.Interface.Model.ComboBoxItem},System.Boolean)">
+            <summary>
+            给combo绑定数据
+            </summary>
+            <param name="combo">需要绑定数据的combo</param>
+            <param name="listComboBoxData">绑定数据数据源</param>
+            <param name="isFullText">是否全部显示,true：显示为val+"-"+text;false:val</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.CommonUI.SetTreeViewData(System.Windows.Forms.TreeView,System.Windows.Forms.TreeNode,System.Data.DataTable,System.String,System.String,System.Object,System.String[],System.String,System.String)">
+            <summary>
+             绑定TreeView树的数据
+             例如：
+               TabManager模块——
+               XB.Framework.Win.Controls.CommonUI.SetTreeViewData(tvTableList, null, dtTableList, "ID_CodeData", "ParentCodeData",
+                   "-1", new string[] { "CodeValue" }, "", "");
+               或
+               SetTreeViewData(tvType, null, dtGoodsType, "ID_CodeData", "ParentCodeData", "-1",
+                      new string[] { "CodeValue" }, "", "-1");
+            张晓斌 2008年7月13日描述 
+            </summary>
+            <param name="treeView">需要绑定的TreeView控件的名称</param>
+            <param name="currNode">设置子结点的当前节点的信息</param>
+            <param name="dt">绑定树控件数据的DataTable数据源</param>
+            <param name="codeField">绑定节点的Tag属性的数据库字段名称 例如："ID_CodeData"</param>
+            <param name="parentField">父节点和子结点相关联关系字段名称 例如：ParentCodeData</param>
+            <param name="parentCodeValue">父级字段的值 例如："-1"</param>
+            <param name="textField">节点Text属性绑定的字段，可以为多个字段，多个字段之间用|相隔
+                                    例如：new string[] { "CodeValue" }</param>
+            <param name="sortField">排序条件，例如dv.Sort = "CodeValue DESC";</param>
+            <param name="expandNodeCode">展开节点的数据值信息 例如："-1"</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.CommonUI.SetComboxDataRecursion(System.Windows.Forms.ComboBox,System.Data.DataTable,System.String,System.String,System.Object,System.String[],System.String,System.String)">
+            <summary>
+             递归绑定ComboBox的数据信息，主要用于万用类别的递归绑定
+             例如：
+               万用类别管理绑定——
+              DataTable dt = NeuHuiju.APF.WinClient.Data.Database.ExecuteDataTable("select * from Cm_CodeData where CodeType = 'GoodsType'");
+              UIEdit.SetRecursionDataComBox(comboBox1, dt, "ID_CodeData", "ParentCodeData", "-1", new string[] { "CodeValue" },
+                    "CodeValue", "-1");
+            张晓斌 2008年9月4日描述 
+            </summary>
+            <param name="comboBox">需要绑定的comboBox控件的名称</param>
+            <param name="dt">绑定树控件数据的DataTable数据源</param>
+            <param name="codeField">绑定节点的Tag属性的数据库字段名称 例如："ID_CodeData"</param>
+            <param name="parentField">父节点和子结点相关联关系字段名称 例如：ParentCodeData</param>
+            <param name="parentCodeValue">父级字段的值 例如："-1"</param>
+            <param name="textField">节点Text属性绑定的字段，可以为多个字段，多个字段之间用|相隔
+                                    例如：new string[] { "CodeValue" }</param>
+            <param name="sortField">排序条件，例如dv.Sort = "CodeValue DESC";</param>
+            <param name="expandNodeCode">展开节点的数据值信息 例如："-1"</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.CommonUI.ReadBindNode(System.Windows.Forms.TreeNode,System.Windows.Forms.ComboBox)">
+            <summary>
+            循环递归各个子节点，直接绑定到ComboBox控件中
+            </summary>
+            <param name="treeNode"></param>
+            <param name="comboBox"></param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.CommonUI.ValidateTextBox(System.Windows.Forms.TextBox,System.Boolean,System.String,XB.Framework.Win.Controls.CommonUI.InputType,System.String)">
+             <summary>
+             验证TextBox的输入值类型
+             </summary>
+             <param name="MyTextBox">需要验证的TextBox</param>
+             <param name="MustInput">是否必须输入数据</param>
+             <param name="HintInput">假如不输入数据的提示信息</param>
+            <param name="inputType">输入类型</param>
+            <param name="ValidateClew">验证出错的提示信息</param>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.CommonUI.InputType">
+            <summary>
+            输入类型
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.CommonUI.InputType.None">
+            <summary>
+            不限制
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.CommonUI.InputType.Phone">
+            <summary>
+            电话号码
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.CommonUI.InputType.ZipCode">
+            <summary>
+            邮政编码
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.CommonUI.InputType.EMail">
+            <summary>
+            电子邮件
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.CommonUI.InputType.Url">
+            <summary>
+            网址 
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.CommonUI.InputType.BankBookPassWord">
+            <summary>
+            银行卡密码
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.CommonUI.InputType.IDCard">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.CommonUI.InputType.HandSetCode">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.CommonUI.InputType.Chinese">
+            <summary>
+            汉字
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.CommonUI.SetColumns(System.Windows.Forms.DataGridView,System.Data.DataTable)">
+            <summary>
+            动态邦定DataGrideView的界面显示
+            </summary>
+            <param name="dgv">需要邦定的DataGridView</param>
+            <param name="dtColumns">属于这个DataGridView动态显示的数据表
+             例如： DataTable dtColumns = ClassFactory.CreateCTableManage(false).GetTBManage(tableName); </param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.CommonUI.SetValue(System.Windows.Forms.TextBox,System.Data.DataRow,System.String,XB.Framework.Win.Controls.CommonUI.SetStatus)">
+            <summary>
+            设置显示的值 
+            </summary>
+            <param name="box">TextBox控件名称</param>
+            <param name="row">数据行名称</param>
+            <param name="fieldName">邦定的字段名称</param>
+            <param name="status">是设置TextBox的值，还是设置DataRow的值</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.CommonUI.BindingPictureBox(System.Data.DataTable,System.String,System.Windows.Forms.PictureBox)">
+            <summary>
+            邦定数据库字段到PictureBox
+            </summary>
+            <param name="dt">需要邦定数据的数据表</param>
+            <param name="FiledName">数据表中图像字段的名称</param>
+            <param name="picBox">需要邦定图像的PictureBox</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.CommonUI.GetModuleType(System.Object)">
+            <summary>
+            返回菜单类型
+            </summary>
+            <param name="menu"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.FastControls.BankButton">
+            <summary>
+            BankButton 的摘要说明。
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.FastControls.BankButtonGroup">
+            <summary>
+            BankButtonGroup 的摘要说明。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.FastControls.BankButtonGroup.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要使用代码编辑器 
+            修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.FastControls.BankButtonGroup.AddButton(XB.Framework.Win.Controls.FastControls.BankButton)">
+            <summary>
+            添加
+            </summary>
+            <param name="btn"></param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.FastControls.BankButtonGroup.RemoveButton(XB.Framework.Win.Controls.FastControls.BankButton)">
+            <summary>
+            删除
+            </summary>
+            <param name="btn"></param>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.FastControls.BankLookBar">
+            <summary>
+            BankLookBar 的摘要说明。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.FastControls.BankLookBar.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要使用代码编辑器 
+            修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.FastControls.BankLookPage">
+            <summary>
+            BankLookPage 的摘要说明。
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.FastControls.BankLookPageCollection">
+            <summary>
+            BankLookPageCollection 的摘要说明。
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.FastControls.BankMenuItem">
+            <summary>
+            BankMenuItem 的摘要说明。
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.FastControls.BankPanel">
+            <summary>
+            BankPanel 的摘要说明。
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.FastControls.BankSplitter">
+            <summary>
+            BankSplitter 的摘要说明。
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.FastControls.BankToolBar">
+            <summary>
+            BankToolBar 的摘要说明。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.FastControls.BankToolBar.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要使用代码编辑器 
+            修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.FastControls.FillStyle">
+            <summary>
+            FillStyle 的摘要说明。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.FastControls.FillStyle.ApplyStyle(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary>
+            应用样式
+            </summary>
+            <param name="g"></param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            实例化GridViewColumnStyle，默认：Visible=true; ReadOnly= false
+            </summary>
+            <param name="Name"></param>
+            <param name="DataPropertyName"></param>
+            <param name="index"></param>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.AttributeList">
+            <summary>
+            所有的属性集合对象
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.Visible">
+            <summary>
+            列是否显示
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.HeaderText">
+            <summary>
+            标题文本
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.CN">
+            <summary>
+            CN：中文
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.EN">
+            <summary>
+            EN:英文
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.DataPropertyName">
+            <summary>
+            绑定到数据库的字段名称
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.FormatString">
+            <summary>
+            样式化设置参数
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.Width">
+            <summary>
+            宽度
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.ReadOnly">
+            <summary>
+            是否可以编辑
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.BackColor">
+            <summary>
+            背景色
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.ForeColor">
+            <summary>
+            字体颜色
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.SelectionBackColor">
+            <summary>
+            光标选中后的背景色
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.SelectionForeColor">
+            <summary>
+            光标选中后的字体颜色
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.Alignment">
+            <summary>
+            文本对齐方式
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.ToolTipText">
+            <summary>
+            鼠标悬停在上方的提示文本
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.SortMode">
+            <summary>
+            定义用户可以用何种方式对 System.Windows.Forms.DataGridView 列进行排序
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.ColumnType">
+            <summary>
+            列的控件样式
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.AutoSizeMode">
+            <summary>
+            列的宽度调整模式 2014-12-24 15:36:27 add
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.Frozen">
+            <summary>
+            是否冻结列 2014-12-24 15:36:27 add
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.FromDataRow(System.Data.DataRow,System.String)">
+            <summary>
+            从DataRowView中加载GridViewColumnStyle
+            </summary>
+            <param name="drvGridConfig"></param>
+            <param name="Language"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.FromWorkSheetRow(XB.Framework.ExcelXmlWriter.WorksheetRow,System.Collections.Generic.Dictionary{System.String,System.Int32},System.String)">
+            <summary>
+            从WorksheetRow中加载GridViewColumnStyle
+            </summary>
+            <param name="workSheetRow"></param>
+            <param name="Language"></param>
+            <param name="dicConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.GridViewColumnStyle.ToDataRow(System.Data.DataRow)">
+            <summary>
+            将数据存储到DataRowView中
+            </summary>
+            <param name="drDataObject"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.GridView.DataGridViewColumnType">
+            <summary>
+            DataGridView表格列的样式
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.GridViewColumnStyleCollection.#ctor(System.String[])">
+            <summary>
+            实例化GridViewColumnStyleCollection
+            张晓斌 2011年12月9日
+            </summary>
+            <param name="GridViewColumnStyleNames"></param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.GridViewStyle.#ctor(System.String,System.String[])">
+            <summary>
+            生成默认GridViewStyle实例
+            张晓斌 2011年12月9日
+            </summary>
+            <param name="name">GridViewStyle名称</param>
+            <param name="ColumnSyleNames">字段集合</param>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewStyle.ColumnStyles">
+            <summary>
+            列配置集合
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.GridViewStyle.ToDataTable">
+            <summary>
+            转换为DataTable
+            张晓斌 2011年11月29日
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.GridViewStyle.ToDataRowCollections">
+            <summary>
+            转换为DataRow Collections
+            张晓斌 2011-12-8
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewStyle.AutoGenerateColumns">
+            <summary>
+            关闭列的自动生成
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewStyle.ColumnHeadersHeightSizeMode">
+            <summary>
+            用户不能用鼠标调整航标题的高度
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.GridView.GridViewStyleHelper.GridViewStyleBaseFileName">
+            <summary>
+            GridView底层样式文件名称
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.GridView.GridViewStyleHelper.GridViewStyleDirectoryName">
+            <summary>
+            配置文件夹的名称
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewStyleHelper.GridViewStyleFileName">
+            <summary>
+            GridView样式文件名称
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewStyleHelper.NowXmlExcelHelper">
+            <summary>
+            XML文件操作类
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewStyleHelper.GridViewStyleConfigPath">
+            <summary>
+            GridView的配置文件路径
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewStyleHelper.LoginUserName">
+            <summary>
+            用户登录名
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewStyleHelper._Language">
+            <summary>
+            CN：中文 EN：英文
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.GridViewStyleHelper.#ctor(System.String,XB.Framework.Interface.Model.Language)">
+            <summary>
+            初始化文件夹、文件名称、文件路径、用户名称
+            </summary>
+            <param name="LoginUserName">用户登录名</param>
+            <param name="Language">CN：中文 EN：英文,默认为中文 </param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.GridViewStyleHelper.LoadSystemAllGridViewStyle">
+            <summary>
+            根据用户名称加载当前用户所需要的所有的表格配置信息
+            张晓斌
+            </summary>
+            <param name="Language">语言 CN：中文 EN：英文</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.GridViewStyleHelper.SetGridViewStyle(System.Windows.Forms.DataGridView,XB.Framework.Win.Controls.GridView.GridViewStyle)">
+            <summary>
+            设置GridView的样式
+            </summary>
+            <param name="dgv"></param>
+            <param name="_SystemAllGridViewStyle">样式数据存储文件</param>
+            <param name="GridViewStyleName">样式名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.GridViewStyleHelper.SaveGridViewStyle(XB.Framework.Win.Controls.GridView.SystemAllGridViewStyle,System.String)">
+            <summary>
+            保存当前GridView的配置
+            </summary>
+            <param name="SystemAllGridViewStyle"></param>
+            <returns></returns>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.GridView.INameClass">
+            <summary>
+            类名称接口
+            张晓斌 2011年11月10日
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.GridView.ListKey`1">
+            <summary>
+            键值集合类
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.GridView.ListKey`1.cache">
+            <summary>
+            隐藏键值属性
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.GridView.ListKey`1.data">
+            <summary>
+            列表属性
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.ListKey`1.#ctor">
+            <summary>
+            构造方法，实例化化后的为字符串和集合类型的集合
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.ListKey`1.Add(`0)">
+            <summary>
+            增加本类集合集合属性中的成员
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.ListKey`1.Clear">
+            <summary>
+            本类的清空方法
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.ListKey`1.Contains(`0)">
+            <summary>
+            检测本类的集合属性中是否包含某个成员
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.ListKey`1.ContainsName(System.String)">
+            <summary>
+            检测本类中的集合属性中是否包含某个名称
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.ListKey`1.CopyTo(`0[],System.Int32)">
+            <summary>
+            拷贝数据属性
+            </summary>
+            <param name="array"></param>
+            <param name="arrayIndex"></param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.ListKey`1.GetEnumerator">
+            <summary>
+            返回数据集合的枚举
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.ListKey`1.IndexOf(`0)">
+            <summary>
+            获得数据项的索引
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.ListKey`1.Insert(System.Int32,`0)">
+            <summary>
+            向数据项集合中插入成员数据
+            </summary>
+            <param name="index"></param>
+            <param name="item"></param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.ListKey`1.Remove(`0)">
+            <summary>
+            删除数据集合属性的成员
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.ListKey`1.RemoveAt(System.Int32)">
+            <summary>
+            按索引删除
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.ListKey`1.Count">
+            <summary>
+            元素数
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.GridView.ObjectProperty.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.ObjectProperty.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.ObjectProperty.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.SystemAllGridViewStyle.Name">
+            <summary>
+            数据源对象，主要用于单独配置数据
+            张晓斌 2011年11月28日
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.GridView.UINavigationToolbar">
+            <summary>
+            导航工具栏多语言配置类，默认的情况是中文，只有在修改语言类别的时候，才可以修改其语言属性。
+            张晓斌 2011年11月7日
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.UINavigationToolbar.#ctor(System.String,System.String)">
+            <summary>
+            生成导航控件工具条展示类
+            </summary>
+            <param name="language">语言类型</param>
+            <param name="languagePath"></param>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.GridView.GridViewStyleSettingStatus.None">
+            <summary>
+            不可维护
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.GridView.GridViewStyleSettingStatus.User">
+            <summary>
+            只能维护顺序，是否展示、宽度、颜色
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.GridView.GridViewStyleSettingStatus.Administrator">
+            <summary>
+            可以维护所有的功能
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.GridViewStyleSetting.FiledNames">
+            <summary>
+            GridViewStyle列中包含的所有的字段，主要用于绑定ColumnName和InitGridViewStyle信息
+            张晓斌 2011年12月9日
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.GridViewStyleSetting.ShowSelf(XB.Framework.Win.Controls.GridView.GridViewStyleSettingStatus,XB.Framework.Win.Controls.GridView.GridViewStyleHelper,XB.Framework.Win.Controls.GridView.SystemAllGridViewStyle,System.String)">
+            <summary>
+            加载可以维护列表界面显示的窗体
+            </summary>
+            <param name="GridViewStyleSettingStatus">维护状态
+                                                        Administrator：可以维护所有的功能
+                                                        User：只能维护是否展示、宽度和颜色
+                                                        None：只能查看
+            </param>
+            <param name="_GridViewStyleHelper">绑定GridView样式的帮助类</param>
+            <param name="_SystemAllGridViewStyle">整个工程GridView样式展示类集合</param>
+            <param name="GridViewStyleName">当前GridView的样式类名称</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.GridViewStyleSetting.ShowSelf(XB.Framework.Win.Controls.GridView.GridViewStyleSettingStatus,XB.Framework.Win.Controls.GridView.GridViewStyleHelper,XB.Framework.Win.Controls.GridView.SystemAllGridViewStyle,System.String,System.String[])">
+            <summary>
+            加载可以维护列表界面显示的窗体
+            </summary>
+            <param name="GridViewStyleSettingStatus">维护状态
+                                                        Administrator：可以维护所有的功能
+                                                        User：只能维护是否展示、宽度和颜色
+                                                        None：只能查看
+            </param>
+            <param name="_GridViewStyleHelper">绑定GridView样式的帮助类</param>
+            <param name="_SystemAllGridViewStyle">整个工程GridView样式展示类集合</param>
+            <param name="GridViewStyleName">当前GridView的样式类名称</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.GridViewStyleSetting.dgvGridViewStyleSetting_DataBindingComplete(System.Object,System.Windows.Forms.DataGridViewBindingCompleteEventArgs)">
+            <summary>
+            根据选中的成员，设置单元格的背景颜色
+            张晓斌 2011年12月8日
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.GridViewStyleSetting.btnInit_Click(System.Object,System.EventArgs)">
+            <summary>
+            当前数据初始化
+            张晓斌 2011年12月9日
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.GridView.GridViewStyleSetting.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.GridViewStyleSetting.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.GridViewStyleSetting.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.GridView.Navigation.__PageSize">
+            <summary>
+            每页默认行数
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.GridView.Navigation.__PagingMethod">
+            <summary>
+            默认的分页方法
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.GridViewStyleSettingEditStatus">
+            <summary>
+            设置 GridViewStyleSetting的维护状态
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.GridView.Navigation._GridViewStyleName">
+            <summary>
+            当前设置GridView的样式名称
+            张晓斌
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.SetGridViewStyleName(System.String)">
+            <summary>
+            如果当前设置的GridViewStyleName为空或者为Null，便加载传入defaultGridViewStyleName，否则，加载GridViewStyleName
+            张晓斌 2011年12月7日 添加
+            </summary>
+            <param name="gridViewStyleName">传入的GridViewStyleName</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.SetGridViewStyleName(System.String,System.String)">
+            <summary>
+            如果当前设置的GridViewStyleName为空或者为Null，便加载传入defaultGridViewStyleName，否则，加载GridViewStyleName
+            张晓斌 2011年12月7日 添加
+            </summary>
+            <param name="gridViewStyleName">传入的GridViewStyleName</param>
+            <param name="defaultGridViewStyleName">默认的GridViewStyleName</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.SetGridViewStyle">
+            <summary>
+            设置GridView样式
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.SystemAllGridViewStyle">
+            <summary>
+            当前用户所有的GridView的数据对象集合
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.GridViewStyleHelper">
+            <summary>
+            配置操作对象
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.UINavigationToolbar">
+            <summary>
+            导航工具栏工具类
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.NaviSetting">
+            <summary>
+            基础设置的配置路径 2011年11月22日
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.LanguageResourcePath">
+            <summary>
+            多语言的配置路径 2011年11月22日
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.DataPlatform">
+            <summary>
+            数据交互平台，根据不同的数据交互平台，后台采用不同的方式进行数据分页处理
+            1.APF，采用WEB Servcie的方式进行数据分页，属于http协议，必须给以下属性赋值：
+                CustomAassamblyName,SelectCountMethod,DataObjectTypeName,SelectDataMethod
+            2.HuijuSDFW采用微软企业库的方式进行数据分页，属于TCP IP协议,必须给以下属性赋值：
+                CustomAassamblyName
+            张晓斌 2014-9-18 21:26:35
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.CustomAassamblyName">
+            <summary>
+            1.主要用于事物操作的DAL层的DAO的获取，采用反射技术，对DL_ClassFullName反射获取到IService，进行操作DAO对象
+            2.用于采用IBatisNet技术的APF平台访问的对应后台Facade层的全类名
+            说明：数据访问方式为iBatisNet_WebService的才使用
+            </summary>
+            <remarks>
+            张晓斌 2012年10月19日8:09:13 新增
+            张晓斌 2014年9月18日21:13:29 修改
+            </remarks>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.GridView.Navigation._ISShowText">
+            <summary>
+            导航控件按钮是否显示文本
+            张晓斌 2011年11月15日 新增
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.SetStyleVisible">
+            <summary>
+            样式设置按钮是否显示 2011年11月28日 张晓斌
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.ExecMasterTableName">
+            <summary>
+            执行的主表的TableName，主要用于对于采用View获取的非执行主表的字段进行自动添加过滤属性
+            张晓斌 2011年11月19日
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.GridView.Navigation._PageSizeMaxValue">
+            <summary>
+            当前导航控件每页最大的条数上限
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.ExportExcelTitle">
+            <summary>
+            导出的Excel的Title标题 2011年11月28日 张晓斌
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.SelectedCheckBoxChecked">
+            <summary>
+            全选当前页数据按钮的状态值
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.DebugInfoVisible">
+            <summary>
+            属性按钮是否显示
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.ExportExcelVisible">
+            <summary>
+            属性按钮是否显示
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.ShowDataVisible">
+            <summary>
+            属性按钮是否显示
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.StyleVisible">
+            <summary>
+            设置样式按钮是否显示
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.ShowAllCheckBox">
+            <summary>
+            是否显示全选按钮
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.FlatStyle">
+            <summary>
+            导航控件的样式
+            张晓斌 2011年11月15日 新增
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.GridView.Navigation._ISAutoGenerateRowNum">
+            <summary>
+            设置当前分页组件包含的DataGridView中生成的数据，是否在RowHeaders中自动生成行号
+            true：自动生成行号  false：不自动生成
+            默认为false
+            zhangxb 2011年11月16日 新增
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.DataGridViewOjbect">
+            <summary>
+            当前分页组件关联的DataGridView对象，主要用与全部导出数据到Excel功能
+            张晓斌 2011年11月4日 新增
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.PageModelDataSoruce">
+            <summary>
+            数据源
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.PagingCondition">
+            <summary>
+            分页所需要的条件参数
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.ApfPagingCondition">
+            <summary>
+            适用于APF平台分页的分页条件参数
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.PagingMethod">
+            <summary>
+            分页方法名称
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.Navigation.PageSize">
+            <summary>
+            每页记录数 (默认是30) 
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.GridView.Navigation._PageIndex">
+            <summary>
+            (默认第一页) 
+            </summary>
+            
+        </member>
+        <member name="F:XB.Framework.Win.Controls.GridView.Navigation._PageCount">
+            <summary>
+            总页数
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.Setting">
+            <summary>
+            设置一些基础配置
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.InitGridViewStyle">
+            <summary>
+            初始化GridViewStyle配置
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.SetNavigationText(System.String)">
+            <summary>
+            获取导航工具栏多语言界面展示类，并且展示到导航界面上
+            张晓斌 2011年11月7日 add
+            </summary>
+            <param name="_NavigationLanguage">导航工具栏的语言类别属性  CN:中文 EN：英文</param>
+            <param name="LanguageResourcePath">语言资源文件路径 XML格式，以DataSet样式存储的文件路径</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.LoadDataSoruce``1(System.Collections.IList)">
+            <summary>
+            加载表格控制组件数据源
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="litDataSource">IList格式的数据源</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.InitData">
+            <summary>
+            初始化数据
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.SetExtendFieldAttribute">
+            <summary>
+            根据Fileds和TableName获取在Table中不包含的View字段，并且设置为附加属性，实现成功保存
+            张晓斌 2011年12月1日 修改
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.GridView.Navigation.PageModelRefshDel">
+            <summary>
+            获取PageModel对象并且绑定到PageModelDataSoruce属性之中，在每次加载数据的时候都会触发，主要事件包括：init、NextPage、LastPage、FristPage、ProvPage
+            </summary>
+            <param name="CurrentPage">当前页码</param>
+            <returns>NeuHuiju.APF.WinClient.Data.GridView.PageModel</returns>
+            <remarks>
+            如果调用此事件，便会采用程序中设置的方式获取数据，否则默认为采用NeuHuiju.APF.WinClient.Data.Database的方式进行数据加载
+            </remarks>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.ExecData(System.Int32)">
+            <summary>
+            获取分页的数据
+            </summary>
+            <param name="_pageIndex">当前的页码</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.btnFrist_Click(System.Object,System.EventArgs)">
+            <summary>
+            第一页
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.btnProv_Click(System.Object,System.EventArgs)">
+            <summary>
+            上一页
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.btnNext_Click(System.Object,System.EventArgs)">
+            <summary>
+            下一页
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.btnLast_Click(System.Object,System.EventArgs)">
+            <summary>
+            最后一页
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.btnRefsh_Click(System.Object,System.EventArgs)">
+            <summary>
+            刷新事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.btnDebugInfo_Click(System.Object,System.EventArgs)">
+            <summary>
+            调试
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.chkAll_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            全选按钮触发事件
+            说明：
+                SelectedCurrentPageDataRow为自定义的全选事件，可以进行自定义的编写。
+                如果没有编写自定义的事件，直接触发对列名为“Selected”，数据类型为“bit”的数据源进行修改的事件
+            张晓斌 2011年10月25日 add
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.chkAll_CheckedChanged(System.Boolean)">
+            <summary>
+            按钮全选事件
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.btnExportAllDataToExcel_Click(System.Object,System.EventArgs)">
+            <summary>
+            导出全部数据到Excel文件之中的事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.DataGridViewOjbect_RowPostPaint(System.Object,System.Windows.Forms.DataGridViewRowPostPaintEventArgs)">
+            <summary>
+            在RowHeaders自动生成行号并且显示
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.btnStyle_Click(System.Object,System.EventArgs)">
+            <summary>
+            样式设置
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.SaveGridViewStyle">
+            <summary>
+            保存当前GridView的配置信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.btnShowData_Click(System.Object,System.EventArgs)">
+            <summary>
+             查看当前数据源
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.GridView.Navigation.DataRefshDel">
+            <summary>
+            翻页的数据刷新事件
+            </summary>
+            <param name="datasource"></param>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.GridView.Navigation.SelectedCurrentPageDataRowDel">
+            <summary>
+            全选当前页数据行
+            </summary>
+            <param name="datasource"></param>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.GridView.Navigation.GridViewStyleChangeDel">
+            <summary>
+            样式变动事件
+            </summary>
+            <param name="datasource"></param>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.GridView.Navigation.ExportDataTableToExcelDel">
+            <summary>
+            导出数据到Excel
+            </summary>
+            <param name="datasource">数据源</param>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.GridView.Navigation.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.Navigation.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.ShowCurrentDataSource.DataGridViewOjbect_RowPostPaint(System.Object,System.Windows.Forms.DataGridViewRowPostPaintEventArgs)">
+            <summary>
+            在RowHeaders自动生成行号并且显示
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.GridView.ShowCurrentDataSource.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.ShowCurrentDataSource.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.ShowCurrentDataSource.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.GridView.StyleConstant.LoadStyleConstant(System.String,XB.Framework.Interface.Model.Language)">
+            <summary>
+            初始化加载配置上下文
+            </summary>
+            <param name="login_name">当前登录用户名，根据此用户名加载默认用户配置的表格样式文件</param>
+            <param name="lang">语言 CN:中文 EN:英文</param>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.StyleConstant.SystemAllGridViewStyle">
+            <summary>
+            当前用户所有的GridViewStyle文件
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.GridView.StyleConstant.GridViewStyleHelper">
+            <summary>
+            GridViewStyle操作类
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.Properties.Resources.Culture">
+            <summary>
+              重写当前线程的 CurrentUICulture 属性，对
+              使用此强类型资源类的所有资源查找执行重写。
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.Properties.Resources._128048">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.Properties.Resources.back">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.Properties.Resources.back_first">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.Properties.Resources.next">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.Properties.Resources.next_last">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.Properties.Resources.propertysheets">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.Properties.Resources.refresh">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.Properties.Resources.refsh1">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.Properties.Resources.属性窗口">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.Properties.Resources.窗口预览">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.Properties.Resources.输出">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.Properties.Resources.预编译常量">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.SubMenuItem">
+            <summary>
+              强类型资源类，用于查找本地化字符串等。
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.SubMenuItem.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.SubMenuItem.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.SubMenuItem.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.Test.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Test.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Test.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.UploadFile_Cs.FmProgress.SetInit(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="caption"></param>
+            <param name="maxValue"></param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.UploadFile_Cs.FmProgress.SetData(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="showText"></param>
+            <param name="value"></param>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.UploadFile_Cs.FmProgress.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.UploadFile_Cs.FmProgress.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.UploadFile_Cs.FmProgress.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.UploadFile_Cs.UploadFileHelper.ConnectionServer(System.String)">
+            <summary>
+            由于第一次将文件上传到服务器的时候，需要连接WebResponse，存在着延迟现象，导致第一次上传总是出现停滞现象，所以在采用上传文件
+            到服务器的模块上，第一次加载时，采用此方法连接服务器，加载WebResponse。
+            张晓斌 2011年12月17日
+            </summary>
+            <param name="address">上传的服务地址</param>
+            <returns></returns>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.UploadFile_Cs.UploadFileHelper.UploadCompletedDelegate">
+            <summary>
+            上传成功
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.UploadFile_Cs.UploadFileHelper.UploadFailureDelegate">
+            <summary>
+            上传失败
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.UploadFile_Cs.UploadFileHelper.UploadRequestThread(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            采用线程技术上传文件到服务器上
+            张晓斌 2011年12月13日
+            </summary>
+            <param name="address">上传文件对应的服务器地址</param>
+            <param name="fileNamePath">需要上传的文件的全路径</param>
+            <param name="saveName">上传到服务器上保存的文件名称</param>
+            <param name="isFlag">是否显示标记滚动条</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.XpMenu.xpMenu_MouseDown(XB.Framework.Win.Controls.XpMenuItem,System.Object)">
+            <summary>
+            鼠标按下时间
+            </summary>
+            <param name="menuItem"></param>
+            <param name="data"></param>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.XpMenu.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.XpMenu.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.XpMenu.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.SuperMenu.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.SuperMenu.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.SuperMenu.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.TitleItem.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.TitleItem.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.TitleItem.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ToolStripCommonUI.SetSelectItem(System.Windows.Forms.ToolStripComboBox,System.String)">
+            <summary>
+            设置选中的Combo
+            </summary>
+            <param name="combo">combo名</param>
+            <param name="value">需要选中的值</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ToolStripCommonUI.SetSelectItem(System.Windows.Forms.ToolStripComboBox,System.String,XB.Framework.Win.Controls.ToolStripCommonUI.ValueType)">
+            <summary>
+            设置选中的Combo的值
+            </summary>
+            <param name="combo">combo的值</param>
+            <param name="value">需要选中的值</param>
+            <param name="valueType">选中的是combo的Value或者Text</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ToolStripCommonUI.GetToolStripComboBoxAllValue(System.Windows.Forms.ToolStripComboBox)">
+            <summary>
+            获取Combo的所有的值
+            </summary>
+            <param name="combo">获取值得combo</param>
+            <returns>返回用于Selecct * frm Tab Where M1 in (x) 中x的值</returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ToolStripCommonUI.GetToolStripComboBoxAllValue(System.Windows.Forms.ToolStripComboBox,XB.Framework.Win.Controls.ToolStripCommonUI.ValueType)">
+            <summary>
+            获取Combo的所有的值
+            </summary>
+            <param name="combo">获取值得combo</param>
+            <param name="valueType">获取的是ID或者是Name</param>
+            <returns>返回用于Selecct * frm Tab Where M1 in (x) 中x的值</returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ToolStripCommonUI.GetToolStripComboBoxValue(System.Windows.Forms.ToolStripComboBox)">
+            <summary>
+            获取combo选中的值
+            </summary>
+            <param name="combo">获取值得combo</param>
+            <returns>返回combx的值</returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ToolStripCommonUI.GetToolStripComboBoxValue(System.Windows.Forms.ToolStripComboBox,XB.Framework.Win.Controls.ToolStripCommonUI.ValueType)">
+            <summary>
+            获取Combo的选中的值
+            </summary>
+            <param name="combo">获取值得combo</param>
+            <param name="valueType">获取的是ID或者是Name</param>
+            <returns>返回combx的值</returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ToolStripCommonUI.SetToolStripComboBoxData(System.Windows.Forms.ToolStripComboBox,System.Data.DataTable,System.String,System.String)">
+            <summary>
+            给combo绑定数据
+            </summary>
+            <param name="combo">需要绑定数据的combo</param>
+            <param name="dt">绑定数据的DataTable</param>
+            <param name="idField">绑定的combo的Value的字段名</param>
+            <param name="nameField">绑定的combo的Text的字段名</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ToolStripCommonUI.GetToolStripDropDownButtonValue(System.Object)">
+            <summary>
+            获取ToolStripDropDownButton的选中的值,返回Tag
+            </summary>
+            <param name="sender">ToolStripDropDownButton单击事件是传递的选中的对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ToolStripCommonUI.GetToolStripDropDownButtonValue(System.Object,XB.Framework.Win.Controls.Common.DataType)">
+            <summary>
+            获取ToolStripDropDownButton的选中的值
+            </summary>
+            <param name="sender">ToolStripDropDownButton单击事件是传递的选中的对象</param>
+            <param name="valueType">返回的类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ToolStripCommonUI.SetToolStripDropDownButtonData(System.Windows.Forms.ToolStripDropDownButton,System.Data.DataTable,System.String,System.String,System.EventHandler)">
+            <summary>
+            给ToolStripDropDownButton邦定数据
+            </summary>
+            <param name="tlspbtn">需要邦定数据的ToolStripDropDownButton</param>
+            <param name="dt">邦定的数据表</param>
+            <param name="idField">邦定菜单的值的字段</param>
+            <param name="nameField">邦定菜单的显示的字段</param>
+            <param name="LocationChanged">邦定的单击触发事件</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ToolStripCommonUI.SetToolStripDropDownButtonData(System.Windows.Forms.ToolStripDropDownButton,System.Data.DataTable,System.String,System.String,System.Drawing.Image,System.EventHandler)">
+            <summary>
+            给ToolStripDropDownButton邦定数据
+            </summary>
+            <param name="tlspbtn">需要邦定数据的ToolStripDropDownButton</param>
+            <param name="dt">邦定的数据表</param>
+            <param name="idField">邦定菜单的值的字段</param>
+            <param name="nameField">邦定菜单的显示的字段</param>
+            <param name="img">菜单显示的图片</param>
+            <param name="LocationChanged">邦定的触发事件</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ToolStripCommonUI.GetToolStripSplitButtonValue(System.Object)">
+            <summary>
+            获取ToolStripDropDownButton的选中的值,返回Tag
+            </summary>
+            <param name="sender">ToolStripDropDownButton单击事件是传递的选中的对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ToolStripCommonUI.GetToolStripSplitButtonValue(System.Object,XB.Framework.Win.Controls.Common.DataType)">
+            <summary>
+            获取ToolStripSplitButton的选中的值
+            </summary>
+            <param name="sender">ToolStripDropDownButton单击事件是传递的选中的对象</param>
+            <param name="valueType">返回的类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ToolStripCommonUI.SetToolStripSplitButtonData(System.Windows.Forms.ToolStripSplitButton,System.Data.DataTable,System.String,System.String,System.EventHandler)">
+            <summary>
+            给ToolStripSplitButton邦定数据
+            </summary>
+            <param name="tlspbtn">需要邦定数据的ToolStripSplitButton</param>
+            <param name="dt">邦定的数据表</param>
+            <param name="idField">邦定菜单的值的字段</param>
+            <param name="nameField">邦定菜单的显示的字段</param>
+            <param name="OnClick">邦定的触发事件</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ToolStripCommonUI.SetToolStripSplitButtonData(System.Windows.Forms.ToolStripSplitButton,System.Data.DataTable,System.String,System.String,System.Drawing.Image,System.EventHandler)">
+            <summary>
+            给ToolStripSplitButton邦定数据
+            </summary>
+            <param name="tlspbtn">需要邦定数据的ToolStripSplitButton</param>
+            <param name="dt">邦定的数据表</param>
+            <param name="idField">邦定菜单的值的字段</param>
+            <param name="nameField">邦定菜单的显示的字段</param>
+            <param name="img">菜单显示的图片</param>
+            <param name="OnClick">邦定的单击触发事件</param>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.DBDateTimePicker.Value">
+            <summary>
+            属性值，表示日期控件的日期值，如果付空值为DBNull.Value
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.DBDateTimePicker.ButtonVisible">
+            <summary>
+            属性值，获取或设置一个值，该值指示是否显示该控件
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.DBDateTimePicker.ButtonText">
+            <summary>
+            属性值，获取或设置一个值，该值指示日期控件后面的小按钮显示的文本
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.DBDateTimePicker.DateTimeFormat">
+            <summary>
+            属性值，获取此实例的日期部分
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.DBDateTimePicker.ShowCheckBox">
+            <summary>
+            属性值，获取或设置一个值，该值指示在选定日期的左侧是否显示一个复选框
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.DBDateTimePicker.ShowUpDown">
+            <summary>
+            获取或设置一个值，该值指示是否使用数值调节钮控件（也称为 up-down 控件）调整日期/时间值。
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.DBDateTimePicker.Format">
+            <summary>
+            属性值，获取或设置一个值，该值指示在选定日期的左侧是否显示一个复选框
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.DBDateTimePicker.CustomFormat">
+            <summary>
+            获取或设置控件中显示的日期和时间格式。
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.DBDateTimePicker.Checked">
+            <summary>
+            获取或设置一个值，该值指示是否已用有效日期/时间值设置了 System.Windows.Forms.DateTimePicker.Value 属性且显示的值可以更新。
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.DBDateTimePicker.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.DBDateTimePicker.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.DBDateTimePicker.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要使用代码编辑器 
+            修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.DBTextBox._InputType">
+            <summary>
+            属性值,所属输入的数据类型
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.DBTextBox._TextStyle">
+            <summary>
+            属性值,显示的文本样式
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.DBTextBox._MeasureName">
+            <summary>
+            属性值,文本框的格式化字符串
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.DBTextBox._FormatString">
+            <summary>
+            属性值,格式化字符串
+            </summary>
+        </member>
+        <member name="E:XB.Framework.Win.Controls.DBTextBox.DBTextChanged">
+            <summary>
+            方法,文本发生变化触发
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.DBTextBox.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.DBTextBox.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.DBTextBox.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.DrawLine.LineX.LineColor">
+            
+            线的颜色属性
+            
+        </member>
+        <member name="P:XB.Framework.Win.Controls.DrawLine.LineX.LineWidth">
+            
+            线的粗细
+            
+        </member>
+        <member name="M:XB.Framework.Win.Controls.DrawLine.LineX.#ctor">
+            
+            构造函数初始颜色和线粗细
+            
+        </member>
+        <member name="F:XB.Framework.Win.Controls.DrawLine.LineX.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.DrawLine.LineX.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.DrawLine.LineX.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.DrawLine.LineY.LineColor">
+            
+            线的颜色属性
+            
+        </member>
+        <member name="P:XB.Framework.Win.Controls.DrawLine.LineY.LineWidth">
+            
+            线的粗细
+            
+        </member>
+        <member name="M:XB.Framework.Win.Controls.DrawLine.LineY.#ctor">
+            
+            构造函数初始颜色和线粗细
+            
+        </member>
+        <member name="F:XB.Framework.Win.Controls.DrawLine.LineY.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.DrawLine.LineY.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.DrawLine.LineY.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.Forum.AForumContent._DateTime">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.Forum.AForumContent._Text">
+            <summary>
+            回复的文本内容
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.Forum.AForumContent._UserName">
+            <summary>
+            回复人的名称
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.Forum.CtlContentItem.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Forum.CtlContentItem.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Forum.CtlContentItem.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Forum.CtlForumContent.btnSends_Click(System.Object,System.EventArgs)">
+            <summary>
+            回复
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.Forum.CtlForumContent.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Forum.CtlForumContent.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Forum.CtlForumContent.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Forum.FmForumContent.ShowSelf(System.String,System.String,System.String,System.Data.DataTable,XB.Framework.Win.Controls.Forum.CtlForumContent.AddForumDataDel)">
+            <summary>
+            调用对于某条信息的所有的回复信息，并可以继续回复信息
+            </summary>
+            <param name="userName">需要回复信息的用户名</param>
+            <param name="dateTime">需要回复信息的时间</param>
+            <param name="mainContent">需要回复信息的主体文本</param>
+            <param name="dtContent">已经回复的数据信息</param>
+            <param name="forumData">回复信息或委托调用的方法</param>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.Forum.FmForumContent.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Forum.FmForumContent.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Forum.FmForumContent.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ImageDo.ImageBrowser.ShowImage(System.Drawing.Image)">
+            <summary>
+            显示图片
+            </summary>
+            <param name="pic">Image的图片文件</param>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ImageDo.ImageBrowser.Multiple">
+            <summary>
+            放大和缩小的倍数
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.ImageDo.ImageBrowser.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ImageDo.ImageBrowser.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ImageDo.ImageBrowser.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ImageDo.ImageData.ImageToByte(System.String)">
+            <summary>
+            转换文件为二进制对象，包含图片
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ImageDo.ImageData.ByteToImage(System.Byte[])">
+            <summary>
+            转换二进制的数据为image
+            </summary>
+            <param name="byteList">需要转换的二进制数组文件</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ImageDo.ImageData.ObjToImage(System.Object)">
+            <summary>
+            转换Ojbect类型为Iamge类型
+            </summary>
+            <param name="objImage">需要转换的Object类型的文件</param>
+            <returns></returns>
+            <summary>
+             具体示例：
+            object obj = dt.rows[0]["Image"];
+            Image img = NeuHuiju.APF.WinClient.Data.ImageDo.ImageData.ObjToImage(obj);
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.InputDo.InputTextForm.ShowInputForm(System.String,System.String@)">
+            <summary>
+            输入数据信息对话框
+            </summary>
+            <param name="text">提示输入的对话框的正文文本</param>
+            <param name="content">返回的数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.InputDo.InputTextForm.ShowInputForm(System.String,System.String,System.String@)">
+            <summary>
+            输入数据信息对话框
+            </summary>
+            <param name="text">提示输入的对话框的正文文本</param>
+            <param name="caption">对话框窗体的标题</param>
+            <param name="content">返回的数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.InputDo.InputTextForm.ShowInputForm(System.String,System.String,XB.Framework.Win.Controls.InputType,System.String@)">
+            <summary>
+            输入数据信息对话框
+            </summary>
+            <param name="text">提示输入的对话框的正文文本</param>
+            <param name="caption">对话框窗体的标题</param>
+            <param name="InputType">需要输入的数据类型的枚举</param>
+            <param name="content">返回的数据</param>
+            <returns></returns>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.InputDo.InputTextForm.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.InputDo.InputTextForm.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.InputDo.InputTextForm.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.MenuItem._SelectedImage">
+            <summary>
+            选中的图片
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.MenuItem._OverImage">
+            <summary>
+            鼠标经过的图片
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.MenuItem._CommonImage">
+            <summary>
+            正常情况下的图片
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.MenuItem.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.MenuItem.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.MenuItem.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.MenuItemCollection">
+            <summary>
+            菜单集合
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Net.FmProgressBar.SetProgress(System.Object,System.EventArgs)">
+            <summary>
+            同步设定进度界面
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.Net.FmProgressBar.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Net.FmProgressBar.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Net.FmProgressBar.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Net.Ftp.GetKB(System.Double)">
+            <summary>
+            获取字节的KB值
+            </summary>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Net.Ftp.DownLoadFile(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="fileName"></param>
+            <param name="showProgress"></param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Net.Ftp.webClient_DownloadProgressChanged(System.Object,System.Net.DownloadProgressChangedEventArgs)">
+            <summary>
+            下载进度
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.Net.Ftp.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Net.Ftp.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Net.Ftp.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.Net.HttpFile.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Net.HttpFile.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Net.HttpFile.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.SubMenButtons.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.SubMenButtons.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.SubMenButtons.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.SubMenuGroup.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.SubMenuGroup.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.SubMenuGroup.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Tablet.FmTablet.ShowTablet(System.Drawing.Image)">
+            <summary>
+            加载手写板程序
+            </summary>
+            <param name="pic">传入Image的参数</param>
+            <returns>返回签名好的Image图像</returns>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.Tablet.FmTablet.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Tablet.FmTablet.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Tablet.FmTablet.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:XB.Framework.Win.Controls.Tablet.PenFactory">
+            <summary>
+            笔工厂
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.Tablet.TabletModule.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Tablet.TabletModule.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Tablet.TabletModule.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Update.FmProgress.Init(System.String,System.Int32)">
+            <summary>
+            加载滚动显示的窗体
+            </summary>
+            <param name="caption">程序进度的窗体上的标题显示</param>
+            <param name="maxValue">数据的最大值</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Update.FmProgress.SetData(System.String,System.Int32)">
+            <summary>
+            指示滚动条的进度
+            </summary>
+            <param name="caption">程序进度的窗体上的标题显示</param>
+            <param name="value">显示滚动条滚动的制定的标识</param>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.Update.FmProgress.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Update.FmProgress.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Update.FmProgress.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Update.UpdateClient.CheckUpdate(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            开始检测版本升级
+            </summary>
+            <param name="configName">配置文件的名称</param>
+            <param name="localPath">本地配置文件的路径</param>
+            <param name="mainExeName">要运行的程序</param>
+            <param name="tempDir">临时文件夹的名称</param>
+            <param name="CurrentProcessName">检测当前运行的进程的名称</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Update.UpdateClient.BeginUpdate(System.String)">
+            <summary>
+            开始更新
+            </summary>
+            <param name="localPath">本地配置文件的路径</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Update.UpdateServer.GetFiles">
+            <summary>
+            获取App文件UpdatePath指定目录下的所有文件
+            </summary>
+            <returns>文件名字符串数组</returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Update.UpdateServer.GetFiles(System.String)">
+            <summary>
+            获得directoryPath路径指定目录下的所有文件下的
+            </summary>
+            <param name="directoryPath">获取文件的路径</param>
+            <returns>返回文件名字符串数组</returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Update.UpdateServer.GetFileStream(System.String)">
+            <summary>
+            获取文件流
+            </summary>
+            <param name="fileName">文件名称</param>
+            <returns>返回文件流</returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Update.UpdateServer.GetFileBytes(System.String)">
+            <summary>
+            下载所有的二进制文件到客户段
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.Update.UpdateServer.ServerVersion">
+            <summary>
+            XML配置文件的配置节点，节点名"ServerVersion"，只写属性，获取服务器端的版本号
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.Update.UpdateServer.UpdatePath">
+            <summary>
+            XML配置文件的配置节点，节点名"UpdatePath"，只写属性，获取服务器端的版本号
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.Web.WebBrowse.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Web.WebBrowse.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.Web.WebBrowse.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.XpMenuGroup.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.XpMenuGroup.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.XpMenuGroup.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.XpMenuItem.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.XpMenuItem.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.XpMenuItem.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.ZXBListView._ListViewChecked">
+            <summary>
+            成员选中状态
+            </summary>
+            
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ZXBListView.ListView">
+            <summary>
+            成员的视图方式
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ZXBListView.SetListViewData(System.Data.DataTable,System.String,System.String)">
+            <summary>
+            动态绑定ListView
+            </summary>
+            <param name="idField"></param>
+            <param name="NameField"></param>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ZXBListView.ListViewAlignment">
+            <summary>
+            设置空间的对齐方式
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ZXBListView.ListViewScrollable">
+            <summary>
+            成员超过显示边界时是否显示滚动条
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ZXBListView.ListViewEnabled">
+            <summary>
+            是否可以编辑
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ZXBListView.ListViewVisible">
+            <summary>
+            是否可以显示
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ZXBListView.GetListViewData(XB.Framework.Win.Controls.Common.DataType)">
+            <summary>
+            获取选中的数据值数据
+            </summary>
+            <param name="dataType"></param>
+            <returns>返回用于IN查询的数据</returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ZXBListView.SelectedListViewItem(System.String,XB.Framework.Win.Controls.Common.DataType)">
+            <summary>
+            根据ZXBListView返回的值选中ListViewItem
+            </summary>
+            <param name="ListItemValue">ZXBListView返回的值</param>
+            <param name="dataType">是数据值好事显示的值</param>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.ZXBListView.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ZXBListView.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ZXBListView.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ZXBViewListCheckBox.SetListViewData(System.Data.DataTable,System.String,System.String)">
+            <summary>
+            动态绑定ListView
+            </summary>
+            <param name="idField"></param>
+            <param name="NameField"></param>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ZXBViewListCheckBox.ListViewAlignment">
+            <summary>
+            成员的对齐方式
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ZXBViewListCheckBox.ListView">
+            <summary>
+            成员的视图方式
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ZXBViewListCheckBox.ListViewScrollable">
+            <summary>
+            成员超过显示边界时是否显示滚动条
+            </summary>
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ZXBViewListCheckBox.ListViewEnabled">
+            <summary>
+            是否可以编辑
+            </summary>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.ZXBViewListCheckBox._ListViewChecked">
+            <summary>
+            成员选中状态
+            </summary>
+            
+        </member>
+        <member name="P:XB.Framework.Win.Controls.ZXBViewListCheckBox.ListViewVisible">
+            <summary>
+            是否可以显示
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ZXBViewListCheckBox.GetListViewData(XB.Framework.Win.Controls.Common.DataType)">
+            <summary>
+            获取选中的数据值数据
+            </summary>
+            <param name="dataType"></param>
+            <returns>返回用于IN查询的数据</returns>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ZXBViewListCheckBox.SelectedListViewItem(System.String,XB.Framework.Win.Controls.Common.DataType)">
+            <summary>
+            根据ZXBListView返回的值选中ListViewItem
+            </summary>
+            <param name="ListItemValue">ZXBListView返回的值</param>
+            <param name="dataType">是数据值好事显示的值</param>
+        </member>
+        <member name="F:XB.Framework.Win.Controls.ZXBViewListCheckBox.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ZXBViewListCheckBox.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:XB.Framework.Win.Controls.ZXBViewListCheckBox.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{51B7C4F9-8C6D-404F-927D-42B57827314C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JKY.XMLProjectCheck</RootNamespace>
+    <AssemblyName>JKY.XMLProjectCheck</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\WIN1\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>EEAC309F6EDCA93F6F175C6BD74EF6E8F436E956</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>XML文件解析判定_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>x2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\文件解析公共类库_v2025\JKY.Lib\XB Library\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\..\文件解析公共类库_v2025\JKY.Lib\XB Library\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\..\文件解析公共类库_v2025\JKY.Lib\XB Library\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\..\文件解析公共类库_v2025\JKY.Lib\XB Library\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="SandBar">
+      <HintPath>..\..\文件解析公共类库_v2025\JKY.Lib\PlusLib\SandBar.dll</HintPath>
+    </Reference>
+    <Reference Include="SandDock">
+      <HintPath>..\..\文件解析公共类库_v2025\JKY.Lib\PlusLib\SandDock.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XB.Framework">
+      <HintPath>..\..\文件解析公共类库_v2025\JKY.Lib\XB Library\XB.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="XB.Framework.Common, Version=4.0.0.7, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\文件解析公共类库_v2025\JKY.Lib\XB Library\XB.Framework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="XB.Framework.Interface">
+      <HintPath>..\..\文件解析公共类库_v2025\JKY.Lib\XB Library\XB.Framework.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="XB.Framework.Office">
+      <HintPath>..\..\文件解析公共类库_v2025\JKY.Lib\XB Library\XB.Framework.Office.dll</HintPath>
+    </Reference>
+    <Reference Include="XB.Framework.Win.Controls">
+      <HintPath>..\..\文件解析公共类库_v2025\JKY.Lib\XB Library\XB.Framework.Win.Controls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CheckMain.cs" />
+    <Compile Include="CheckMain24.cs" />
+    <Compile Include="DataConvert.cs" />
+    <Compile Include="fmMainFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmMainFrom.Designer.cs">
+      <DependentUpon>fmMainFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmXmlCheckMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmXmlCheckMain.Designer.cs">
+      <DependentUpon>fmXmlCheckMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmXmlCheckMainPlus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmXmlCheckMainPlus.Designer.cs">
+      <DependentUpon>fmXmlCheckMainPlus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fmXmlCheckMainPro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmXmlCheckMainPro.Designer.cs">
+      <DependentUpon>fmXmlCheckMainPro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\ReflectionHelper.cs" />
+    <EmbeddedResource Include="fmMainFrom.resx">
+      <DependentUpon>fmMainFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmXmlCheckMain.resx">
+      <DependentUpon>fmXmlCheckMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmXmlCheckMainPlus.resx">
+      <DependentUpon>fmXmlCheckMainPlus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmXmlCheckMainPro.resx">
+      <DependentUpon>fmXmlCheckMainPro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <None Include="Resources\TV - 22%402x.png" />
+    <None Include="Resources\bj1.png" />
+    <None Include="Resources\Frame 2036097084.png" />
+    <None Include="Resources\Frame 2036097084%402x.png" />
+    <None Include="Resources\btn2.png" />
+    <None Include="Resources\cap.png" />
+    <None Include="Resources\lab.png" />
+    <None Include="Resources\boot.png" />
+    <None Include="Resources\boot2.png" />
+    <None Include="Resources\btnred.png" />
+    <None Include="Resources\btnbule.png" />
+    <Content Include="x1.ico" />
+    <Content Include="x2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\文件解析公共类库_v2025\AutoResolveService\AutoResolveService.csproj">
+      <Project>{c6312a72-0996-4124-923c-45667b4f67b6}</Project>
+      <Name>AutoResolveService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
